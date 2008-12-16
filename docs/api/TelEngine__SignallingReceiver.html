@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingReceiver</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingReceiver</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract Layer 2 packet data receiver. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingReceiver</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingComponent.html">TelEngine::SignallingComponent</A> <small>[virtual public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ISDNQ921.html">ISDNQ921</A>, <A HREF="TelEngine__ISDNQ921Pasive.html">ISDNQ921Pasive</A>, <A HREF="TelEngine__SS7MTP2.html">SS7MTP2</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingReceiver.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">SignallingReceiver</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SignallingReceiver</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">attach</A></b> (SignallingInterface* iface) 
+</LI>
+<LI>inline SignallingInterface* &nbsp;<b><A HREF="#ref5">iface</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">control</A></b> (SignallingInterface::Operation oper, NamedList* params = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline bool &nbsp;<b><A HREF="#ref7">transmitPacket</A></b> (const DataBlock& packet, bool repeat,
+	SignallingInterface::PacketType type = SignallingInterface::Unknown) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref8">receivedPacket</A></i></b> (const DataBlock& packet) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">notify</A></b> (SignallingInterface::Notification event) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An interface to an abstraction of a Layer 2 packet data receiver
+</p>
+<A NAME="SignallingReceiver"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SignallingReceiver</strong> ()
+<br></td><td align="right"><h3><strong>SignallingReceiver</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="~SignallingReceiver"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingReceiver</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingReceiver</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, stops the interface and detaches from it
+     </p>
+<A NAME="attach"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>attach</strong> (SignallingInterface* iface)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Attach a hardware interface to the data link. Detach from the old one if valid
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>iface</i></TD><TD align="left" valign="top">Pointer to interface to attach
+     </TD></TR>
+</TABLE></P>
+<A NAME="iface"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingInterface* &nbsp;<strong>iface</strong> ()
+<br></td><td align="right"><h3><strong>iface</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the interface used by this receiver
+</p>
+<p><b>Returns</b>: Pointer to the attached interface or NULL
+     </p>
+<A NAME="control"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>control</strong> (SignallingInterface::Operation oper, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>control</strong></h3></td></tr></table><p></p><p>
+ Execute a control operation on the attached interface.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>oper</i></TD><TD align="left" valign="top">Operation to execute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameters for the operation
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the command completed successfully, for query operations
+  also indicates the interface is enabled and operational
+     </p>
+<A NAME="transmitPacket"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>transmitPacket</strong> (const DataBlock& packet, bool repeat,
+	SignallingInterface::PacketType type = SignallingInterface::Unknown)
+<br></td><td align="right"><h3><strong>transmitPacket</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a packet to the attached interface for transmission
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>packet</i></TD><TD align="left" valign="top">Packet data to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>repeat</i></TD><TD align="left" valign="top">Continuously send a copy of the packet while no other
+  data is available for transmission
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packet to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the interface accepted the packet
+     </p>
+<A NAME="receivedPacket"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>receivedPacket</strong></i> (const DataBlock& packet)
+<br></td><td align="right"><h3><i><strong>receivedPacket</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ Process a Signalling Packet received by the interface
+</p>
+<p><b>Returns</b>: True if message was successfully processed
+     </p>
+<A NAME="notify"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>notify</strong> (SignallingInterface::Notification event)
+<br></td><td align="right"><h3><strong>notify</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a notification generated by the attached interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Notification event reported by the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if notification was processed
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

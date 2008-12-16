@@ -1,0 +1,271 @@
+<HTML>
+<HEAD>
+<TITLE>class JBEvent</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBEvent</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber stream event. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBEvent</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBEvent.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">Type</A> {	Terminated              = 1,     
+	Destroy                 = 2,     
+	Running                 = 3,     
+	WriteFail               = 10,    
+	Presence                = 20,    
+	Message                 = 30,    
+	Iq                      = 50,    
+	IqError                 = 51,    
+	IqResult                = 52,    
+	IqDiscoInfoGet          = 60,
+	IqDiscoInfoSet          = 61,
+	IqDiscoInfoRes          = 62,
+	IqDiscoInfoErr          = 63,
+	IqDiscoItemsGet         = 64,
+	IqDiscoItemsSet         = 65,
+	IqDiscoItemsRes         = 66,
+	IqDiscoItemsErr         = 67,
+	IqCommandGet            = 70,
+	IqCommandSet            = 71,
+	IqCommandRes            = 72,
+	IqCommandErr            = 73,
+	IqJingleGet             = 80,
+	IqJingleSet             = 81,
+	IqJingleRes             = 82,
+	IqJingleErr             = 83,
+	IqRosterSet             = 91,
+	IqRosterRes             = 92,
+	IqRosterErr             = 93,
+	IqClientRosterUpdate    = 150,
+	Unhandled               = 200,   
+	Invalid                 = 500,   
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref4">JBEvent</A></b> (Type type, JBStream* stream, XMLElement* element, XMLElement* child = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">JBEvent</A></b> (Type type, JBStream* stream, XMLElement* element, const String& senderID) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref6">~JBEvent</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref7">type</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref8">name</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">stanzaType</A></b> ()  const
+</LI>
+<LI>inline const JabberID& &nbsp;<b><A HREF="#ref10">from</A></b> ()  const
+</LI>
+<LI>inline const JabberID& &nbsp;<b><A HREF="#ref11">to</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref12">id</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref13">text</A></b> ()  const
+</LI>
+<LI>inline JBStream* &nbsp;<b><A HREF="#ref14">stream</A></b> ()  const
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref15">element</A></b> ()  const
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref16">child</A></b> ()  const
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref17">releaseXML</A></b> (bool del = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">releaseStream</A></b> () 
+</LI>
+<LI>XMLElement* &nbsp;<b><A HREF="#ref19">createError</A></b> (XMPPError::ErrorType type, XMPPError::Type error, const char* text = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  const char* &nbsp;<b><A HREF="#ref20">lookup</A></b> (int type) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a Jabber stream event. Stream events are raised by streams
+  and sent by the engine to the proper service
+</p>
+<A NAME="Type"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Terminated              = 1,     
+	Destroy                 = 2,     
+	Running                 = 3,     
+	WriteFail               = 10,    
+	Presence                = 20,    
+	Message                 = 30,    
+	Iq                      = 50,    
+	IqError                 = 51,    
+	IqResult                = 52,    
+	IqDiscoInfoGet          = 60,
+	IqDiscoInfoSet          = 61,
+	IqDiscoInfoRes          = 62,
+	IqDiscoInfoErr          = 63,
+	IqDiscoItemsGet         = 64,
+	IqDiscoItemsSet         = 65,
+	IqDiscoItemsRes         = 66,
+	IqDiscoItemsErr         = 67,
+	IqCommandGet            = 70,
+	IqCommandSet            = 71,
+	IqCommandRes            = 72,
+	IqCommandErr            = 73,
+	IqJingleGet             = 80,
+	IqJingleSet             = 81,
+	IqJingleRes             = 82,
+	IqJingleErr             = 83,
+	IqRosterSet             = 91,
+	IqRosterRes             = 92,
+	IqRosterErr             = 93,
+	IqClientRosterUpdate    = 150,
+	Unhandled               = 200,   
+	Invalid                 = 500,   
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Event type enumeration
+     </p>
+<A NAME="JBEvent"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBEvent</strong> (Type type, JBStream* stream, XMLElement* element, XMLElement* child = 0)
+<br></td><td align="right"><h3><strong>JBEvent</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs an event from a stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of this event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream that generated the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Element that generated the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>child</i></TD><TD align="left" valign="top">Optional type depending element's child
+     </TD></TR>
+</TABLE></P>
+<A NAME="JBEvent"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBEvent</strong> (Type type, JBStream* stream, XMLElement* element, const String& senderID)
+<br></td><td align="right"><h3><strong>JBEvent</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs a WriteSuccess/WriteFail event from a stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of this event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream that generated the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Element that generated the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>senderID</i></TD><TD align="left" valign="top">Sender's id
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JBEvent"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBEvent</strong> ()
+<br></td><td align="right"><h3><strong>~JBEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Delete the XML element if valid
+     </p>
+<A NAME="type"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the event type
+</p>
+<p><b>Returns</b>: The type of this event as enumeration
+     </p>
+<A NAME="name"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the event name
+</p>
+<p><b>Returns</b>: The name of this event
+     </p>
+<A NAME="stanzaType"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>stanzaType</strong> ()
+<br></td><td align="right"><h3><strong>stanzaType</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the element's 'type' attribute if any
+</p>
+<p><b>Returns</b>: The  element's 'type' attribute
+     </p>
+<A NAME="from"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const JabberID& &nbsp;<strong>from</strong> ()
+<br></td><td align="right"><h3><strong>from</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the 'from' attribute of a received stanza
+</p>
+<p><b>Returns</b>: The 'from' attribute
+     </p>
+<A NAME="to"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const JabberID& &nbsp;<strong>to</strong> ()
+<br></td><td align="right"><h3><strong>to</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the 'to' attribute of a received stanza
+</p>
+<p><b>Returns</b>: The 'to' attribute
+     </p>
+<A NAME="id"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the sender's id for Write... events or the 'id' attribute if the
+  event carries a received stanza
+</p>
+<p><b>Returns</b>: The event id
+     </p>
+<A NAME="text"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>text</strong> ()
+<br></td><td align="right"><h3><strong>text</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The stanza's text or termination reason for Terminated/Destroy events
+</p>
+<p><b>Returns</b>: The event's text
+     </p>
+<A NAME="stream"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JBStream* &nbsp;<strong>stream</strong> ()
+<br></td><td align="right"><h3><strong>stream</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the stream that generated this event
+</p>
+<p><b>Returns</b>: The stream that generated this event
+     </p>
+<A NAME="element"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>element</strong> ()
+<br></td><td align="right"><h3><strong>element</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the underlying XMLElement
+</p>
+<p><b>Returns</b>: XMLElement pointer or 0
+     </p>
+<A NAME="child"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>child</strong> ()
+<br></td><td align="right"><h3><strong>child</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the first child of the underlying element if any
+</p>
+<p><b>Returns</b>: XMLElement pointer or 0
+     </p>
+<A NAME="releaseXML"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>releaseXML</strong> (bool del = false)
+<br></td><td align="right"><h3><strong>releaseXML</strong></h3></td></tr></table><p></p><p>
+ Delete the underlying XMLElement(s). Release the ownership.
+ The caller is responsable of the returned pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>del</i></TD><TD align="left" valign="top">True to delete all xml elements owned by this event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XMLElement pointer if not deleted or 0
+     </p>
+<A NAME="releaseStream"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>releaseStream</strong> ()
+<br></td><td align="right"><h3><strong>releaseStream</strong></h3></td></tr></table><p></p><p>
+ Release the link with the stream to let the stream continue with events
+     </p>
+<A NAME="createError"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMLElement* &nbsp;<strong>createError</strong> (XMPPError::ErrorType type, XMPPError::Type error, const char* text = 0)
+<br></td><td align="right"><h3><strong>createError</strong></h3></td></tr></table><p></p><p>
+ Create an error response from this event if it contains a known type.
+ Don't create the error response if this event is carrying a response
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Error type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The error condition
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text to add to the error element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="lookup"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const char* &nbsp;<strong>lookup</strong> (int type)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the name of an event type
+</p>
+<p><b>Returns</b>: The name an event type
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

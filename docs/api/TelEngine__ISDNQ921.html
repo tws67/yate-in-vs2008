@@ -1,0 +1,199 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ921</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ921</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">ISDN Q.921 implementation on top of a hardware interface. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ921</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__ISDNLayer2.html">TelEngine::ISDNLayer2</A></i> <small>[public ]</small>, <i><A HREF="TelEngine__SignallingReceiver.html">TelEngine::SignallingReceiver</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ921.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">ISDNQ921</A></b> (const NamedList& params, const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~ISDNQ921</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref3">dataTimeout</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref4">multipleFrame</A></b> (bool establish, bool force) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">sendData</A></b> (const DataBlock& data, bool ack) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">cleanup</A></b> () 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref7">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref8">destruct</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">setDebug</A></b> (bool printFrames, bool extendedDebug) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">setDumper</A></b> (SignallingDumper* dumper = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref11">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref12">receivedPacket</A></b> (const DataBlock& packet) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">notify</A></b> (SignallingInterface::Notification event) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">reset</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.921 ISDN Layer 2 implementation on top of a hardware HDLC interface
+</p>
+<A NAME="ISDNQ921"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ921</strong> (const NamedList& params, const char* name = 0)
+<br></td><td align="right"><h3><strong>ISDNQ921</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Initialize this object and the component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Layer's and <A HREF="TelEngine__ISDNLayer2.html">TelEngine::ISDNLayer2</A> parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ISDNQ921"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ921</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ921</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="dataTimeout"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>dataTimeout</strong> ()
+<br></td><td align="right"><h3><strong>dataTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the timeout of a data frame. After that, a higher layer may retransmit data
+</p>
+<p><b>Returns</b>: The timeout of a data frame
+     </p>
+<A NAME="multipleFrame"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>multipleFrame</strong> (bool establish, bool force)
+<br></td><td align="right"><h3><strong>multipleFrame</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Implements Q.921 DL-ESTABLISH and DL-RELEASE request primitives
+ If accepted, the primitive is enqueued for further processing
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>establish</i></TD><TD align="left" valign="top">True to establish. False to release
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to establish even if we already are in this mode. This
+  parameter is ignored if establish is false
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the request was accepted
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer2.html#multipleFrame">ISDNLayer2</A>.</p>
+<A NAME="sendData"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>sendData</strong> (const DataBlock& data, bool ack)
+<br></td><td align="right"><h3><strong>sendData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Implements Q.921 DL-DATA and DL-UNIT DATA request primitives
+ Send data through the HDLC interface
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ack</i></TD><TD align="left" valign="top">True to send an acknoledged frame, false to send an unacknoledged one
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the request was not accepted or send operation failed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer2.html#sendData">ISDNLayer2</A>.</p>
+<A NAME="cleanup"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Emergency release.
+ Send 'disconnect' command. Reset all data. Set state to 'Released'
+ This method is thread safe
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer2.html#cleanup">ISDNLayer2</A>.</p>
+<A NAME="getObject"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a data member or this layer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="destruct"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Detach links. Disposes memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="setDebug"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDebug</strong> (bool printFrames, bool extendedDebug)
+<br></td><td align="right"><h3><strong>setDebug</strong></h3></td></tr></table><p></p><p>
+ Set debug data of this layer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>printFrames</i></TD><TD align="left" valign="top">Enable/disable frame printing on output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extendedDebug</i></TD><TD align="left" valign="top">Enable/disable hex data dump if print frames is enabled
+     </TD></TR>
+</TABLE></P>
+<A NAME="setDumper"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setDumper</strong> (SignallingDumper* dumper = 0)
+<br></td><td align="right"><h3><strong>setDumper</strong></h3></td></tr></table><p></p><p>
+ Set or remove a data dumper
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dumper</i></TD><TD align="left" valign="top">Pointer to the data dumper object, 0 to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="timerTick"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to check timeouts
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for events and timeouts
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingComponent.html#timerTick">SignallingComponent</A>.</p>
+<A NAME="receivedPacket"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>receivedPacket</strong> (const DataBlock& packet)
+<br></td><td align="right"><h3><strong>receivedPacket</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a packet received by the receiver's interface
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>packet</i></TD><TD align="left" valign="top">The received packet
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if message was successfully processed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingReceiver.html#receivedPacket">SignallingReceiver</A>.</p>
+<A NAME="notify"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>notify</strong> (SignallingInterface::Notification event)
+<br></td><td align="right"><h3><strong>notify</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a notification generated by the attached interface
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Notification event reported by the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if notification was processed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingReceiver.html#notify">SignallingReceiver</A>.</p>
+<A NAME="reset"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Reset object if not in Released state. Drop all frames
+ This method is thread safe
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

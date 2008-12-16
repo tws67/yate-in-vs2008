@@ -1,0 +1,289 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7PointCode</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7PointCode</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">SS7 Code Point. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7PointCode</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7PointCode.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Other  = 0,
+	ITU    = 1, 
+	ANSI   = 2, 
+	ANSI8  = 3, 
+	China  = 4, 
+	Japan  = 5, 
+	Japan5 = 6, 
+	DefinedTypes
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">SS7PointCode</A></b> (unsigned char network = 0, unsigned char cluster = 0, unsigned char member = 0) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">SS7PointCode</A></b> (Type type, unsigned int packed) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref4">SS7PointCode</A></b> (const SS7PointCode& original) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref5">~SS7PointCode</A></b> () 
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref6">network</A></b> ()  const
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref7">cluster</A></b> ()  const
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref8">member</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">assign</A></b> (unsigned char network, unsigned char cluster, unsigned char member) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">assign</A></b> (const String& src) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">assign</A></b> (Type type, const unsigned char* src, int len = -1, unsigned char* spare = 0) 
+</LI>
+<LI>inline SS7PointCode& &nbsp;<b><A HREF="#ref12">operator=</A></b> (const SS7PointCode& original) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">operator==</A></b> (const SS7PointCode& original)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">compatible</A></b> (Type type)  const
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref15">pack</A></b> (Type type)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">unpack</A></b> (Type type, unsigned int packed) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref17">store</A></b> (Type type, unsigned char* dest, unsigned char spare = 0)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  unsigned char &nbsp;<b><A HREF="#ref18">size</A></b> (Type type) 
+</LI>
+<LI>static  unsigned char &nbsp;<b><A HREF="#ref19">length</A></b> (Type type) 
+</LI>
+<LI>static  Type &nbsp;<b><A HREF="#ref20">lookup</A></b> (const char* text) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref21">lookup</A></b> (Type type) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An universal SS7 Layer 3 routing Code Point
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Other  = 0,
+	ITU    = 1, 
+	ANSI   = 2, 
+	ANSI8  = 3, 
+	China  = 4, 
+	Japan  = 5, 
+	Japan5 = 6, 
+	DefinedTypes
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Different incompatible types of points codes
+     </p>
+<A NAME="SS7PointCode"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7PointCode</strong> (unsigned char network = 0, unsigned char cluster = 0, unsigned char member = 0)
+<br></td><td align="right"><h3><strong>SS7PointCode</strong></h3></td></tr></table><p></p><p>
+ Constructor from components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">ANSI Network Identifier / ITU-T Zone Identification
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cluster</i></TD><TD align="left" valign="top">ANSI Network Cluster / ITU-T Area/Network Identification
+</TD></TR>
+<TR><TD align="left" valign="top"><i>member</i></TD><TD align="left" valign="top">ANSI Cluster Member / ITU-T Signalling Point Identification
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7PointCode"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7PointCode</strong> (Type type, unsigned int packed)
+<br></td><td align="right"><h3><strong>SS7PointCode</strong></h3></td></tr></table><p></p><p>
+ Constructor from unpacked format
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the unpacking desired
+</TD></TR>
+<TR><TD align="left" valign="top"><i>packed</i></TD><TD align="left" valign="top">Packed format of the point code
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7PointCode"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7PointCode</strong> (const SS7PointCode& original)
+<br></td><td align="right"><h3><strong>SS7PointCode</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Code point to be copied
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7PointCode"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>~SS7PointCode</strong> ()
+<br></td><td align="right"><h3><strong>~SS7PointCode</strong></h3></td></tr></table><p></p><p>
+ Destructor
+     </p>
+<A NAME="network"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>network</strong> ()
+<br></td><td align="right"><h3><strong>network</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Network / Zone component of the Code Point
+</p>
+<p><b>Returns</b>: ANSI Network Identifier / ITU-T Zone Identification
+     </p>
+<A NAME="cluster"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>cluster</strong> ()
+<br></td><td align="right"><h3><strong>cluster</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Cluster / Area component of the Code Point
+</p>
+<p><b>Returns</b>: ANSI Network Cluster / ITU-T Area/Network Identification
+     </p>
+<A NAME="member"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>member</strong> ()
+<br></td><td align="right"><h3><strong>member</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Cluster / Point component of the Code Point
+</p>
+<p><b>Returns</b>: ANSI Cluster Member / ITU-T Signalling Point Identification
+     </p>
+<A NAME="assign"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>assign</strong> (unsigned char network, unsigned char cluster, unsigned char member)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assignment from components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">ANSI Network Identifier / ITU-T Zone Identification
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cluster</i></TD><TD align="left" valign="top">ANSI Network Cluster / ITU-T Area/Network Identification
+</TD></TR>
+<TR><TD align="left" valign="top"><i>member</i></TD><TD align="left" valign="top">ANSI Cluster Member / ITU-T Signalling Point Identification
+     </TD></TR>
+</TABLE></P>
+<A NAME="assign"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>assign</strong> (const String& src)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assign data members from a given string of form 'network-cluster-member'
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the string has incorrect format or individual elements are not in the range 0..255
+     </p>
+<A NAME="assign"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>assign</strong> (Type type, const unsigned char* src, int len = -1, unsigned char* spare = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assign data members from a packed memory block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the point code in memory
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Pointer to packed point code in memory
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, negative to not check validity
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Pointer to variable to save spare bits, NULL to ignore them
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false if invalid type or memory area
+     </p>
+<A NAME="operator="></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7PointCode& &nbsp;<strong>operator=</strong> (const SS7PointCode& original)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Code point to be copied
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator=="></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator==</strong> (const SS7PointCode& original)
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Equality operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Code point to be compared with
+     </TD></TR>
+</TABLE></P>
+<A NAME="compatible"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>compatible</strong> (Type type)
+<br></td><td align="right"><h3><strong>compatible</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the point code is compatible with a packing type
+</p>
+<p><b>Returns</b>: True if the Network and Member fit in the packing format
+     </p>
+<A NAME="pack"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>pack</strong> (Type type)
+<br></td><td align="right"><h3><strong>pack</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Pack the code point into a single integer number.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packing desired
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Compact code point as integer or zero if the packing type is not supported
+     </p>
+<A NAME="unpack"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>unpack</strong> (Type type, unsigned int packed)
+<br></td><td align="right"><h3><strong>unpack</strong></h3></td></tr></table><p></p><p>
+ Unpack an integer number into a point code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the unpacking desired
+</TD></TR>
+<TR><TD align="left" valign="top"><i>packed</i></TD><TD align="left" valign="top">Packed format of the point code
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the unpacking succeeded and the point code was updated
+     </p>
+<A NAME="store"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>store</strong> (Type type, unsigned char* dest, unsigned char spare = 0)
+<br></td><td align="right"><h3><strong>store</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Store the point code in a memory area
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packing desired
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Location to store the label info, must be at least length() long
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Spare bits to store after the point code if applicable (ITU)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the unpacking succeeded and the memory was updated
+     </p>
+<A NAME="size"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned char &nbsp;<strong>size</strong> (Type type)
+<br></td><td align="right"><h3><strong>size</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the size (in bits) of a packed code point according to its type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bits required to represent the code point, zero if unknown
+     </p>
+<A NAME="length"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned char &nbsp;<strong>length</strong> (Type type)
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the length (in octets) of a packed code point according to its type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of octets required to represent the code point, zero if unknown
+     </p>
+<A NAME="lookup"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Type &nbsp;<strong>lookup</strong> (const char* text)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get a point type associated to a given text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Point code type as enumeration
+     </p>
+<A NAME="lookup"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>lookup</strong> (Type type)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated to a point type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested text or 0 if not found
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

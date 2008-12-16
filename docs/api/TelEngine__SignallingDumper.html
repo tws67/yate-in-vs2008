@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingDumper</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingDumper</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A generic data dumper. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingDumper</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingDumper.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Hexa,
+	Hdlc,
+	Mtp2,
+	Mtp3,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SignallingDumper</A></b> (Type type = Hexa) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">~SignallingDumper</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref4">type</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">active</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">terminate</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">setStream</A></b> (Stream* stream = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">dump</A></b> (void* buf, unsigned int len, bool sent = false, int link = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">dump</A></b> (const DataBlock& data, bool sent = false, int link = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  SignallingDumper* &nbsp;<b><A HREF="#ref10">create</A></b> (DebugEnabler* dbg, const char* filename, Type type,
+	bool create = true, bool append = false) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is a generic data dumper with libpcap compatibility
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Hexa,
+	Hdlc,
+	Mtp2,
+	Mtp3,
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Type of dumper output
+     </p>
+<A NAME="SignallingDumper"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingDumper</strong> (Type type = Hexa)
+<br></td><td align="right"><h3><strong>SignallingDumper</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the output desired
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingDumper"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~SignallingDumper</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingDumper</strong></h3></td></tr></table><p></p><p>
+ Destructor, closes the output
+     </p>
+<A NAME="type"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of the dumper
+</p>
+<p><b>Returns</b>: Type of the dumper object
+     </p>
+<A NAME="active"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>active</strong> ()
+<br></td><td align="right"><h3><strong>active</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the dumper is active
+</p>
+<p><b>Returns</b>: True if the object will actually send data to something
+     </p>
+<A NAME="terminate"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>terminate</strong> ()
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p></p><p>
+ Terminate the dump session, close the output
+     </p>
+<A NAME="setStream"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setStream</strong> (Stream* stream = 0)
+<br></td><td align="right"><h3><strong>setStream</strong></h3></td></tr></table><p></p><p>
+ Set a new output stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">New stream for output, NULL to terminate
+     </TD></TR>
+</TABLE></P>
+<A NAME="dump"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dump</strong> (void* buf, unsigned int len, bool sent = false, int link = 0)
+<br></td><td align="right"><h3><strong>dump</strong></h3></td></tr></table><p></p><p>
+ Dump the provided data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to buffer to dump
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sent</i></TD><TD align="left" valign="top">True if data is being sent, false if is being received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>link</i></TD><TD align="left" valign="top">Link number (relevant to MTP2 only)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the data was dumped successfully
+     </p>
+<A NAME="dump"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>dump</strong> (const DataBlock& data, bool sent = false, int link = 0)
+<br></td><td align="right"><h3><strong>dump</strong></h3></td></tr></table><p></p><p>
+ Dump the provided data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Buffer to dump
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sent</i></TD><TD align="left" valign="top">True if data is being sent, false if is being received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>link</i></TD><TD align="left" valign="top">Link number (relevant to MTP2 only)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the data was dumped successfully
+     </p>
+<A NAME="create"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingDumper* &nbsp;<strong>create</strong> (DebugEnabler* dbg, const char* filename, Type type,
+	bool create = true, bool append = false)
+<br></td><td align="right"><h3><strong>create</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a file to dump data in it. The file is opened/created in write only, binary mode
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dbg</i></TD><TD align="left" valign="top">DebugEnabler requesting the operation (used for debug message on failure)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>filename</i></TD><TD align="left" valign="top">The file name to use
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The dumper type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>create</i></TD><TD align="left" valign="top">True to create the file if doesn't exist
+</TD></TR>
+<TR><TD align="left" valign="top"><i>append</i></TD><TD align="left" valign="top">Append to an existing file. If false and the file already exists, it will be truncated
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingDumper pointer on success, 0 on failure
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

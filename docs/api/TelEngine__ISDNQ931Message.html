@@ -1,0 +1,376 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931Message</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931Message</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Q.931 ISDN Layer 3 message. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931Message</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingMessage.html">TelEngine::SignallingMessage</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931Message.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Alerting = 0x01,                 
+	Proceeding = 0x02,               
+	Connect = 0x07,                  
+	ConnectAck = 0x0f,               
+	Progress = 0x03,                 
+	Setup = 0x05,                    
+	SetupAck = 0x0d,                 
+	Resume = 0x26,                   
+	ResumeAck = 0x2e,                
+	ResumeRej = 0x22,                
+	Suspend = 0x25,                  
+	SuspendAck = 0x2d,               
+	SuspendRej = 0x21,               
+	UserInfo = 0x20,                 
+	Disconnect = 0x45,               
+	Release = 0x4d,                  
+	ReleaseComplete = 0x5a,          
+	Restart = 0x46,                  
+	RestartAck = 0x4e,               
+	Segment = 0x60,                  
+	CongestionCtrl = 0x79,           
+	Info = 0x7b,                     
+	Notify = 0x6e,                   
+	Status = 0x7d,                   
+	StatusEnquiry = 0x75,            
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">ISDNQ931Message</A></b> (Type type, bool initiator, <A HREF="#u_int32_t">u_int32_t</A> callRef, <A HREF="#u_int8_t">u_int8_t</A> callRefLen) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">ISDNQ931Message</A></b> (Type type) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">ISDNQ931Message</A></b> (Type type, ISDNQ931Call* call) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~ISDNQ931Message</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref6">type</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">initiator</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref8">callRef</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref9">callRefLen</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">dummyCallRef</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">unknownMandatory</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">setUnknownMandatory</A></b> () 
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref13">ieList</A></b> () 
+</LI>
+<LI>ISDNQ931IE* &nbsp;<b><A HREF="#ref14">getIE</A></b> (ISDNQ931IE::Type type, ISDNQ931IE* base = 0) 
+</LI>
+<LI>ISDNQ931IE* &nbsp;<b><A HREF="#ref15">removeIE</A></b> (ISDNQ931IE::Type type, ISDNQ931IE* base = 0) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref16">getIEValue</A></b> (ISDNQ931IE::Type type, const char* param,
+	const char* defVal = 0) 
+</LI>
+<LI>inline ISDNQ931IE* &nbsp;<b><A HREF="#ref17">appendIEValue</A></b> (ISDNQ931IE::Type type, const char* param,
+	const char* value) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">append</A></b> (ISDNQ931IE* ie) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">appendSafe</A></b> (ISDNQ931IE* ie) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">toString</A></b> (String& dest, bool extendedDebug, const char* indent = 0)  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref21">getObject</A></b> (const String& name)  const
+</LI>
+<LI><A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref22">encode</A></b> (ISDNQ931ParserData& parserData, ObjList& dest) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  ISDNQ931Message* &nbsp;<b><A HREF="#ref23">parse</A></b> (ISDNQ931ParserData& parserData,
+	const DataBlock& buffer, DataBlock* segData) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref24">typeName</A></b> (int t) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref25">s_type[]</A></b></LI>
+<LI>DataBlock <b><A HREF="#ref26">m_buffer</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN Layer 3 message
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Alerting = 0x01,                 
+	Proceeding = 0x02,               
+	Connect = 0x07,                  
+	ConnectAck = 0x0f,               
+	Progress = 0x03,                 
+	Setup = 0x05,                    
+	SetupAck = 0x0d,                 
+	Resume = 0x26,                   
+	ResumeAck = 0x2e,                
+	ResumeRej = 0x22,                
+	Suspend = 0x25,                  
+	SuspendAck = 0x2d,               
+	SuspendRej = 0x21,               
+	UserInfo = 0x20,                 
+	Disconnect = 0x45,               
+	Release = 0x4d,                  
+	ReleaseComplete = 0x5a,          
+	Restart = 0x46,                  
+	RestartAck = 0x4e,               
+	Segment = 0x60,                  
+	CongestionCtrl = 0x79,           
+	Info = 0x7b,                     
+	Notify = 0x6e,                   
+	Status = 0x7d,                   
+	StatusEnquiry = 0x75,            
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Message type enumeration
+     </p>
+<A NAME="ISDNQ931Message"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931Message</strong> (Type type, bool initiator, <A HREF="#u_int32_t">u_int32_t</A> callRef, <A HREF="#u_int8_t">u_int8_t</A> callRefLen)
+<br></td><td align="right"><h3><strong>ISDNQ931Message</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Constructs a message from given data. Used for incoming messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Message type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>initiator</i></TD><TD align="left" valign="top">The call initiator flag: True: this is the initiator
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRef</i></TD><TD align="left" valign="top">The call reference
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRefLen</i></TD><TD align="left" valign="top">The call reference length
+     </TD></TR>
+</TABLE></P>
+<A NAME="ISDNQ931Message"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931Message</strong> (Type type)
+<br></td><td align="right"><h3><strong>ISDNQ931Message</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Constructs a message with dummy call reference
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Message type
+     </TD></TR>
+</TABLE></P>
+<A NAME="ISDNQ931Message"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931Message</strong> (Type type, ISDNQ931Call* call)
+<br></td><td align="right"><h3><strong>ISDNQ931Message</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Constructs a message for a given call. Used for outgoing messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Message type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">The call this message belongs to
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ISDNQ931Message"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ931Message</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ931Message</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this message
+</p>
+<p><b>Returns</b>: The type of this message as enumeration
+     </p>
+<A NAME="initiator"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>initiator</strong> ()
+<br></td><td align="right"><h3><strong>initiator</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the sender of this message is the call initiator
+</p>
+<p><b>Returns</b>: True if the sender of this message is the call initiator
+     </p>
+<A NAME="callRef"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>callRef</strong> ()
+<br></td><td align="right"><h3><strong>callRef</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the id of the call this message belongs to
+</p>
+<p><b>Returns</b>: The call reference
+     </p>
+<A NAME="callRefLen"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>callRefLen</strong> ()
+<br></td><td align="right"><h3><strong>callRefLen</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the call reference
+</p>
+<p><b>Returns</b>: The length of the call reference
+     </p>
+<A NAME="dummyCallRef"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>dummyCallRef</strong> ()
+<br></td><td align="right"><h3><strong>dummyCallRef</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message has a dummy call reference
+</p>
+<p><b>Returns</b>: True if this message has a dummy call reference
+     </p>
+<A NAME="unknownMandatory"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>unknownMandatory</strong> ()
+<br></td><td align="right"><h3><strong>unknownMandatory</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message contains unknown mandatory IE(s)
+</p>
+<p><b>Returns</b>: True if this message contains unknown mandatory IE(s)
+     </p>
+<A NAME="setUnknownMandatory"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setUnknownMandatory</strong> ()
+<br></td><td align="right"><h3><strong>setUnknownMandatory</strong></h3></td></tr></table><p></p><p>
+ Set the unknown mandatory IE(s) flag
+     </p>
+<A NAME="ieList"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>ieList</strong> ()
+<br></td><td align="right"><h3><strong>ieList</strong></h3></td></tr></table><p></p><p>
+ Get the IE list of this message
+</p>
+<p><b>Returns</b>: A valid pointer to the list of this message's IEs
+     </p>
+<A NAME="getIE"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ISDNQ931IE* &nbsp;<strong>getIE</strong> (ISDNQ931IE::Type type, ISDNQ931IE* base = 0)
+<br></td><td align="right"><h3><strong>getIE</strong></h3></td></tr></table><p></p><p>
+ Get a pointer to the first IE with the given type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Requested IE's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Optional search starting element. If 0, search is started from the first IE following base
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the IE or 0 if not found
+     </p>
+<A NAME="removeIE"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ISDNQ931IE* &nbsp;<strong>removeIE</strong> (ISDNQ931IE::Type type, ISDNQ931IE* base = 0)
+<br></td><td align="right"><h3><strong>removeIE</strong></h3></td></tr></table><p></p><p>
+ Remove an IE from list without destroying it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Requested IE's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Optional search starting element. If 0, search is started from the first IE following base
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the IE or 0 if not found
+     </p>
+<A NAME="getIEValue"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>getIEValue</strong> (ISDNQ931IE::Type type, const char* param,
+	const char* defVal = 0)
+<br></td><td align="right"><h3><strong>getIEValue</strong></h3></td></tr></table><p></p><p>
+ Get the value of a given parameter of a given IE
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Requested IE's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Requested IE's parameter. Set to 0 to use IE's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Default value to return if IE is missing or the parameter is missing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested value or 0
+     </p>
+<A NAME="appendIEValue"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ISDNQ931IE* &nbsp;<strong>appendIEValue</strong> (ISDNQ931IE::Type type, const char* param,
+	const char* value)
+<br></td><td align="right"><h3><strong>appendIEValue</strong></h3></td></tr></table><p></p><p>
+ Append an IE with a given parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">IE's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">IE's parameter. Set to 0 to use IE's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">IE parameter's value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested value or 0
+     </p>
+<A NAME="append"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>append</strong> (ISDNQ931IE* ie)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append an information element to this message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ie</i></TD><TD align="left" valign="top">Information element to add
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the IE was added or replaced, false if it was invalid
+     </p>
+<A NAME="appendSafe"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>appendSafe</strong> (ISDNQ931IE* ie)
+<br></td><td align="right"><h3><strong>appendSafe</strong></h3></td></tr></table><p></p><p>
+ Append/insert an information element to this message. Check the IE list consistency
+ The given IE is 'consumed': deleted or appended to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ie</i></TD><TD align="left" valign="top">Information element to add
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the IE was added or replaced, false if it was invalid
+     </p>
+<A NAME="toString"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, bool extendedDebug, const char* indent = 0)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Put this message into a string for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extendedDebug</i></TD><TD align="left" valign="top">True to add the content of IEs and dump data.
+  If false, only the IE name is added to the destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">The line indent
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a data member or this message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="encode"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>encode</strong> (ISDNQ931ParserData& parserData, ObjList& dest)
+<br></td><td align="right"><h3><strong>encode</strong></h3></td></tr></table><p></p><p>
+ Encode this message
+ If message segmentation is allowed and the message is longer then maximum allowed,
+  split it into Segment messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>parserData</i></TD><TD align="left" valign="top">The parser settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination list.
+  If 1 is returned the list contains a DataBuffer with this message.
+  If more then 1 is returned, the list is filled with data buffers with Segment messages
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of segments on success or 0 on failure.
+     </p>
+<A NAME="parse"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ISDNQ931Message* &nbsp;<strong>parse</strong> (ISDNQ931ParserData& parserData,
+	const DataBlock& buffer, DataBlock* segData)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Parse received data
+ If the message type is Segment, decode only the header and the first IE
+  If valid, fills the given buffer with the rest of the message. If segData is 0, drop the message.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>parserData</i></TD><TD align="left" valign="top">The parser settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">The received data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>segData</i></TD><TD align="left" valign="top">Segment message data. If 0, received segmented messages will be dropped
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid ISDNQ931Message pointer on success or 0
+     </p>
+<A NAME="typeName"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeName</strong> (int t)
+<br></td><td align="right"><h3><strong>typeName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the string associated with a given message type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>t</i></TD><TD align="left" valign="top">The message type whose string we want to get
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the string associated with the given message type or 0
+     </p>
+<A NAME="s_type[]"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_type[]</strong>
+</td><td align="right"><h3><strong>s_type[]</strong></h3></td></tr></table><p></p><A NAME="m_buffer"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock  <strong>m_buffer</strong>
+</td><td align="right"><h3><strong>m_buffer</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

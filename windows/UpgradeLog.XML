@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="YATE">
+</Property><Property Name="解决方案文件" Value="E:\代码\yate\windows\YATE.sln">
+</Property><Property Name="Date" Value="2008年12月15日 星期一">
+</Property><Property Name="Time" Value="下午 16:46">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="YATE.sln" Description="文件已成功备份为 E:\代码\yate\windows\YATE.sln.old">
+</Event><Event ErrorLevel="0" Project="Client" Source="Client.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="Client" Source="Client.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Client" Source="Client.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Client.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Client" Source="Client.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Client" Source="Client.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Console" Source="Console.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="Console" Source="Console.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Console" Source="Console.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Console.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Console" Source="Console.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Console" Source="Console.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="Extra" Source="Extra.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Extra" Source="Extra.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Extra.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Extra" Source="Extra.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Extra" Source="Extra.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Libyate" Source="Libyate.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="Libyate" Source="Libyate.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Libyate" Source="Libyate.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Libyate.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Libyate" Source="Libyate.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Libyate" Source="Libyate.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="Modules" Source="Modules.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Modules" Source="Modules.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Modules.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Modules" Source="Modules.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Modules" Source="Modules.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Service" Source="Service.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="Service" Source="Service.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Service" Source="Service.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Service.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Service" Source="Service.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Service" Source="Service.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TestSS7" Source="TestSS7.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="TestSS7" Source="TestSS7.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="TestSS7" Source="TestSS7.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\TestSS7.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="TestSS7" Source="TestSS7.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="TestSS7" Source="TestSS7.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="YATE" Source="YATE.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="YATE" Source="YATE.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\YATE.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="YATE" Source="YATE.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="YATE" Source="YATE.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_accfile" Source="_accfile.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_accfile" Source="_accfile.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_accfile" Source="_accfile.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_accfile.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_accfile" Source="_accfile.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_accfile" Source="_accfile.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_analyzer" Source="_analyzer.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_analyzer" Source="_analyzer.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_analyzer" Source="_analyzer.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_analyzer.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_analyzer" Source="_analyzer.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_analyzer" Source="_analyzer.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_callfork" Source="_callfork.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_callfork" Source="_callfork.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_callfork" Source="_callfork.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_callfork.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_callfork" Source="_callfork.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_callfork" Source="_callfork.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_callgen" Source="_callgen.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_callgen" Source="_callgen.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_callgen" Source="_callgen.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_callgen.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_callgen" Source="_callgen.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_callgen" Source="_callgen.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_cdrbuild" Source="_cdrbuild.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_cdrbuild" Source="_cdrbuild.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_cdrbuild" Source="_cdrbuild.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_cdrbuild.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_cdrbuild" Source="_cdrbuild.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_cdrbuild" Source="_cdrbuild.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_cdrfile" Source="_cdrfile.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_cdrfile" Source="_cdrfile.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_cdrfile" Source="_cdrfile.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_cdrfile.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_cdrfile" Source="_cdrfile.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_cdrfile" Source="_cdrfile.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_conference" Source="_conference.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_conference" Source="_conference.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_conference" Source="_conference.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_conference.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_conference" Source="_conference.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_conference" Source="_conference.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_dbpbx" Source="_dbpbx.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_dbpbx" Source="_dbpbx.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_dbpbx" Source="_dbpbx.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_dbpbx.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_dbpbx" Source="_dbpbx.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_dbpbx" Source="_dbpbx.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_dsoundchan" Source="_dsoundchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_dsoundchan" Source="_dsoundchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_dsoundchan" Source="_dsoundchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_dsoundchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_dsoundchan" Source="_dsoundchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_dsoundchan" Source="_dsoundchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_dumbchan" Source="_dumbchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_dumbchan" Source="_dumbchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_dumbchan" Source="_dumbchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_dumbchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_dumbchan" Source="_dumbchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_dumbchan" Source="_dumbchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_extmodule" Source="_extmodule.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_extmodule" Source="_extmodule.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_extmodule" Source="_extmodule.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_extmodule.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_extmodule" Source="_extmodule.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_extmodule" Source="_extmodule.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_gsmcodec" Source="_gsmcodec.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_gsmcodec" Source="_gsmcodec.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_gsmcodec" Source="_gsmcodec.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_gsmcodec.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_gsmcodec" Source="_gsmcodec.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_gsmcodec" Source="_gsmcodec.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_h323chan" Source="_h323chan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_h323chan" Source="_h323chan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_h323chan" Source="_h323chan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_h323chan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_h323chan" Source="_h323chan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_h323chan" Source="_h323chan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_ilbccodec" Source="_ilbccodec.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_ilbccodec" Source="_ilbccodec.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_ilbccodec" Source="_ilbccodec.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_ilbccodec.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_ilbccodec" Source="_ilbccodec.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_ilbccodec" Source="_ilbccodec.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_msgsniff" Source="_msgsniff.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_msgsniff" Source="_msgsniff.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_msgsniff" Source="_msgsniff.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_msgsniff.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_msgsniff" Source="_msgsniff.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_msgsniff" Source="_msgsniff.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_mysqldb" Source="_mysqldb.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_mysqldb" Source="_mysqldb.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_mysqldb" Source="_mysqldb.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_mysqldb.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_mysqldb" Source="_mysqldb.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_mysqldb" Source="_mysqldb.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_park" Source="_park.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_park" Source="_park.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_park" Source="_park.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_park.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_park" Source="_park.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_park" Source="_park.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_pbx" Source="_pbx.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_pbx" Source="_pbx.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_pbx" Source="_pbx.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_pbx.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_pbx" Source="_pbx.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_pbx" Source="_pbx.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_pbxassist" Source="_pbxassist.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_pbxassist" Source="_pbxassist.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_pbxassist" Source="_pbxassist.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_pbxassist.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_pbxassist" Source="_pbxassist.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_pbxassist" Source="_pbxassist.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_pgsqldb" Source="_pgsqldb.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_pgsqldb" Source="_pgsqldb.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_pgsqldb" Source="_pgsqldb.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_pgsqldb.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_pgsqldb" Source="_pgsqldb.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_pgsqldb" Source="_pgsqldb.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_queues" Source="_queues.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_queues" Source="_queues.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_queues" Source="_queues.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_queues.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_queues" Source="_queues.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_queues" Source="_queues.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_regexroute" Source="_regexroute.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_regexroute" Source="_regexroute.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_regexroute" Source="_regexroute.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_regexroute.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_regexroute" Source="_regexroute.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_regexroute" Source="_regexroute.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_regfile" Source="_regfile.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_regfile" Source="_regfile.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_regfile" Source="_regfile.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_regfile.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_regfile" Source="_regfile.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_regfile" Source="_regfile.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_register" Source="_register.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_register" Source="_register.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_register" Source="_register.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_register.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_register" Source="_register.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_register" Source="_register.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_rmanager" Source="_rmanager.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_rmanager" Source="_rmanager.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_rmanager" Source="_rmanager.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_rmanager.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_rmanager" Source="_rmanager.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_rmanager" Source="_rmanager.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_sipfeatures" Source="_sipfeatures.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_sipfeatures" Source="_sipfeatures.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_sipfeatures" Source="_sipfeatures.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_sipfeatures.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_sipfeatures" Source="_sipfeatures.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_sipfeatures" Source="_sipfeatures.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_speexcodec" Source="_speexcodec.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_speexcodec" Source="_speexcodec.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_speexcodec" Source="_speexcodec.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_speexcodec.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_speexcodec" Source="_speexcodec.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_speexcodec" Source="_speexcodec.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_tonedetect" Source="_tonedetect.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_tonedetect" Source="_tonedetect.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_tonedetect" Source="_tonedetect.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_tonedetect.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_tonedetect" Source="_tonedetect.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_tonedetect" Source="_tonedetect.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_tonegen" Source="_tonegen.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_tonegen" Source="_tonegen.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_tonegen" Source="_tonegen.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_tonegen.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_tonegen" Source="_tonegen.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_tonegen" Source="_tonegen.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_wavefile" Source="_wavefile.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_wavefile" Source="_wavefile.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_wavefile" Source="_wavefile.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_wavefile.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_wavefile" Source="_wavefile.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_wavefile" Source="_wavefile.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_wpcard" Source="_wpcard.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_wpcard" Source="_wpcard.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_wpcard" Source="_wpcard.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_wpcard.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_wpcard" Source="_wpcard.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_wpcard" Source="_wpcard.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_yiaxchan" Source="_yiaxchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_yiaxchan" Source="_yiaxchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_yiaxchan" Source="_yiaxchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_yiaxchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_yiaxchan" Source="_yiaxchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_yiaxchan" Source="_yiaxchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_yjinglechan" Source="_yjinglechan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_yjinglechan" Source="_yjinglechan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_yjinglechan" Source="_yjinglechan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_yjinglechan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_yjinglechan" Source="_yjinglechan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_yjinglechan" Source="_yjinglechan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_yradius" Source="_yradius.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_yradius" Source="_yradius.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_yradius" Source="_yradius.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_yradius.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_yradius" Source="_yradius.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_yradius" Source="_yradius.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_yrtpchan" Source="_yrtpchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_yrtpchan" Source="_yrtpchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_yrtpchan" Source="_yrtpchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_yrtpchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_yrtpchan" Source="_yrtpchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_yrtpchan" Source="_yrtpchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_ysipchan" Source="_ysipchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_ysipchan" Source="_ysipchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_ysipchan" Source="_ysipchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_ysipchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_ysipchan" Source="_ysipchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_ysipchan" Source="_ysipchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_ystunchan" Source="_ystunchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_ystunchan" Source="_ystunchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_ystunchan" Source="_ystunchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_ystunchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_ystunchan" Source="_ystunchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_ystunchan" Source="_ystunchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libilbc" Source="libilbc.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libilbc" Source="libilbc.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libilbc.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libilbc" Source="libilbc.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libilbc" Source="libilbc.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libregex" Source="libregex.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libregex" Source="libregex.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libregex.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libregex" Source="libregex.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libregex" Source="libregex.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libyiax" Source="libyiax.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libyiax" Source="libyiax.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libyiax.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libyiax" Source="libyiax.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libyiax" Source="libyiax.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libyjingle" Source="libyjingle.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libyjingle" Source="libyjingle.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libyjingle.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libyjingle" Source="libyjingle.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libyjingle" Source="libyjingle.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libypbx" Source="libypbx.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libypbx" Source="libypbx.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libypbx.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libypbx" Source="libypbx.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libypbx" Source="libypbx.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libyrtp" Source="libyrtp.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libyrtp" Source="libyrtp.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libyrtp.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libyrtp" Source="libyrtp.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libyrtp" Source="libyrtp.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libysip" Source="libysip.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libysip" Source="libysip.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libysip.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libysip" Source="libysip.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libysip" Source="libysip.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="libysig" Source="libysig.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="libysig" Source="libysig.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libysig" Source="libysig.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libysig.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libysig" Source="libysig.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libysig" Source="libysig.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libyxml" Source="libyxml.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libyxml" Source="libyxml.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libyxml.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libyxml" Source="libyxml.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libyxml" Source="libyxml.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_ysigchan" Source="_ysigchan.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_ysigchan" Source="_ysigchan.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_ysigchan" Source="_ysigchan.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_ysigchan.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_ysigchan" Source="_ysigchan.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_ysigchan" Source="_ysigchan.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_analog" Source="_analog.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_analog" Source="_analog.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_analog" Source="_analog.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_analog.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_analog" Source="_analog.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_analog" Source="_analog.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_heartbeat" Source="_heartbeat.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_heartbeat" Source="_heartbeat.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_heartbeat" Source="_heartbeat.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_heartbeat.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_heartbeat" Source="_heartbeat.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_heartbeat" Source="_heartbeat.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libymgcp" Source="libymgcp.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libymgcp" Source="libymgcp.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libymgcp.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libymgcp" Source="libymgcp.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libymgcp" Source="libymgcp.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_mgcpca" Source="_mgcpca.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_mgcpca" Source="_mgcpca.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_mgcpca" Source="_mgcpca.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_mgcpca.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_mgcpca" Source="_mgcpca.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_mgcpca" Source="_mgcpca.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_mgcpgw" Source="_mgcpgw.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_mgcpgw" Source="_mgcpgw.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_mgcpgw" Source="_mgcpgw.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_mgcpgw.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_mgcpgw" Source="_mgcpgw.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_mgcpgw" Source="_mgcpgw.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_mux" Source="_mux.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_mux" Source="_mux.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_mux" Source="_mux.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_mux.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_mux" Source="_mux.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_mux" Source="_mux.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LibQt4" Source="LibQt4.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="LibQt4" Source="LibQt4.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="LibQt4" Source="LibQt4.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\LibQt4.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="LibQt4" Source="LibQt4.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="LibQt4" Source="LibQt4.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Qt4Client" Source="Qt4Client.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="Qt4Client" Source="Qt4Client.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="Qt4Client" Source="Qt4Client.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\Qt4Client.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="Qt4Client" Source="Qt4Client.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="Qt4Client" Source="Qt4Client.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="msvcrtest" Source="msvcrtest.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="msvcrtest" Source="msvcrtest.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="msvcrtest" Source="msvcrtest.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\msvcrtest.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="msvcrtest" Source="msvcrtest.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="msvcrtest" Source="msvcrtest.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_clustering" Source="_clustering.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_clustering" Source="_clustering.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_clustering" Source="_clustering.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_clustering.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_clustering" Source="_clustering.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_clustering" Source="_clustering.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_lateroute" Source="_lateroute.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_lateroute" Source="_lateroute.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_lateroute" Source="_lateroute.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_lateroute.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_lateroute" Source="_lateroute.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_lateroute" Source="_lateroute.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_openssl" Source="_openssl.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_openssl" Source="_openssl.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_openssl" Source="_openssl.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_openssl.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_openssl" Source="_openssl.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_openssl" Source="_openssl.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_amrnbcodec" Source="_amrnbcodec.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_amrnbcodec" Source="_amrnbcodec.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_amrnbcodec" Source="_amrnbcodec.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_amrnbcodec.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_amrnbcodec" Source="_amrnbcodec.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_amrnbcodec" Source="_amrnbcodec.vcproj" Description="Converted">
+</Event><Event ErrorLevel="1" Project="libymodem" Source="libymodem.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="libymodem" Source="libymodem.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\libymodem.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="libymodem" Source="libymodem.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="libymodem" Source="libymodem.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="_analogdetect" Source="_analogdetect.vcproj" Description="已不再支持对本地 IIS 服务器的 Web 部署。Web 部署生成工具已从项目设置中删除。">
+</Event><Event ErrorLevel="1" Project="_analogdetect" Source="_analogdetect.vcproj" Description="此应用程序已更新，包含了与 Windows Vista 的用户帐户控制(UAC)功能相关的设置。默认情况下，当运行在启用了 UAC 的 Windows Vista 上时，此应用程序被标记为以与启动它的进程相同的权限运行。此标记还禁止应用程序以虚拟化方式运行。您可以从此项目的属性页中更改与 UAC 相关的设置。">
+</Event><Event ErrorLevel="0" Project="_analogdetect" Source="_analogdetect.vcproj" Description="已成功地将项目文件备份为“E:\代码\yate\windows\_analogdetect.vcproj.8.00.old”。">
+</Event><Event ErrorLevel="0" Project="_analogdetect" Source="_analogdetect.vcproj" Description="项目升级成功。">
+</Event><Event ErrorLevel="3" Project="_analogdetect" Source="_analogdetect.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="YATE.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="YATE.sln" Description="Converted">
+</Event></UpgradeLog>

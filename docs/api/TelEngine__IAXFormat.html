@@ -1,0 +1,122 @@
+<HTML>
+<HEAD>
+<TITLE>class IAXFormat</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class IAXFormat</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Wrapper class for audio and video formats. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::IAXFormat</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yiax___yateiax_h.html">libs/yiax/yateiax.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__IAXFormat.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Audio</A> {        G723_1 = (1 <<  0),
+        GSM    = (1 <<  1),
+        ULAW   = (1 <<  2),
+        ALAW   = (1 <<  3),
+        MP3    = (1 <<  4),
+        ADPCM  = (1 <<  5),
+        SLIN   = (1 <<  6),
+        LPC10  = (1 <<  7),
+        G729A  = (1 <<  8),
+        SPEEX  = (1 <<  9),
+        ILBC   = (1 << 10),
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Video</A> {        JPEG   = (1 << 16),
+        PNG    = (1 << 17),
+        H261   = (1 << 18),
+        H263   = (1 << 19),
+    }
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref3">formatList</A></b> (String& dest, <A HREF="#u_int32_t">u_int32_t</A> formats, char sep = ',') 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref4">audioText</A></b> (<A HREF="#u_int32_t">u_int32_t</A> audio) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref5">videoText</A></b> (<A HREF="#u_int32_t">u_int32_t</A> video) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref6">audioData[]</A></b></LI>
+<LI>static TokenDict <b><A HREF="#ref7">videoData[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds the enumeration values for audio and video formats
+</p>
+<A NAME="Audio"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Audio</strong> {        G723_1 = (1 <<  0),
+        GSM    = (1 <<  1),
+        ULAW   = (1 <<  2),
+        ALAW   = (1 <<  3),
+        MP3    = (1 <<  4),
+        ADPCM  = (1 <<  5),
+        SLIN   = (1 <<  6),
+        LPC10  = (1 <<  7),
+        G729A  = (1 <<  8),
+        SPEEX  = (1 <<  9),
+        ILBC   = (1 << 10),
+    }
+</td><td align="right"><h3><strong>Audio</strong></h3></td></tr></table><p></p><p>
+ Audio format enumeration types
+     </p>
+<A NAME="Video"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Video</strong> {        JPEG   = (1 << 16),
+        PNG    = (1 << 17),
+        H261   = (1 << 18),
+        H263   = (1 << 19),
+    }
+</td><td align="right"><h3><strong>Video</strong></h3></td></tr></table><p></p><p>
+ Video format enumeration types
+     </p>
+<A NAME="formatList"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>formatList</strong> (String& dest, <A HREF="#u_int32_t">u_int32_t</A> formats, char sep = ',')
+<br></td><td align="right"><h3><strong>formatList</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a string list from formats
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination
+</TD></TR>
+<TR><TD align="left" valign="top"><i>formats</i></TD><TD align="left" valign="top">The formats
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">The separator to use
+    </TD></TR>
+</TABLE></P>
+<A NAME="audioText"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>audioText</strong> (<A HREF="#u_int32_t">u_int32_t</A> audio)
+<br></td><td align="right"><h3><strong>audioText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated with an audio format
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>audio</i></TD><TD align="left" valign="top">The desired format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the text associated with the format or 0 if the format doesn't exist
+    </p>
+<A NAME="videoText"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>videoText</strong> (<A HREF="#u_int32_t">u_int32_t</A> video)
+<br></td><td align="right"><h3><strong>videoText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated with a video format
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>video</i></TD><TD align="left" valign="top">The desired format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the text associated with the format or 0 if the format doesn't exist
+    </p>
+<A NAME="audioData[]"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>audioData[]</strong>
+</td><td align="right"><h3><strong>audioData[]</strong></h3></td></tr></table><p></p><A NAME="videoData[]"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>videoData[]</strong>
+</td><td align="right"><h3><strong>videoData[]</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

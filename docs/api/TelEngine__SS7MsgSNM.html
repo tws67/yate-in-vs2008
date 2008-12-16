@@ -1,0 +1,246 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7MsgSNM</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7MsgSNM</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">SNM signalling message. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7MsgSNM</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingMessage.html">TelEngine::SignallingMessage</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7MsgSNM.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Unknown = 0,
+	COO  = 0x11, 
+	ECO  = 0x12, 
+	RCT  = 0x13, 
+	TFP  = 0x14, 
+	RST  = 0x15, 
+	RSP  = RST,  
+	LIN  = 0x16, 
+	TRA  = 0x17, 
+	DLC  = 0x18, 
+	UPU  = 0x1a, 
+	COA  = 0x21, 
+	ECA  = 0x22, 
+	TFC  = 0x23, 
+	TCP  = 0x24, 
+	TFPA = TCP,  
+	RSR  = 0x25, 
+	LUN  = 0x26, 
+	TRW  = 0x27, 
+	CSS  = 0x28, 
+	TFR  = 0x34, 
+	RCP  = 0x35, 
+	LIA  = 0x36, 
+	CNS  = 0x38, 
+	TCR  = 0x44, 
+	RCR  = 0x45, 
+	LUA  = 0x46, 
+	CNP  = 0x48, 
+	CBD  = 0x51, 
+	TFA  = 0x54, 
+	LID  = 0x56, 
+	CBA  = 0x61, 
+	TCA  = 0x64, 
+	TFAA = TCA,  
+	LFU  = 0x66, 
+	LLT  = 0x76, 
+	LLI  = LLT,  
+	LRT  = 0x86, 
+	LRI  = LRT,  
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Group</A> {	CHM = 0x01,  
+	ECM = 0x02,  
+	FCM = 0x03,  
+	TFM = 0x04,  
+	RSM = 0x05,  
+	MIM = 0x06,  
+	TRM = 0x07,  
+	DLM = 0x08,  
+	UFC = 0x0a,  
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">SS7MsgSNM</A></b> (unsigned char type) 
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref4">type</A></b> ()  const
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref5">group</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">toString</A></b> (String& dest, const SS7Label& label, bool params)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  SS7MsgSNM* &nbsp;<b><A HREF="#ref7">parse</A></b> (SS7Management* receiver, unsigned char type,
+	SS7PointCode::Type pcType,
+	const unsigned char* buf, unsigned int len) 
+</LI>
+<LI>static  const TokenDict* &nbsp;<b><A HREF="#ref8">names</A></b> () 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref9">lookup</A></b> (Type type, const char* defvalue = 0) 
+</LI>
+<LI>static  inline Type &nbsp;<b><A HREF="#ref10">lookup</A></b> (const char* name, Type defvalue = Unknown) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Decoded Signalling Network Management (SNM) User Part message
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Unknown = 0,
+	COO  = 0x11, 
+	ECO  = 0x12, 
+	RCT  = 0x13, 
+	TFP  = 0x14, 
+	RST  = 0x15, 
+	RSP  = RST,  
+	LIN  = 0x16, 
+	TRA  = 0x17, 
+	DLC  = 0x18, 
+	UPU  = 0x1a, 
+	COA  = 0x21, 
+	ECA  = 0x22, 
+	TFC  = 0x23, 
+	TCP  = 0x24, 
+	TFPA = TCP,  
+	RSR  = 0x25, 
+	LUN  = 0x26, 
+	TRW  = 0x27, 
+	CSS  = 0x28, 
+	TFR  = 0x34, 
+	RCP  = 0x35, 
+	LIA  = 0x36, 
+	CNS  = 0x38, 
+	TCR  = 0x44, 
+	RCR  = 0x45, 
+	LUA  = 0x46, 
+	CNP  = 0x48, 
+	CBD  = 0x51, 
+	TFA  = 0x54, 
+	LID  = 0x56, 
+	CBA  = 0x61, 
+	TCA  = 0x64, 
+	TFAA = TCA,  
+	LFU  = 0x66, 
+	LLT  = 0x76, 
+	LLI  = LLT,  
+	LRT  = 0x86, 
+	LRI  = LRT,  
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ SNM Message type as defined by Q.704 Table 1
+     </p>
+<A NAME="Group"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Group</strong> {	CHM = 0x01,  
+	ECM = 0x02,  
+	FCM = 0x03,  
+	TFM = 0x04,  
+	RSM = 0x05,  
+	MIM = 0x06,  
+	TRM = 0x07,  
+	DLM = 0x08,  
+	UFC = 0x0a,  
+    }
+</td><td align="right"><h3><strong>Group</strong></h3></td></tr></table><p></p><p>
+ SNM Message group (H0) as defined by Q.704 15.3
+     </p>
+<A NAME="SS7MsgSNM"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7MsgSNM</strong> (unsigned char type)
+<br></td><td align="right"><h3><strong>SS7MsgSNM</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Message type
+     </TD></TR>
+</TABLE></P>
+<A NAME="type"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this message
+</p>
+<p><b>Returns</b>: The type of this message
+     </p>
+<A NAME="group"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>group</strong> ()
+<br></td><td align="right"><h3><strong>group</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the group this message belongs to
+</p>
+<p><b>Returns</b>: This message's group
+     </p>
+<A NAME="toString"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, const SS7Label& label, bool params)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Fill a string with this message's parameters for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">The routing label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">True to add parameters
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="parse"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SS7MsgSNM* &nbsp;<strong>parse</strong> (SS7Management* receiver, unsigned char type,
+	SS7PointCode::Type pcType,
+	const unsigned char* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Parse a received buffer and build a message from it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>receiver</i></TD><TD align="left" valign="top">The SS7 management entity that received the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Message type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pcType</i></TD><TD align="left" valign="top">The point code type contained in received MSU's label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Buffer after message head
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer length
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid message pointer of 0 on failure
+     </p>
+<A NAME="names"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>names</strong> ()
+<br></td><td align="right"><h3><strong>names</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the dictionary containing the names of the message type
+     </p>
+<A NAME="lookup"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>lookup</strong> (Type type, const char* defvalue = 0)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convert a SNM message type to a C string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of SNM message to look up
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default string to return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Name of the SNM message type
+     </p>
+<A NAME="lookup"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline Type &nbsp;<strong>lookup</strong> (const char* name, Type defvalue = Unknown)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Look up a SNM message name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">String name of the SNM message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default type to return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Encoded type of the SNM message
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

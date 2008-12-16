@@ -1,0 +1,326 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7Label</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7Label</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">SS7 Routing Label. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7Label</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7Label.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SS7Label</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">SS7Label</A></b> (const SS7Label& original) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">SS7Label</A></b> (const SS7Label& original, unsigned char sls, unsigned char spare = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">SS7Label</A></b> (SS7PointCode::Type type, const SS7PointCode& dpc,
+	const SS7PointCode& opc, unsigned char sls, unsigned char spare = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">SS7Label</A></b> (SS7PointCode::Type type, unsigned int dpc,
+	unsigned int opc, unsigned char sls, unsigned char spare = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref6">SS7Label</A></b> (SS7PointCode::Type type, const SS7MSU& msu) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">assign</A></b> (SS7PointCode::Type type, const SS7PointCode& dpc,
+	const SS7PointCode& opc, unsigned char sls, unsigned char spare = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">assign</A></b> (SS7PointCode::Type type, unsigned int dpc,
+	unsigned int opc, unsigned char sls, unsigned char spare = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">assign</A></b> (SS7PointCode::Type type, const SS7MSU& msu) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">assign</A></b> (SS7PointCode::Type type, const unsigned char* src, int len = -1) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">store</A></b> (unsigned char* dest)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">compatible</A></b> (SS7PointCode::Type type)  const
+</LI>
+<LI>inline SS7PointCode::Type &nbsp;<b><A HREF="#ref13">type</A></b> ()  const
+</LI>
+<LI>inline const SS7PointCode& &nbsp;<b><A HREF="#ref14">dpc</A></b> ()  const
+</LI>
+<LI>inline SS7PointCode& &nbsp;<b><A HREF="#ref15">dpc</A></b> () 
+</LI>
+<LI>inline const SS7PointCode& &nbsp;<b><A HREF="#ref16">opc</A></b> ()  const
+</LI>
+<LI>inline SS7PointCode& &nbsp;<b><A HREF="#ref17">opc</A></b> () 
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref18">sls</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref19">setSls</A></b> (unsigned char sls) 
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref20">spare</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref21">setSpare</A></b> (unsigned char spare) 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref22">length</A></b> ()  const
+</LI>
+<LI>inline unsigned char &nbsp;<b><A HREF="#ref24">size</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  unsigned int &nbsp;<b><A HREF="#ref23">length</A></b> (SS7PointCode::Type type) 
+</LI>
+<LI>static  unsigned char &nbsp;<b><A HREF="#ref25">size</A></b> (SS7PointCode::Type type) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A SS7 Layer 3 routing label, both ANSI and ITU capable
+</p>
+<A NAME="SS7Label"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7Label</strong> ()
+<br></td><td align="right"><h3><strong>SS7Label</strong></h3></td></tr></table><p></p><p>
+ Constructor of an empty, invalid label
+     </p>
+<A NAME="SS7Label"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7Label</strong> (const SS7Label& original)
+<br></td><td align="right"><h3><strong>SS7Label</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Label to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7Label"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7Label</strong> (const SS7Label& original, unsigned char sls, unsigned char spare = 0)
+<br></td><td align="right"><h3><strong>SS7Label</strong></h3></td></tr></table><p></p><p>
+ Swapping constructor, puts SPC into DPC and the other way around
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Label to swap
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Spare bits
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7Label"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7Label</strong> (SS7PointCode::Type type, const SS7PointCode& dpc,
+	const SS7PointCode& opc, unsigned char sls, unsigned char spare = 0)
+<br></td><td align="right"><h3><strong>SS7Label</strong></h3></td></tr></table><p></p><p>
+ Constructor from label components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of point code used to pack the label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dpc</i></TD><TD align="left" valign="top">Destination Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>opc</i></TD><TD align="left" valign="top">Originating Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Spare bits
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7Label"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7Label</strong> (SS7PointCode::Type type, unsigned int dpc,
+	unsigned int opc, unsigned char sls, unsigned char spare = 0)
+<br></td><td align="right"><h3><strong>SS7Label</strong></h3></td></tr></table><p></p><p>
+ Constructor from packed label components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of point code used to pack the label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dpc</i></TD><TD align="left" valign="top">Destination Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>opc</i></TD><TD align="left" valign="top">Originating Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Spare bits
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7Label"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7Label</strong> (SS7PointCode::Type type, const SS7MSU& msu)
+<br></td><td align="right"><h3><strong>SS7Label</strong></h3></td></tr></table><p></p><p>
+ Constructor from type and received MSU
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of point code to use to decode the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">A received MSU to be parsed
+     </TD></TR>
+</TABLE></P>
+<A NAME="assign"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>assign</strong> (SS7PointCode::Type type, const SS7PointCode& dpc,
+	const SS7PointCode& opc, unsigned char sls, unsigned char spare = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assignment from label components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of point code used to pack the label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dpc</i></TD><TD align="left" valign="top">Destination Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>opc</i></TD><TD align="left" valign="top">Originating Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Spare bits
+     </TD></TR>
+</TABLE></P>
+<A NAME="assign"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>assign</strong> (SS7PointCode::Type type, unsigned int dpc,
+	unsigned int opc, unsigned char sls, unsigned char spare = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assignment from packed label components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of point code used to pack the label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dpc</i></TD><TD align="left" valign="top">Destination Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>opc</i></TD><TD align="left" valign="top">Originating Point Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection
+</TD></TR>
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">Spare bits
+     </TD></TR>
+</TABLE></P>
+<A NAME="assign"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>assign</strong> (SS7PointCode::Type type, const SS7MSU& msu)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assignment from type and received MSU
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of point code to use to decode the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">A received MSU to be parsed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the assignment succeeded
+     </p>
+<A NAME="assign"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>assign</strong> (SS7PointCode::Type type, const unsigned char* src, int len = -1)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assignment from a packed memory block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the point codes in memory block
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Pointer to packed label in memory
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, negative to not check validity
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if success, false if invalid type or memory area
+     </p>
+<A NAME="store"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>store</strong> (unsigned char* dest)
+<br></td><td align="right"><h3><strong>store</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Pack and store the label in a memory location
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Location to store the label info, must be at least length() long
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false if type is invalid
+     </p>
+<A NAME="compatible"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>compatible</strong> (SS7PointCode::Type type)
+<br></td><td align="right"><h3><strong>compatible</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the label is compatible with another packing type
+</p>
+<p><b>Returns</b>: True if the DLC, SLC and SLS fit in the new packing format
+     </p>
+<A NAME="type"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7PointCode::Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type (SS7 dialect) of the routing label
+</p>
+<p><b>Returns</b>: Dialect of the routing label as enumeration
+     </p>
+<A NAME="dpc"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SS7PointCode& &nbsp;<strong>dpc</strong> ()
+<br></td><td align="right"><h3><strong>dpc</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Destination Code Point inside the label
+</p>
+<p><b>Returns</b>: Reference of the destination code point
+     </p>
+<A NAME="dpc"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7PointCode& &nbsp;<strong>dpc</strong> ()
+<br></td><td align="right"><h3><strong>dpc</strong></h3></td></tr></table><p></p><p>
+ Get a writable reference to the Destination Code Point inside the label
+</p>
+<p><b>Returns</b>: Reference of the destination code point
+     </p>
+<A NAME="opc"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SS7PointCode& &nbsp;<strong>opc</strong> ()
+<br></td><td align="right"><h3><strong>opc</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Originating Code Point inside the label
+</p>
+<p><b>Returns</b>: Reference of the source code point
+     </p>
+<A NAME="opc"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7PointCode& &nbsp;<strong>opc</strong> ()
+<br></td><td align="right"><h3><strong>opc</strong></h3></td></tr></table><p></p><p>
+ Get a writable reference to the Originating Code Point inside the label
+</p>
+<p><b>Returns</b>: Reference of the originating code point
+     </p>
+<A NAME="sls"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>sls</strong> ()
+<br></td><td align="right"><h3><strong>sls</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Signalling Link Selection inside the label
+</p>
+<p><b>Returns</b>: Value of the SLS field
+     </p>
+<A NAME="setSls"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setSls</strong> (unsigned char sls)
+<br></td><td align="right"><h3><strong>setSls</strong></h3></td></tr></table><p></p><p>
+ Set the Signalling Link Selection inside the label
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">New value of the SLS/SLC field
+     </TD></TR>
+</TABLE></P>
+<A NAME="spare"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>spare</strong> ()
+<br></td><td align="right"><h3><strong>spare</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the spare bits inside the label
+</p>
+<p><b>Returns</b>: Value of the bits not included in DPC, OPC, or SLS
+     </p>
+<A NAME="setSpare"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setSpare</strong> (unsigned char spare)
+<br></td><td align="right"><h3><strong>setSpare</strong></h3></td></tr></table><p></p><p>
+ Set the spare bits inside the label
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>spare</i></TD><TD align="left" valign="top">New value of the spare bits
+     </TD></TR>
+</TABLE></P>
+<A NAME="length"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length (in bytes) of this routing label
+</p>
+<p><b>Returns</b>: Number of bytes required to represent the label, zero if unknown
+     </p>
+<A NAME="length"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>length</strong> (SS7PointCode::Type type)
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the length (in bytes) of a packed routing label according to its type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bytes required to represent the label, zero if unknown
+     </p>
+<A NAME="size"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char &nbsp;<strong>size</strong> ()
+<br></td><td align="right"><h3><strong>size</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the size (in bits) of this routing label except the spare bits
+</p>
+<p><b>Returns</b>: Number of bits required to represent this label, zero if unknown
+     </p>
+<A NAME="size"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned char &nbsp;<strong>size</strong> (SS7PointCode::Type type)
+<br></td><td align="right"><h3><strong>size</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the size (in bits) of a packed routing label according to its type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the packing
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of bits required to represent the label, zero if unknown
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

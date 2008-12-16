@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingEngine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingEngine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Main signalling component holder. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingEngine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingEngine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">SignallingEngine</A></b> (const char* name = "signalling") 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~SignallingEngine</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">insert</A></b> (SignallingComponent* component) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">remove</A></b> (SignallingComponent* component) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">remove</A></b> (const String& name) 
+</LI>
+<LI>SignallingComponent* &nbsp;<b><A HREF="#ref8">find</A></b> (const String& name) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">find</A></b> (const SignallingComponent* component) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">start</A></b> (const char* name = "Signalling", Thread::Priority prio = Thread::Normal, unsigned long usec = 1000) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">stop</A></b> () 
+</LI>
+<LI>Thread* &nbsp;<b><A HREF="#ref12">thread</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref13">timerTick</A></b> (const Time& when) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ObjList <b><A HREF="#ref14">m_components</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ The engine is the center of all SS7 or ISDN applications.
+ It is used as a base to build the protocol stack from components.
+</p>
+<A NAME="SignallingEngine"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingEngine</strong> (const char* name = "signalling")
+<br></td><td align="right"><h3><strong>SignallingEngine</strong></h3></td></tr></table><p></p><p>
+ Constructor of an empty engine
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The debug name of this engine
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingEngine"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingEngine</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingEngine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, removes all components
+     </p>
+<A NAME="insert"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>insert</strong> (SignallingComponent* component)
+<br></td><td align="right"><h3><strong>insert</strong></h3></td></tr></table><p></p><p>
+ Insert a component in the engine, lock the list while doing so
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Pointer to component to insert in engine
+     </TD></TR>
+</TABLE></P>
+<A NAME="remove"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>remove</strong> (SignallingComponent* component)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Remove a component from the engine, lock the list while doing so
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Pointer to component to remove from engine
+     </TD></TR>
+</TABLE></P>
+<A NAME="remove"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>remove</strong> (const String& name)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Remove and destroy a component from the engine by name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of component to remove from engine
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if a component was found and destroyed
+     </p>
+<A NAME="find"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingComponent* &nbsp;<strong>find</strong> (const String& name)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p></p><p>
+ Retrive a component by name, lock the list while searching for it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the component to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to component found or NULL
+     </p>
+<A NAME="find"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>find</strong> (const SignallingComponent* component)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p></p><p>
+ Check if a component is in the engine's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Pointer to component to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the component is in the engine's list
+     </p>
+<A NAME="start"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>start</strong> (const char* name = "Signalling", Thread::Priority prio = Thread::Normal, unsigned long usec = 1000)
+<br></td><td align="right"><h3><strong>start</strong></h3></td></tr></table><p></p><p>
+ Starts the worker thread that keeps components alive
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Static name of the thread
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread's priority
+</TD></TR>
+<TR><TD align="left" valign="top"><i>usec</i></TD><TD align="left" valign="top">How long to sleep between iterations, in microseconds
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if (already) started, false if an error occured
+     </p>
+<A NAME="stop"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>stop</strong> ()
+<br></td><td align="right"><h3><strong>stop</strong></h3></td></tr></table><p></p><p>
+ Stops and destroys the worker thread if running
+     </p>
+<A NAME="thread"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Thread* &nbsp;<strong>thread</strong> ()
+<br></td><td align="right"><h3><strong>thread</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Return a pointer to the worker thread
+</p>
+<p><b>Returns</b>: Pointer to running worker thread or NULL
+     </p>
+<A NAME="timerTick"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically by the <A HREF="TelEngine__SignallingEngine.html#SignallingThreadPrivate">SignallingThreadPrivate</A> to keep everything alive
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for events and timeouts
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_components"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_components</strong>
+</td><td align="right"><h3><strong>m_components</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

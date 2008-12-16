@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingCounter</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingCounter</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A counter class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingCounter</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingCounter.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">SignallingCounter</A></b> (<A HREF="#u_int32_t">u_int32_t</A> maxVal) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref2">maxVal</A></b> (<A HREF="#u_int32_t">u_int32_t</A> value) 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref3">maxVal</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref4">count</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">reset</A></b> (bool down = true) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">inc</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">dec</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">empty</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">full</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Counter management class. Keep a value between 0 and a given maximum one
+</p>
+<A NAME="SignallingCounter"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SignallingCounter</strong> (<A HREF="#u_int32_t">u_int32_t</A> maxVal)
+<br></td><td align="right"><h3><strong>SignallingCounter</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxVal</i></TD><TD align="left" valign="top">The maximum value for the counter
+     </TD></TR>
+</TABLE></P>
+<A NAME="maxVal"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>maxVal</strong> (<A HREF="#u_int32_t">u_int32_t</A> value)
+<br></td><td align="right"><h3><strong>maxVal</strong></h3></td></tr></table><p></p><p>
+ Set the maximum value for the counter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The new maximum value for the counter
+     </TD></TR>
+</TABLE></P>
+<A NAME="maxVal"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>maxVal</strong> ()
+<br></td><td align="right"><h3><strong>maxVal</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the maximum value for the counter
+</p>
+<p><b>Returns</b>: The maximum value for the counter
+     </p>
+<A NAME="count"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current value of the counter
+</p>
+<p><b>Returns</b>: The current value of the counter
+     </p>
+<A NAME="reset"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>reset</strong> (bool down = true)
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p></p><p>
+ Reset the counter's value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>down</i></TD><TD align="left" valign="top">True to reset to 0, false to reset to maxVal()
+     </TD></TR>
+</TABLE></P>
+<A NAME="inc"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>inc</strong> ()
+<br></td><td align="right"><h3><strong>inc</strong></h3></td></tr></table><p></p><p>
+ Increment the counter's value if it can
+</p>
+<p><b>Returns</b>: False if the counter is full (reached the maximum value)
+     </p>
+<A NAME="dec"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>dec</strong> ()
+<br></td><td align="right"><h3><strong>dec</strong></h3></td></tr></table><p></p><p>
+ Decrement the counter's value if it can
+</p>
+<p><b>Returns</b>: False if the counter is empty (reached 0)
+     </p>
+<A NAME="empty"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>empty</strong> ()
+<br></td><td align="right"><h3><strong>empty</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the counter is empty (the value is 0)
+</p>
+<p><b>Returns</b>: True if the counter is empty
+     </p>
+<A NAME="full"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>full</strong> ()
+<br></td><td align="right"><h3><strong>full</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the counter is full (the value reached the maximum)
+</p>
+<p><b>Returns</b>: True if the counter is full
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

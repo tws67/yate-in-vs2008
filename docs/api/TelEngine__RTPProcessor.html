@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPProcessor</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPProcessor</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Base class to ease creation of RTP forwarders. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPProcessor</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__RTPDejitter.html">RTPDejitter</A>, <A HREF="TelEngine__RTPSession.html">RTPSession</A>, <A HREF="TelEngine__RTPTransport.html">RTPTransport</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPProcessor.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref6">RTPProcessor</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref7">~RTPProcessor</A></b> () 
+</LI>
+<LI>inline RTPGroup* &nbsp;<b><A HREF="#ref8">group</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">rtpData</A></b> (const void* data, int len) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref10">rtcpData</A></b> (const void* data, int len) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref11">group</A></b> (RTPGroup* newgrp) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref12">timerTick</A></i></b> (const Time& when) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A base class that contains just placeholders to process raw RTP and RTCP packets.
+</p>
+<A NAME="RTPProcessor"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>RTPProcessor</strong> ()
+<br></td><td align="right"><h3><strong>RTPProcessor</strong></h3></td></tr></table><p></p><p>
+ Constructor - processor should be later inserted in a RTP group
+     </p>
+<A NAME="~RTPProcessor"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPProcessor</strong> ()
+<br></td><td align="right"><h3><strong>~RTPProcessor</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor - removes itself from the RTP group
+     </p>
+<A NAME="group"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RTPGroup* &nbsp;<strong>group</strong> ()
+<br></td><td align="right"><h3><strong>group</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the RTP group to which this processor belongs
+</p>
+<p><b>Returns</b>: Pointer to the RTP group this processor has joined
+     </p>
+<A NAME="rtpData"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpData</strong> (const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ This method is called to send or process a RTP packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to raw RTP data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data packet
+     </TD></TR>
+</TABLE></P>
+<A NAME="rtcpData"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtcpData</strong> (const void* data, int len)
+<br></td><td align="right"><h3><strong>rtcpData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ This method is called to send or process a RTCP packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to raw RTCP data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data packet
+     </TD></TR>
+</TABLE></P>
+<A NAME="group"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>group</strong> (RTPGroup* newgrp)
+<br></td><td align="right"><h3><strong>group</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set a new RTP group for this processor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newgrp</i></TD><TD align="left" valign="top">New group to join this processor, the old one will be left
+     </TD></TR>
+</TABLE></P>
+<A NAME="timerTick"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>timerTick</strong></i> (const Time& when)
+<br></td><td align="right"><h3><i><strong>timerTick</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ Method called periodically to keep the data flowing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as base in all computing
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

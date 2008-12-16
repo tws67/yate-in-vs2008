@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<TITLE>class SIGTRAN</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SIGTRAN</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract SIGTRAN component. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SIGTRAN</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ISDNIUA.html">ISDNIUA</A>, <A HREF="TelEngine__SS7M2PA.html">SS7M2PA</A>, <A HREF="TelEngine__SS7M2UA.html">SS7M2UA</A>, <A HREF="TelEngine__SS7M3UA.html">SS7M3UA</A>, <A HREF="TelEngine__SS7SUA.html">SS7SUA</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SIGTRAN.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Transport</A> {	None = 0,
+	Sctp,
+	Tcp,
+	Unix,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SIGTRAN</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SIGTRAN</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">terminate</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref5">attach</A></b> (Socket* socket, Transport trans) 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref6">processMSG</A></i></b> (unsigned char msgVersion, unsigned char msgClass,
+	unsigned char msgType, const DataBlock& msg) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An interface to a Signalling Transport component
+</p>
+<A NAME="Transport"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Transport</strong> {	None = 0,
+	Sctp,
+	Tcp,
+	Unix,
+    }
+</td><td align="right"><h3><strong>Transport</strong></h3></td></tr></table><p></p><p>
+ Type of transport used
+     </p>
+<A NAME="SIGTRAN"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIGTRAN</strong> ()
+<br></td><td align="right"><h3><strong>SIGTRAN</strong></h3></td></tr></table><p></p><p>
+ Constructs an uninitialized signalling transport
+     </p>
+<A NAME="~SIGTRAN"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SIGTRAN</strong> ()
+<br></td><td align="right"><h3><strong>~SIGTRAN</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, closes connection and any socket
+     </p>
+<A NAME="terminate"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>terminate</strong> ()
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Terminate the transport, close the socket, drop partial data
+     </p>
+<A NAME="attach"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>attach</strong> (Socket* socket, Transport trans)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Attach an open socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>socket</i></TD><TD align="left" valign="top">Already open socket to attach
+</TD></TR>
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">Type of the socket (transport)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the new socket was attached successfully
+     </p>
+<A NAME="processMSG"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>processMSG</strong></i> (unsigned char msgVersion, unsigned char msgClass,
+	unsigned char msgType, const DataBlock& msg)
+<br></td><td align="right"><h3><i><strong>processMSG</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ Process a complete message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msgVersion</i></TD><TD align="left" valign="top">Version of the protocol
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msgClass</i></TD><TD align="left" valign="top">Class of the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msgType</i></TD><TD align="left" valign="top">Type of the message, depends on the class
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Message data, may be empty
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message was handled
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,596 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">ISDN Q.931 implementation on top of Q.921. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__ISDNLayer3.html">TelEngine::ISDNLayer3</A></i> <small>[public ]</small>, <A HREF="TelEngine__SignallingCallControl.html">TelEngine::SignallingCallControl</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">BehaviourFlags</A> {	SendNonIsdnSource = 0x00000001,
+	IgnoreNonIsdnDest = 0x00000002,
+	ForcePresNetProv = 0x00000004,
+	Translate31kAudio = 0x00000008,
+	URDITransferCapsOnly = 0x00000010,
+	NoLayer1Caps = 0x00000020,
+	IgnoreNonLockedIE = 0x00000040,
+	NoDisplayIE = 0x00000080,
+	NoDisplayCharset = 0x00000100,
+	ForceSendComplete = 0x00000200,
+	NoActiveOnConnect = 0x00000400,
+	CheckNotifyInd = 0x00000800,
+    }
+</LI>
+<LI>enum <A HREF="#ref3">SwitchType</A> {	Unknown      = 0,
+	EuroIsdnE1   = ForceSendComplete|CheckNotifyInd|NoDisplayCharset|URDITransferCapsOnly,
+	EuroIsdnT1   = ForceSendComplete|CheckNotifyInd,
+	NationalIsdn = SendNonIsdnSource,
+	Dms100       = ForcePresNetProv|IgnoreNonIsdnDest,
+	Lucent5e     = IgnoreNonLockedIE,
+	Att4ess      = ForcePresNetProv|IgnoreNonLockedIE|Translate31kAudio|NoLayer1Caps,
+	QSIG         = NoActiveOnConnect|NoDisplayIE|NoDisplayCharset
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref4">ISDNQ931</A></b> (const NamedList& params, const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~ISDNQ931</A></b> () 
+</LI>
+<LI>inline const ISDNLayer2* &nbsp;<b><A HREF="#ref6">layer2</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">primaryRate</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">transferModeCircuit</A></b> ()  const
+</LI>
+<LI>inline ISDNQ931ParserData& &nbsp;<b><A HREF="#ref9">parserData</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">numPlan</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref11">numType</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref12">numPresentation</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref13">numScreening</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref14">format</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">sendMessage</A></b> (ISDNQ931Message* msg, String* reason = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref16">multipleFrameEstablished</A></b> (bool confirm, bool timeout, ISDNLayer2* layer2) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref17">multipleFrameReleased</A></b> (bool confirm, bool timeout, ISDNLayer2* layer2) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref18">receiveData</A></b> (const DataBlock& data, bool ack, ISDNLayer2* layer2) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref19">attach</A></b> (ISDNLayer2* q921) 
+</LI>
+<LI>SignallingCall* &nbsp;<b><A HREF="#ref20">call</A></b> (SignallingMessage* msg, String& reason) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref21">restart</A></b> (const char* circuits) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref22">sendStatus</A></b> (ISDNQ931Call* call, const char* cause,
+	const char* display = 0, const char* diagnostic = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref23">sendRelease</A></b> (ISDNQ931Call* call, bool release, const char* cause,
+	const char* diag = 0, const char* display = 0, const char* signal = 0) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref24">cleanup</A></b> (const char* reason = "offline") 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">setInterval</A></b> (SignallingTimer& timer, int id) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref26">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref27">destruct</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref28">setDebug</A></b> (bool printMsg, bool extendedDebug) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref29">s_flags[]</A></b></LI>
+<LI>static TokenDict <b><A HREF="#ref30">s_swType[]</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref31">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>ISDNQ931Call* &nbsp;<b><A HREF="#ref32">findCall</A></b> (<A HREF="#u_int32_t">u_int32_t</A> callRef, bool outgoing) 
+</LI>
+<LI>ISDNQ931Call* &nbsp;<b><A HREF="#ref33">findCall</A></b> (unsigned int circuit) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref34">terminateCalls</A></b> (ObjList* list, const char* reason) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref35">acceptNewCall</A></b> (bool outgoing, String& reason) 
+</LI>
+<LI>ISDNQ931Message* &nbsp;<b><A HREF="#ref36">getMsg</A></b> (const DataBlock& data) 
+</LI>
+<LI>ISDNQ931Message* &nbsp;<b><A HREF="#ref37">endReceiveSegment</A></b> (const char* reason = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref38">processGlobalMsg</A></b> (ISDNQ931Message* msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref39">processMsgRestart</A></b> (ISDNQ931Message* msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref40">processInvalidMsg</A></b> (ISDNQ931Message* msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref41">sendRestart</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time = Time::msecNow(), bool retrans = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref42">endRestart</A></b> (bool restart, <A HREF="#u_int64_t">u_int64_t</A> time, bool timeout = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref43">sendStatus</A></b> (const char* cause, <A HREF="#u_int8_t">u_int8_t</A> callRefLen, <A HREF="#u_int32_t">u_int32_t</A> callRef = 0,
+	bool initiator = false, ISDNQ931Call::State state = ISDNQ931Call::Null,
+	const char* display = 0, const char* diagnostic = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref44">sendRelease</A></b> (bool release, <A HREF="#u_int8_t">u_int8_t</A> callRefLen, <A HREF="#u_int32_t">u_int32_t</A> callRef,
+	bool initiator, const char* cause, const char* diag = 0,
+	const char* display = 0, const char* signal = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN Layer 3 implementation on top of a Layer 2
+</p>
+<A NAME="BehaviourFlags"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>BehaviourFlags</strong> {	SendNonIsdnSource = 0x00000001,
+	IgnoreNonIsdnDest = 0x00000002,
+	ForcePresNetProv = 0x00000004,
+	Translate31kAudio = 0x00000008,
+	URDITransferCapsOnly = 0x00000010,
+	NoLayer1Caps = 0x00000020,
+	IgnoreNonLockedIE = 0x00000040,
+	NoDisplayIE = 0x00000080,
+	NoDisplayCharset = 0x00000100,
+	ForceSendComplete = 0x00000200,
+	NoActiveOnConnect = 0x00000400,
+	CheckNotifyInd = 0x00000800,
+    }
+</td><td align="right"><h3><strong>BehaviourFlags</strong></h3></td></tr></table><p></p><p>
+ Enumeration flags defining the behaviour of the ISDN call controller and
+  any active calls managed by it
+     </p>
+<A NAME="SwitchType"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>SwitchType</strong> {	Unknown      = 0,
+	EuroIsdnE1   = ForceSendComplete|CheckNotifyInd|NoDisplayCharset|URDITransferCapsOnly,
+	EuroIsdnT1   = ForceSendComplete|CheckNotifyInd,
+	NationalIsdn = SendNonIsdnSource,
+	Dms100       = ForcePresNetProv|IgnoreNonIsdnDest,
+	Lucent5e     = IgnoreNonLockedIE,
+	Att4ess      = ForcePresNetProv|IgnoreNonLockedIE|Translate31kAudio|NoLayer1Caps,
+	QSIG         = NoActiveOnConnect|NoDisplayIE|NoDisplayCharset
+    }
+</td><td align="right"><h3><strong>SwitchType</strong></h3></td></tr></table><p></p><p>
+ Call controller switch type. Each value is a mask of behaviour flags
+     </p>
+<A NAME="ISDNQ931"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931</strong> (const NamedList& params, const char* name = 0)
+<br></td><td align="right"><h3><strong>ISDNQ931</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Initialize this object and the component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Layer's parameters and parser settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ISDNQ931"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ931</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ931</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+ Destroy all calls
+     </p>
+<A NAME="layer2"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ISDNLayer2* &nbsp;<strong>layer2</strong> ()
+<br></td><td align="right"><h3><strong>layer2</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the layer 2 attached to this object
+</p>
+<p><b>Returns</b>: Pointer to the layer 2 attached to this object or 0 if none
+     </p>
+<A NAME="primaryRate"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>primaryRate</strong> ()
+<br></td><td align="right"><h3><strong>primaryRate</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this call controller supports primary or basic rate transfer
+</p>
+<p><b>Returns</b>: True for primary rate. False for basic rate
+     </p>
+<A NAME="transferModeCircuit"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>transferModeCircuit</strong> ()
+<br></td><td align="right"><h3><strong>transferModeCircuit</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this call controller supports circuit switch or packet mode transfer
+</p>
+<p><b>Returns</b>: True for circuit switch. False for packet mode
+     </p>
+<A NAME="parserData"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ISDNQ931ParserData& &nbsp;<strong>parserData</strong> ()
+<br></td><td align="right"><h3><strong>parserData</strong></h3></td></tr></table><p></p><p>
+ Get the parser settings of this call control
+</p>
+<p><b>Returns</b>: The parser settings
+     </p>
+<A NAME="numPlan"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>numPlan</strong> ()
+<br></td><td align="right"><h3><strong>numPlan</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default numbering plan for outgoing calls
+</p>
+<p><b>Returns</b>: The default numbering plan for outgoing calls
+     </p>
+<A NAME="numType"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>numType</strong> ()
+<br></td><td align="right"><h3><strong>numType</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default number type for outgoing calls
+</p>
+<p><b>Returns</b>: The default number type for outgoing calls
+     </p>
+<A NAME="numPresentation"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>numPresentation</strong> ()
+<br></td><td align="right"><h3><strong>numPresentation</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default number presentation for outgoing calls
+</p>
+<p><b>Returns</b>: The default number presentation for outgoing calls
+     </p>
+<A NAME="numScreening"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>numScreening</strong> ()
+<br></td><td align="right"><h3><strong>numScreening</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default number screening for outgoing calls
+</p>
+<p><b>Returns</b>: The default number screening for outgoing calls
+     </p>
+<A NAME="format"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>format</strong> ()
+<br></td><td align="right"><h3><strong>format</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default data format for outgoing calls
+</p>
+<p><b>Returns</b>: The default data format for outgoing calls
+     </p>
+<A NAME="sendMessage"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendMessage</strong> (ISDNQ931Message* msg, String* reason = 0)
+<br></td><td align="right"><h3><strong>sendMessage</strong></h3></td></tr></table><p></p><p>
+ Send a message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to be sent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Optional string to write the failure reason
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the message is invalid, Layer 2 is missing or refused the data
+     </p>
+<A NAME="multipleFrameEstablished"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>multipleFrameEstablished</strong> (bool confirm, bool timeout, ISDNLayer2* layer2)
+<br></td><td align="right"><h3><strong>multipleFrameEstablished</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification of Layer 2 up state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>confirm</i></TD><TD align="left" valign="top">True if this is a confirmation of a previous request.
+  False if it is an indication of state change on remote request
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">True if the reason is a timeout.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>layer2</i></TD><TD align="left" valign="top">Pointer to the notifier
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer3.html#multipleFrameEstablished">ISDNLayer3</A>.</p>
+<A NAME="multipleFrameReleased"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>multipleFrameReleased</strong> (bool confirm, bool timeout, ISDNLayer2* layer2)
+<br></td><td align="right"><h3><strong>multipleFrameReleased</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification of Layer 2 down state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>confirm</i></TD><TD align="left" valign="top">True if this is a confirmation of a previous request.
+  False if it is an indication of state change on remote request
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">True if the reason is a timeout.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>layer2</i></TD><TD align="left" valign="top">Pointer to the notifier
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer3.html#multipleFrameReleased">ISDNLayer3</A>.</p>
+<A NAME="receiveData"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>receiveData</strong> (const DataBlock& data, bool ack, ISDNLayer2* layer2)
+<br></td><td align="right"><h3><strong>receiveData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Receive data from Layer 2
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Received data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ack</i></TD><TD align="left" valign="top">True if data is an acknoledged frame, false if it is an unacknoledged one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>layer2</i></TD><TD align="left" valign="top">Pointer to the sender
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer3.html#receiveData">ISDNLayer3</A>.</p>
+<A NAME="attach"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>attach</strong> (ISDNLayer2* q921)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Attach an ISDN Q.921 transport
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>q921</i></TD><TD align="left" valign="top">Pointer to the Q.921 transport to attach
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#attach">SignallingCallControl</A>.</p>
+<A NAME="call"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingCall* &nbsp;<strong>call</strong> (SignallingMessage* msg, String& reason)
+<br></td><td align="right"><h3><strong>call</strong></h3></td></tr></table><p></p><p>
+ Create an outgoing call. Send a NewCall event with the given msg parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Failure reason if any
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced SignallingCall pointer on success or 0 on failure
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#call">SignallingCallControl</A>.</p>
+<A NAME="restart"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>restart</strong> (const char* circuits)
+<br></td><td align="right"><h3><strong>restart</strong></h3></td></tr></table><p></p><p>
+ Restart one or more the circuits
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuits</i></TD><TD align="left" valign="top">Comma separated list of circuits to be restarted
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the procedure was succesfully started or enqueued
+     </p>
+<A NAME="sendStatus"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendStatus</strong> (ISDNQ931Call* call, const char* cause,
+	const char* display = 0, const char* diagnostic = 0)
+<br></td><td align="right"><h3><strong>sendStatus</strong></h3></td></tr></table><p></p><p>
+ Send a STATUS message for a given call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">The call requesting the operation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cause</i></TD><TD align="left" valign="top">Value for Cause IE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>display</i></TD><TD align="left" valign="top">Optional value for Display IE 
+</TD></TR>
+<TR><TD align="left" valign="top"><i>diagnostic</i></TD><TD align="left" valign="top">Optional value for cause diagnostic value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of the operation (true if succesfully sent)
+     </p>
+<A NAME="sendRelease"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendRelease</strong> (ISDNQ931Call* call, bool release, const char* cause,
+	const char* diag = 0, const char* display = 0, const char* signal = 0)
+<br></td><td align="right"><h3><strong>sendRelease</strong></h3></td></tr></table><p></p><p>
+ Send a RELEASE or RELEASE COMPLETE message for a given call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">The call requesting the operation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>release</i></TD><TD align="left" valign="top">True to send RELEASE, false to send RELEASE COMPLETE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cause</i></TD><TD align="left" valign="top">Value for Cause IE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>diag</i></TD><TD align="left" valign="top">Optional hexified string for cause dignostic
+</TD></TR>
+<TR><TD align="left" valign="top"><i>display</i></TD><TD align="left" valign="top">Optional value for Display IE 
+</TD></TR>
+<TR><TD align="left" valign="top"><i>signal</i></TD><TD align="left" valign="top">Optional value for Signal IE 
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of the operation (true if succesfully sent)
+     </p>
+<A NAME="cleanup"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> (const char* reason = "offline")
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set terminate to all calls
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Cleanup reason
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#cleanup">SignallingCallControl</A>.</p>
+<A NAME="setInterval"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setInterval</strong> (SignallingTimer& timer, int id)
+<br></td><td align="right"><h3><strong>setInterval</strong></h3></td></tr></table><p></p><p>
+ Set the timeout interval for a given timer if implemented
+ If the timer is not implemented the interval is set to 0
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>timer</i></TD><TD align="left" valign="top">The destination timer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The timer number as defined in Q.931
+     </TD></TR>
+</TABLE></P>
+<A NAME="getObject"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this call controller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name. Must be ISDNQ931
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="destruct"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Detach links. Disposes memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="setDebug"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDebug</strong> (bool printMsg, bool extendedDebug)
+<br></td><td align="right"><h3><strong>setDebug</strong></h3></td></tr></table><p></p><p>
+ Set debug data of this call controller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>printMsg</i></TD><TD align="left" valign="top">Enable/disable message printing on output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extendedDebug</i></TD><TD align="left" valign="top">Enable/disable hex data dump if print messages is enabled
+     </TD></TR>
+</TABLE></P>
+<A NAME="s_flags[]"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_flags[]</strong>
+</td><td align="right"><h3><strong>s_flags[]</strong></h3></td></tr></table><p></p><A NAME="s_swType[]"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_swType[]</strong>
+</td><td align="right"><h3><strong>s_swType[]</strong></h3></td></tr></table><p></p><A NAME="timerTick"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to check timeouts
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for events and timeouts
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingComponent.html#timerTick">SignallingComponent</A>.</p>
+<A NAME="findCall"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ISDNQ931Call* &nbsp;<strong>findCall</strong> (<A HREF="#u_int32_t">u_int32_t</A> callRef, bool outgoing)
+<br></td><td align="right"><h3><strong>findCall</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find a call given its call reference and direction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>callRef</i></TD><TD align="left" valign="top">The call reference to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">True to find an outgoing call, false to find an incoming one
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A referenced pointer to a call or 0
+     </p>
+<A NAME="findCall"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ISDNQ931Call* &nbsp;<strong>findCall</strong> (unsigned int circuit)
+<br></td><td align="right"><h3><strong>findCall</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find a call given a circuit number
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuit</i></TD><TD align="left" valign="top">The circuit number to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A referenced pointer to a call or 0
+     </p>
+<A NAME="terminateCalls"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>terminateCalls</strong> (ObjList* list, const char* reason)
+<br></td><td align="right"><h3><strong>terminateCalls</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Terminate calls. If list is 0 terminate all calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Optional list of circuits (strings) to be released
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">The reason to be passed to each terminated call
+     </TD></TR>
+</TABLE></P>
+<A NAME="acceptNewCall"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>acceptNewCall</strong> (bool outgoing, String& reason)
+<br></td><td align="right"><h3><strong>acceptNewCall</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Check if this call control can accept new calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">Call direction (true for outgoing)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">String to be filled with the reason if not accepted
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the call request is accepted
+     </p>
+<A NAME="getMsg"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ISDNQ931Message* &nbsp;<strong>getMsg</strong> (const DataBlock& data)
+<br></td><td align="right"><h3><strong>getMsg</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process received data. Process received message segments if any
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The received data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ISDNQ931Message pointer or 0
+     </p>
+<A NAME="endReceiveSegment"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ISDNQ931Message* &nbsp;<strong>endReceiveSegment</strong> (const char* reason = 0)
+<br></td><td align="right"><h3><strong>endReceiveSegment</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ End waiting for message segments
+ If reason is 0 parse already received data for the segmented message
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Debug info reason. If non 0 drop the received segment(s)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ISDNQ931Message pointer or 0
+     </p>
+<A NAME="processGlobalMsg"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processGlobalMsg</strong> (ISDNQ931Message* msg)
+<br></td><td align="right"><h3><strong>processGlobalMsg</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process messages with global call reference or should have one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+     </TD></TR>
+</TABLE></P>
+<A NAME="processMsgRestart"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processMsgRestart</strong> (ISDNQ931Message* msg)
+<br></td><td align="right"><h3><strong>processMsgRestart</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process a restart request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+     </TD></TR>
+</TABLE></P>
+<A NAME="processInvalidMsg"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processInvalidMsg</strong> (ISDNQ931Message* msg)
+<br></td><td align="right"><h3><strong>processInvalidMsg</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process messages with invalid call reference
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+     </TD></TR>
+</TABLE></P>
+<A NAME="sendRestart"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sendRestart</strong> (<A HREF="#u_int64_t">u_int64_t</A> time = Time::msecNow(), bool retrans = false)
+<br></td><td align="right"><h3><strong>sendRestart</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Try to reserve a circuit for restarting if none. Send a restart request on it's behalf
+ Start counting the restart interval if no circuit reserved
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">The time of the transmission
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retrans</i></TD><TD align="left" valign="top">Retransmission flag (true if a previous request timed out)
+     </TD></TR>
+</TABLE></P>
+<A NAME="endRestart"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>endRestart</strong> (bool restart, <A HREF="#u_int64_t">u_int64_t</A> time, bool timeout = false)
+<br></td><td align="right"><h3><strong>endRestart</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ End restart procedure on timeout or restart acknoledge
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>restart</i></TD><TD align="left" valign="top">True to try to send restart for the next circuit
+</TD></TR>
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">The time of the transmission
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">True if a restart request timed out
+     </TD></TR>
+</TABLE></P>
+<A NAME="sendStatus"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendStatus</strong> (const char* cause, <A HREF="#u_int8_t">u_int8_t</A> callRefLen, <A HREF="#u_int32_t">u_int32_t</A> callRef = 0,
+	bool initiator = false, ISDNQ931Call::State state = ISDNQ931Call::Null,
+	const char* display = 0, const char* diagnostic = 0)
+<br></td><td align="right"><h3><strong>sendStatus</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a STATUS message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cause</i></TD><TD align="left" valign="top">Value for Cause IE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRefLen</i></TD><TD align="left" valign="top">The call reference length parameter.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRef</i></TD><TD align="left" valign="top">The call reference
+</TD></TR>
+<TR><TD align="left" valign="top"><i>initiator</i></TD><TD align="left" valign="top">True if this is from the call initiator
+</TD></TR>
+<TR><TD align="left" valign="top"><i>state</i></TD><TD align="left" valign="top">The state for CallState IE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>display</i></TD><TD align="left" valign="top">Optional value for Display IE 
+</TD></TR>
+<TR><TD align="left" valign="top"><i>diagnostic</i></TD><TD align="left" valign="top">Optional value for cause diagnostic value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of the operation (true if succesfully sent)
+     </p>
+<A NAME="sendRelease"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendRelease</strong> (bool release, <A HREF="#u_int8_t">u_int8_t</A> callRefLen, <A HREF="#u_int32_t">u_int32_t</A> callRef,
+	bool initiator, const char* cause, const char* diag = 0,
+	const char* display = 0, const char* signal = 0)
+<br></td><td align="right"><h3><strong>sendRelease</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a RELEASE or RELEASE COMPLETE message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>release</i></TD><TD align="left" valign="top">True to send RELEASE, false to send RELEASE COMPLETE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRefLen</i></TD><TD align="left" valign="top">The call reference length parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRef</i></TD><TD align="left" valign="top">The call reference
+</TD></TR>
+<TR><TD align="left" valign="top"><i>initiator</i></TD><TD align="left" valign="top">The call initiator flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cause</i></TD><TD align="left" valign="top">Value for Cause IE
+</TD></TR>
+<TR><TD align="left" valign="top"><i>diag</i></TD><TD align="left" valign="top">Optional hexified string for cause dignostic
+</TD></TR>
+<TR><TD align="left" valign="top"><i>display</i></TD><TD align="left" valign="top">Optional value for Display IE 
+</TD></TR>
+<TR><TD align="left" valign="top"><i>signal</i></TD><TD align="left" valign="top">Optional value for Signal IE 
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of the operation (true if succesfully sent)
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

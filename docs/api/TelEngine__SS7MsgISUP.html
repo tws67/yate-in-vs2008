@@ -1,0 +1,459 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7MsgISUP</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7MsgISUP</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">ISUP signalling message. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7MsgISUP</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingMessage.html">TelEngine::SignallingMessage</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7MsgISUP.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Type</A> {	Unknown = 0,
+	IAM  = 0x01, 
+	SAM  = 0x02, 
+	INR  = 0x03, 
+	INF  = 0x04, 
+	COT  = 0x05, 
+	ACM  = 0x06, 
+	CON  = 0x07, 
+	FOT  = 0x08, 
+	ANM  = 0x09, 
+	REL  = 0x0c, 
+	SUS  = 0x0d, 
+	RES  = 0x0e, 
+	RLC  = 0x10, 
+	CCR  = 0x11, 
+	RSC  = 0x12, 
+	BLK  = 0x13, 
+	UBL  = 0x14, 
+	BLA  = 0x15, 
+	UBA  = 0x16, 
+	GRS  = 0x17, 
+	CGB  = 0x18, 
+	CGU  = 0x19, 
+	CGA  = 0x1a, 
+	CGBA = CGA,
+	CUA  = 0x1b, 
+	CMR  = 0x1c, 
+	CMC  = 0x1d, 
+	CMRJ = 0x1e, 
+	FACR = 0x1f, 
+	FAA  = 0x20, 
+	FRJ  = 0x21, 
+	FAD  = 0x22, 
+	FAI  = 0x23, 
+	LPA  = 0x24, 
+	CSVR = 0x25, 
+	CSVS = 0x26, 
+	DRS  = 0x27, 
+	PAM  = 0x28, 
+	GRA  = 0x29, 
+	CQM  = 0x2a, 
+	CQR  = 0x2b, 
+	CPR  = 0x2c, 
+	CPG  = CPR,
+	USR  = 0x2d, 
+	UEC  = 0x2e, 
+	UCIC = UEC,
+	CNF  = 0x2f, 
+	OLM  = 0x30, 
+	CRG  = 0x31, 
+	NRM  = 0x32, 
+	FAC  = 0x33, 
+	UPT  = 0x34, 
+	UPA  = 0x35, 
+	IDR  = 0x36, 
+	IRS  = 0x37, 
+	SGM  = 0x38, 
+	LOP  = 0x40, 
+	APM  = 0x41, 
+	PRI  = 0x42, 
+	SDN  = 0x43, 
+	CRA  = 0xe9, 
+	CRM  = 0xea, 
+	CVR  = 0xeb, 
+	CVT  = 0xec, 
+	EXM  = 0xed, 
+    }
+</LI>
+<LI>enum <A HREF="#ref3">Parameters</A> {	EndOfParameters                = 0,
+	CallReference                  = 0x01,
+	TransmissionMediumRequirement  = 0x02,
+	AccessTransport                = 0x03,
+	CalledPartyNumber              = 0x04,
+	SubsequentNumber               = 0x05,
+	NatureOfConnectionIndicators   = 0x06,
+	ForwardCallIndicators          = 0x07,
+	OptionalForwardCallIndicators  = 0x08,
+	CallingPartyCategory           = 0x09,
+	CallingPartyNumber             = 0x0a,
+	RedirectingNumber              = 0x0b,
+	RedirectionNumber              = 0x0c,
+	ConnectionRequest              = 0x0d,
+	InformationRequestIndicators   = 0x0e,
+	InformationIndicators          = 0x0f,
+	ContinuityIndicators           = 0x10,
+	BackwardCallIndicators         = 0x11,
+	CauseIndicators                = 0x12,
+	RedirectionInformation         = 0x13,
+	GroupSupervisionTypeIndicator  = 0x15,
+	RangeAndStatus                 = 0x16,
+	CallModificationIndicators     = 0x17, 
+	FacilityIndicator              = 0x18,
+	FacilityInformationIndicators  = 0x19, 
+	CUG_InterlockCode              = 0x1a,
+	Index                          = 0x1b, 
+	CUG_CheckResponseIndicators    = 0x1c, 
+	UserServiceInformation         = 0x1d,
+	SignallingPointCode            = 0x1e,
+	UserToUserInformation          = 0x20,
+	ConnectedNumber                = 0x21,
+	SuspendResumeIndicators        = 0x22,
+	TransitNetworkSelection        = 0x23,
+	EventInformation               = 0x24,
+	CircuitAssignmentMap           = 0x25, 
+	CircuitStateIndicator          = 0x26,
+	AutomaticCongestionLevel       = 0x27,
+	OriginalCalledNumber           = 0x28,
+	OptionalBackwardCallIndicators = 0x29,
+	UserToUserIndicators           = 0x2a,
+	OriginationISCPointCode        = 0x2b, 
+	GenericNotification            = 0x2c, 
+	CallHistoryInformation         = 0x2d, 
+	AccessDeliveryInformation      = 0x2e, 
+	NetworkSpecificFacilities      = 0x2f, 
+	UserServiceInformationPrime    = 0x30,
+	PropagationDelayCounter        = 0x31, 
+	RemoteOperations               = 0x32,
+	ServiceActivation              = 0x33,
+	UserTeleserviceInformation     = 0x34, 
+	TransmissionMediumUsed         = 0x35,
+	CallDiversionInformation       = 0x36, 
+	EchoControlInformation         = 0x37, 
+	MessageCompatInformation       = 0x38, 
+	ParameterCompatInformation     = 0x39, 
+	MLPP_Precedence                = 0x3a, 
+	Precedence                     = MLPP_Precedence, 
+	MCID_RequestIndicator          = 0x3b, 
+	MCID_ResponseIndicator         = 0x3c, 
+	HopCounter                     = 0x3d,
+	TransMediumRequirementPrime    = 0x3e, 
+	LocationNumber                 = 0x3f, 
+	RedirectionNumberRestriction   = 0x40, 
+	FreephoneIndicators            = 0x41, 
+	GenericReference               = 0x42, 
+	ApplicationTransport           = 0x78,
+	GenericNumber                  = 0xc0, 
+	GenericAddress                 = GenericNumber, 
+	GenericDigits                  = 0xc1,
+	OperatorServicesInformation    = 0xc2, 
+	Egress                         = 0xc3, 
+	Jurisdiction                   = 0xc4, 
+	CarrierIdentification          = 0xc5, 
+	BusinessGroup                  = 0xc6, 
+	GenericName                    = 0xc7, 
+	NotificationIndicator          = 0xe1, 
+	TransactionRequest             = 0xe3, 
+	CircuitGroupCharactIndicator   = 0xe5, 
+	CircuitValidationRespIndicator = 0xe6, 
+	OutgoingTrunkGroupNumber       = 0xe7, 
+	CircuitIdentificationName      = 0xe8, 
+	CommonLanguage                 = 0xe9, 
+	OriginatingLineInformation     = 0xea, 
+	ChargeNumber                   = 0xeb, 
+	ServiceCodeIndicator           = 0xec, 
+	SpecialProcessingRequest       = 0xed, 
+	CarrierSelectionInformation    = 0xee, 
+	NetworkTransport               = 0xef, 
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref4">SS7MsgISUP</A></b> (Type type, unsigned int cic) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~SS7MsgISUP</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref6">type</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref7">cic</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">toString</A></b> (String& dest, const SS7Label& label, bool params)  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref9">getObject</A></b> (const String& name)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const TokenDict* &nbsp;<b><A HREF="#ref10">names</A></b> () 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref11">lookup</A></b> (Type type, const char* defvalue = 0) 
+</LI>
+<LI>static  inline Type &nbsp;<b><A HREF="#ref12">lookup</A></b> (const char* name, Type defvalue = Unknown) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Decoded ISDN User Part message
+</p>
+<A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Unknown = 0,
+	IAM  = 0x01, 
+	SAM  = 0x02, 
+	INR  = 0x03, 
+	INF  = 0x04, 
+	COT  = 0x05, 
+	ACM  = 0x06, 
+	CON  = 0x07, 
+	FOT  = 0x08, 
+	ANM  = 0x09, 
+	REL  = 0x0c, 
+	SUS  = 0x0d, 
+	RES  = 0x0e, 
+	RLC  = 0x10, 
+	CCR  = 0x11, 
+	RSC  = 0x12, 
+	BLK  = 0x13, 
+	UBL  = 0x14, 
+	BLA  = 0x15, 
+	UBA  = 0x16, 
+	GRS  = 0x17, 
+	CGB  = 0x18, 
+	CGU  = 0x19, 
+	CGA  = 0x1a, 
+	CGBA = CGA,
+	CUA  = 0x1b, 
+	CMR  = 0x1c, 
+	CMC  = 0x1d, 
+	CMRJ = 0x1e, 
+	FACR = 0x1f, 
+	FAA  = 0x20, 
+	FRJ  = 0x21, 
+	FAD  = 0x22, 
+	FAI  = 0x23, 
+	LPA  = 0x24, 
+	CSVR = 0x25, 
+	CSVS = 0x26, 
+	DRS  = 0x27, 
+	PAM  = 0x28, 
+	GRA  = 0x29, 
+	CQM  = 0x2a, 
+	CQR  = 0x2b, 
+	CPR  = 0x2c, 
+	CPG  = CPR,
+	USR  = 0x2d, 
+	UEC  = 0x2e, 
+	UCIC = UEC,
+	CNF  = 0x2f, 
+	OLM  = 0x30, 
+	CRG  = 0x31, 
+	NRM  = 0x32, 
+	FAC  = 0x33, 
+	UPT  = 0x34, 
+	UPA  = 0x35, 
+	IDR  = 0x36, 
+	IRS  = 0x37, 
+	SGM  = 0x38, 
+	LOP  = 0x40, 
+	APM  = 0x41, 
+	PRI  = 0x42, 
+	SDN  = 0x43, 
+	CRA  = 0xe9, 
+	CRM  = 0xea, 
+	CVR  = 0xeb, 
+	CVT  = 0xec, 
+	EXM  = 0xed, 
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ ISUP Message type as defined by Q.762 Table 2 and Q.763 Table 4
+     </p>
+<A NAME="Parameters"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Parameters</strong> {	EndOfParameters                = 0,
+	CallReference                  = 0x01,
+	TransmissionMediumRequirement  = 0x02,
+	AccessTransport                = 0x03,
+	CalledPartyNumber              = 0x04,
+	SubsequentNumber               = 0x05,
+	NatureOfConnectionIndicators   = 0x06,
+	ForwardCallIndicators          = 0x07,
+	OptionalForwardCallIndicators  = 0x08,
+	CallingPartyCategory           = 0x09,
+	CallingPartyNumber             = 0x0a,
+	RedirectingNumber              = 0x0b,
+	RedirectionNumber              = 0x0c,
+	ConnectionRequest              = 0x0d,
+	InformationRequestIndicators   = 0x0e,
+	InformationIndicators          = 0x0f,
+	ContinuityIndicators           = 0x10,
+	BackwardCallIndicators         = 0x11,
+	CauseIndicators                = 0x12,
+	RedirectionInformation         = 0x13,
+	GroupSupervisionTypeIndicator  = 0x15,
+	RangeAndStatus                 = 0x16,
+	CallModificationIndicators     = 0x17, 
+	FacilityIndicator              = 0x18,
+	FacilityInformationIndicators  = 0x19, 
+	CUG_InterlockCode              = 0x1a,
+	Index                          = 0x1b, 
+	CUG_CheckResponseIndicators    = 0x1c, 
+	UserServiceInformation         = 0x1d,
+	SignallingPointCode            = 0x1e,
+	UserToUserInformation          = 0x20,
+	ConnectedNumber                = 0x21,
+	SuspendResumeIndicators        = 0x22,
+	TransitNetworkSelection        = 0x23,
+	EventInformation               = 0x24,
+	CircuitAssignmentMap           = 0x25, 
+	CircuitStateIndicator          = 0x26,
+	AutomaticCongestionLevel       = 0x27,
+	OriginalCalledNumber           = 0x28,
+	OptionalBackwardCallIndicators = 0x29,
+	UserToUserIndicators           = 0x2a,
+	OriginationISCPointCode        = 0x2b, 
+	GenericNotification            = 0x2c, 
+	CallHistoryInformation         = 0x2d, 
+	AccessDeliveryInformation      = 0x2e, 
+	NetworkSpecificFacilities      = 0x2f, 
+	UserServiceInformationPrime    = 0x30,
+	PropagationDelayCounter        = 0x31, 
+	RemoteOperations               = 0x32,
+	ServiceActivation              = 0x33,
+	UserTeleserviceInformation     = 0x34, 
+	TransmissionMediumUsed         = 0x35,
+	CallDiversionInformation       = 0x36, 
+	EchoControlInformation         = 0x37, 
+	MessageCompatInformation       = 0x38, 
+	ParameterCompatInformation     = 0x39, 
+	MLPP_Precedence                = 0x3a, 
+	Precedence                     = MLPP_Precedence, 
+	MCID_RequestIndicator          = 0x3b, 
+	MCID_ResponseIndicator         = 0x3c, 
+	HopCounter                     = 0x3d,
+	TransMediumRequirementPrime    = 0x3e, 
+	LocationNumber                 = 0x3f, 
+	RedirectionNumberRestriction   = 0x40, 
+	FreephoneIndicators            = 0x41, 
+	GenericReference               = 0x42, 
+	ApplicationTransport           = 0x78,
+	GenericNumber                  = 0xc0, 
+	GenericAddress                 = GenericNumber, 
+	GenericDigits                  = 0xc1,
+	OperatorServicesInformation    = 0xc2, 
+	Egress                         = 0xc3, 
+	Jurisdiction                   = 0xc4, 
+	CarrierIdentification          = 0xc5, 
+	BusinessGroup                  = 0xc6, 
+	GenericName                    = 0xc7, 
+	NotificationIndicator          = 0xe1, 
+	TransactionRequest             = 0xe3, 
+	CircuitGroupCharactIndicator   = 0xe5, 
+	CircuitValidationRespIndicator = 0xe6, 
+	OutgoingTrunkGroupNumber       = 0xe7, 
+	CircuitIdentificationName      = 0xe8, 
+	CommonLanguage                 = 0xe9, 
+	OriginatingLineInformation     = 0xea, 
+	ChargeNumber                   = 0xeb, 
+	ServiceCodeIndicator           = 0xec, 
+	SpecialProcessingRequest       = 0xed, 
+	CarrierSelectionInformation    = 0xee, 
+	NetworkTransport               = 0xef, 
+    }
+</td><td align="right"><h3><strong>Parameters</strong></h3></td></tr></table><p></p><p>
+ ISUP Message type as defined by Q.763 Table 5
+     </p>
+<A NAME="SS7MsgISUP"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7MsgISUP</strong> (Type type, unsigned int cic)
+<br></td><td align="right"><h3><strong>SS7MsgISUP</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of ISUP message as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Source/destination Circuit Identification Code
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7MsgISUP"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SS7MsgISUP</strong> ()
+<br></td><td align="right"><h3><strong>~SS7MsgISUP</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this message
+</p>
+<p><b>Returns</b>: The type of this message as enumeration
+     </p>
+<A NAME="cic"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>cic</strong> ()
+<br></td><td align="right"><h3><strong>cic</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the source/destination Circuit Identification Code of this message
+</p>
+<p><b>Returns</b>: The source/destination Circuit Identification Code of this message
+     </p>
+<A NAME="toString"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, const SS7Label& label, bool params)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Fill a string with this message's parameters for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">The routing label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">True to add parameters
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this object or other data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="names"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>names</strong> ()
+<br></td><td align="right"><h3><strong>names</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the dictionary with the message names
+</p>
+<p><b>Returns</b>: Pointer to the dictionary with the message names
+     </p>
+<A NAME="lookup"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>lookup</strong> (Type type, const char* defvalue = 0)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Convert an ISUP message type to a C string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of ISUP message to look up
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default string to return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Name of the ISUP message type
+     </p>
+<A NAME="lookup"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline Type &nbsp;<strong>lookup</strong> (const char* name, Type defvalue = Unknown)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Look up an ISUP message name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">String name of the ISUP message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default type to return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Encoded type of the ISUP message
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

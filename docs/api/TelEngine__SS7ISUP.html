@@ -1,0 +1,365 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7ISUP</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7ISUP</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">SS7 ISUP implementation. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7ISUP</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SS7Layer4.html">TelEngine::SS7Layer4</A> <small>[public ]</small>, <A HREF="TelEngine__SignallingCallControl.html">TelEngine::SignallingCallControl</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__SS7BICC.html">SS7BICC</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7ISUP.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SS7ISUP</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SS7ISUP</A></b> () 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref4">cicLen</A></b> ()  const
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref5">format</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">setPointCode</A></b> (SS7PointCode* pc, bool def) 
+</LI>
+<LI>SS7PointCode* &nbsp;<b><A HREF="#ref7">hasPointCode</A></b> (const SS7PointCode& pc) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref8">setLabel</A></b> (SS7Label& label, const SS7PointCode& opc, const SS7PointCode& dpc,
+	unsigned char sls = 255) 
+</LI>
+<LI>virtual  SS7MSU* &nbsp;<b><A HREF="#ref9">createMSU</A></b> (SS7MsgISUP::Type type, unsigned char ssf,
+	const SS7Label& label, unsigned int cic, const NamedList* params = 0)  const
+</LI>
+<LI>virtual  SignallingCall* &nbsp;<b><A HREF="#ref10">call</A></b> (SignallingMessage* msg, String& reason) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref11">transmitMessage</A></b> (SS7MsgISUP* msg, const SS7Label& label, bool recvLbl, int sls = -1) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref12">cleanup</A></b> (const char* reason = "offline") 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref13">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">destruct</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">decodeMessage</A></b> (NamedList& msg, SS7MsgISUP::Type msgType, SS7PointCode::Type pcType,
+	const unsigned char* paramPtr, unsigned int paramLen) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">encodeMessage</A></b> (DataBlock& buf, SS7MsgISUP::Type msgType, SS7PointCode::Type pcType,
+	const NamedList& params, unsigned int* cic = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref17">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref18">notify</A></b> (SS7Layer3* link, int sls) 
+</LI>
+<LI>SS7MSU* &nbsp;<b><A HREF="#ref19">buildMSU</A></b> (SS7MsgISUP::Type type, unsigned char sio,
+	const SS7Label& label, unsigned int cic, const NamedList* params)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref20">receivedMSU</A></b> (const SS7MSU& msu, const SS7Label& label, SS7Layer3* network, int sls) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref21">processMSU</A></b> (SS7MsgISUP::Type type, unsigned int cic,
+        const unsigned char* paramPtr, unsigned int paramLen,
+	const SS7Label& label, SS7Layer3* network, int sls) 
+</LI>
+<LI>virtual  SignallingEvent* &nbsp;<b><A HREF="#ref22">processCircuitEvent</A></b> (SignallingCircuitEvent& event,
+	SignallingCall* call = 0) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>unsigned int <b><A HREF="#ref23">m_cicLen</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Implementation of SS7 ISDN User Part
+</p>
+<A NAME="SS7ISUP"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7ISUP</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>SS7ISUP</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Call controller's parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7ISUP"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SS7ISUP</strong> ()
+<br></td><td align="right"><h3><strong>~SS7ISUP</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="cicLen"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>cicLen</strong> ()
+<br></td><td align="right"><h3><strong>cicLen</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the Circuit Identification Code for this user part
+</p>
+<p><b>Returns</b>: Length of the CIC field in octets
+     </p>
+<A NAME="format"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>format</strong> ()
+<br></td><td align="right"><h3><strong>format</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default data format
+</p>
+<p><b>Returns</b>: The default data format
+     </p>
+<A NAME="setPointCode"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setPointCode</strong> (SS7PointCode* pc, bool def)
+<br></td><td align="right"><h3><strong>setPointCode</strong></h3></td></tr></table><p></p><p>
+ Append a point code to the list of point codes serviced by this controller
+  if not already there. Set default point code if requested.
+ If the list is empty, the default point code is set to the first point code added
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>pc</i></TD><TD align="left" valign="top">The point code to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>def</i></TD><TD align="left" valign="top">True if this point code is the default for outgoing calls
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the point code is invalid for this call controller type. If true is returned, don't reuse the pointer
+     </p>
+<A NAME="hasPointCode"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SS7PointCode* &nbsp;<strong>hasPointCode</strong> (const SS7PointCode& pc)
+<br></td><td align="right"><h3><strong>hasPointCode</strong></h3></td></tr></table><p></p><p>
+ Check if the given point code is serviced by this controller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>pc</i></TD><TD align="left" valign="top">The point code to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SS7PointCode pointer or 0 if not found
+     </p>
+<A NAME="setLabel"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setLabel</strong> (SS7Label& label, const SS7PointCode& opc, const SS7PointCode& dpc,
+	unsigned char sls = 255)
+<br></td><td align="right"><h3><strong>setLabel</strong></h3></td></tr></table><p></p><p>
+ Set a routing label to be used for outgoing messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label to set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>opc</i></TD><TD align="left" valign="top">Originating point code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dpc</i></TD><TD align="left" valign="top">Destination point code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection
+     </TD></TR>
+</TABLE></P>
+<A NAME="createMSU"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SS7MSU* &nbsp;<strong>createMSU</strong> (SS7MsgISUP::Type type, unsigned char ssf,
+	const SS7Label& label, unsigned int cic, const NamedList* params = 0)
+<br></td><td align="right"><h3><strong>createMSU</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Create a new MSU populated with type, routing label and space for fixed part
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of ISUP message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ssf</i></TD><TD align="left" valign="top">Subservice Field
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label for the new MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameter list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the new MSU or NULL if an error occured
+     </p>
+<A NAME="call"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingCall* &nbsp;<strong>call</strong> (SignallingMessage* msg, String& reason)
+<br></td><td align="right"><h3><strong>call</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create an outgoing call. Send a NewCall event with the given msg parameter
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Failure reason if any
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced SignallingCall pointer on success or 0 on failure
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#call">SignallingCallControl</A>.</p>
+<A NAME="transmitMessage"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>transmitMessage</strong> (SS7MsgISUP* msg, const SS7Label& label, bool recvLbl, int sls = -1)
+<br></td><td align="right"><h3><strong>transmitMessage</strong></h3></td></tr></table><p></p><p>
+ Converts an ISUP message to a Message Signal Unit and push it down the protocol stack.
+ The given message is consumed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">The routing label for the message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>recvLbl</i></TD><TD align="left" valign="top">True if the given label is from a received message. If true, a new routing
+  label will be created from the received one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link to use for the new routing label. Ignored if recvLbl is false
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Link the message was successfully queued to, negative for error
+     </p>
+<A NAME="cleanup"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> (const char* reason = "offline")
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Cleanup calls
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Cleanup reason
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#cleanup">SignallingCallControl</A>.</p>
+<A NAME="getObject"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this object or other data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="destruct"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove all links with other layers. Disposes the memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="decodeMessage"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>decodeMessage</strong> (NamedList& msg, SS7MsgISUP::Type msgType, SS7PointCode::Type pcType,
+	const unsigned char* paramPtr, unsigned int paramLen)
+<br></td><td align="right"><h3><strong>decodeMessage</strong></h3></td></tr></table><p></p><p>
+ Decode an ISUP message buffer to a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Destination list of parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msgType</i></TD><TD align="left" valign="top">The message type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pcType</i></TD><TD align="left" valign="top">The point code type (message version)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>paramPtr</i></TD><TD align="left" valign="top">Pointer to the Parameter area (just after the message type)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>paramLen</i></TD><TD align="left" valign="top">Length of the Parameter area
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the mesage was succesfully parsed
+     </p>
+<A NAME="encodeMessage"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>encodeMessage</strong> (DataBlock& buf, SS7MsgISUP::Type msgType, SS7PointCode::Type pcType,
+	const NamedList& params, unsigned int* cic = 0)
+<br></td><td align="right"><h3><strong>encodeMessage</strong></h3></td></tr></table><p></p><p>
+ Encode an ISUP list of parameters to a buffer.
+ The input list may contain a 'message-prefix' parameter to override this controller's prefix
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msgType</i></TD><TD align="left" valign="top">The message type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pcType</i></TD><TD align="left" valign="top">The point code type (message version)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Message list of parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Optional cic to be added before mesage
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the mesage was succesfully encoded
+     </p>
+<A NAME="timerTick"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Send CGU if not already done. Check timeouts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for timeouts
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingComponent.html#timerTick">SignallingComponent</A>.</p>
+<A NAME="notify"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>notify</strong> (SS7Layer3* link, int sls)
+<br></td><td align="right"><h3><strong>notify</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a notification generated by the attached network layer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>link</i></TD><TD align="left" valign="top">Network or linkset that generated the notification
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link that generated the notification, negative if none
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SS7L3User.html#notify">SS7L3User</A>.</p>
+<A NAME="buildMSU"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SS7MSU* &nbsp;<strong>buildMSU</strong> (SS7MsgISUP::Type type, unsigned char sio,
+	const SS7Label& label, unsigned int cic, const NamedList* params)
+<br></td><td align="right"><h3><strong>buildMSU</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Create a new MSU populated with type, routing label and space for fixed part
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of ISUP message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sio</i></TD><TD align="left" valign="top">Service Information Octet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label for the new MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Parameter list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the new MSU or NULL if an error occured
+     </p>
+<A NAME="receivedMSU"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>receivedMSU</strong> (const SS7MSU& msu, const SS7Label& label, SS7Layer3* network, int sls)
+<br></td><td align="right"><h3><strong>receivedMSU</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a MSU received from a Layer 3 component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">Message data, starting with Service Indicator Octet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label of the received MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">Network layer that delivered the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link the MSU was received from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the MSU was processed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7L3User.html#receivedMSU">SS7L3User</A>.</p>
+<A NAME="processMSU"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>processMSU</strong> (SS7MsgISUP::Type type, unsigned int cic,
+        const unsigned char* paramPtr, unsigned int paramLen,
+	const SS7Label& label, SS7Layer3* network, int sls)
+<br></td><td align="right"><h3><strong>processMSU</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a MSU received from a Layer 3 component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of ISUP message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>paramPtr</i></TD><TD align="left" valign="top">Pointer to the Parameter area
+</TD></TR>
+<TR><TD align="left" valign="top"><i>paramLen</i></TD><TD align="left" valign="top">Length of the Parameter area
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label of the received MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">Network layer that delivered the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link the MSU was received from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the MSU was processed
+     </p>
+<A NAME="processCircuitEvent"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingEvent* &nbsp;<strong>processCircuitEvent</strong> (SignallingCircuitEvent& event,
+	SignallingCall* call = 0)
+<br></td><td align="right"><h3><strong>processCircuitEvent</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process an event received from a non-reserved circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">Optional signalling call whose circuit generated the event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Signalling event pointer or 0
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#processCircuitEvent">SignallingCallControl</A>.</p>
+<A NAME="m_cicLen"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_cicLen</strong>
+</td><td align="right"><h3><strong>m_cicLen</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<TITLE>class MGCPEndpointId</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MGCPEndpointId</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An endpoint id. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MGCPEndpointId</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ymgcp___yatemgcp_h.html">libs/ymgcp/yatemgcp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__MGCPEndpoint.html">MGCPEndpoint</A>, <A HREF="TelEngine__MGCPEpInfo.html">MGCPEpInfo</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MGCPEndpointId.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">MGCPEndpointId</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref2">MGCPEndpointId</A></b> (String& src) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">MGCPEndpointId</A></b> (const char* endpoint, const char* host, int port) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref4">id</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref5">user</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">host</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref7">port</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref8">port</A></b> (int newPort) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">set</A></b> (const char* endpoint, const char* host, int port) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">set</A></b> (String& src) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">valid</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds an endpoint id in the form "endpoint@host:port"
+</p>
+<A NAME="MGCPEndpointId"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>MGCPEndpointId</strong> ()
+<br></td><td align="right"><h3><strong>MGCPEndpointId</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="MGCPEndpointId"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>MGCPEndpointId</strong> (String& src)
+<br></td><td align="right"><h3><strong>MGCPEndpointId</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct this endpoint id from a string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The string to construct from
+     </TD></TR>
+</TABLE></P>
+<A NAME="MGCPEndpointId"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>MGCPEndpointId</strong> (const char* endpoint, const char* host, int port)
+<br></td><td align="right"><h3><strong>MGCPEndpointId</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct this endpoint id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>endpoint</i></TD><TD align="left" valign="top">The user part of the endpoint's URI
+</TD></TR>
+<TR><TD align="left" valign="top"><i>host</i></TD><TD align="left" valign="top">The IP address of the endpoint's URI
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">The port used by the endpoint to receive data
+     </TD></TR>
+</TABLE></P>
+<A NAME="id"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the full id of the endpoint
+</p>
+<p><b>Returns</b>: The full id of the endpoint
+     </p>
+<A NAME="user"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>user</strong> ()
+<br></td><td align="right"><h3><strong>user</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the user part of the endpoint URI
+</p>
+<p><b>Returns</b>: The user part of the endpoint URI
+     </p>
+<A NAME="host"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>host</strong> ()
+<br></td><td align="right"><h3><strong>host</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the host part of the endpoint URI
+</p>
+<p><b>Returns</b>: The host part of the endpoint URI
+     </p>
+<A NAME="port"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>port</strong> ()
+<br></td><td align="right"><h3><strong>port</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the port used by this endpoint
+</p>
+<p><b>Returns</b>: The port used by this endpoint
+     </p>
+<A NAME="port"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>port</strong> (int newPort)
+<br></td><td align="right"><h3><strong>port</strong></h3></td></tr></table><p></p><p>
+ Set the port used by this endpoint
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newPort</i></TD><TD align="left" valign="top">The new port used by this endpoint
+     </TD></TR>
+</TABLE></P>
+<A NAME="set"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>set</strong> (const char* endpoint, const char* host, int port)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set this endpoint id. Convert it to lower case
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>endpoint</i></TD><TD align="left" valign="top">The user part of the endpoint's URI
+</TD></TR>
+<TR><TD align="left" valign="top"><i>host</i></TD><TD align="left" valign="top">The IP address of the endpoint's URI
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">The port used by the endpoint to receive data
+     </TD></TR>
+</TABLE></P>
+<A NAME="set"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>set</strong> (String& src)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set this endpoint id. Convert it to lower case
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The string to construct from
+     </TD></TR>
+</TABLE></P>
+<A NAME="valid"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this is a valid endpoint id as defined in RFC 3435 3.2.1.3.
+ It is considerred valid if the user and host part lengths are between
+  1 and 255 and the port is not 0
+</p>
+<p><b>Returns</b>: True if this is a valid endpoint id
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

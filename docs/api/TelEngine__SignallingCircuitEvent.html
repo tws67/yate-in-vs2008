@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingCircuitEvent</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingCircuitEvent</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A single signalling circuit related event. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingCircuitEvent</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__NamedList.html">TelEngine::NamedList</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingCircuitEvent.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Unknown      = 0,
+	Dtmf         = 1,                
+	Timeout      = 10,               
+	Polarity     = 11,               
+	StartLine    = 15,               
+	LineStarted  = 16,               
+	DialComplete = 17,               
+	OnHook       = 20,               
+	OffHook      = 21,               
+	RingBegin    = 22,               
+	RingEnd      = 23,               
+	RingerOn     = 30,               
+	RingerOff    = 31,               
+	Wink         = 32,               
+	Flash        = 33,               
+	PulseStart   = 40,               
+	PulseDigit   = 41,               
+	Alarm        = 100,              
+	NoAlarm      = 101,              
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SignallingCircuitEvent</A></b> (SignallingCircuit* cic, Type type, const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SignallingCircuitEvent</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref4">type</A></b> ()  const
+</LI>
+<LI>inline SignallingCircuit* &nbsp;<b><A HREF="#ref5">circuit</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An object holding a signalling circuit event and related references
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Unknown      = 0,
+	Dtmf         = 1,                
+	Timeout      = 10,               
+	Polarity     = 11,               
+	StartLine    = 15,               
+	LineStarted  = 16,               
+	DialComplete = 17,               
+	OnHook       = 20,               
+	OffHook      = 21,               
+	RingBegin    = 22,               
+	RingEnd      = 23,               
+	RingerOn     = 30,               
+	RingerOff    = 31,               
+	Wink         = 32,               
+	Flash        = 33,               
+	PulseStart   = 40,               
+	PulseDigit   = 41,               
+	Alarm        = 100,              
+	NoAlarm      = 101,              
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Type of the event
+     </p>
+<A NAME="SignallingCircuitEvent"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingCircuitEvent</strong> (SignallingCircuit* cic, Type type, const char* name = 0)
+<br></td><td align="right"><h3><strong>SignallingCircuitEvent</strong></h3></td></tr></table><p></p><p>
+ Constructor for a circuit related event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">The circuit that generated this event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Event type as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name for the named list
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingCircuitEvent"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingCircuitEvent</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingCircuitEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, dereferences any resources
+     </p>
+<A NAME="type"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this event
+</p>
+<p><b>Returns</b>: The type of this event
+     </p>
+<A NAME="circuit"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCircuit* &nbsp;<strong>circuit</strong> ()
+<br></td><td align="right"><h3><strong>circuit</strong></h3></td></tr></table><p></p><p>
+ Get the circuit that generated this event
+</p>
+<p><b>Returns</b>: The circuit that generated this event
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

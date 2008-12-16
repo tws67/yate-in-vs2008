@@ -1,0 +1,415 @@
+<HTML>
+<HEAD>
+<TITLE>class JBEngine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBEngine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber engine. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBEngine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small>, <A HREF="TelEngine__JBThreadList.html">TelEngine::JBThreadList</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBEngine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Protocol</A> {	Component = 1,                   
+	Client    = 2,                   
+    }
+</LI>
+<LI>enum <A HREF="#ref3">Service</A> {	ServiceJingle    = 0,            
+	ServiceIq        = 1,            
+	ServiceMessage   = 2,            
+	ServicePresence  = 3,            
+	ServiceCommand   = 4,            
+	ServiceDisco     = 5,            
+	ServiceStream    = 6,            
+	ServiceWriteFail = 7,            
+	ServiceRoster    = 8,            
+	ServiceCount     = 9
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref4">JBEngine</A></b> (Protocol proto) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~JBEngine</A></b> () 
+</LI>
+<LI>inline Protocol &nbsp;<b><A HREF="#ref6">protocol</A></b> ()  const
+</LI>
+<LI>inline const JabberID& &nbsp;<b><A HREF="#ref7">componentServer</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref8">setAlternateDomain</A></b> (const char* domain = 0) 
+</LI>
+<LI>inline const JabberID& &nbsp;<b><A HREF="#ref9">getAlternateDomain</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">defaultResource</A></b> ()  const
+</LI>
+<LI>inline const ObjList& &nbsp;<b><A HREF="#ref11">streams</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref12">destruct</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref13">initialize</A></b> (const NamedList& params) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">cleanup</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">setComponentServer</A></b> (const char* domain) 
+</LI>
+<LI>JBStream* &nbsp;<b><A HREF="#ref16">findStream</A></b> (const String& name) 
+</LI>
+<LI>JBStream* &nbsp;<b><A HREF="#ref17">getStream</A></b> (const JabberID* jid = 0, bool create = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">getStream</A></b> (JBStream*& stream, bool& release) 
+</LI>
+<LI>JBClientStream* &nbsp;<b><A HREF="#ref19">createClientStream</A></b> (NamedList& params) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">receive</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref21">process</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">checkDupId</A></b> (const JBStream* stream) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref23">checkComponentFrom</A></b> (JBComponentStream* stream, const char* from) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref24">connect</A></b> (JBStream* stream) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref25">exiting</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref26">encryptStream</A></b> (JBStream* stream) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">appendServer</A></b> (XMPPServerInfo* server, bool open) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref28">getServerIdentity</A></b> (String& destination, bool full, const char* token = 0,
+	bool domain = true) 
+</LI>
+<LI>XMPPServerInfo* &nbsp;<b><A HREF="#ref29">findServerInfo</A></b> (const char* token, bool domain) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref30">attachService</A></b> (JBService* service, Service type, int prio = -1) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref31">detachService</A></b> (JBService* service) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref32">printXml</A></b> (const XMLElement& xml, const JBStream* stream, bool send)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static inline  const char* &nbsp;<b><A HREF="#ref33">lookupProto</A></b> (int proto, const char* def = 0) 
+</LI>
+<LI>static inline  int &nbsp;<b><A HREF="#ref34">lookupProto</A></b> (const char* proto, int def = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a Jabber engine
+</p>
+<A NAME="Protocol"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Protocol</strong> {	Component = 1,                   
+	Client    = 2,                   
+    }
+</td><td align="right"><h3><strong>Protocol</strong></h3></td></tr></table><p></p><p>
+ Jabber protocol type
+     </p>
+<A NAME="Service"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Service</strong> {	ServiceJingle    = 0,            
+	ServiceIq        = 1,            
+	ServiceMessage   = 2,            
+	ServicePresence  = 3,            
+	ServiceCommand   = 4,            
+	ServiceDisco     = 5,            
+	ServiceStream    = 6,            
+	ServiceWriteFail = 7,            
+	ServiceRoster    = 8,            
+	ServiceCount     = 9
+    }
+</td><td align="right"><h3><strong>Service</strong></h3></td></tr></table><p></p><p>
+ Service type enumeration
+     </p>
+<A NAME="JBEngine"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBEngine</strong> (Protocol proto)
+<br></td><td align="right"><h3><strong>JBEngine</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>proto</i></TD><TD align="left" valign="top">The protocol used by the streams belonging to this engine
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JBEngine"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBEngine</strong> ()
+<br></td><td align="right"><h3><strong>~JBEngine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="protocol"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Protocol &nbsp;<strong>protocol</strong> ()
+<br></td><td align="right"><h3><strong>protocol</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Jabber protocol this engine is using
+</p>
+<p><b>Returns</b>: The Jabber protocol as enumeration
+     </p>
+<A NAME="componentServer"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const JabberID& &nbsp;<strong>componentServer</strong> ()
+<br></td><td align="right"><h3><strong>componentServer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default component server
+</p>
+<p><b>Returns</b>: The default component server
+     </p>
+<A NAME="setAlternateDomain"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setAlternateDomain</strong> (const char* domain = 0)
+<br></td><td align="right"><h3><strong>setAlternateDomain</strong></h3></td></tr></table><p></p><p>
+ Set the alternate domain name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">Name of an acceptable alternate domain
+     </TD></TR>
+</TABLE></P>
+<A NAME="getAlternateDomain"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const JabberID& &nbsp;<strong>getAlternateDomain</strong> ()
+<br></td><td align="right"><h3><strong>getAlternateDomain</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the alternate domain name
+</p>
+<p><b>Returns</b>: the alternate domain name
+     </p>
+<A NAME="defaultResource"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>defaultResource</strong> ()
+<br></td><td align="right"><h3><strong>defaultResource</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default resource name.
+</p>
+<p><b>Returns</b>: The default resource name.
+     </p>
+<A NAME="streams"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const ObjList& &nbsp;<strong>streams</strong> ()
+<br></td><td align="right"><h3><strong>streams</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the stream list
+</p>
+<p><b>Returns</b>: The list of streams belonging to this engine
+     </p>
+<A NAME="destruct"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Cleanup streams. Stop all threads owned by this engine. Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="initialize"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Initialize the engine's parameters. Start private streams if requested
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Engine's parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="cleanup"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p></p><p>
+ Terminate all streams
+     </p>
+<A NAME="setComponentServer"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setComponentServer</strong> (const char* domain)
+<br></td><td align="right"><h3><strong>setComponentServer</strong></h3></td></tr></table><p></p><p>
+ Set the default component server to use. The domain must be in the server list.
+ Choose the first one from the server list if the given one doesn't exists.
+ Do nothing if the protocol is not Component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">Domain name of the server
+     </TD></TR>
+</TABLE></P>
+<A NAME="findStream"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JBStream* &nbsp;<strong>findStream</strong> (const String& name)
+<br></td><td align="right"><h3><strong>findStream</strong></h3></td></tr></table><p></p><p>
+ Find a stream by its name. This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the stream to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced JBStream pointer or 0
+     </p>
+<A NAME="getStream"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JBStream* &nbsp;<strong>getStream</strong> (const JabberID* jid = 0, bool create = true)
+<br></td><td align="right"><h3><strong>getStream</strong></h3></td></tr></table><p></p><p>
+ Get a stream. Create it not found and requested.
+ For the component protocol, the jid parameter may contain the domain to find,
+  otherwise, the default component will be used.
+ This method won't create a client stream. Use <A HREF="TelEngine__JBEngine.html#createClientStream">createClientStream</A>().
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">Optional jid to use to find or create the stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>create</i></TD><TD align="left" valign="top">True to create a stream if don't exist. Ignored if the engine's protocol is Client
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced JBStream pointer or 0
+     </p>
+<A NAME="getStream"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getStream</strong> (JBStream*& stream, bool& release)
+<br></td><td align="right"><h3><strong>getStream</strong></h3></td></tr></table><p></p><p>
+ Try to get a stream if stream parameter is 0
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Stream to check
+</TD></TR>
+<TR><TD align="left" valign="top"><i>release</i></TD><TD align="left" valign="top">Set to true on exit if the caller must deref the stream
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if stream is valid
+     </p>
+<A NAME="createClientStream"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JBClientStream* &nbsp;<strong>createClientStream</strong> (NamedList& params)
+<br></td><td align="right"><h3><strong>createClientStream</strong></h3></td></tr></table><p></p><p>
+ Create a new client stream. This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Stream parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced JBClientStream pointer or 0
+     </p>
+<A NAME="receive"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>receive</strong> ()
+<br></td><td align="right"><h3><strong>receive</strong></h3></td></tr></table><p></p><p>
+ Keep calling receive() for each stream until no data is received or the
+  thread is terminated
+</p>
+<p><b>Returns</b>: True if data was received
+     </p>
+<A NAME="process"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>process</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>process</strong></h3></td></tr></table><p></p><p>
+ Get events from the streams owned by this engine and send them to a service.
+ Delete them if not processed by a service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if an event was generated by any stream
+     </p>
+<A NAME="checkDupId"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>checkDupId</strong> (const JBStream* stream)
+<br></td><td align="right"><h3><strong>checkDupId</strong></h3></td></tr></table><p></p><p>
+ Check if an outgoing stream exists with the same id and remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The calling stream
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if found
+     </p>
+<A NAME="checkComponentFrom"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>checkComponentFrom</strong> (JBComponentStream* stream, const char* from)
+<br></td><td align="right"><h3><strong>checkComponentFrom</strong></h3></td></tr></table><p></p><p>
+ Check the 'from' attribute received by a Component stream at startup
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The calling stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The from attribute to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if valid
+     </p>
+<A NAME="connect"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>connect</strong> (JBStream* stream)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Asynchronously call the connect method of the given stream if the stream is idle
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream to connect
+     </TD></TR>
+</TABLE></P>
+<A NAME="exiting"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>exiting</strong> ()
+<br></td><td align="right"><h3><strong>exiting</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if this engine is exiting
+</p>
+<p><b>Returns</b>: True is terminating
+     </p>
+<A NAME="encryptStream"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>encryptStream</strong> (JBStream* stream)
+<br></td><td align="right"><h3><strong>encryptStream</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Setup the transport layer security for a stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream requesting the operation
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if stream securing started, false on failure.
+     </p>
+<A NAME="appendServer"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>appendServer</strong> (XMPPServerInfo* server, bool open)
+<br></td><td align="right"><h3><strong>appendServer</strong></h3></td></tr></table><p></p><p>
+ Append a server info element to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>server</i></TD><TD align="left" valign="top">The object to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>open</i></TD><TD align="left" valign="top">True to open the stream, if in component mode
+     </TD></TR>
+</TABLE></P>
+<A NAME="getServerIdentity"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getServerIdentity</strong> (String& destination, bool full, const char* token = 0,
+	bool domain = true)
+<br></td><td align="right"><h3><strong>getServerIdentity</strong></h3></td></tr></table><p></p><p>
+ Get the identity of the given server
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>destination</i></TD><TD align="left" valign="top">The destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>full</i></TD><TD align="left" valign="top">True to get the full identity
+</TD></TR>
+<TR><TD align="left" valign="top"><i>token</i></TD><TD align="left" valign="top">The search string. If 0 and the component protocol is used,
+  the default server will be used
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">True to find by domain name. False to find by address
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if server doesn't exists
+     </p>
+<A NAME="findServerInfo"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPServerInfo* &nbsp;<strong>findServerInfo</strong> (const char* token, bool domain)
+<br></td><td align="right"><h3><strong>findServerInfo</strong></h3></td></tr></table><p></p><p>
+ Find server info object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>token</i></TD><TD align="left" valign="top">The search string. If 0 and the Component protocol is used,
+  the default component server will be used
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">True to find by domain name. False to find by address
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XMPPServerInfo pointer or 0 if not found
+     </p>
+<A NAME="attachService"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>attachService</strong> (JBService* service, Service type, int prio = -1)
+<br></td><td align="right"><h3><strong>attachService</strong></h3></td></tr></table><p></p><p>
+ Attach a service to this engine.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>service</i></TD><TD align="left" valign="top">The service to attach
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Service type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Service priority. Set to -1 to use the givent service's priority.
+  A lower values indicates a service with higher priority
+     </TD></TR>
+</TABLE></P>
+<A NAME="detachService"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>detachService</strong> (JBService* service)
+<br></td><td align="right"><h3><strong>detachService</strong></h3></td></tr></table><p></p><p>
+ Remove a service from all event handlers of this engine.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>service</i></TD><TD align="left" valign="top">The service to detach
+     </TD></TR>
+</TABLE></P>
+<A NAME="printXml"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>printXml</strong> (const XMLElement& xml, const JBStream* stream, bool send)
+<br></td><td align="right"><h3><strong>printXml</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Print an XML element to output
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">Element to print
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Stream requesting the operation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>send</i></TD><TD align="left" valign="top">True if sending, false if receiving
+     </TD></TR>
+</TABLE></P>
+<A NAME="lookupProto"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const char* &nbsp;<strong>lookupProto</strong> (int proto, const char* def = 0)
+<br></td><td align="right"><h3><strong>lookupProto</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the name of a protocol
+</p>
+<p><b>Returns</b>: The name of the requested protocol or the default value
+     </p>
+<A NAME="lookupProto"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  int &nbsp;<strong>lookupProto</strong> (const char* proto, int def = 0)
+<br></td><td align="right"><h3><strong>lookupProto</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the value associated with a protocol name
+</p>
+<p><b>Returns</b>: The value associated with a protocol name
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

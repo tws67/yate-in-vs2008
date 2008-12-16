@@ -1,0 +1,200 @@
+<HTML>
+<HEAD>
+<TITLE>class IAXFrame</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class IAXFrame</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">This class holds an IAX frame. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::IAXFrame</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yiax___yateiax_h.html">libs/yiax/yateiax.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__IAXFrameOut.html">IAXFrameOut</A>, <A HREF="TelEngine__IAXFullFrame.html">IAXFullFrame</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__IAXFrame.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {        DTMF    = 0x01,
+        Voice   = 0x02,
+        Video   = 0x03,
+        Control = 0x04,
+        Null    = 0x05,
+        IAX     = 0x06,
+        Text    = 0x07,
+        Image   = 0x08,
+        HTML    = 0x09,
+        Noise   = 0x0a,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">IAXFrame</A></b> (Type type, <A HREF="#u_int16_t">u_int16_t</A> sCallNo, <A HREF="#u_int32_t">u_int32_t</A> tStamp, bool retrans,
+	     const unsigned char* buf, unsigned int len) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~IAXFrame</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref4">type</A></b> ()  const
+</LI>
+<LI>inline DataBlock& &nbsp;<b><A HREF="#ref5">data</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">retrans</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref7">sourceCallNo</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref8">timeStamp</A></b> ()  const
+</LI>
+<LI>virtual  const IAXFullFrame* &nbsp;<b><A HREF="#ref9">fullFrame</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  IAXFrame* &nbsp;<b><A HREF="#ref10">parse</A></b> (const unsigned char* buf, unsigned int len, IAXEngine* engine = 0, const SocketAddr* addr = 0) 
+</LI>
+<LI>static  <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref11">packSubclass</A></b> (<A HREF="#u_int32_t">u_int32_t</A> value) 
+</LI>
+<LI>static  <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref12">unpackSubclass</A></b> (<A HREF="#u_int8_t">u_int8_t</A> value) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref13">typeText</A></b> (int type) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>DataBlock <b><A HREF="#ref14">m_data</A></b></LI>
+<LI>bool <b><A HREF="#ref15">m_retrans</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds all data needded to manage an IAX frame
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {        DTMF    = 0x01,
+        Voice   = 0x02,
+        Video   = 0x03,
+        Control = 0x04,
+        Null    = 0x05,
+        IAX     = 0x06,
+        Text    = 0x07,
+        Image   = 0x08,
+        HTML    = 0x09,
+        Noise   = 0x0a,
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ IAX frame type enumeration
+     </p>
+<A NAME="IAXFrame"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>IAXFrame</strong> (Type type, <A HREF="#u_int16_t">u_int16_t</A> sCallNo, <A HREF="#u_int32_t">u_int32_t</A> tStamp, bool retrans,
+	     const unsigned char* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>IAXFrame</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs an incoming frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sCallNo</i></TD><TD align="left" valign="top">Source call number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">Frame timestamp
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retrans</i></TD><TD align="left" valign="top">Retransmission flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">IE buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">IE buffer length
+     </TD></TR>
+</TABLE></P>
+<A NAME="~IAXFrame"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~IAXFrame</strong> ()
+<br></td><td align="right"><h3><strong>~IAXFrame</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this frame as enumeration
+</p>
+<p><b>Returns</b>: The type of this frame as enumeration
+     </p>
+<A NAME="data"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline DataBlock& &nbsp;<strong>data</strong> ()
+<br></td><td align="right"><h3><strong>data</strong></h3></td></tr></table><p></p><p>
+ Get the data buffer of the frame
+</p>
+<p><b>Returns</b>: The data buffer of the frame
+     </p>
+<A NAME="retrans"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>retrans</strong> ()
+<br></td><td align="right"><h3><strong>retrans</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the retransmission flag of this frame
+</p>
+<p><b>Returns</b>: The retransmission flag of this frame
+     </p>
+<A NAME="sourceCallNo"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>sourceCallNo</strong> ()
+<br></td><td align="right"><h3><strong>sourceCallNo</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the source call number of this frame
+</p>
+<p><b>Returns</b>: The source call number of this frame
+     </p>
+<A NAME="timeStamp"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>timeStamp</strong> ()
+<br></td><td align="right"><h3><strong>timeStamp</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the timestamp of this frame
+</p>
+<p><b>Returns</b>: The timestamp of this frame
+     </p>
+<A NAME="fullFrame"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const IAXFullFrame* &nbsp;<strong>fullFrame</strong> ()
+<br></td><td align="right"><h3><strong>fullFrame</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this frame if it is a full frame
+</p>
+<p><b>Returns</b>: A pointer to this frame if it is a full frame or 0
+     </p>
+<A NAME="parse"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> IAXFrame* &nbsp;<strong>parse</strong> (const unsigned char* buf, unsigned int len, IAXEngine* engine = 0, const SocketAddr* addr = 0)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Parse a received buffer and returns a IAXFrame pointer if valid
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Received buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The IAXEngine who requested the operation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">The source address
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A frame pointer on success or 0
+     </p>
+<A NAME="packSubclass"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>packSubclass</strong> (<A HREF="#u_int32_t">u_int32_t</A> value)
+<br></td><td align="right"><h3><strong>packSubclass</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Pack a subclass value according to IAX protocol
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to pack
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The packed subclass value or 0 if invalid (>255 and not a power of 2)
+     </p>
+<A NAME="unpackSubclass"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>unpackSubclass</strong> (<A HREF="#u_int8_t">u_int8_t</A> value)
+<br></td><td align="right"><h3><strong>unpackSubclass</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Unpack a subclass value according to IAX protocol
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value to unpack
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The unpacked subclass value
+     </p>
+<A NAME="typeText"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeText</strong> (int type)
+<br></td><td align="right"><h3><strong>typeText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the string associated with the given IAX frame type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The requested type
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text if type is valid or 0
+     </p>
+<A NAME="m_data"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock  <strong>m_data</strong>
+</td><td align="right"><h3><strong>m_data</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_retrans"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_retrans</strong>
+</td><td align="right"><h3><strong>m_retrans</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

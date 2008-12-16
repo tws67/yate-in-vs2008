@@ -1,0 +1,372 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingCircuitGroup</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingCircuitGroup</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Group of data circuits used by signalling. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingCircuitGroup</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__SignallingComponent.html">TelEngine::SignallingComponent</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__AnalogLineGroup.html">AnalogLineGroup</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingCircuitGroup.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref5">Strategy</A> {	Other     = 0,
+	Increment = 0x0001, 
+	Decrement = 0x0002, 
+	Lowest    = 0x0003, 
+	Highest   = 0x0004, 
+	Random    = 0x0005, 
+	OnlyEven  = 0x1000,
+	OnlyOdd   = 0x2000,
+	Fallback  = 0x4000,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref6">SignallingCircuitGroup</A></b> (unsigned int base = 0, int strategy = Increment,
+	const char* name = "circgroup") 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref7">~SignallingCircuitGroup</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref8">count</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref9">base</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref10">last</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref11">strategy</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">setStrategy</A></b> (int strategy) 
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref13">circuits</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">getCicList</A></b> (String& dest) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">insert</A></b> (SignallingCircuit* circuit) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">remove</A></b> (SignallingCircuit* circuit) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref17">insertSpan</A></b> (SignallingCircuitSpan* span) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">insertRange</A></b> (SignallingCircuitSpan* span, const char* name,
+	int strategy = -1) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">insertRange</A></b> (const String& range, const char* name,
+	int strategy = -1) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">removeSpan</A></b> (SignallingCircuitSpan* span, bool delCics = true, bool delSpan = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref21">removeSpanCircuits</A></b> (SignallingCircuitSpan* span) 
+</LI>
+<LI>SignallingCircuit* &nbsp;<b><A HREF="#ref22">find</A></b> (unsigned int cic, bool local = false) 
+</LI>
+<LI>SignallingCircuitRange* &nbsp;<b><A HREF="#ref23">findRange</A></b> (const char* name) 
+</LI>
+<LI>SignallingCircuit::Status &nbsp;<b><A HREF="#ref24">status</A></b> (unsigned int cic) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref25">status</A></b> (unsigned int cic, SignallingCircuit::Status newStat, bool sync = false) 
+</LI>
+<LI>SignallingCircuit* &nbsp;<b><A HREF="#ref26">reserve</A></b> (int checkLock = -1, int strategy = -1,
+	SignallingCircuitRange* range = 0) 
+</LI>
+<LI>SignallingCircuit* &nbsp;<b><A HREF="#ref27">reserve</A></b> (const String& list, bool mandatory,
+	int checkLock = -1, int strategy = -1, SignallingCircuitRange* range = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref28">release</A></b> (SignallingCircuit* cic, bool sync = false) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref29">destruct</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  int &nbsp;<b><A HREF="#ref30">str2strategy</A></b> (const char* name, int def = Increment) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref31">s_strategy[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Interface to a stateful group of voice/data circuits
+</p>
+<A NAME="Strategy"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Strategy</strong> {	Other     = 0,
+	Increment = 0x0001, 
+	Decrement = 0x0002, 
+	Lowest    = 0x0003, 
+	Highest   = 0x0004, 
+	Random    = 0x0005, 
+	OnlyEven  = 0x1000,
+	OnlyOdd   = 0x2000,
+	Fallback  = 0x4000,
+    }
+</td><td align="right"><h3><strong>Strategy</strong></h3></td></tr></table><p></p><p>
+ Circuit allocation strategy
+     </p>
+<A NAME="SignallingCircuitGroup"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingCircuitGroup</strong> (unsigned int base = 0, int strategy = Increment,
+	const char* name = "circgroup")
+<br></td><td align="right"><h3><strong>SignallingCircuitGroup</strong></h3></td></tr></table><p></p><p>
+ Constructor, creates a group with a specific base code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>base</i></TD><TD align="left" valign="top">Base of identification codes for this group
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">Default strategy used for circuit allocation
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingCircuitGroup"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~SignallingCircuitGroup</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingCircuitGroup</strong></h3></td></tr></table><p></p><p>
+ Destructor
+     </p>
+<A NAME="count"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of circuits in this group
+</p>
+<p><b>Returns</b>: The number of circuits owned by this group
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Mutex.html#count">Mutex</A>.</p>
+<A NAME="base"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>base</strong> ()
+<br></td><td align="right"><h3><strong>base</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the base of identification codes for this group
+</p>
+<p><b>Returns</b>: Base of identification codes for this group
+     </p>
+<A NAME="last"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>last</strong> ()
+<br></td><td align="right"><h3><strong>last</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the maximum of identification codes for this group
+</p>
+<p><b>Returns</b>: The maximum of identification codes for this group
+     </p>
+<A NAME="strategy"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>strategy</strong> ()
+<br></td><td align="right"><h3><strong>strategy</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the circuit allocation strategy
+</p>
+<p><b>Returns</b>: Strategy flags ORed together
+     </p>
+<A NAME="setStrategy"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setStrategy</strong> (int strategy)
+<br></td><td align="right"><h3><strong>setStrategy</strong></h3></td></tr></table><p></p><p>
+ Set the circuit allocation strategy
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">The new circuit allocation strategy
+     </TD></TR>
+</TABLE></P>
+<A NAME="circuits"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>circuits</strong> ()
+<br></td><td align="right"><h3><strong>circuits</strong></h3></td></tr></table><p></p><p>
+ Get the circuit list
+     </p>
+<A NAME="getCicList"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>getCicList</strong> (String& dest)
+<br></td><td align="right"><h3><strong>getCicList</strong></h3></td></tr></table><p></p><p>
+ Create a comma separated list with this group's circuits
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination string
+     </TD></TR>
+</TABLE></P>
+<A NAME="insert"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>insert</strong> (SignallingCircuit* circuit)
+<br></td><td align="right"><h3><strong>insert</strong></h3></td></tr></table><p></p><p>
+ Insert a circuit in the group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuit</i></TD><TD align="left" valign="top">Pointer to the circuit to insert
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if a circuit with the same code already exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingComponent.html#insert">SignallingComponent</A>.</p>
+<A NAME="remove"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>remove</strong> (SignallingCircuit* circuit)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Remove a circuit from the group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuit</i></TD><TD align="left" valign="top">Pointer to the circuit to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="insertSpan"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>insertSpan</strong> (SignallingCircuitSpan* span)
+<br></td><td align="right"><h3><strong>insertSpan</strong></h3></td></tr></table><p></p><p>
+ Insert a circuit span in the group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>span</i></TD><TD align="left" valign="top">Pointer to the circuit span to insert
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on failure
+     </p>
+<A NAME="insertRange"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>insertRange</strong> (SignallingCircuitSpan* span, const char* name,
+	int strategy = -1)
+<br></td><td align="right"><h3><strong>insertRange</strong></h3></td></tr></table><p></p><p>
+ Build and insert a range from circuits belonging to a given span
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>span</i></TD><TD align="left" valign="top">Span to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Range name or 0 to use span's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">Strategy used to allocate circuits from the new range,
+  -1 to use group's strategy
+     </TD></TR>
+</TABLE></P>
+<A NAME="insertRange"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>insertRange</strong> (const String& range, const char* name,
+	int strategy = -1)
+<br></td><td align="right"><h3><strong>insertRange</strong></h3></td></tr></table><p></p><p>
+ Build and insert a range contained in a string.
+ See <A HREF="TelEngine__SignallingUtils.html#parseUIntArray">SignallingUtils::parseUIntArray</A>() for the format of the string range
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>range</i></TD><TD align="left" valign="top">String used to build the range
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Range name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">Strategy used to allocate circuits from the new range,
+  -1 to use group's strategy
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeSpan"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeSpan</strong> (SignallingCircuitSpan* span, bool delCics = true, bool delSpan = false)
+<br></td><td align="right"><h3><strong>removeSpan</strong></h3></td></tr></table><p></p><p>
+ Remove a circuit span from the group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>span</i></TD><TD align="left" valign="top">Pointer to the circuit span to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delCics</i></TD><TD align="left" valign="top">True to delete signalling circuits associated to the span
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delSpan</i></TD><TD align="left" valign="top">True to delete the span
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeSpanCircuits"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeSpanCircuits</strong> (SignallingCircuitSpan* span)
+<br></td><td align="right"><h3><strong>removeSpanCircuits</strong></h3></td></tr></table><p></p><p>
+ Remove signalling circuits associated to the given span
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>span</i></TD><TD align="left" valign="top">Pointer to the circuit span whose circuits will be removed
+     </TD></TR>
+</TABLE></P>
+<A NAME="find"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingCircuit* &nbsp;<strong>find</strong> (unsigned int cic, bool local = false)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p></p><p>
+ Find a specific circuit by its identification code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">Interpret the cic parameter as group-local code
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to circuit or NULL if not found
+     </p>
+<A NAME="findRange"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingCircuitRange* &nbsp;<strong>findRange</strong> (const char* name)
+<br></td><td align="right"><h3><strong>findRange</strong></h3></td></tr></table><p></p><p>
+ Find a range of circuits owned by this group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The range name to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to circuit range or 0 if not found
+     </p>
+<A NAME="status"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingCircuit::Status &nbsp;<strong>status</strong> (unsigned int cic)
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p></p><p>
+ Get the status of a circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Enumerated status of circuit
+     </p>
+<A NAME="status"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>status</strong> (unsigned int cic, SignallingCircuit::Status newStat, bool sync = false)
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p></p><p>
+ Initiate a circuit status transition
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newStat</i></TD><TD align="left" valign="top">Desired new status
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">Synchronous status change requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if status change has been initiated
+     </p>
+<A NAME="reserve"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingCircuit* &nbsp;<strong>reserve</strong> (int checkLock = -1, int strategy = -1,
+	SignallingCircuitRange* range = 0)
+<br></td><td align="right"><h3><strong>reserve</strong></h3></td></tr></table><p></p><p>
+ Reserve a circuit for later use
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>checkLock</i></TD><TD align="left" valign="top">Lock flags to check. If the given lock flags are set, reservation will fail
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">Strategy used for allocation, use group default if negative
+</TD></TR>
+<TR><TD align="left" valign="top"><i>range</i></TD><TD align="left" valign="top">Range of circuits to allocate from. 0 to use group default
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced pointer to a reserved circuit or 0 on failure
+     </p>
+<A NAME="reserve"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingCircuit* &nbsp;<strong>reserve</strong> (const String& list, bool mandatory,
+	int checkLock = -1, int strategy = -1, SignallingCircuitRange* range = 0)
+<br></td><td align="right"><h3><strong>reserve</strong></h3></td></tr></table><p></p><p>
+ Reserve a circuit for later use
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Comma separated list of circuits
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mandatory</i></TD><TD align="left" valign="top">The list is mandatory. If false and none of the circuits in
+  the list are available, try to reserve a free one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>checkLock</i></TD><TD align="left" valign="top">Lock flags to check. If the given lock flags are set, reservation will fail
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">Strategy used for allocation if failed to allocate one from
+  the list, use group default if negative
+</TD></TR>
+<TR><TD align="left" valign="top"><i>range</i></TD><TD align="left" valign="top">Range of circuits to allocate from. 0 to use group default
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced pointer to a reserved circuit or 0 on failure
+     </p>
+<A NAME="release"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>release</strong> (SignallingCircuit* cic, bool sync = false)
+<br></td><td align="right"><h3><strong>release</strong></h3></td></tr></table><p></p><p>
+ Initiate a release of a circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit to release
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">Synchronous release requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the circuit release was initiated
+     </p>
+<A NAME="destruct"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove all spans and circuits. Release object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="str2strategy"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>str2strategy</strong> (const char* name, int def = Increment)
+<br></td><td align="right"><h3><strong>str2strategy</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the strategy value associated with a given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Strategy name whose value we want to obtain
+</TD></TR>
+<TR><TD align="left" valign="top"><i>def</i></TD><TD align="left" valign="top">Value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested strategy value or the default one
+     </p>
+<A NAME="s_strategy[]"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_strategy[]</strong>
+</td><td align="right"><h3><strong>s_strategy[]</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

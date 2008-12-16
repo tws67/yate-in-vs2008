@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7Route</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7Route</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A SS7 MSU route. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7Route</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7Route.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">SS7Route</A></b> (unsigned int packed, unsigned int priority = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SS7Route</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref4">attach</A></b> (SS7Layer3* network, SS7PointCode::Type type) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">detach</A></b> (SS7Layer3* network) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref6">transmitMSU</A></b> (const SS7Router* router, const SS7MSU& msu, const SS7Label& label, int sls) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Keeps a packed destination point code, a network priority or a list of networks used
+  to route to the enclosed destination point code
+</p>
+<A NAME="SS7Route"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7Route</strong> (unsigned int packed, unsigned int priority = 0)
+<br></td><td align="right"><h3><strong>SS7Route</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>packed</i></TD><TD align="left" valign="top">The packed value of the destination point code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>priority</i></TD><TD align="left" valign="top">Optional value of the network priority
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7Route"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SS7Route</strong> ()
+<br></td><td align="right"><h3><strong>~SS7Route</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="attach"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>attach</strong> (SS7Layer3* network, SS7PointCode::Type type)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p></p><p>
+ Attach a network to use for this destination or change its priority.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">The network to attach or change priority
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The point code type used to get the priority from the given network or the networks already in the list
+     </TD></TR>
+</TABLE></P>
+<A NAME="detach"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>detach</strong> (SS7Layer3* network)
+<br></td><td align="right"><h3><strong>detach</strong></h3></td></tr></table><p></p><p>
+ Remove a network from the list without deleting it.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">The network to remove
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the list of networks is empty
+     </p>
+<A NAME="transmitMSU"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>transmitMSU</strong> (const SS7Router* router, const SS7MSU& msu, const SS7Label& label, int sls)
+<br></td><td align="right"><h3><strong>transmitMSU</strong></h3></td></tr></table><p></p><p>
+ Try to transmit a MSU through one of the attached networks.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>router</i></TD><TD align="left" valign="top">The router requesting the operation (used for debug)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">Message data, starting with Service Indicator Octet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label of the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link Selection, negative to choose best
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Link the message was successfully queued to, negative for error
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

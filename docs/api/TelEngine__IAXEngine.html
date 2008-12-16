@@ -1,0 +1,434 @@
+<HTML>
+<HEAD>
+<TITLE>class IAXEngine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class IAXEngine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">IAX engine class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::IAXEngine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yiax___yateiax_h.html">libs/yiax/yateiax.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__IAXEngine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">IAXEngine</A></b> (const char* iface, int port, <A HREF="#u_int16_t">u_int16_t</A> transListCount, <A HREF="#u_int16_t">u_int16_t</A> retransCount, <A HREF="#u_int16_t">u_int16_t</A> retransInterval,
+	<A HREF="#u_int16_t">u_int16_t</A> authTimeout, <A HREF="#u_int16_t">u_int16_t</A> transTimeout, <A HREF="#u_int16_t">u_int16_t</A> maxFullFrameDataLen,
+	<A HREF="#u_int32_t">u_int32_t</A> format, <A HREF="#u_int32_t">u_int32_t</A> capab, <A HREF="#u_int32_t">u_int32_t</A> trunkSendInterval, bool authRequired) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~IAXEngine</A></b> () 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref3">addFrame</A></b> (const SocketAddr& addr, IAXFrame* frame) 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref4">addFrame</A></b> (const SocketAddr& addr, const unsigned char* buf, unsigned int len) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">processMedia</A></b> (IAXTransaction* transaction, DataBlock& data, <A HREF="#u_int32_t">u_int32_t</A> tStamp) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">process</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref7">retransCount</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref8">retransInterval</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">authRequired</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref10">authTimeout</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref11">transactionTimeout</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref12">maxFullFrameDataLen</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref13">format</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref14">capability</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">readSocket</A></b> (SocketAddr& addr) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">writeSocket</A></b> (const void* buf, int len, const SocketAddr& addr, IAXFullFrame* frame = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">runGetEvents</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">removeTransaction</A></b> (IAXTransaction* transaction) 
+</LI>
+<LI><A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref19">transactionCount</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">keepAlive</A></b> (SocketAddr& addr) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref21">voiceFormatChanged</A></b> (IAXTransaction* trans, <A HREF="#u_int32_t">u_int32_t</A> format) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">acceptFormatAndCapability</A></b> (IAXTransaction* trans) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref23">defaultEventHandler</A></b> (IAXEvent* event) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref24">enableTrunking</A></b> (IAXTransaction* trans) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">removeTrunkFrame</A></b> (IAXMetaTrunkFrame* metaFrame) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref26">runProcessTrunkFrames</A></b> () 
+</LI>
+<LI>inline Socket& &nbsp;<b><A HREF="#ref27">socket</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref28">getMD5FromChallenge</A></b> (String& md5data, const String& challenge, const String& password) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref29">isMD5ChallengeCorrect</A></b> (const String& md5data, const String& challenge, const String& password) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>bool &nbsp;<b><A HREF="#ref30">processTrunkFrames</A></b> (<A HREF="#u_int32_t">u_int32_t</A> time = Time::msecNow()) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref31">processEvent</A></b> (IAXEvent* event) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref32">getEvent</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI><A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref33">generateCallNo</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref34">releaseCallNo</A></b> (<A HREF="#u_int16_t">u_int16_t</A> lcallno) 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref35">startLocalTransaction</A></b> (IAXTransaction::Type type, const SocketAddr& addr, IAXIEList& ieList, bool trunking = false) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds all information needded to manipulate all IAX transactions and events
+</p>
+<A NAME="IAXEngine"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>IAXEngine</strong> (const char* iface, int port, <A HREF="#u_int16_t">u_int16_t</A> transListCount, <A HREF="#u_int16_t">u_int16_t</A> retransCount, <A HREF="#u_int16_t">u_int16_t</A> retransInterval,
+	<A HREF="#u_int16_t">u_int16_t</A> authTimeout, <A HREF="#u_int16_t">u_int16_t</A> transTimeout, <A HREF="#u_int16_t">u_int16_t</A> maxFullFrameDataLen,
+	<A HREF="#u_int32_t">u_int32_t</A> format, <A HREF="#u_int32_t">u_int32_t</A> capab, <A HREF="#u_int32_t">u_int32_t</A> trunkSendInterval, bool authRequired)
+<br></td><td align="right"><h3><strong>IAXEngine</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>iface</i></TD><TD align="left" valign="top">Address of the interface to use, default all (0.0.0.0)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">UDP port to run the protocol on
+</TD></TR>
+<TR><TD align="left" valign="top"><i>transListCount</i></TD><TD align="left" valign="top">Number of entries in the transaction hash table
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retransCount</i></TD><TD align="left" valign="top">Retransmission counter for each transaction belonging to this engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retransInterval</i></TD><TD align="left" valign="top">Retransmission interval default value in miliseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>authTimeout</i></TD><TD align="left" valign="top">Timeout (in seconds) of acknoledged auth frames sent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>transTimeout</i></TD><TD align="left" valign="top">Timeout (in seconds) on remote request of transactions belonging to this engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxFullFrameDataLen</i></TD><TD align="left" valign="top">Max full frame IE list (buffer) length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Default media format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>capab</i></TD><TD align="left" valign="top">Media capabilities of this engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>trunkSendInterval</i></TD><TD align="left" valign="top">Send trunk meta frame interval
+</TD></TR>
+<TR><TD align="left" valign="top"><i>authRequired</i></TD><TD align="left" valign="top">Automatically challenge all clients for authentication
+     </TD></TR>
+</TABLE></P>
+<A NAME="~IAXEngine"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~IAXEngine</strong> ()
+<br></td><td align="right"><h3><strong>~IAXEngine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+ Closes all transactions belonging to this engine and flush all queues
+     </p>
+<A NAME="addFrame"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>addFrame</strong> (const SocketAddr& addr, IAXFrame* frame)
+<br></td><td align="right"><h3><strong>addFrame</strong></h3></td></tr></table><p></p><p>
+ Add a parsed frame to the transaction list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address from which the frame was received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">A parsed IAX frame
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the transaction or 0 to deref the frame
+     </p>
+<A NAME="addFrame"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>addFrame</strong> (const SocketAddr& addr, const unsigned char* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>addFrame</strong></h3></td></tr></table><p></p><p>
+ Add a raw frame to the transaction list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address from which the message was received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Pointer to the start of the buffer holding the IAX frame
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the message buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the transaction or 0
+     </p>
+<A NAME="processMedia"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processMedia</strong> (IAXTransaction* transaction, DataBlock& data, <A HREF="#u_int32_t">u_int32_t</A> tStamp)
+<br></td><td align="right"><h3><strong>processMedia</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process media from remote peer. Descendents must override this method
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>transaction</i></TD><TD align="left" valign="top">IAXTransaction that owns the call leg
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Media data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">Media timestamp
+     </TD></TR>
+</TABLE></P>
+<A NAME="process"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>process</strong> ()
+<br></td><td align="right"><h3><strong>process</strong></h3></td></tr></table><p></p><p>
+ Event processor method. Keeps calling getEvent() and passing
+  any events to processEvent() until there are no more events
+</p>
+<p><b>Returns</b>: True if at least one event was processed
+     </p>
+<A NAME="retransCount"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>retransCount</strong> ()
+<br></td><td align="right"><h3><strong>retransCount</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get default frame retransmission counter
+</p>
+<p><b>Returns</b>: Frame retransmission counter
+     </p>
+<A NAME="retransInterval"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>retransInterval</strong> ()
+<br></td><td align="right"><h3><strong>retransInterval</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get default frame retransmission starting interval
+</p>
+<p><b>Returns</b>: Frame retransmission starting interval
+     </p>
+<A NAME="authRequired"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>authRequired</strong> ()
+<br></td><td align="right"><h3><strong>authRequired</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a transaction should automatically request authentication
+</p>
+<p><b>Returns</b>: True to automatically request authentication
+     </p>
+<A NAME="authTimeout"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>authTimeout</strong> ()
+<br></td><td align="right"><h3><strong>authTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the timeout (in seconds) of acknoledged auth frames sent
+</p>
+<p><b>Returns</b>: Auth timeout in seconds
+     </p>
+<A NAME="transactionTimeout"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>transactionTimeout</strong> ()
+<br></td><td align="right"><h3><strong>transactionTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the timeout (in seconds) of transactions belonging to this engine
+</p>
+<p><b>Returns</b>: Timeout (in seconds) of transactions belonging to this engine
+     </p>
+<A NAME="maxFullFrameDataLen"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>maxFullFrameDataLen</strong> ()
+<br></td><td align="right"><h3><strong>maxFullFrameDataLen</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the maximum allowed frame length
+</p>
+<p><b>Returns</b>: The maximum allowed frame length
+     </p>
+<A NAME="format"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>format</strong> ()
+<br></td><td align="right"><h3><strong>format</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default media format
+</p>
+<p><b>Returns</b>: The default media format
+     </p>
+<A NAME="capability"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>capability</strong> ()
+<br></td><td align="right"><h3><strong>capability</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the media capability of this engine
+</p>
+<p><b>Returns</b>: The media capability of this engine
+     </p>
+<A NAME="readSocket"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>readSocket</strong> (SocketAddr& addr)
+<br></td><td align="right"><h3><strong>readSocket</strong></h3></td></tr></table><p></p><p>
+ Read data from socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Socket to read from
+     </TD></TR>
+</TABLE></P>
+<A NAME="writeSocket"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>writeSocket</strong> (const void* buf, int len, const SocketAddr& addr, IAXFullFrame* frame = 0)
+<br></td><td align="right"><h3><strong>writeSocket</strong></h3></td></tr></table><p></p><p>
+ Write data to socket.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Data to write
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Data length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Socket to write to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Optional frame to be printed if debug is DebugAll
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="runGetEvents"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>runGetEvents</strong> ()
+<br></td><td align="right"><h3><strong>runGetEvents</strong></h3></td></tr></table><p></p><p>
+ Read events
+     </p>
+<A NAME="removeTransaction"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeTransaction</strong> (IAXTransaction* transaction)
+<br></td><td align="right"><h3><strong>removeTransaction</strong></h3></td></tr></table><p></p><p>
+ Removes a transaction from queue. Free the allocated local call number
+  Does not delete it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>transaction</i></TD><TD align="left" valign="top">Transaction to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="transactionCount"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>transactionCount</strong> ()
+<br></td><td align="right"><h3><strong>transactionCount</strong></h3></td></tr></table><p></p><p>
+ Return the transactions count
+ This method is thread safe
+</p>
+<p><b>Returns</b>: Transactions count
+     </p>
+<A NAME="keepAlive"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>keepAlive</strong> (SocketAddr& addr)
+<br></td><td align="right"><h3><strong>keepAlive</strong></h3></td></tr></table><p></p><p>
+ Send an INVAL with call numbers set to 0 to a remote peer to keep it alive
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to send to
+     </TD></TR>
+</TABLE></P>
+<A NAME="voiceFormatChanged"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>voiceFormatChanged</strong> (IAXTransaction* trans, <A HREF="#u_int32_t">u_int32_t</A> format)
+<br></td><td align="right"><h3><strong>voiceFormatChanged</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a new format received with a Voice frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">Transaction that received the new format
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">The received format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if accepted
+     </p>
+<A NAME="acceptFormatAndCapability"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>acceptFormatAndCapability</strong> (IAXTransaction* trans)
+<br></td><td align="right"><h3><strong>acceptFormatAndCapability</strong></h3></td></tr></table><p></p><p>
+ Process the initial received format and capability. If accepted on exit will set the transaction format and capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">Transaction that received the new format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if accepted
+     </p>
+<A NAME="defaultEventHandler"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>defaultEventHandler</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>defaultEventHandler</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Default event handler. event MUST NOT be deleted
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to handle
+     </TD></TR>
+</TABLE></P>
+<A NAME="enableTrunking"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>enableTrunking</strong> (IAXTransaction* trans)
+<br></td><td align="right"><h3><strong>enableTrunking</strong></h3></td></tr></table><p></p><p>
+ Enable trunking for the given transaction. Allocate a trunk meta frame if needded
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">Transaction to enable trunking for
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeTrunkFrame"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeTrunkFrame</strong> (IAXMetaTrunkFrame* metaFrame)
+<br></td><td align="right"><h3><strong>removeTrunkFrame</strong></h3></td></tr></table><p></p><p>
+ Remove a trunk meta frame from the queue and deref it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trunkFrame</i></TD><TD align="left" valign="top">The trunk meta frame to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="runProcessTrunkFrames"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>runProcessTrunkFrames</strong> ()
+<br></td><td align="right"><h3><strong>runProcessTrunkFrames</strong></h3></td></tr></table><p></p><p>
+ Keep calling processTrunkFrames to send trunked media data
+     </p>
+<A NAME="socket"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Socket& &nbsp;<strong>socket</strong> ()
+<br></td><td align="right"><h3><strong>socket</strong></h3></td></tr></table><p></p><p>
+ Get the socket used for engine operation
+</p>
+<p><b>Returns</b>: Reference to the UDP socket
+     </p>
+<A NAME="getMD5FromChallenge"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>getMD5FromChallenge</strong> (String& md5data, const String& challenge, const String& password)
+<br></td><td align="right"><h3><strong>getMD5FromChallenge</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the MD5 data from a challenge and a password
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>md5data</i></TD><TD align="left" valign="top">Destination String
+</TD></TR>
+<TR><TD align="left" valign="top"><i>challenge</i></TD><TD align="left" valign="top">Challenge source
+</TD></TR>
+<TR><TD align="left" valign="top"><i>password</i></TD><TD align="left" valign="top">Password source
+     </TD></TR>
+</TABLE></P>
+<A NAME="isMD5ChallengeCorrect"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>isMD5ChallengeCorrect</strong> (const String& md5data, const String& challenge, const String& password)
+<br></td><td align="right"><h3><strong>isMD5ChallengeCorrect</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Test if a received response to an authentication request is correct
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>md5data</i></TD><TD align="left" valign="top">Data to compare with
+</TD></TR>
+<TR><TD align="left" valign="top"><i>challenge</i></TD><TD align="left" valign="top">Received challenge
+</TD></TR>
+<TR><TD align="left" valign="top"><i>password</i></TD><TD align="left" valign="top">Password source
+     </TD></TR>
+</TABLE></P>
+<A NAME="processTrunkFrames"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>processTrunkFrames</strong> (<A HREF="#u_int32_t">u_int32_t</A> time = Time::msecNow())
+<br></td><td align="right"><h3><strong>processTrunkFrames</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process all trunk meta frames in the queue
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Time of the call
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if at least one frame was sent
+     </p>
+<A NAME="processEvent"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processEvent</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>processEvent</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Default event for connection transactions handler. This method may be overriden to perform custom
+  processing
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Event to process
+     </TD></TR>
+</TABLE></P>
+<A NAME="getEvent"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEvent</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Get an IAX event from the queue.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Time of the call
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0 if none is available
+     </p>
+<A NAME="generateCallNo"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>generateCallNo</strong> ()
+<br></td><td align="right"><h3><strong>generateCallNo</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Generate call number. Update used call numbers list
+</p>
+<p><b>Returns</b>: Call number or 0 if none available
+     </p>
+<A NAME="releaseCallNo"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>releaseCallNo</strong> (<A HREF="#u_int16_t">u_int16_t</A> lcallno)
+<br></td><td align="right"><h3><strong>releaseCallNo</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Release a call number
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>lcallno</i></TD><TD align="left" valign="top">Call number to release
+     </TD></TR>
+</TABLE></P>
+<A NAME="startLocalTransaction"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>startLocalTransaction</strong> (IAXTransaction::Type type, const SocketAddr& addr, IAXIEList& ieList, bool trunking = false)
+<br></td><td align="right"><h3><strong>startLocalTransaction</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Start a transaction based on a local request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Transaction type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Remote address to send the request
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ieList</i></TD><TD align="left" valign="top">First frame IE list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>trunking</i></TD><TD align="left" valign="top">Enable/disable trunking for this transaction
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: IAXTransaction pointer on success.
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

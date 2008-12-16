@@ -1,0 +1,188 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlHandle</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlHandle</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+	A TiXmlHandle is a class that wraps a node pointer with null checks; this is
+	an incredibly useful thing. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlHandle</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlHandle.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">TiXmlHandle</A></b> ( TiXmlNode* _node ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">TiXmlHandle</A></b> ( const TiXmlHandle& ref ) 
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref3">operator=</A></b> ( const TiXmlHandle& ref ) 
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref4">FirstChild</A></b> ()  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref5">FirstChild</A></b> ( const char * value )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref6">FirstChildElement</A></b> ()  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref7">FirstChildElement</A></b> ( const char * value )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref8">Child</A></b> ( const char* value, int index )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref9">Child</A></b> ( int index )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref10">ChildElement</A></b> ( const char* value, int index )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref11">ChildElement</A></b> ( int index )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref12">FirstChild</A></b> ( const std::string& _value )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref13">FirstChildElement</A></b> ( const std::string& _value )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref14">Child</A></b> ( const std::string& _value, int index )  const
+</LI>
+<LI>TiXmlHandle &nbsp;<b><A HREF="#ref15">ChildElement</A></b> ( const std::string& _value, int index )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref16">Node</A></b> ()  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref17">Element</A></b> ()  const
+</LI>
+<LI>TiXmlText* &nbsp;<b><A HREF="#ref18">Text</A></b> ()  const
+</LI>
+<LI>TiXmlUnknown* &nbsp;<b><A HREF="#ref19">Unknown</A></b> ()  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+	A TiXmlHandle is a class that wraps a node pointer with null checks; this is
+	an incredibly useful thing. Note that TiXmlHandle is not part of the TinyXml
+	DOM structure. It is a separate utility class.
+</p>
+<p>	Take an example:
+	@verbatim
+	<Document>
+		<Element attributeA = "valueA">
+			<Child attributeB = "value1" />
+			<Child attributeB = "value2" />
+		</Element>
+	<Document>
+	@endverbatim
+</p>
+<p>	Assuming you want the value of "attributeB" in the 2nd "Child" element, it's very 
+	easy to write a *lot* of code that looks like:
+</p>
+<p>	@verbatim
+	TiXmlElement* root = document.FirstChildElement( "Document" );
+	if ( root )
+	{
+		TiXmlElement* element = root->FirstChildElement( "Element" );
+		if ( element )
+		{
+			TiXmlElement* child = element->FirstChildElement( "Child" );
+			if ( child )
+			{
+				TiXmlElement* child2 = child->NextSiblingElement( "Child" );
+				if ( child2 )
+				{
+					// Finally do something useful.
+	@endverbatim
+</p>
+<p>	And that doesn't even cover "else" cases. TiXmlHandle addresses the verbosity
+	of such code. A TiXmlHandle checks for null	pointers so it is perfectly safe 
+	and correct to use:
+</p>
+<p>	@verbatim
+	TiXmlHandle docHandle( &document );
+	TiXmlElement* child2 = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).Child( "Child", 1 ).Element();
+	if ( child2 )
+	{
+		// do something useful
+	@endverbatim
+</p>
+<p>	Which is MUCH more concise and useful.
+</p>
+<p>	It is also safe to copy handles - internally they are nothing more than node pointers.
+	@verbatim
+	TiXmlHandle handleCopy = handle;
+	@endverbatim
+</p>
+<p>	What they should not be used for is iteration:
+</p>
+<p>	@verbatim
+	int i=0; 
+	while ( true )
+	{
+		TiXmlElement* child = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).Child( "Child", i ).Element();
+		if ( !child )
+			break;
+		// do something
+		++i;
+	}
+	@endverbatim
+</p>
+<p>	It seems reasonable, but it is in fact two embedded while loops. The Child method is 
+	a linear walk to find the element, so this code would iterate much more than it needs 
+	to. Instead, prefer:
+</p>
+<p>	@verbatim
+	TiXmlElement* child = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).FirstChild( "Child" ).Element();
+</p>
+<p>	for( child; child; child=child->NextSiblingElement() )
+	{
+		// do something
+	}
+	@endverbatim
+</p>
+<A NAME="TiXmlHandle"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlHandle</strong> ( TiXmlNode* _node )
+<br></td><td align="right"><h3><strong>TiXmlHandle</strong></h3></td></tr></table><p></p><A NAME="TiXmlHandle"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlHandle</strong> ( const TiXmlHandle& ref )
+<br></td><td align="right"><h3><strong>TiXmlHandle</strong></h3></td></tr></table><p></p><A NAME="operator="></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>operator=</strong> ( const TiXmlHandle& ref )
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><A NAME="FirstChild"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>FirstChild</strong> ()
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChild"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>FirstChild</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChildElement"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>FirstChildElement</strong> ()
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChildElement"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>FirstChildElement</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Child"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>Child</strong> ( const char* value, int index )
+<br></td><td align="right"><h3><strong>Child</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return a handle to the "index" child with the given name. 
+		The first child is 0, the second 1, etc.
+	</p>
+<A NAME="Child"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>Child</strong> ( int index )
+<br></td><td align="right"><h3><strong>Child</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return a handle to the "index" child. 
+		The first child is 0, the second 1, etc.
+	</p>
+<A NAME="ChildElement"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>ChildElement</strong> ( const char* value, int index )
+<br></td><td align="right"><h3><strong>ChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return a handle to the "index" child element with the given name. 
+		The first child element is 0, the second 1, etc. Note that only TiXmlElements
+		are indexed: other types are not counted.
+	</p>
+<A NAME="ChildElement"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>ChildElement</strong> ( int index )
+<br></td><td align="right"><h3><strong>ChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return a handle to the "index" child element. 
+		The first child element is 0, the second 1, etc. Note that only TiXmlElements
+		are indexed: other types are not counted.
+	</p>
+<A NAME="FirstChild"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>FirstChild</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChildElement"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>FirstChildElement</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Child"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>Child</strong> ( const std::string& _value, int index )
+<br></td><td align="right"><h3><strong>Child</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="ChildElement"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlHandle &nbsp;<strong>ChildElement</strong> ( const std::string& _value, int index )
+<br></td><td align="right"><h3><strong>ChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Node"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>Node</strong> ()
+<br></td><td align="right"><h3><strong>Node</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Element"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>Element</strong> ()
+<br></td><td align="right"><h3><strong>Element</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Text"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlText* &nbsp;<strong>Text</strong> ()
+<br></td><td align="right"><h3><strong>Text</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Unknown"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlUnknown* &nbsp;<strong>Unknown</strong> ()
+<br></td><td align="right"><h3><strong>Unknown</strong></h3></td></tr></table><p> <small>[const]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

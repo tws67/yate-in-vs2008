@@ -1,0 +1,515 @@
+<HTML>
+<HEAD>
+<TITLE>class SIPTransaction</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SIPTransaction</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ All informaton related to a SIP transaction, starting with 1st message
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SIPTransaction</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysip___yatesip_h.html">libs/ysip/yatesip.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SIPTransaction.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">State</A> {	Invalid,
+	Initial,
+	Trying,
+	Process,
+	Retrans,
+	Finish,
+	Cleared
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Processed</A> {	NoMatch,
+	NoDialog,
+	Matched
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">SIPTransaction</A></b> (SIPMessage* message, SIPEngine* engine, bool outgoing = true) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">SIPTransaction</A></b> (const SIPTransaction& original, const String& tag) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~SIPTransaction</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref7">getState</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">isActive</A></b> ()  const
+</LI>
+<LI>inline const SIPMessage* &nbsp;<b><A HREF="#ref9">initialMessage</A></b> ()  const
+</LI>
+<LI>inline const SIPMessage* &nbsp;<b><A HREF="#ref10">latestMessage</A></b> ()  const
+</LI>
+<LI>inline const SIPMessage* &nbsp;<b><A HREF="#ref11">recentMessage</A></b> ()  const
+</LI>
+<LI>inline SIPEngine* &nbsp;<b><A HREF="#ref12">getEngine</A></b> ()  const
+</LI>
+<LI>Mutex* &nbsp;<b><A HREF="#ref13">mutex</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">isOutgoing</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">isIncoming</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">isInvite</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">isReliable</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref18">getMethod</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref19">getURI</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref20">getBranch</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref21">getCallID</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref22">getDialogTag</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">setDialogTag</A></b> (const char* tag = 0) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref24">setTransmit</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">requestAuth</A></b> (const String& realm, const String& domain, bool stale, bool proxy = false) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref26">authUser</A></b> (String& user, bool proxy = false, GenObject* userData = 0) 
+</LI>
+<LI>virtual  Processed &nbsp;<b><A HREF="#ref27">processMessage</A></b> (SIPMessage* message, const String& branch) 
+</LI>
+<LI>virtual  SIPEvent* &nbsp;<b><A HREF="#ref28">getEvent</A></b> (bool pendingOnly = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref29">setResponse</A></b> (int code, const char* reason = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref30">setResponse</A></b> (SIPMessage* message) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref31">getResponseCode</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref32">setUserData</A></b> (void* data) 
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref33">getUserData</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const char* &nbsp;<b><A HREF="#ref6">stateName</A></b> (int state) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref34">SIPTransaction</A></b> (SIPTransaction& original, SIPMessage* answer) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref35">tryAutoAuth</A></b> (SIPMessage* answer) 
+</LI>
+<LI>virtual  SIPEvent* &nbsp;<b><A HREF="#ref36">getClientEvent</A></b> (int state, int timeout) 
+</LI>
+<LI>virtual  SIPEvent* &nbsp;<b><A HREF="#ref37">getServerEvent</A></b> (int state, int timeout) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref38">processClientMessage</A></b> (SIPMessage* message, int state) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref39">processServerMessage</A></b> (SIPMessage* message, int state) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref40">changeState</A></b> (int newstate) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref41">setLatestMessage</A></b> (SIPMessage* message = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref42">setPendingEvent</A></b> (SIPEvent* event = 0, bool replace = false) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref43">isPendingEvent</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref44">setTimeout</A></b> (<A HREF="#u_int64_t">u_int64_t</A> delay = 0, unsigned int count = 1) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>bool <b><A HREF="#ref45">m_outgoing</A></b></LI>
+<LI>bool <b><A HREF="#ref46">m_invite</A></b></LI>
+<LI>bool <b><A HREF="#ref47">m_transmit</A></b></LI>
+<LI>int <b><A HREF="#ref48">m_state</A></b></LI>
+<LI>int <b><A HREF="#ref49">m_response</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref50">m_timeouts</A></b></LI>
+<LI>u_int64_t <b><A HREF="#ref51">m_delay</A></b></LI>
+<LI>u_int64_t <b><A HREF="#ref52">m_timeout</A></b></LI>
+<LI>SIPMessage* <b><A HREF="#ref53">m_firstMessage</A></b></LI>
+<LI>SIPMessage* <b><A HREF="#ref54">m_lastMessage</A></b></LI>
+<LI>SIPEvent* <b><A HREF="#ref55">m_pending</A></b></LI>
+<LI>SIPEngine* <b><A HREF="#ref56">m_engine</A></b></LI>
+<LI>String <b><A HREF="#ref57">m_branch</A></b></LI>
+<LI>String <b><A HREF="#ref58">m_callid</A></b></LI>
+<LI>String <b><A HREF="#ref59">m_tag</A></b></LI>
+<LI>void *<b><A HREF="#ref60">m_private</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ All informaton related to a SIP transaction, starting with 1st message
+ </p>
+<A NAME="State"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {	Invalid,
+	Initial,
+	Trying,
+	Process,
+	Retrans,
+	Finish,
+	Cleared
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ Current state of the transaction
+     </p>
+<A NAME="Processed"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Processed</strong> {	NoMatch,
+	NoDialog,
+	Matched
+    }
+</td><td align="right"><h3><strong>Processed</strong></h3></td></tr></table><p></p><p>
+ Possible return values from <A HREF="TelEngine__SIPTransaction.html#processMessage">processMessage</A>()
+     </p>
+<A NAME="SIPTransaction"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPTransaction</strong> (SIPMessage* message, SIPEngine* engine, bool outgoing = true)
+<br></td><td align="right"><h3><strong>SIPTransaction</strong></h3></td></tr></table><p></p><p>
+ Constructor from first message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">A pointer to the initial message, should not be used
+  afterwards as the transaction takes ownership
+</TD></TR>
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">A pointer to the SIP engine this transaction belongs
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">True if this transaction is for an outgoing request
+     </TD></TR>
+</TABLE></P>
+<A NAME="SIPTransaction"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPTransaction</strong> (const SIPTransaction& original, const String& tag)
+<br></td><td align="right"><h3><strong>SIPTransaction</strong></h3></td></tr></table><p></p><p>
+ Copy constructor to be used with forked INVITEs
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Original transaction that is to be copied
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tag</i></TD><TD align="left" valign="top">Dialog tag for the new transaction
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SIPTransaction"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SIPTransaction</strong> ()
+<br></td><td align="right"><h3><strong>~SIPTransaction</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor - clears all held objects
+     </p>
+<A NAME="stateName"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>stateName</strong> (int state)
+<br></td><td align="right"><h3><strong>stateName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the name of a transaction state
+     </p>
+<A NAME="getState"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getState</strong> ()
+<br></td><td align="right"><h3><strong>getState</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The current state of the transaction
+</p>
+<p><b>Returns</b>: The current state as one of the State enums
+     </p>
+<A NAME="isActive"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isActive</strong> ()
+<br></td><td align="right"><h3><strong>isActive</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the transaction is active for the upper layer
+</p>
+<p><b>Returns</b>: True if the transaction is active, false if it finished
+     </p>
+<A NAME="initialMessage"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SIPMessage* &nbsp;<strong>initialMessage</strong> ()
+<br></td><td align="right"><h3><strong>initialMessage</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The first message that created this transaction
+     </p>
+<A NAME="latestMessage"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SIPMessage* &nbsp;<strong>latestMessage</strong> ()
+<br></td><td align="right"><h3><strong>latestMessage</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The last message (re)sent by this transaction
+     </p>
+<A NAME="recentMessage"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SIPMessage* &nbsp;<strong>recentMessage</strong> ()
+<br></td><td align="right"><h3><strong>recentMessage</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The most recent message handled by this transaction
+     </p>
+<A NAME="getEngine"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SIPEngine* &nbsp;<strong>getEngine</strong> ()
+<br></td><td align="right"><h3><strong>getEngine</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The SIPEngine this transaction belongs to
+     </p>
+<A NAME="mutex"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex* &nbsp;<strong>mutex</strong> ()
+<br></td><td align="right"><h3><strong>mutex</strong></h3></td></tr></table><p></p><p>
+ Get the mutex that protects the engine's objects
+</p>
+<p><b>Returns</b>: Pointer to the engine's mutex object or NULL if none exists
+     </p>
+<A NAME="isOutgoing"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isOutgoing</strong> ()
+<br></td><td align="right"><h3><strong>isOutgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this transaction was initiated by the remote peer or locally
+</p>
+<p><b>Returns</b>: True if the transaction was created by an outgoing message
+     </p>
+<A NAME="isIncoming"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isIncoming</strong> ()
+<br></td><td align="right"><h3><strong>isIncoming</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this transaction was initiated locally or by the remote peer
+</p>
+<p><b>Returns</b>: True if the transaction was created by an incoming message
+     </p>
+<A NAME="isInvite"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isInvite</strong> ()
+<br></td><td align="right"><h3><strong>isInvite</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this transaction is an INVITE transaction or not
+</p>
+<p><b>Returns</b>: True if the transaction is an INVITE
+     </p>
+<A NAME="isReliable"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isReliable</strong> ()
+<br></td><td align="right"><h3><strong>isReliable</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this transaction is handled by a reliable protocol
+</p>
+<p><b>Returns</b>: True if a reliable protocol (TCP, SCTP) is used
+     </p>
+<A NAME="getMethod"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getMethod</strong> ()
+<br></td><td align="right"><h3><strong>getMethod</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The SIP method this transaction handles
+     </p>
+<A NAME="getURI"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getURI</strong> ()
+<br></td><td align="right"><h3><strong>getURI</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The SIP URI this transaction handles
+     </p>
+<A NAME="getBranch"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getBranch</strong> ()
+<br></td><td align="right"><h3><strong>getBranch</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The Via branch that may uniquely identify this transaction
+</p>
+<p><b>Returns</b>: The branch parameter taken from the Via header
+     </p>
+<A NAME="getCallID"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getCallID</strong> ()
+<br></td><td align="right"><h3><strong>getCallID</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The call ID may identify this transaction
+</p>
+<p><b>Returns</b>: The Call-ID parameter taken from the message
+     </p>
+<A NAME="getDialogTag"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getDialogTag</strong> ()
+<br></td><td align="right"><h3><strong>getDialogTag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The dialog tag that may identify this transaction
+</p>
+<p><b>Returns</b>: The dialog tag parameter
+     </p>
+<A NAME="setDialogTag"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setDialogTag</strong> (const char* tag = 0)
+<br></td><td align="right"><h3><strong>setDialogTag</strong></h3></td></tr></table><p></p><p>
+ Set a new dialog tag, optionally build a random one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tag</i></TD><TD align="left" valign="top">New dialog tag, a null string will build a random tag
+     </TD></TR>
+</TABLE></P>
+<A NAME="setTransmit"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setTransmit</strong> ()
+<br></td><td align="right"><h3><strong>setTransmit</strong></h3></td></tr></table><p></p><p>
+ Set the (re)transmission flag that allows the latest outgoing message
+  to be send over the wire
+     </p>
+<A NAME="requestAuth"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>requestAuth</strong> (const String& realm, const String& domain, bool stale, bool proxy = false)
+<br></td><td align="right"><h3><strong>requestAuth</strong></h3></td></tr></table><p></p><p>
+ Send back an authentication required response
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>realm</i></TD><TD align="left" valign="top">Authentication realm to send in the answer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">Domain for which it will authenticate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stale</i></TD><TD align="left" valign="top">True if the previous password is valid but nonce is too old
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proxy</i></TD><TD align="left" valign="top">True to authenticate as proxy, false as user agent
+     </TD></TR>
+</TABLE></P>
+<A NAME="authUser"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>authUser</strong> (String& user, bool proxy = false, GenObject* userData = 0)
+<br></td><td align="right"><h3><strong>authUser</strong></h3></td></tr></table><p></p><p>
+ Detect the proper credentials for any user in the engine
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">String to store the authenticated user name or user to
+  look for (if not null on entry)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proxy</i></TD><TD align="left" valign="top">True to authenticate as proxy, false as user agent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>userData</i></TD><TD align="left" valign="top">Pointer to an optional object that is passed back to <A HREF="TelEngine__SIPEngine.html#checkUser">SIPEngine::checkUser</A>
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Age of the nonce if user matches, negative for a failure
+     </p>
+<A NAME="processMessage"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Processed &nbsp;<strong>processMessage</strong> (SIPMessage* message, const String& branch)
+<br></td><td align="right"><h3><strong>processMessage</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check if a message belongs to this transaction and process it if so
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">A pointer to the message to check, should not be used
+  afterwards if this method returned True
+</TD></TR>
+<TR><TD align="left" valign="top"><i>branch</i></TD><TD align="left" valign="top">The branch parameter extracted from first Via header
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Matched if the message was handled by this transaction, in
+  which case it takes ownership over the message
+     </p>
+<A NAME="getEvent"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SIPEvent* &nbsp;<strong>getEvent</strong> (bool pendingOnly = false)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an event for this transaction if any is available.
+ It provides default handling for invalid states, otherwise calls
+  the more specific protected version.
+ You may override this method if you need processing of invalid states.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>pendingOnly</i></TD><TD align="left" valign="top">True to only return outgoing and pending events
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A newly allocated event or NULL if none is needed
+     </p>
+<A NAME="setResponse"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setResponse</strong> (int code, const char* reason = 0)
+<br></td><td align="right"><h3><strong>setResponse</strong></h3></td></tr></table><p></p><p>
+ Creates and transmits a final response message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Response code to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Human readable reason text (optional)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message was queued for transmission
+     </p>
+<A NAME="setResponse"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setResponse</strong> (SIPMessage* message)
+<br></td><td align="right"><h3><strong>setResponse</strong></h3></td></tr></table><p></p><p>
+ Transmits a final response message
+     </p>
+<A NAME="getResponseCode"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getResponseCode</strong> ()
+<br></td><td align="right"><h3><strong>getResponseCode</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the latest response code
+</p>
+<p><b>Returns</b>: Code of most recent response, zero if none is known
+     </p>
+<A NAME="setUserData"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setUserData</strong> (void* data)
+<br></td><td align="right"><h3><strong>setUserData</strong></h3></td></tr></table><p></p><p>
+ Set an arbitrary pointer as user specific data
+     </p>
+<A NAME="getUserData"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>getUserData</strong> ()
+<br></td><td align="right"><h3><strong>getUserData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Return the opaque user data
+     </p>
+<A NAME="SIPTransaction"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPTransaction</strong> (SIPTransaction& original, SIPMessage* answer)
+<br></td><td align="right"><h3><strong>SIPTransaction</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor from previous auto authenticated transaction. This is used only internally
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Original transaction that failed authentication
+</TD></TR>
+<TR><TD align="left" valign="top"><i>answer</i></TD><TD align="left" valign="top">SIP answer that creates the new transaction
+     </TD></TR>
+</TABLE></P>
+<A NAME="tryAutoAuth"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>tryAutoAuth</strong> (SIPMessage* answer)
+<br></td><td align="right"><h3><strong>tryAutoAuth</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Attempt to perform automatic client transaction authentication
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>answer</i></TD><TD align="left" valign="top">SIP answer that creates the new transaction
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if current client processing must be abandoned
+     </p>
+<A NAME="getClientEvent"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SIPEvent* &nbsp;<strong>getClientEvent</strong> (int state, int timeout)
+<br></td><td align="right"><h3><strong>getClientEvent</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Get an event only for client transactions
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>state</i></TD><TD align="left" valign="top">The current state of the transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">If timeout occured, number of remaining timeouts,
+  otherwise -1
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A newly allocated event or NULL if none is needed
+     </p>
+<A NAME="getServerEvent"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SIPEvent* &nbsp;<strong>getServerEvent</strong> (int state, int timeout)
+<br></td><td align="right"><h3><strong>getServerEvent</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Get an event only for server transactions.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>state</i></TD><TD align="left" valign="top">The current state of the transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">If timeout occured, number of remaining timeouts,
+  otherwise -1
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A newly allocated event or NULL if none is needed
+     </p>
+<A NAME="processClientMessage"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processClientMessage</strong> (SIPMessage* message, int state)
+<br></td><td align="right"><h3><strong>processClientMessage</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process only the messages for client transactions
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">A pointer to the message to process, should not be used
+  afterwards if this method returned True
+</TD></TR>
+<TR><TD align="left" valign="top"><i>state</i></TD><TD align="left" valign="top">The current state of the transaction
+     </TD></TR>
+</TABLE></P>
+<A NAME="processServerMessage"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processServerMessage</strong> (SIPMessage* message, int state)
+<br></td><td align="right"><h3><strong>processServerMessage</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process only the messages for server transactions
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">A pointer to the message to process, should not be used
+  afterwards if this method returned True
+</TD></TR>
+<TR><TD align="left" valign="top"><i>state</i></TD><TD align="left" valign="top">The current state of the transaction
+     </TD></TR>
+</TABLE></P>
+<A NAME="changeState"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>changeState</strong> (int newstate)
+<br></td><td align="right"><h3><strong>changeState</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Change the transaction state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newstate</i></TD><TD align="left" valign="top">The desired new state
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if state change occured
+     </p>
+<A NAME="setLatestMessage"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setLatestMessage</strong> (SIPMessage* message = 0)
+<br></td><td align="right"><h3><strong>setLatestMessage</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the latest message sent by this transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Pointer to the latest message
+     </TD></TR>
+</TABLE></P>
+<A NAME="setPendingEvent"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setPendingEvent</strong> (SIPEvent* event = 0, bool replace = false)
+<br></td><td align="right"><h3><strong>setPendingEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Store a pending event to be picked up at the next <A HREF="TelEngine__SIPTransaction.html#getEvent">getEvent</A>() call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Event to store
+</TD></TR>
+<TR><TD align="left" valign="top"><i>replace</i></TD><TD align="left" valign="top">True to replace any existing pending event
+     </TD></TR>
+</TABLE></P>
+<A NAME="isPendingEvent"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isPendingEvent</strong> ()
+<br></td><td align="right"><h3><strong>isPendingEvent</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Check if there is a pending event waiting
+</p>
+<p><b>Returns</b>: True is there is a pending event
+     </p>
+<A NAME="setTimeout"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setTimeout</strong> (<A HREF="#u_int64_t">u_int64_t</A> delay = 0, unsigned int count = 1)
+<br></td><td align="right"><h3><strong>setTimeout</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set a repetitive timeout
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>delay</i></TD><TD align="left" valign="top">How often (in microseconds) to fire the timeout
+</TD></TR>
+<TR><TD align="left" valign="top"><i>count</i></TD><TD align="left" valign="top">How many times to keep firing the timeout
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_outgoing"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_outgoing</strong>
+</td><td align="right"><h3><strong>m_outgoing</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_invite"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_invite</strong>
+</td><td align="right"><h3><strong>m_invite</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_transmit"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_transmit</strong>
+</td><td align="right"><h3><strong>m_transmit</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_state"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_state</strong>
+</td><td align="right"><h3><strong>m_state</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_response"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_response</strong>
+</td><td align="right"><h3><strong>m_response</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_timeouts"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_timeouts</strong>
+</td><td align="right"><h3><strong>m_timeouts</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_delay"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int64_t">u_int64_t</A>  <strong>m_delay</strong>
+</td><td align="right"><h3><strong>m_delay</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_timeout"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int64_t">u_int64_t</A>  <strong>m_timeout</strong>
+</td><td align="right"><h3><strong>m_timeout</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_firstMessage"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPMessage*  <strong>m_firstMessage</strong>
+</td><td align="right"><h3><strong>m_firstMessage</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_lastMessage"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPMessage*  <strong>m_lastMessage</strong>
+</td><td align="right"><h3><strong>m_lastMessage</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_pending"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPEvent*  <strong>m_pending</strong>
+</td><td align="right"><h3><strong>m_pending</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_engine"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPEngine*  <strong>m_engine</strong>
+</td><td align="right"><h3><strong>m_engine</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_branch"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_branch</strong>
+</td><td align="right"><h3><strong>m_branch</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_callid"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_callid</strong>
+</td><td align="right"><h3><strong>m_callid</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_tag"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_tag</strong>
+</td><td align="right"><h3><strong>m_tag</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_private"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void * <strong>m_private</strong>
+</td><td align="right"><h3><strong>m_private</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

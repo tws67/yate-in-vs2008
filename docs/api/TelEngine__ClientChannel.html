@@ -1,0 +1,363 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientChannel</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientChannel</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Channel used by client programs. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientChannel</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Channel.html">TelEngine::Channel</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientChannel.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Notification</A> {	Startup,
+	Destroyed,
+	Active,
+	OnHold,
+	Noticed,
+	AddrChanged,
+	Routed,
+	Accepted,
+	Rejected,
+	Progressing,
+	Ringing,
+	Answered,
+	Transfer,
+	Conference,
+	Unknown
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">ClientChannel</A></b> (const Message& msg, const String& peerid) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">ClientChannel</A></b> (const String& target, const NamedList& params) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~ClientChannel</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">msgProgress</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">msgRinging</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">msgAnswered</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">msgDrop</A></b> (Message& msg, const char* reason) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">callRouted</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">callAccept</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref12">callRejected</A></b> (const char* error, const char* reason, const Message* msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">callAnswer</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref14">party</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">conference</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref16">transferId</A></b> ()  const
+</LI>
+<LI>inline RefObject* &nbsp;<b><A HREF="#ref17">clientData</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref18">setClientData</A></b> (RefObject* obj = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">setMedia</A></b> (bool open = false, bool replace = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">setActive</A></b> (bool active, bool update = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref21">setTransfer</A></b> (const String& target = String::empty()) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">setConference</A></b> (const String& target = String::empty()) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref23">peerOutFormat</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref24">peerInFormat</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref25">active</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref26">isNoticed</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">noticed</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref28">line</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref29">line</A></b> (int newLine) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref30">update</A></b> (int notif, bool chan = true,
+	bool updatePeer = true, const char* engineMsg = 0,
+	bool minimal = false, bool data = false) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  int &nbsp;<b><A HREF="#ref31">lookup</A></b> (const char* notif, int def = Unknown) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref32">lookup</A></b> (int notif, const char* def = 0) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref33">s_notification[]</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref34">destroyed</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref35">disconnected</A></b> (bool final, const char* reason) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref36">peerHasSource</A></b> (Message& msg) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref37">checkSilence</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>String <b><A HREF="#ref38">m_party</A></b></LI>
+<LI>String <b><A HREF="#ref39">m_peerOutFormat</A></b></LI>
+<LI>String <b><A HREF="#ref40">m_peerInFormat</A></b></LI>
+<LI>String <b><A HREF="#ref41">m_reason</A></b></LI>
+<LI>String <b><A HREF="#ref42">m_peerId</A></b></LI>
+<LI>bool <b><A HREF="#ref43">m_noticed</A></b></LI>
+<LI>int <b><A HREF="#ref44">m_line</A></b></LI>
+<LI>bool <b><A HREF="#ref45">m_active</A></b></LI>
+<LI>bool <b><A HREF="#ref46">m_silence</A></b></LI>
+<LI>bool <b><A HREF="#ref47">m_conference</A></b></LI>
+<LI>String <b><A HREF="#ref48">m_transferId</A></b></LI>
+<LI>RefObject* <b><A HREF="#ref49">m_clientData</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class implements a Channel used by client programs
+</p>
+<A NAME="Notification"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Notification</strong> {	Startup,
+	Destroyed,
+	Active,
+	OnHold,
+	Noticed,
+	AddrChanged,
+	Routed,
+	Accepted,
+	Rejected,
+	Progressing,
+	Ringing,
+	Answered,
+	Transfer,
+	Conference,
+	Unknown
+    }
+</td><td align="right"><h3><strong>Notification</strong></h3></td></tr></table><p></p><p>
+ Channel notifications
+     </p>
+<A NAME="ClientChannel"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ClientChannel</strong> (const Message& msg, const String& peerid)
+<br></td><td align="right"><h3><strong>ClientChannel</strong></h3></td></tr></table><p></p><A NAME="ClientChannel"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ClientChannel</strong> (const String& target, const NamedList& params)
+<br></td><td align="right"><h3><strong>ClientChannel</strong></h3></td></tr></table><p></p><A NAME="~ClientChannel"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ClientChannel</strong> ()
+<br></td><td align="right"><h3><strong>~ClientChannel</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="msgProgress"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgProgress</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgProgress</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#msgProgress">Channel</A>.</p>
+<A NAME="msgRinging"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgRinging</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgRinging</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#msgRinging">Channel</A>.</p>
+<A NAME="msgAnswered"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgAnswered</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgAnswered</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#msgAnswered">Channel</A>.</p>
+<A NAME="msgDrop"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgDrop</strong> (Message& msg, const char* reason)
+<br></td><td align="right"><h3><strong>msgDrop</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#msgDrop">Channel</A>.</p>
+<A NAME="callRouted"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>callRouted</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>callRouted</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#callRouted">Channel</A>.</p>
+<A NAME="callAccept"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>callAccept</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>callAccept</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#callAccept">Channel</A>.</p>
+<A NAME="callRejected"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>callRejected</strong> (const char* error, const char* reason, const Message* msg)
+<br></td><td align="right"><h3><strong>callRejected</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#callRejected">Channel</A>.</p>
+<A NAME="callAnswer"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>callAnswer</strong> ()
+<br></td><td align="right"><h3><strong>callAnswer</strong></h3></td></tr></table><p></p><p>
+ Answer an incoming call. Set media channels. Enqueue a clientchan.update message
+     </p>
+<A NAME="party"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>party</strong> ()
+<br></td><td align="right"><h3><strong>party</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the remote party of this channel
+</p>
+<p><b>Returns</b>: The remote party of this channel
+     </p>
+<A NAME="conference"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>conference</strong> ()
+<br></td><td align="right"><h3><strong>conference</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this channel is in conference
+</p>
+<p><b>Returns</b>: True if this channel is in conference
+     </p>
+<A NAME="transferId"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>transferId</strong> ()
+<br></td><td align="right"><h3><strong>transferId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the transferred peer's id
+</p>
+<p><b>Returns</b>: The transferred peer's id
+     </p>
+<A NAME="clientData"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RefObject* &nbsp;<strong>clientData</strong> ()
+<br></td><td align="right"><h3><strong>clientData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the client data
+</p>
+<p><b>Returns</b>: RefObject pointer or 0
+     </p>
+<A NAME="setClientData"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setClientData</strong> (RefObject* obj = 0)
+<br></td><td align="right"><h3><strong>setClientData</strong></h3></td></tr></table><p></p><p>
+ Set/reset the client data.
+ If a new client data is set its reference counter is increased
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>obj</i></TD><TD align="left" valign="top">The new client data
+     </TD></TR>
+</TABLE></P>
+<A NAME="setMedia"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setMedia</strong> (bool open = false, bool replace = false)
+<br></td><td align="right"><h3><strong>setMedia</strong></h3></td></tr></table><p></p><p>
+ Attach/detach media channels
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>open</i></TD><TD align="left" valign="top">True to open, false to close
+</TD></TR>
+<TR><TD align="left" valign="top"><i>replace</i></TD><TD align="left" valign="top">True to replace media if already open. Ignored if open is false
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setActive"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setActive</strong> (bool active, bool update = true)
+<br></td><td align="right"><h3><strong>setActive</strong></h3></td></tr></table><p></p><p>
+ Set/reset this channel's data source/consumer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">True to set active, false to set inactive (mute)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>update</i></TD><TD align="left" valign="top">True to enqueue an update message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="setTransfer"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setTransfer</strong> (const String& target = String::empty())
+<br></td><td align="right"><h3><strong>setTransfer</strong></h3></td></tr></table><p></p><p>
+ Set/reset the transferred peer's id. Enqueue clientchan.update if changed.
+ Open media when reset if the channel is active and answered
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>target</i></TD><TD align="left" valign="top">The transferred peer's id. Leave it blank to reset
+     </TD></TR>
+</TABLE></P>
+<A NAME="setConference"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setConference</strong> (const String& target = String::empty())
+<br></td><td align="right"><h3><strong>setConference</strong></h3></td></tr></table><p></p><p>
+ Set/reset the conference data. Enqueue clientchan.update if changed.
+ Open media when reset if the channel is active and answered
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>target</i></TD><TD align="left" valign="top">The confeernce room's name. Leave it blank to reset
+     </TD></TR>
+</TABLE></P>
+<A NAME="peerOutFormat"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>peerOutFormat</strong> ()
+<br></td><td align="right"><h3><strong>peerOutFormat</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the peer consumer's data format
+</p>
+<p><b>Returns</b>: The peer consumer's data format
+     </p>
+<A NAME="peerInFormat"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>peerInFormat</strong> ()
+<br></td><td align="right"><h3><strong>peerInFormat</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the peer source's data format
+</p>
+<p><b>Returns</b>: The peer source's data format
+     </p>
+<A NAME="active"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>active</strong> ()
+<br></td><td align="right"><h3><strong>active</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this channel is the active one
+</p>
+<p><b>Returns</b>: True if this channel is the active one
+     </p>
+<A NAME="isNoticed"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isNoticed</strong> ()
+<br></td><td align="right"><h3><strong>isNoticed</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this channel was noticed
+</p>
+<p><b>Returns</b>: True if this channel was noticed
+     </p>
+<A NAME="noticed"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>noticed</strong> ()
+<br></td><td align="right"><h3><strong>noticed</strong></h3></td></tr></table><p></p><p>
+ Notice this channel. Enqueue a clientchan.update message
+     </p>
+<A NAME="line"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>line</strong> ()
+<br></td><td align="right"><h3><strong>line</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get this channel's line
+</p>
+<p><b>Returns</b>: This channel's line
+     </p>
+<A NAME="line"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>line</strong> (int newLine)
+<br></td><td align="right"><h3><strong>line</strong></h3></td></tr></table><p></p><p>
+ Set this channel's line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newLine</i></TD><TD align="left" valign="top">This channel's line
+     </TD></TR>
+</TABLE></P>
+<A NAME="update"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>update</strong> (int notif, bool chan = true,
+	bool updatePeer = true, const char* engineMsg = 0,
+	bool minimal = false, bool data = false)
+<br></td><td align="right"><h3><strong>update</strong></h3></td></tr></table><p></p><p>
+ Update channel. Enqueue a clientchan.update message with the given operation.
+ Enqueue other channel status messages if required
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>notif</i></TD><TD align="left" valign="top">The value of the notify parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>chan</i></TD><TD align="left" valign="top">Set the channel as message's user data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>updatePeer</i></TD><TD align="left" valign="top">True to update peer's data formats
+</TD></TR>
+<TR><TD align="left" valign="top"><i>engineMsg</i></TD><TD align="left" valign="top">Optional message to enqueue in the engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minimal</i></TD><TD align="left" valign="top">Set to true to fill in only a minimum of engine message's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Set the channel as engine message's user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="lookup"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>lookup</strong> (const char* notif, int def = Unknown)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Lookup for a notification id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>notif</i></TD><TD align="left" valign="top">The notification's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>def</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result
+     </p>
+<A NAME="lookup"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>lookup</strong> (int notif, const char* def = 0)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Lookup for a notification name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>notif</i></TD><TD align="left" valign="top">The notification's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>def</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result
+     </p>
+<A NAME="s_notification[]"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_notification[]</strong>
+</td><td align="right"><h3><strong>s_notification[]</strong></h3></td></tr></table><p></p><A NAME="destroyed"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Channel notifications dictionary
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__CallEndpoint.html#destroyed">CallEndpoint</A>.</p>
+<A NAME="disconnected"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>disconnected</strong> (bool final, const char* reason)
+<br></td><td align="right"><h3><strong>disconnected</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__Channel.html#disconnected">Channel</A>.</p>
+<A NAME="peerHasSource"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>peerHasSource</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>peerHasSource</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="checkSilence"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>checkSilence</strong> ()
+<br></td><td align="right"><h3><strong>checkSilence</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_party"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_party</strong>
+</td><td align="right"><h3><strong>m_party</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_peerOutFormat"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_peerOutFormat</strong>
+</td><td align="right"><h3><strong>m_peerOutFormat</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_peerInFormat"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_peerInFormat</strong>
+</td><td align="right"><h3><strong>m_peerInFormat</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_reason"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_reason</strong>
+</td><td align="right"><h3><strong>m_reason</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_peerId"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_peerId</strong>
+</td><td align="right"><h3><strong>m_peerId</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_noticed"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_noticed</strong>
+</td><td align="right"><h3><strong>m_noticed</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_line"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_line</strong>
+</td><td align="right"><h3><strong>m_line</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_active"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_active</strong>
+</td><td align="right"><h3><strong>m_active</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_silence"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_silence</strong>
+</td><td align="right"><h3><strong>m_silence</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_conference"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_conference</strong>
+</td><td align="right"><h3><strong>m_conference</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_transferId"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_transferId</strong>
+</td><td align="right"><h3><strong>m_transferId</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_clientData"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>RefObject*  <strong>m_clientData</strong>
+</td><td align="right"><h3><strong>m_clientData</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,414 @@
+<HTML>
+<HEAD>
+<TITLE>class XMPPUtils</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMPPUtils</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">General XMPP utilities. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMPPUtils</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmpputils_h.html">libs/yjingle/xmpputils.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMPPUtils.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">IqType</A> {	IqSet,                           
+	IqGet,                           
+	IqResult,                        
+	IqError,                         
+	IqCount,
+    }
+</LI>
+<LI>enum <A HREF="#ref2">CommandAction</A> {	CommExecute,
+	CommCancel,
+	CommPrev,
+	CommNext,
+	CommComplete,
+    }
+</LI>
+<LI>enum <A HREF="#ref3">CommandStatus</A> {	CommExecuting,
+	CommCompleted,
+	CommCancelled,
+    }
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  XMLElement* &nbsp;<b><A HREF="#ref4">createElement</A></b> (const char* name, XMPPNamespace::Type ns,
+	const char* text = 0) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref5">createElement</A></b> (XMLElement::Type type, XMPPNamespace::Type ns,
+	const char* text = 0) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref6">createIq</A></b> (IqType type, const char* from,
+	const char* to, const char* id) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref7">createIqBind</A></b> (const char* from,
+	const char* to, const char* id, const ObjList& resources) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref8">createCommand</A></b> (CommandAction action, const char* node,
+	const char* sessionId = 0) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref9">createIdentity</A></b> (const char* category,
+	const char* type, const char* name) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref10">createIqDisco</A></b> (const char* from, const char* to,
+	const char* id, bool info = true) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref11">createDiscoInfoRes</A></b> (const char* from, const char* to,
+	const char* id, JIDFeatureList* features, JIDIdentity* identity) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref12">createError</A></b> (XMPPError::ErrorType type,
+	XMPPError::Type error, const char* text = 0) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref13">createError</A></b> (XMLElement* xml, XMPPError::ErrorType type,
+	XMPPError::Type error, const char* text = 0) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref14">createStreamError</A></b> (XMPPError::Type error,
+	const char* text = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref15">hasXmlns</A></b> (XMLElement& element, XMPPNamespace::Type ns) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref16">decodeError</A></b> (XMLElement* element, String& error, String& text) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref17">print</A></b> (String& xmlStr, XMLElement& element, const char* indent = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref18">split</A></b> (NamedList& dest, const char* src, const char sep,
+	bool nameFirst) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref19">decodeFlags</A></b> (const String& src, const TokenDict* dict) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref20">buildFlags</A></b> (String& dest, int src, const TokenDict* dict) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref21">addChidren</A></b> (XMLElement* dest, ObjList& list) 
+</LI>
+<LI>static  inline IqType &nbsp;<b><A HREF="#ref22">iqType</A></b> (const char* text) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref23">s_iq[]</A></b></LI>
+<LI>static TokenDict <b><A HREF="#ref24">s_commandAction[]</A></b></LI>
+<LI>static TokenDict <b><A HREF="#ref25">s_commandStatus[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is a general XMPP utilities
+</p>
+<A NAME="IqType"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>IqType</strong> {	IqSet,                           
+	IqGet,                           
+	IqResult,                        
+	IqError,                         
+	IqCount,
+    }
+</td><td align="right"><h3><strong>IqType</strong></h3></td></tr></table><p></p><p>
+ Iq type enumeration
+     </p>
+<A NAME="CommandAction"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>CommandAction</strong> {	CommExecute,
+	CommCancel,
+	CommPrev,
+	CommNext,
+	CommComplete,
+    }
+</td><td align="right"><h3><strong>CommandAction</strong></h3></td></tr></table><p></p><p>
+ Command action enumeration
+     </p>
+<A NAME="CommandStatus"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>CommandStatus</strong> {	CommExecuting,
+	CommCompleted,
+	CommCancelled,
+    }
+</td><td align="right"><h3><strong>CommandStatus</strong></h3></td></tr></table><p></p><p>
+ Command status enumeration
+     </p>
+<A NAME="createElement"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createElement</strong> (const char* name, XMPPNamespace::Type ns,
+	const char* text = 0)
+<br></td><td align="right"><h3><strong>createElement</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an XML element with an 'xmlns' attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Element's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">'xmlns' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text for the element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createElement"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createElement</strong> (XMLElement::Type type, XMPPNamespace::Type ns,
+	const char* text = 0)
+<br></td><td align="right"><h3><strong>createElement</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an XML element with an 'xmlns' attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Element's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">'xmlns' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text for the element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createIq"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createIq</strong> (IqType type, const char* from,
+	const char* to, const char* id)
+<br></td><td align="right"><h3><strong>createIq</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an 'iq' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Iq type as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The 'from' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The 'to' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The 'id' attribute
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createIqBind"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createIqBind</strong> (const char* from,
+	const char* to, const char* id, const ObjList& resources)
+<br></td><td align="right"><h3><strong>createIqBind</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an 'iq' element with a 'bind' child containing the resources
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The 'from' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The 'to' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The 'id' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>resources</i></TD><TD align="left" valign="top">The resources to bind (strings)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createCommand"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createCommand</strong> (CommandAction action, const char* node,
+	const char* sessionId = 0)
+<br></td><td align="right"><h3><strong>createCommand</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a 'command' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>action</i></TD><TD align="left" valign="top">The command action
+</TD></TR>
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">The command
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sessionId</i></TD><TD align="left" valign="top">Optional session ID for the command
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createIdentity"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createIdentity</strong> (const char* category,
+	const char* type, const char* name)
+<br></td><td align="right"><h3><strong>createIdentity</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an 'identity' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>category</i></TD><TD align="left" valign="top">The 'category' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The 'type' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The 'name' attribute
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createIqDisco"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createIqDisco</strong> (const char* from, const char* to,
+	const char* id, bool info = true)
+<br></td><td align="right"><h3><strong>createIqDisco</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an 'iq' of type 'get' element with a 'query' child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The 'from' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The 'to' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The 'id' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>info</i></TD><TD align="left" valign="top">True to create a query info request. False to create a query items request
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createDiscoInfoRes"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createDiscoInfoRes</strong> (const char* from, const char* to,
+	const char* id, JIDFeatureList* features, JIDIdentity* identity)
+<br></td><td align="right"><h3><strong>createDiscoInfoRes</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an 'iq' of type 'result' element with a 'query' child in response to
+  a disco info request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The 'from' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The 'to' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The 'id' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>features</i></TD><TD align="left" valign="top">Features to be added to response
+</TD></TR>
+<TR><TD align="left" valign="top"><i>identity</i></TD><TD align="left" valign="top">The identity of the entity sending the response
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createError"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createError</strong> (XMPPError::ErrorType type,
+	XMPPError::Type error, const char* text = 0)
+<br></td><td align="right"><h3><strong>createError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a 'error' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Error type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The error
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text to add to the error element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="createError"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createError</strong> (XMLElement* xml, XMPPError::ErrorType type,
+	XMPPError::Type error, const char* text = 0)
+<br></td><td align="right"><h3><strong>createError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an error from a received element. Consume the received element
+ Reverse 'to' and 'from' attributes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">Received element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Error type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The error
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text to add to the error element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer or 0 if xml is 0
+     </p>
+<A NAME="createStreamError"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createStreamError</strong> (XMPPError::Type error,
+	const char* text = 0)
+<br></td><td align="right"><h3><strong>createStreamError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a 'stream:error' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The XMPP defined condition
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text to add to the error
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="hasXmlns"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>hasXmlns</strong> (XMLElement& element, XMPPNamespace::Type ns)
+<br></td><td align="right"><h3><strong>hasXmlns</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the given element has an attribute 'xmlns' equal to a given value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Element to check
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Namespace value to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given element has the requested namespace
+     </p>
+<A NAME="decodeError"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>decodeError</strong> (XMLElement* element, String& error, String& text)
+<br></td><td align="right"><h3><strong>decodeError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode a received stream error or stanza error
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The received element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The error condition
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The stanza's error or error text
+     </TD></TR>
+</TABLE></P>
+<A NAME="print"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>print</strong> (String& xmlStr, XMLElement& element, const char* indent = 0)
+<br></td><td align="right"><h3><strong>print</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Print an XMLElement to a string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xmlStr</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The element to print
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">The indent. 0 if it is the root element
+     </TD></TR>
+</TABLE></P>
+<A NAME="split"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>split</strong> (NamedList& dest, const char* src, const char sep,
+	bool nameFirst)
+<br></td><td align="right"><h3><strong>split</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Split a string at a delimiter character and fills a named list with its parts
+ Skip empty parts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination NamedList
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Pointer to the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">The delimiter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nameFirst</i></TD><TD align="left" valign="top">True to add the parts as name and index as value.
+  False to do the other way
+     </TD></TR>
+</TABLE></P>
+<A NAME="decodeFlags"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>decodeFlags</strong> (const String& src, const TokenDict* dict)
+<br></td><td align="right"><h3><strong>decodeFlags</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode a comma separated list of flags and put them into an integer mask
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dict</i></TD><TD align="left" valign="top">Dictionary containing flag names and values
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The mask of found flags
+     </p>
+<A NAME="buildFlags"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildFlags</strong> (String& dest, int src, const TokenDict* dict)
+<br></td><td align="right"><h3><strong>buildFlags</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Encode a mask of flags to a comma separated list of names
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source mask
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dict</i></TD><TD align="left" valign="top">Dictionary containing flag names and values
+     </TD></TR>
+</TABLE></P>
+<A NAME="addChidren"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>addChidren</strong> (XMLElement* dest, ObjList& list)
+<br></td><td align="right"><h3><strong>addChidren</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add child elements from a list to a destination element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination XMLElement
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">A list containing XML elements
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if at least one child was added
+     </p>
+<A NAME="iqType"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline IqType &nbsp;<strong>iqType</strong> (const char* text)
+<br></td><td align="right"><h3><strong>iqType</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the type of an 'iq' stanza as enumeration
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Iq type as enumeration
+     </p>
+<A NAME="s_iq[]"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_iq[]</strong>
+</td><td align="right"><h3><strong>s_iq[]</strong></h3></td></tr></table><p></p><A NAME="s_commandAction[]"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_commandAction[]</strong>
+</td><td align="right"><h3><strong>s_commandAction[]</strong></h3></td></tr></table><p></p><A NAME="s_commandStatus[]"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_commandStatus[]</strong>
+</td><td align="right"><h3><strong>s_commandStatus[]</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

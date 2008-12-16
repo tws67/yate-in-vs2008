@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931ParserData</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931ParserData</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Q.931 message parser data. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931ParserData</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931ParserData.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">ISDNQ931ParserData</A></b> (const NamedList& params, DebugEnabler* dbg = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref2">flag</A></b> (int mask) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>DebugEnabler* <b><A HREF="#ref3">m_dbg</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref4">m_maxMsgLen</A></b></LI>
+<LI>int <b><A HREF="#ref5">m_flags</A></b></LI>
+<LI>int <b><A HREF="#ref6">m_flagsOrig</A></b></LI>
+<LI>u_int8_t <b><A HREF="#ref7">m_maxDisplay</A></b></LI>
+<LI>bool <b><A HREF="#ref8">m_allowSegment</A></b></LI>
+<LI>u_int8_t <b><A HREF="#ref9">m_maxSegments</A></b></LI>
+<LI>bool <b><A HREF="#ref10">m_extendedDebug</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds Q.931 parser settings used to encode/decode Q.931 messages
+</p>
+<A NAME="ISDNQ931ParserData"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931ParserData</strong> (const NamedList& params, DebugEnabler* dbg = 0)
+<br></td><td align="right"><h3><strong>ISDNQ931ParserData</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Parser settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dbg</i></TD><TD align="left" valign="top">The debug enabler used for output
+     </TD></TR>
+</TABLE></P>
+<A NAME="flag"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>flag</strong> (int mask)
+<br></td><td align="right"><h3><strong>flag</strong></h3></td></tr></table><p></p><p>
+ Check the state of a flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">The flag to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given flag is set
+     </p>
+<A NAME="m_dbg"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DebugEnabler*  <strong>m_dbg</strong>
+</td><td align="right"><h3><strong>m_dbg</strong></h3></td></tr></table><p></p><A NAME="m_maxMsgLen"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_maxMsgLen</strong>
+</td><td align="right"><h3><strong>m_maxMsgLen</strong></h3></td></tr></table><p></p><A NAME="m_flags"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_flags</strong>
+</td><td align="right"><h3><strong>m_flags</strong></h3></td></tr></table><p></p><A NAME="m_flagsOrig"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_flagsOrig</strong>
+</td><td align="right"><h3><strong>m_flagsOrig</strong></h3></td></tr></table><p></p><A NAME="m_maxDisplay"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int8_t">u_int8_t</A>  <strong>m_maxDisplay</strong>
+</td><td align="right"><h3><strong>m_maxDisplay</strong></h3></td></tr></table><p></p><A NAME="m_allowSegment"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_allowSegment</strong>
+</td><td align="right"><h3><strong>m_allowSegment</strong></h3></td></tr></table><p></p><A NAME="m_maxSegments"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int8_t">u_int8_t</A>  <strong>m_maxSegments</strong>
+</td><td align="right"><h3><strong>m_maxSegments</strong></h3></td></tr></table><p></p><A NAME="m_extendedDebug"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_extendedDebug</strong>
+</td><td align="right"><h3><strong>m_extendedDebug</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

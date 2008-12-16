@@ -1,0 +1,232 @@
+<HTML>
+<HEAD>
+<TITLE>class JabberID</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JabberID</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber ID. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JabberID</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmpputils_h.html">libs/yjingle/xmpputils.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JabberID.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">JabberID</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref2">JabberID</A></b> (const char* jid) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">JabberID</A></b> (const char* node, const char* domain, const char* resource = 0) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref4">node</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref5">bare</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">domain</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">domain</A></b> (const char* d) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">resource</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">isFull</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">match</A></b> (const JabberID& src)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">operator==</A></b> (const JabberID& src)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">operator==</A></b> (const String& src)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">operator!=</A></b> (const JabberID& src)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">operator!=</A></b> (const String& src)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref15">resource</A></b> (const char* res) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">set</A></b> (const char* jid) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">set</A></b> (const char* node, const char* domain, const char* resource = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref18">valid</A></b> (const String& value) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static Regexp <b><A HREF="#ref19">s_regExpValid</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a Jabber ID in form "node@domain/resource" or "node@domain"
+</p>
+<A NAME="JabberID"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>JabberID</strong> ()
+<br></td><td align="right"><h3><strong>JabberID</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="JabberID"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>JabberID</strong> (const char* jid)
+<br></td><td align="right"><h3><strong>JabberID</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs a JID from a given string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">The JID string
+     </TD></TR>
+</TABLE></P>
+<A NAME="JabberID"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JabberID</strong> (const char* node, const char* domain, const char* resource = 0)
+<br></td><td align="right"><h3><strong>JabberID</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs a JID from user, domain, resource
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">The node
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">The domain
+</TD></TR>
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource
+     </TD></TR>
+</TABLE></P>
+<A NAME="node"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>node</strong> ()
+<br></td><td align="right"><h3><strong>node</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the node part of the JID
+</p>
+<p><b>Returns</b>: The node part of the JID
+     </p>
+<A NAME="bare"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>bare</strong> ()
+<br></td><td align="right"><h3><strong>bare</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the bare JID: "node@domain"
+</p>
+<p><b>Returns</b>: The bare JID
+     </p>
+<A NAME="domain"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>domain</strong> ()
+<br></td><td align="right"><h3><strong>domain</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the domain part of the JID
+</p>
+<p><b>Returns</b>: The domain part of the JID
+     </p>
+<A NAME="domain"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>domain</strong> (const char* d)
+<br></td><td align="right"><h3><strong>domain</strong></h3></td></tr></table><p></p><p>
+ Set the domain part of the JID.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>d</i></TD><TD align="left" valign="top">The new domain part of the JID.
+     </TD></TR>
+</TABLE></P>
+<A NAME="resource"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>resource</strong> ()
+<br></td><td align="right"><h3><strong>resource</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the resource part of the JID
+</p>
+<p><b>Returns</b>: The resource part of the JID
+     </p>
+<A NAME="isFull"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isFull</strong> ()
+<br></td><td align="right"><h3><strong>isFull</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this is a full JID
+</p>
+<p><b>Returns</b>: True if this is a full JID
+     </p>
+<A NAME="match"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>match</strong> (const JabberID& src)
+<br></td><td align="right"><h3><strong>match</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Try to match another JID to this one. If src has a resource compare it too
+ (case sensitive). Otherwise compare just the bare JID (case insensitive)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The JID to match
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if matched
+     </p>
+<A NAME="operator=="></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator==</strong> (const JabberID& src)
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Equality operator. Do a case senitive resource comparison and a case insensitive bare jid comparison
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The JID to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if equal
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator==">String</A>.</p>
+<A NAME="operator=="></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator==</strong> (const String& src)
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Equality operator. Build a temporary JID and compare with it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The string to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if equal
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator==">String</A>.</p>
+<A NAME="operator!="></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator!=</strong> (const JabberID& src)
+<br></td><td align="right"><h3><strong>operator!=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Inequality operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The JID to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if not equal
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator!=">String</A>.</p>
+<A NAME="operator!="></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator!=</strong> (const String& src)
+<br></td><td align="right"><h3><strong>operator!=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Inequality operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The string to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if not equal
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator!=">String</A>.</p>
+<A NAME="resource"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>resource</strong> (const char* res)
+<br></td><td align="right"><h3><strong>resource</strong></h3></td></tr></table><p></p><p>
+ Set the resource part of the JID
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>res</i></TD><TD align="left" valign="top">The new resource part of the JID
+     </TD></TR>
+</TABLE></P>
+<A NAME="set"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>set</strong> (const char* jid)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set the data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">The JID string to assign
+     </TD></TR>
+</TABLE></P>
+<A NAME="set"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>set</strong> (const char* node, const char* domain, const char* resource = 0)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set the data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">The node
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">The domain
+</TD></TR>
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource
+     </TD></TR>
+</TABLE></P>
+<A NAME="valid"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>valid</strong> (const String& value)
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the given string contains valid characters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The string to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if value is valid or 0. False if value is a non empty invalid string
+     </p>
+<A NAME="s_regExpValid"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static Regexp  <strong>s_regExpValid</strong>
+</td><td align="right"><h3><strong>s_regExpValid</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

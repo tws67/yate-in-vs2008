@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+<TITLE>class JGEngine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JGEngine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jingle engine. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JGEngine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejingle_h.html">libs/yjingle/yatejingle.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__JBService.html">TelEngine::JBService</A> <small>[public ]</small>, <A HREF="TelEngine__JBThreadList.html">TelEngine::JBThreadList</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JGEngine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">JGEngine</A></b> (JBEngine* engine, const NamedList* params, int prio = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~JGEngine</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref4">stanzaTimeout</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">initialize</A></b> (const NamedList& params) 
+</LI>
+<LI>JGEvent* &nbsp;<b><A HREF="#ref6">getEvent</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>JGSession* &nbsp;<b><A HREF="#ref7">call</A></b> (const String& callerName, const String& remoteJID,
+	XMLElement* media, XMLElement* transport, const char* msg = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">defProcessEvent</A></b> (JGEvent* event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">processEvent</A></b> (JGEvent* event) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref10">accept</A></b> (JBEvent* event, bool& processed, bool& insert) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a Jingle service for the Jabber engine. Handle jingle stanzas,
+  stanza write fail events and stream termination events
+</p>
+<A NAME="JGEngine"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JGEngine</strong> (JBEngine* engine, const NamedList* params, int prio = 0)
+<br></td><td align="right"><h3><strong>JGEngine</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs a Jingle service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The Jabber engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">The priority of this service
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JGEngine"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JGEngine</strong> ()
+<br></td><td align="right"><h3><strong>~JGEngine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Terminates all active sessions
+     </p>
+<A NAME="stanzaTimeout"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>stanzaTimeout</strong> ()
+<br></td><td align="right"><h3><strong>stanzaTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the timeout interval of a sent stanza
+</p>
+<p><b>Returns</b>: The timeout interval of a sent stanza
+     </p>
+<A NAME="initialize"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Initialize this service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__JBService.html#initialize">JBService</A>.</p>
+<A NAME="getEvent"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JGEvent* &nbsp;<strong>getEvent</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p></p><p>
+ Call getEvent() for each session list until an event is generated or the end is reached
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time in miliseconds
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The first generated event
+     </p>
+<A NAME="call"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JGSession* &nbsp;<strong>call</strong> (const String& callerName, const String& remoteJID,
+	XMLElement* media, XMLElement* transport, const char* msg = 0)
+<br></td><td align="right"><h3><strong>call</strong></h3></td></tr></table><p></p><p>
+ Make an outgoing call.
+ 'media' and 'transport' will be invalid on exit. Don't delete them
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>callerName</i></TD><TD align="left" valign="top">The local peer's username
+</TD></TR>
+<TR><TD align="left" valign="top"><i>remoteJID</i></TD><TD align="left" valign="top">The remote peer's JID
+</TD></TR>
+<TR><TD align="left" valign="top"><i>media</i></TD><TD align="left" valign="top">A valid 'description' XML element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>transport</i></TD><TD align="left" valign="top">A valid 'transport' XML element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Optional message to send before call
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid JGSession pointer (referenced) on success
+     </p>
+<A NAME="defProcessEvent"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>defProcessEvent</strong> (JGEvent* event)
+<br></td><td align="right"><h3><strong>defProcessEvent</strong></h3></td></tr></table><p></p><p>
+ Default event processor. Delete event.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to process
+     </TD></TR>
+</TABLE></P>
+<A NAME="processEvent"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processEvent</strong> (JGEvent* event)
+<br></td><td align="right"><h3><strong>processEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process events from the sessions. Default action: Delete event.
+ Descendants must override this method to process generated events
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to process
+     </TD></TR>
+</TABLE></P>
+<A NAME="accept"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>accept</strong> (JBEvent* event, bool& processed, bool& insert)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Accept an event from the Jabber engine
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to accept
+</TD></TR>
+<TR><TD align="left" valign="top"><i>processed</i></TD><TD align="left" valign="top">Set to true on exit to signal that the event was already processed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>insert</i></TD><TD align="left" valign="top">Set to true if accepted to insert on top of the event queue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if not accepted, let the engine try another service
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__JBService.html#accept">JBService</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

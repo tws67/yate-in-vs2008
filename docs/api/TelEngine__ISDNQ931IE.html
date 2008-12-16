@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931IE</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931IE</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Q.931 ISDN Layer 3 message Information Element. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931IE</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__NamedList.html">TelEngine::NamedList</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931IE.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Type</A> {	Shift = 0x90,                    
+	MoreData = 0xa0,                 
+	SendComplete = 0xa1,             
+	Congestion = 0xb0,               
+	Repeat = 0xd0,                   
+	Segmented = 0x00,                
+	BearerCaps = 0x04,               
+	Cause = 0x08,                    
+	CallIdentity = 0x10,             
+	CallState = 0x14,                
+	ChannelID = 0x18,                
+	Progress = 0x1e,                 
+	NetFacility = 0x20,              
+	Notification = 0x27,             
+	Display = 0x28,                  
+	DateTime = 0x29,                 
+	Keypad = 0x2c,                   
+	Signal = 0x34,                   
+	ConnectedNo = 0x4c,              
+	CallingNo = 0x6c,                
+	CallingSubAddr = 0x6d,           
+	CalledNo = 0x70,                 
+	CalledSubAddr = 0x71,            
+	NetTransit = 0x78,               
+	Restart = 0x79,                  
+	LoLayerCompat = 0x7c,            
+	HiLayerCompat = 0x7d,            
+	UserUser = 0x7e,                 
+	Escape = 0x7f,                   
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">ISDNQ931IE</A></b> (<A HREF="#u_int16_t">u_int16_t</A> type) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~ISDNQ931IE</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref5">type</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">addParamPrefix</A></b> (const char* name, const char* value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">toString</A></b> (String& dest, bool extendedDebug, const char* before = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref8">typeName</A></b> (int type, const char* defVal = 0) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref9">s_type[]</A></b></LI>
+<LI>DataBlock <b><A HREF="#ref10">m_buffer</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN Layer 3 message Information Element
+</p>
+<A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Shift = 0x90,                    
+	MoreData = 0xa0,                 
+	SendComplete = 0xa1,             
+	Congestion = 0xb0,               
+	Repeat = 0xd0,                   
+	Segmented = 0x00,                
+	BearerCaps = 0x04,               
+	Cause = 0x08,                    
+	CallIdentity = 0x10,             
+	CallState = 0x14,                
+	ChannelID = 0x18,                
+	Progress = 0x1e,                 
+	NetFacility = 0x20,              
+	Notification = 0x27,             
+	Display = 0x28,                  
+	DateTime = 0x29,                 
+	Keypad = 0x2c,                   
+	Signal = 0x34,                   
+	ConnectedNo = 0x4c,              
+	CallingNo = 0x6c,                
+	CallingSubAddr = 0x6d,           
+	CalledNo = 0x70,                 
+	CalledSubAddr = 0x71,            
+	NetTransit = 0x78,               
+	Restart = 0x79,                  
+	LoLayerCompat = 0x7c,            
+	HiLayerCompat = 0x7d,            
+	UserUser = 0x7e,                 
+	Escape = 0x7f,                   
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Keep IE type enumerations. See Q.931 4.5
+     </p>
+<A NAME="ISDNQ931IE"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931IE</strong> (<A HREF="#u_int16_t">u_int16_t</A> type)
+<br></td><td align="right"><h3><strong>ISDNQ931IE</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Constructs an unknown IE with raw data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of this IE
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ISDNQ931IE"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ931IE</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ931IE</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this IE
+</p>
+<p><b>Returns</b>: The type of this IE
+     </p>
+<A NAME="addParamPrefix"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>addParamPrefix</strong> (const char* name, const char* value)
+<br></td><td align="right"><h3><strong>addParamPrefix</strong></h3></td></tr></table><p></p><p>
+ Add a parameter using the IE name as prefix
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Parameter value
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, bool extendedDebug, const char* before = 0)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p></p><p>
+ Put this message into a string for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extendedDebug</i></TD><TD align="left" valign="top">True to add the content of this IE and dump data.
+  If false, only the IE name is added to the destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>before</i></TD><TD align="left" valign="top">Optional string to be added before
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__String.html#toString">String</A>.</p>
+<A NAME="typeName"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeName</strong> (int type, const char* defVal = 0)
+<br></td><td align="right"><h3><strong>typeName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the string associated with a given IE type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The IE type whose string we want to get
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">The value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested string or defValue
+     </p>
+<A NAME="s_type[]"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_type[]</strong>
+</td><td align="right"><h3><strong>s_type[]</strong></h3></td></tr></table><p></p><A NAME="m_buffer"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock  <strong>m_buffer</strong>
+</td><td align="right"><h3><strong>m_buffer</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

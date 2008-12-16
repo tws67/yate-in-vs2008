@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+<TITLE>class AnalogLineGroup</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class AnalogLineGroup</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A group of analog lines. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::AnalogLineGroup</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingCircuitGroup.html">TelEngine::SignallingCircuitGroup</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__AnalogLineGroup.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">AnalogLineGroup</A></b> (AnalogLine::Type type, const char* name, bool slave = false) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">AnalogLineGroup</A></b> (const char* name, AnalogLineGroup* fxo) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~AnalogLineGroup</A></b> () 
+</LI>
+<LI>inline AnalogLine::Type &nbsp;<b><A HREF="#ref4">type</A></b> ()  const
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref5">lines</A></b> () 
+</LI>
+<LI>inline AnalogLineGroup* &nbsp;<b><A HREF="#ref6">fxo</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">slave</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">appendLine</A></b> (AnalogLine* line, bool destructOnFail = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">removeLine</A></b> (unsigned int cic) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">removeLine</A></b> (AnalogLine* line) 
+</LI>
+<LI>AnalogLine* &nbsp;<b><A HREF="#ref11">findLine</A></b> (unsigned int cic) 
+</LI>
+<LI>AnalogLine* &nbsp;<b><A HREF="#ref12">findLine</A></b> (const String& address) 
+</LI>
+<LI>virtual  AnalogLineEvent* &nbsp;<b><A HREF="#ref13">getEvent</A></b> (const Time& when) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">destruct</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ObjList <b><A HREF="#ref15">m_lines</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is an analog line container.
+ It may contain another group when used to monitor analog lines
+</p>
+<A NAME="AnalogLineGroup"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>AnalogLineGroup</strong> (AnalogLine::Type type, const char* name, bool slave = false)
+<br></td><td align="right"><h3><strong>AnalogLineGroup</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct an analog line group owning single lines
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Line type as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+</TD></TR>
+<TR><TD align="left" valign="top"><i>slave</i></TD><TD align="left" valign="top">True if this is an FXO group owned by an FXS one. Ignored if type is not FXO
+     </TD></TR>
+</TABLE></P>
+<A NAME="AnalogLineGroup"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>AnalogLineGroup</strong> (const char* name, AnalogLineGroup* fxo)
+<br></td><td align="right"><h3><strong>AnalogLineGroup</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct an FXS analog line group owning another group of FXO analog lines.
+ The fxo group is owned by this component and will be destructed if invalid (not FXO type)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fxo</i></TD><TD align="left" valign="top">The FXO group
+     </TD></TR>
+</TABLE></P>
+<A NAME="~AnalogLineGroup"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~AnalogLineGroup</strong> ()
+<br></td><td align="right"><h3><strong>~AnalogLineGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline AnalogLine::Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get this group's type
+</p>
+<p><b>Returns</b>: The group's type
+     </p>
+<A NAME="lines"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>lines</strong> ()
+<br></td><td align="right"><h3><strong>lines</strong></h3></td></tr></table><p></p><p>
+ Get the analog lines belonging to this group
+</p>
+<p><b>Returns</b>: The group's lines list
+     </p>
+<A NAME="fxo"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline AnalogLineGroup* &nbsp;<strong>fxo</strong> ()
+<br></td><td align="right"><h3><strong>fxo</strong></h3></td></tr></table><p></p><p>
+ Get the group holding the FXO lines if present
+</p>
+<p><b>Returns</b>: The group holding the FXO lines or 0
+     </p>
+<A NAME="slave"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>slave</strong> ()
+<br></td><td align="right"><h3><strong>slave</strong></h3></td></tr></table><p></p><p>
+ Check if this is an FXO group owned by an FXS one
+</p>
+<p><b>Returns</b>: True if this is an FXO group owned by an FXS one
+     </p>
+<A NAME="appendLine"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>appendLine</strong> (AnalogLine* line, bool destructOnFail = true)
+<br></td><td align="right"><h3><strong>appendLine</strong></h3></td></tr></table><p></p><p>
+ Append a line to this group. Line must have the same type as this group and must be owned by this group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">The line to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>destructOnFail</i></TD><TD align="left" valign="top">Destroy line if failed to append. Defaults to true
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="removeLine"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeLine</strong> (unsigned int cic)
+<br></td><td align="right"><h3><strong>removeLine</strong></h3></td></tr></table><p></p><p>
+ Remove a line from the list and destruct it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">The signalling circuit's code used by the line
+     </TD></TR>
+</TABLE></P>
+<A NAME="removeLine"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeLine</strong> (AnalogLine* line)
+<br></td><td align="right"><h3><strong>removeLine</strong></h3></td></tr></table><p></p><p>
+ Remove a line from the list without destroying it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">The line to be removed
+     </TD></TR>
+</TABLE></P>
+<A NAME="findLine"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>AnalogLine* &nbsp;<strong>findLine</strong> (unsigned int cic)
+<br></td><td align="right"><h3><strong>findLine</strong></h3></td></tr></table><p></p><p>
+ Find a line by its circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">The signalling circuit's code used by the line
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: AnalogLine pointer or 0 if not found
+     </p>
+<A NAME="findLine"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>AnalogLine* &nbsp;<strong>findLine</strong> (const String& address)
+<br></td><td align="right"><h3><strong>findLine</strong></h3></td></tr></table><p></p><p>
+ Find a line by its address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>address</i></TD><TD align="left" valign="top">The address of the line
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: AnalogLine pointer or 0 if not found
+     </p>
+<A NAME="getEvent"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> AnalogLineEvent* &nbsp;<strong>getEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Iterate through the line list to get an event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: AnalogLineEvent pointer or 0 if no events
+     </p>
+<A NAME="destruct"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove all lines. Release object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCircuitGroup.html#destruct">SignallingCircuitGroup</A>.</p>
+<A NAME="m_lines"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_lines</strong>
+</td><td align="right"><h3><strong>m_lines</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

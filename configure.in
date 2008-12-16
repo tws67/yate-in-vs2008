@@ -1,0 +1,916 @@
+# Process this file with autoconf to produce a configure script.
+AC_INIT(Yate, 2.0.0)
+AC_CONFIG_SRCDIR([README])
+AC_PREREQ(2.52)
+
+PACKAGE_RELEASE="1"
+PACKAGE_STATUS=""
+
+PACKAGE_VERSION_MAJOR="${PACKAGE_VERSION%%.*}"
+PACKAGE_VERSION_MINOR="${PACKAGE_VERSION#*.}"
+PACKAGE_VERSION_MINOR="${PACKAGE_VERSION_MINOR%.*}"
+PACKAGE_VERSION_BUILD="${PACKAGE_VERSION##*.}"
+PACKAGE_VERSION_RELEASE="$((0+${PACKAGE_RELEASE}))"
+AC_SUBST(PACKAGE_VERSION_MAJOR)
+AC_SUBST(PACKAGE_VERSION_MINOR)
+AC_SUBST(PACKAGE_VERSION_BUILD)
+AC_SUBST(PACKAGE_VERSION_RELEASE)
+AC_SUBST(PACKAGE_RELEASE)
+AC_SUBST(PACKAGE_STATUS)
+
+# sed expression to convert version into something comparable lexicographically
+vsed='s/\(^\|\.\)\([[0-9]]\)\($\|\.\)/\10\2\3/g'
+
+# We may need the host OS type but avoid the overhead of AC_CANONICAL_SYSTEM
+AC_MSG_CHECKING([for local operating system type])
+uname_os=`uname -s`
+test -x "$uname_os" && uname_os=Unknown
+AC_MSG_RESULT([$uname_os])
+
+# Check if we should look for alternate library names
+AC_ARG_WITH(archlib,AC_HELP_STRING([--with-archlib=NAME],[use NAME as library directory name]),[ac_cv_use_archlib=$withval])
+AC_MSG_CHECKING([for libraries directory name])
+archname=`uname -m` 2>/dev/null
+test -z "$archname" && archname=`arch -k`
+ARCHLIB="lib"
+case "x$archname" in
+    x*x86_64*)
+	ARCHLIB=lib64
+	;;
+esac
+case "x$ac_cv_use_archlib" in
+    x|xyes)
+	;;
+    xno)
+	ARCHLIB="lib"
+	;;
+    *)
+	ARCHLIB="$ac_cv_use_archlib"
+esac
+test -d "/usr/$ARCHLIB" || ARCHLIB="lib"
+AC_MSG_RESULT([$ARCHLIB])
+AC_SUBST(ARCHLIB)
+
+# Checks for programs.
+AC_PROG_CXX
+AC_PROG_CC
+AC_PROG_AWK
+
+# Check if gcc style printf argument check is supported
+HAVE_GCC_FORMAT_CHECK=""
+AC_MSG_CHECKING([for gcc printf format typechecks])
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror"
+AC_TRY_COMPILE([],[void f(void*x,const char*f,...) __attribute__((format(printf,2,3))); ],[ac_cv_format_checks=yes],[ac_cv_format_checks=no])
+CFLAGS="$SAVE_CFLAGS"
+if [[ "x$ac_cv_format_checks" = "xyes" ]]; then
+    HAVE_GCC_FORMAT_CHECK="-DHAVE_GCC_FORMAT_CHECK"
+fi
+AC_MSG_RESULT([$ac_cv_format_checks])
+
+GCC_UNRESOLVED_SYMBOLS="-Wl,--unresolved-symbols=ignore-in-shared-libs"
+ld_unresolved_symbols=no
+AC_MSG_CHECKING([if ld supports reporting unresolved symbols])
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror $GCC_UNRESOLVED_SYMBOLS"
+AC_TRY_LINK([],[],[ld_unresolved_symbols=yes],[GCC_UNRESOLVED_SYMBOLS=""])
+CFLAGS="$SAVE_CFLAGS"
+AC_MSG_RESULT([$ld_unresolved_symbols])
+
+# Checks for header files.
+AC_HEADER_DIRENT
+AC_HEADER_STDC
+AC_CHECK_HEADERS([fcntl.h arpa/inet.h netdb.h netinet/in.h sys/ioctl.h sys/socket.h sys/time.h], , [AC_MSG_ERROR([This header file is required.])])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_C_INLINE
+AC_HEADER_TIME
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_TYPE_SIGNAL
+AC_CHECK_FUNCS([gettimeofday inet_ntoa memmove regcomp strerror], , [AC_MSG_ERROR([This function is required.])])
+
+AC_CACHE_SAVE
+
+# Checks for required libraries.
+AC_CHECK_LIB([pthread], [pthread_mutexattr_settype], , [AC_MSG_ERROR([This library is required.])])
+
+AC_MSG_CHECKING([for dlopen in default libs])
+AC_LANG_SAVE
+AC_LANG_C
+AC_TRY_LINK([#include <dlfcn.h>],[dlopen("",0);],[have_dl=yes],[have_dl=no])
+AC_LANG_RESTORE
+AC_MSG_RESULT([$have_dl])
+if [[ "x$have_dl" != "xyes" ]]; then
+AC_CHECK_LIB([dl], [dlopen], , [AC_MSG_ERROR([This library is required.])])
+DLOPEN_LIB="-ldl"
+fi
+AC_SUBST(DLOPEN_LIB)
+
+MUTEX_HACK=""
+AC_MSG_CHECKING([for pthread_mutexattr_settype declaration])
+AC_LANG_SAVE
+AC_LANG_C
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror"
+AC_TRY_COMPILE([
+#include <unistd.h>
+#include <pthread.h>
+],[
+pthread_mutexattr_t attr;
+pthread_mutexattr_settype(&attr,PTHREAD_MUTEX_RECURSIVE_NP);
+],
+have_mutex_settype="yes",
+have_mutex_settype="no"
+)
+CFLAGS="$SAVE_CFLAGS"
+AC_LANG_RESTORE
+if [[ "$have_mutex_settype" = "no" ]]; then
+MUTEX_HACK="-DMUTEX_HACK"
+fi
+AC_MSG_RESULT([$have_mutex_settype])
+AC_SUBST(MUTEX_HACK)
+
+THREAD_KILL=""
+AC_MSG_CHECKING([for pthread_kill_other_threads_np declaration])
+AC_LANG_SAVE
+AC_LANG_C
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror"
+AC_TRY_COMPILE([
+#include <unistd.h>
+#include <pthread.h>
+],[
+pthread_kill_other_threads_np();
+],
+have_pthread_kill="yes",
+have_pthread_kill="no"
+)
+CFLAGS="$SAVE_CFLAGS"
+AC_LANG_RESTORE
+if [[ "$have_pthread_kill" = "yes" ]]; then
+THREAD_KILL="-DTHREAD_KILL"
+fi
+AC_MSG_RESULT([$have_pthread_kill])
+AC_SUBST(THREAD_KILL)
+
+# Check for compile options
+INLINE_FLAGS=""
+AC_ARG_ENABLE(inline,AC_HELP_STRING([--enable-inline],[Enable inlining of functions]),want_inline=$enableval,want_inline=auto)
+AC_MSG_CHECKING([whether to use inline functions])
+case "x$want_inline" in
+    xyes)
+	INLINE_FLAGS="-finline -Winline"
+	;;
+    xno)
+	INLINE_FLAGS="-fno-inline"
+	;;
+    xauto)
+	;;
+    *)
+	AC_ERROR([Invalid argument passed to --enable-inline])
+	;;
+esac
+AC_MSG_RESULT([$want_inline])
+AC_SUBST(INLINE_FLAGS)
+
+FDSIZE_HACK=""
+AC_ARG_WITH(fdsize,AC_HELP_STRING([--with-fdsize=NNNN],[set FD_SIZE to NNNN (default 8192)]),[ac_cv_use_fdsize=$withval],[ac_cv_use_fdsize=8192])
+if [[ "x$ac_cv_use_fdsize" != "xno" ]]; then
+FDSIZE_HACK="-DFDSIZE_HACK=$ac_cv_use_fdsize"
+AC_LANG_SAVE
+AC_LANG_C
+AC_TRY_COMPILE([#include <features.h>
+#if (__GLIBC__ > 2) || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 2)
+#include <bits/types.h>
+#else
+#error FD_SETSIZE cannot be set
+#endif],[if (__FD_SETSIZE>10) return 0;],[],[FDSIZE_HACK=""])
+AC_LANG_RESTORE
+if [[ "x$FDSIZE_HACK" = "x" ]]; then
+AC_ERROR([Cannot set FD_SETSIZE on this platform, use --without-fdsize])
+fi
+fi
+AC_SUBST(FDSIZE_HACK)
+
+HAVE_SCTP=no
+HAVE_SCTP_NETINET=no
+AC_ARG_ENABLE(sctp,AC_HELP_STRING([--enable-sctp],[Enable SCTP sockets (default: no)]),want_sctp=$enableval,want_sctp=no)
+if [[ "x$want_sctp" = "xyes" ]]; then
+AC_LANG_SAVE
+AC_LANG_C
+AC_MSG_CHECKING([for basic SCTP support])
+AC_TRY_COMPILE([#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>],[int fd = socket(PF_INET,SOCK_SEQPACKET,IPPROTO_SCTP);],[HAVE_SCTP=yes])
+AC_MSG_RESULT([$HAVE_SCTP])
+AC_MSG_CHECKING([for netinet/sctp.h usability])
+AC_TRY_COMPILE([#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netinet/sctp.h>],[sctp_assoc_t assoc; int fd = socket(PF_INET,SOCK_SEQPACKET,IPPROTO_SCTP); assoc = 1;],[HAVE_SCTP_NETINET=yes])
+AC_MSG_RESULT([$HAVE_SCTP_NETINET])
+if [[ "x$HAVE_SCTP_NETINET" != "xno" ]]; then
+# including netinet/sctp.h fixes SCTP support so enable it
+HAVE_SCTP=yes
+fi
+AC_LANG_RESTORE
+fi
+AC_SUBST(HAVE_SCTP)
+AC_SUBST(HAVE_SCTP_NETINET)
+
+# Checks for optional libraries.
+
+HAVE_RESOLV=no
+RESOLV_LIB=""
+AC_MSG_CHECKING([for resolver library])
+AC_LANG_SAVE
+AC_LANG_C
+AC_TRY_LINK([#include <netinet/in.h>
+#include <arpa/nameser.h>
+#include <resolv.h>],[res_init();],[HAVE_RESOLV=yes],[HAVE_RESOLV=no])
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror $GCC_UNRESOLVED_SYMBOLS"
+AC_TRY_LINK([#include <netinet/in.h>
+#include <arpa/nameser.h>
+#include <resolv.h>],[unsigned char x[2]; res_query("",0,0,x,0);],[],[RESOLV_LIB=-lresolv])
+CFLAGS="$SAVE_CFLAGS"
+AC_LANG_RESTORE
+AC_MSG_RESULT([$HAVE_RESOLV $RESOLV_LIB])
+AC_SUBST(HAVE_RESOLV)
+AC_SUBST(RESOLV_LIB)
+
+INTERNAL_REGEX=yes
+AC_ARG_ENABLE(internalregex,AC_HELP_STRING([--enable-internalregex],[Use internal regexp library (default: not on Linux)]),want_internalregex=$enableval,want_internalregex=auto)
+AC_MSG_CHECKING([whether to use the internal regexp library])
+case "x$want_internalregex" in
+    xno|xdisable|xnot)
+	INTERNAL_REGEX=no
+	;;
+    xyes|xenable)
+	;;
+    xauto)
+	if [[ "x$uname_os" = "xLinux" ]]; then
+	    INTERNAL_REGEX=no
+	fi
+	;;
+    *)
+	AC_ERROR([Invalid argument passed to --enable-internalregex])
+	;;
+esac
+AC_MSG_RESULT([$INTERNAL_REGEX])
+AC_SUBST(INTERNAL_REGEX)
+
+HAVE_PGSQL=no
+PGSQL_INC=""
+AC_ARG_WITH(libpq,AC_HELP_STRING([--with-libpq=DIR],[use Postgress SQL from DIR (default /usr)]),[ac_cv_use_libpq=$withval],[ac_cv_use_libpq=/usr])
+if [[ "x$ac_cv_use_libpq" != "xno" ]]; then
+AC_MSG_CHECKING([for Postgress SQL in $ac_cv_use_libpq])
+local_lib="$ARCHLIB"
+libpq="$ac_cv_use_libpq/$ARCHLIB/libpq.so"
+if [[ "x$local_lib" != "xlib" -a ! -f "$libpq" ]]; then
+    local_lib="lib"
+    libpq="$ac_cv_use_libpq/$ARCHLIB/libpq.so"
+fi
+for i in include include/pgsql pgsql/include include/postgresql; do
+    incpq="$ac_cv_use_libpq/$i"
+    test -f "$incpq/libpq-fe.h" && break
+done
+if [[ ! -f "$incpq/libpq-fe.h" ]]; then
+    incpq="$incpq/pgsql"
+fi
+if [[ -f "$incpq/libpq-fe.h" -a -f "$libpq" ]]; then
+    HAVE_PGSQL=yes
+    PGSQL_INC="-I$incpq"
+fi
+AC_MSG_RESULT([$HAVE_PGSQL])
+fi
+AC_SUBST(HAVE_PGSQL)
+AC_SUBST(PGSQL_INC)
+
+HAVE_MYSQL=no
+MYSQL_INC=""
+MYSQL_LIB=""
+MYSQL_VER=""
+AC_ARG_WITH(mysql,AC_HELP_STRING([--with-mysql=DIR],[use MySQL client library from DIR]),[ac_cv_use_mysql=$withval],[ac_cv_use_mysql=yes])
+if [[ "x$ac_cv_use_mysql" != "xno" ]]; then
+if [[ "x$ac_cv_use_mysql" = "xyes" ]]; then
+AC_MSG_CHECKING([for MySQL using mysql_config])
+MYSQL_INC=`mysql_config --include 2>/dev/null`
+MYSQL_LIB=`mysql_config --libs_r 2>/dev/null`
+MYSQL_VER=`mysql_config --version 2>/dev/null`
+if [[ x`echo "$MYSQL_INC $MYSQL_LIB $MYSQL_VER" | wc -l | sed 's/^ *//g'` != "x1" ]]; then
+MYSQL_INC=""
+fi
+if [[ ! -f `echo "$MYSQL_INC" | sed 's,^-I\(.*\)$,\1/mysql.h,'` ]]; then
+MYSQL_INC=""
+fi
+if [[ "x$MYSQL_INC" != "x" -a "x$MYSQL_LIB" != "x" -a "x$MYSQL_VER" != "x" ]]; then
+HAVE_MYSQL=yes
+else
+MYSQL_INC=""
+MYSQL_LIB=""
+MYSQL_VER=""
+fi
+else
+AC_MSG_CHECKING([for MySQL in $ac_cv_use_mysql])
+local_lib="$ARCHLIB"
+if [[ "x$local_lib" != "xlib" -a ! -d "$ac_cv_use_mysql/$local_lib/mysql" ]]; then
+    local_lib="lib"
+fi
+if [[ -f "$ac_cv_use_mysql/include/mysql/mysql.h" -a -d "$ac_cv_use_mysql/$local_lib/mysql" ]]; then
+MYSQL_INC="-I$ac_cv_use_mysql/include/mysql"
+MYSQL_LIB="-L$ac_cv_use_mysql/$local_lib/mysql -lmysqlclient_r -lpthread -lz -lcrypt -lnsl -lm"
+MYSQL_VER=`sed -n 's/^.*MYSQL_SERVER_VERSION[[^"]]*"\([[^"]]*\).*$/\1/p' "$ac_cv_use_mysql/include/mysql/mysql_version.h"`
+HAVE_MYSQL=yes
+fi
+fi
+AC_MSG_RESULT([$HAVE_MYSQL $MYSQL_VER])
+if test "$HAVE_MYSQL" = "yes"; then
+    save_CPPFLAGS=$CPPFLAGS
+    CPPFLAGS="$CPPFLAGS $MYSQL_INC"
+    AC_CHECK_DECLS([MYSQL_OPT_RECONNECT],[MYSQL_INC="$MYSQL_INC -DMYSQL_OPT_RECONNECT=MYSQL_OPT_RECONNECT"],,[#include<mysql.h>])
+    AC_CHECK_DECLS([MYSQL_OPT_READ_TIMEOUT],[MYSQL_INC="$MYSQL_INC -DMYSQL_OPT_READ_TIMEOUT=MYSQL_OPT_READ_TIMEOUT"],,[#include<mysql.h>])
+    AC_CHECK_DECLS([MYSQL_OPT_WRITE_TIMEOUT],[MYSQL_INC="$MYSQL_INC -DMYSQL_OPT_WRITE_TIMEOUT=MYSQL_OPT_WRITE_TIMEOUT"],,[#include<mysql.h>])
+    CPPFLAGS=$save_CPPFLAGS
+fi
+fi
+AC_SUBST(HAVE_MYSQL)
+AC_SUBST(MYSQL_INC)
+AC_SUBST(MYSQL_LIB)
+AC_SUBST(MYSQL_VER)
+
+HAVE_ZAP=no
+ZAP_FLAGS=""
+AC_ARG_ENABLE(zaptel,AC_HELP_STRING([--enable-zaptel],[Enable Zaptel driver (default: yes)]),want_zaptel=$enableval,want_zaptel=yes)
+if [[ "x$want_zaptel" = "xyes" ]]; then
+AC_MSG_CHECKING([for Zaptel generic headers])
+AC_TRY_COMPILE([
+#include <zaptel/zaptel.h>
+],[],
+HAVE_ZAP="yes"
+ZAP_FLAGS="-DNEW_ZAPTEL_LOCATION"
+)
+AC_MSG_RESULT([$HAVE_ZAP])
+if [[ "x$HAVE_ZAP" = "xno" ]]; then
+AC_MSG_CHECKING([for Zaptel linux headers])
+AC_TRY_COMPILE([
+#include <linux/zaptel.h>
+],[],
+HAVE_ZAP="yes"
+)
+AC_MSG_RESULT([$HAVE_ZAP])
+fi
+fi
+AC_SUBST(HAVE_ZAP)
+AC_SUBST(ZAP_FLAGS)
+
+HAVE_WANPIPE=no
+AC_ARG_ENABLE(wanpipe,AC_HELP_STRING([--enable-wanpipe],[Enable Wanpipe driver (default: yes)]),want_wanpipe=$enableval,want_wanpipe=yes)
+if [[ "x$want_wanpipe" = "xyes" ]]; then
+AC_MSG_CHECKING([for Wanpipe linux headers])
+AC_TRY_COMPILE([
+#define __LINUX__
+#include <sys/types.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <linux/if_wanpipe.h>
+#include <linux/if.h>
+#include <linux/wanpipe_defines.h>
+#include <linux/wanpipe_cfg.h>
+#include <linux/wanpipe.h>
+#include <linux/sdla_aft_te1.h>
+],[],
+HAVE_WANPIPE="yes"
+)
+AC_MSG_RESULT([$HAVE_WANPIPE])
+fi
+AC_SUBST(HAVE_WANPIPE)
+
+WANPIPE_HWEC_INC=""
+AC_ARG_WITH(wphwec,AC_HELP_STRING([--with-wphwec=DIR],[use Wanpipe/Octasic headers from DIR]),[ac_cv_use_wphwec=$withval],[ac_cv_use_wphwec=/usr/include/wanpipe])
+if [[ "x$HAVE_WANPIPE" = "xyes" ]]; then
+if [[ "x$ac_cv_use_wphwec" != "xno" ]]; then
+AC_MSG_CHECKING([for Wanpipe/Octasic headers])
+if [[ -f "$ac_cv_use_wphwec/wanec_iface.h" -a -f "$ac_cv_use_wphwec/oct6100_api/oct6100api/oct6100_api.h" ]]; then
+    WANPIPE_HWEC_INC="-DHAVE_WANPIPE_HWEC -I$ac_cv_use_wphwec -I$ac_cv_use_wphwec/oct6100_api"
+    ac_cv_use_wphwec=yes
+else
+    ac_cv_use_wphwec=no
+fi
+AC_MSG_RESULT([$ac_cv_use_wphwec])
+fi
+fi
+AC_SUBST(WANPIPE_HWEC_INC)
+
+HAVE_SOUNDCARD=no
+AC_MSG_CHECKING([for sound card headers])
+AC_TRY_COMPILE([
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <string.h>
+#include <fcntl.h>
+
+#if defined(__linux__)
+#include <linux/soundcard.h>
+#elif defined (__FreeBSD__)
+#include <machine/soundcard.h>
+#else
+#include <soundcard.h>
+#endif
+],[],
+HAVE_SOUNDCARD="yes"
+)
+AC_MSG_RESULT([$HAVE_SOUNDCARD])
+AC_SUBST(HAVE_SOUNDCARD)
+
+HAVE_ALSA=no
+AC_MSG_CHECKING([for ALSA headers])
+AC_TRY_COMPILE([
+#if defined(__linux__)
+#include <linux/soundcard.h>
+#elif defined (__FreeBSD__)
+#include <machine/soundcard.h>
+#else
+#include <soundcard.h>
+#endif
+
+#define ALSA_PCM_NEW_HW_PARAMS_API
+#include <alsa/asoundlib.h>
+],[],
+HAVE_ALSA="yes"
+)
+AC_MSG_RESULT([$HAVE_ALSA])
+AC_SUBST(HAVE_ALSA)
+
+
+HAVE_GSM=no
+GSM_INC=""
+AC_ARG_WITH(libgsm,AC_HELP_STRING([--with-libgsm],[use GSM codec if available (default)]),[ac_cv_use_libgsm=$withval],[ac_cv_use_libgsm=yes])
+if [[ "x$ac_cv_use_libgsm" = "xyes" ]]; then
+for i in /usr/include /usr/include/gsm /usr/local/include /usr/local/include/gsm; do
+    ac_cv_use_libgsm="$i"
+    test -f "$ac_cv_use_libgsm/gsm.h" && break
+done
+fi
+if [[ "x$ac_cv_use_libgsm" != "xno" ]]; then
+AC_MSG_CHECKING([for gsm.h in $ac_cv_use_libgsm])
+if [[ -f "$ac_cv_use_libgsm/gsm.h" ]]; then
+    HAVE_GSM=yes
+    GSM_INC="-I$ac_cv_use_libgsm"
+fi
+AC_MSG_RESULT([$HAVE_GSM])
+fi
+AC_SUBST(HAVE_GSM)
+AC_SUBST(GSM_INC)
+
+
+HAVE_ILBC=no
+ILBC_INC=""
+AC_ARG_ENABLE(ilbc,AC_HELP_STRING([--enable-ilbc],[Enable iLBC codec (default: yes)]),want_ilbc=$enableval,want_ilbc=yes)
+if [[ "x$want_ilbc" = "xyes" ]]; then
+AC_MSG_CHECKING([for iLBC in libs])
+	basedir=`cd "$srcdir" && pwd`
+	incilbc="libs/ilbc"
+        if [[ -f "$basedir/$incilbc/iLBC_encode.h" ]]; then
+		HAVE_ILBC=yes
+		ILBC_INC="-I$basedir/$incilbc"
+		ILBC_DEP="../$incilbc/libilbc.a"
+	fi
+AC_MSG_RESULT([$HAVE_ILBC])
+fi
+AC_SUBST(HAVE_ILBC)
+AC_SUBST(ILBC_INC)
+
+
+HAVE_SPEEX=no
+SPEEX_INC=""
+AC_ARG_WITH(libspeex,AC_HELP_STRING([--with-libspeex],[use Speex codec if available (default)]),[ac_cv_use_libspeex=$withval],[ac_cv_use_libspeex=yes])
+if [[ "x$ac_cv_use_libspeex" = "xyes" ]]; then
+for i in /usr/include /usr/include/speex /usr/local/include /usr/local/include/speex; do
+    ac_cv_use_libspeex="$i"
+    test -f "$ac_cv_use_libspeex/speex.h" && break
+done
+fi
+if [[ "x$ac_cv_use_libspeex" != "xno" ]]; then
+AC_MSG_CHECKING([for speex.h in $ac_cv_use_libspeex])
+if [[ -f "$ac_cv_use_libspeex/speex.h" ]]; then
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror -I$ac_cv_use_libspeex"
+AC_TRY_COMPILE([
+#include <speex.h>
+],[
+int i = SPEEX_MODEID_UWB;
+speex_lib_ctl(SPEEX_LIB_GET_MAJOR_VERSION, &i);
+],
+HAVE_SPEEX=yes
+)
+CFLAGS="$SAVE_CFLAGS"
+if [[ "x$HAVE_SPEEX" = "xyes" ]]; then
+    SPEEX_INC="-I$ac_cv_use_libspeex"
+fi
+fi
+AC_MSG_RESULT([$HAVE_SPEEX])
+fi
+AC_SUBST(HAVE_SPEEX)
+AC_SUBST(SPEEX_INC)
+
+
+HAVE_AMRNB=no
+AMRNB_INC=""
+AMRNB_LIB=""
+AC_ARG_WITH(amrnb,AC_HELP_STRING([--with-amrnb=DIR],[use AMR-NB if available (default)]),[ac_cv_use_amrnb=$withval],[ac_cv_use_amrnb=/usr])
+if [[ "x$ac_cv_use_amrnb" != "xno" ]]; then
+AC_MSG_CHECKING([for AMR-NB in $ac_cv_use_amrnb])
+local_lib="$ARCHLIB"
+amrinc="$ac_cv_use_amrnb/include/amrnb"
+test -f "$ac_cv_use_amrnb/$local_lib/libamrnb.so" || local_lib="lib"
+if [[ -f "$ac_cv_use_amrnb/$local_lib/libamrnb.so" -a -f "$amrinc/interf_rom.h" ]]; then
+    HAVE_AMRNB=yes
+    AMRNB_LIB="-L$ac_cv_use_amrnb/$local_lib -lamrnb"
+    AMRNB_INC="-I$amrinc"
+fi
+AC_MSG_RESULT([$HAVE_AMRNB])
+fi
+AC_SUBST(HAVE_AMRNB)
+AC_SUBST(AMRNB_INC)
+AC_SUBST(AMRNB_LIB)
+
+
+HAVE_SPANDSP=no
+SPANDSP_INC=""
+AC_ARG_WITH(spandsp,AC_HELP_STRING([--with-spandsp],[use spandsp library if available (default)]),[ac_cv_use_spandsp=$withval],[ac_cv_use_spandsp=yes])
+if [[ "x$ac_cv_use_spandsp" = "xyes" ]]; then
+for i in /usr/include /usr/local/include; do
+    ac_cv_use_spandsp="$i"
+    test -f "$ac_cv_use_spandsp/spandsp.h" && break
+done
+fi
+if [[ "x$ac_cv_use_spandsp" != "xno" ]]; then
+AC_MSG_CHECKING([for usable spandsp in $ac_cv_use_spandsp])
+if [[ -f "$ac_cv_use_spandsp/spandsp.h" ]]; then
+AC_LANG_SAVE
+AC_LANG([C++])
+SAVE_CFLAGS="$CFLAGS"
+CFLAGS="$CFLAGS -Wall -Werror"
+AC_TRY_COMPILE([
+#define __STDC_LIMIT_MACROS
+#include <math.h>
+#include <stdint.h>
+#include <stdlib.h>
+#include <string.h>
+#include <spandsp.h>
+],[
+fax_state_t fax_state;
+t38_terminal_state_t t38_t_state;
+t38_gateway_state_t t38_g_state;
+fax_init(&fax_state,TRUE);
+t30_set_ecm_capability(&fax_state.t30_state,1);
+t30_set_supported_compressions(&fax_state.t30_state,T30_SUPPORT_T6_COMPRESSION);
+t30_set_tx_file(&fax_state.t30_state,"abc",-1,-1);
+fax_set_transmit_on_idle(&fax_state,1);
+t38_terminal_init(&t38_t_state,TRUE,NULL,NULL);
+t38_gateway_init(&t38_g_state,NULL,NULL);
+],
+HAVE_SPANDSP="yes"
+)
+CFLAGS="$SAVE_CFLAGS"
+AC_LANG_RESTORE
+if [[ "x$HAVE_SPANDSP" = "xyes" ]]; then
+SPANDSP_INC="-I$ac_cv_use_spandsp"
+fi
+fi
+AC_MSG_RESULT([$HAVE_SPANDSP])
+fi
+AC_SUBST(HAVE_SPANDSP)
+AC_SUBST(SPANDSP_INC)
+
+
+HAVE_PWLIB=no
+PWLIB_RTTI=none
+PWLIB_INC=""
+PWLIB_LIB=""
+PWLIB_RUN=""
+AC_ARG_WITH(pwlib,AC_HELP_STRING([--with-pwlib=DIR],[use Pwlib from DIR (default /usr)]),[ac_cv_use_pwlib=$withval],[ac_cv_use_pwlib=/usr])
+
+if [[ "x$ac_cv_use_pwlib" != "xno" ]]; then
+if [[ "x$ac_cv_use_pwlib" = "x/usr" -a ! -f "$ac_cv_use_pwlib/include/ptlib.h" ]]; then
+    ac_cv_use_pwlib="$ac_cv_use_pwlib/local"
+fi
+AC_MSG_CHECKING([for Pwlib in $ac_cv_use_pwlib])
+local_lib="$ARCHLIB"
+verpw=`$ac_cv_use_pwlib/bin/ptlib-config --version 2>/dev/null`
+prtti=`$ac_cv_use_pwlib/bin/ptlib-config --ccflags 2>/dev/null | sed -n 's/^.*\(-f[[^ ]]*rtti\).*$/\1/p'`
+# try first installed directory
+incpw="$ac_cv_use_pwlib/include/ptlib.h"
+libpw="$ac_cv_use_pwlib/$local_lib/libpt.so"
+if [[ "x$local_lib" != "xlib" -a ! -f "$libpw" ]]; then
+    local_lib="lib"
+    libpw="$ac_cv_use_pwlib/$local_lib/libpt.so"
+fi
+if [[ "x$verpw" = "x" ]]; then
+    verpw=`cat "$ac_cv_use_pwlib/include/ptbuildopts.h" 2>/dev/null | sed -n 's/^.*PWLIB_VERSION "\([[^"]]*\)".*$/\1/p'`
+fi
+PWLIB_INC="-I$ac_cv_use_pwlib/include/ptlib"
+vpw=`echo "$verpw" | sed "$vsed" | sed "$vsed"`
+if [[ "$vpw" '<' "01.06.00" ]]; then
+    PWLIB_INC="$PWLIB_INC/unix/ptlib $PWLIB_INC/unix $PWLIB_INC"
+fi
+if [[ -f "$incpw" -a -f "$libpw" ]]; then
+    HAVE_PWLIB=installed
+    PWLIB_LIB="-L$ac_cv_use_pwlib/$local_lib -lpt"
+    case "x$prtti" in
+	x-frtti)
+	    PWLIB_RTTI=yes
+	    ;;
+	x-fno-rtti)
+	    PWLIB_RTTI=no
+	    ;;
+    esac
+else
+# try source directory style
+    libpw=`echo "$ac_cv_use_pwlib/lib/"libpt*r.so`
+    if [[ -f "$incpw" -a -f "$libpw" ]]; then
+	prtti=`"$ac_cv_use_pwlib/make/ptlib-config" --ccflags 2>/dev/null | sed -n 's/^.*\(-f[[^ ]]*rtti\).*$/\1/p'`
+        HAVE_PWLIB=sources
+	PWLIB_INC="-I$ac_cv_use_pwlib/include $PWLIB_INC"
+        PWLIB_LIB="-L$ac_cv_use_pwlib/lib -l`echo "$libpw"|sed 's,^.*/lib,,; s,\.so$,,'`"
+        PWLIB_RUN=":$ac_cv_use_pwlib/lib"
+	case "x$prtti" in
+	    x-frtti)
+		PWLIB_RTTI=yes
+		;;
+	    x-fno-rtti)
+		PWLIB_RTTI=no
+		;;
+	esac
+    fi
+fi
+AC_MSG_RESULT([$HAVE_PWLIB $verpw RTTI: $PWLIB_RTTI])
+fi
+
+
+HAVE_H323=no
+H323_INC=""
+H323_LIB=""
+H323_RUN=""
+AC_ARG_WITH(openh323,AC_HELP_STRING([--with-openh323=DIR],[use OpenH323 from DIR (default /usr)]),[ac_cv_use_openh323=$withval],[ac_cv_use_openh323=/usr])
+
+if [[ "x$HAVE_PWLIB" != "xno" -a "x$ac_cv_use_openh323" != "xno" ]]; then
+if [[ "x$ac_cv_use_openh323" = "x/usr" -a ! -f "$ac_cv_use_openh323/include/openh323/h323.h" ]]; then
+    ac_cv_use_openh323="$ac_cv_use_openh323/local"
+fi
+AC_MSG_CHECKING([for OpenH323 in $ac_cv_use_openh323])
+local_lib="$ARCHLIB"
+# try first installed directory
+ver323=""
+inc323="$ac_cv_use_openh323/include/openh323/h323.h"
+lib323="$ac_cv_use_openh323/$local_lib/libopenh323.so"
+if [[ "x$local_lib" != "xlib" -a ! -f "$lib323" ]]; then
+    local_lib="lib"
+    lib323="$ac_cv_use_openh323/$local_lib/libopenh323.so"
+fi
+if [[ -f "$inc323" -a -f "$lib323" ]]; then
+    ver323=`sed -n 's/^.*OPENH323_VERSION.*"\([[^"]]\+\)".*$/\1/p' "$ac_cv_use_openh323/include/openh323/openh323buildopts.h" 2>/dev/null`
+    HAVE_H323=installed
+    H323_INC="-I$ac_cv_use_openh323/include/openh323"
+    H323_LIB="-L$ac_cv_use_openh323/$local_lib -lopenh323"
+else
+# try source directory style
+    inc323="$ac_cv_use_openh323/include/h323.h"
+    lib323=`echo "$ac_cv_use_openh323/lib/"libh323*r.so`
+    if [[ -f "$inc323" -a -f "$lib323" ]]; then
+	ver323=`sed -n 's/^.*OPENH323_VERSION.*"\([[^"]]\+\)".*$/\1/p' "$ac_cv_use_openh323/include/openh323buildopts.h" 2>/dev/null`
+        HAVE_H323=sources
+        H323_INC="-I$ac_cv_use_openh323/include"
+        H323_LIB="-L$ac_cv_use_openh323/lib -l`echo "$lib323"|sed 's,^.*/lib,,; s,\.so$,,'`"
+        H323_RUN=":$ac_cv_use_openh323/lib"
+    fi
+fi
+AC_MSG_RESULT([$HAVE_H323 $ver323])
+fi
+
+if [[ "x$HAVE_H323" != "xno" ]]; then
+    H323_INC="$PWLIB_INC $H323_INC"
+    H323_LIB="$H323_LIB $PWLIB_LIB"
+    H323_RUN="$PWLIB_RUN$H323_RUN"
+fi
+AC_SUBST(HAVE_H323)
+AC_SUBST(H323_INC)
+AC_SUBST(H323_LIB)
+AC_SUBST(H323_RUN)
+
+
+HAVE_OPENSSL=no
+OPENSSL_INC=""
+OPENSSL_LIB=""
+OPENSSL_VER=""
+AC_ARG_WITH(openssl,AC_HELP_STRING([--with-openssl],[use OpenSSL for secure sockets (default)]),[ac_cv_use_openssl=$withval],[ac_cv_use_openssl=yes])
+if [[ "x$ac_cv_use_openssl" = "xyes" ]]; then
+    AC_MSG_CHECKING([for OpenSSL using pkg-config])
+    pkg="openssl"
+    verssl=`pkg-config --modversion $pkg 2>/dev/null`
+    if [[ "x$verssl" = "x" ]]; then
+	pkg="libssl"
+	verssl=`pkg-config --modversion $pkg 2>/dev/null`
+    fi
+    incssl=`pkg-config --cflags $pkg 2>/dev/null`
+    libssl=`pkg-config --libs $pkg 2>/dev/null`
+    if [[ "x$incssl" != "x" -a "x$libssl" != "x" ]]; then
+	HAVE_OPENSSL=yes
+	OPENSSL_VER="$verssl"
+	OPENSSL_INC="$incssl"
+	OPENSSL_LIB="$libssl"
+    else
+	verssl="no"
+    fi
+    AC_MSG_RESULT([$verssl])
+fi
+AC_SUBST(HAVE_OPENSSL)
+AC_SUBST(OPENSSL_INC)
+AC_SUBST(OPENSSL_LIB)
+AC_SUBST(OPENSSL_VER)
+
+
+HAVE_QT4=no
+QT4_INC=""
+QT4_LIB=""
+QT4_MOC=""
+QT4_VER=""
+AC_ARG_WITH(libqt4,AC_HELP_STRING([--with-libqt4],[use Qt for graphical clients (default)]),[ac_cv_use_libqt4=$withval],[ac_cv_use_libqt4=yes])
+if [[ "x$ac_cv_use_libqt4" = "xyes" ]]; then
+    AC_MSG_CHECKING([for Qt4 using pkg-config])
+    pkgd="/usr/lib/qt4/$ARCHLIB/pkgconfig"
+    if [[ -d "$pkgd" ]]; then
+	export PKG_CONFIG_LIBDIR="$pkgd"
+    fi
+    verqt=`pkg-config --modversion QtCore 2>/dev/null`
+    incqt=`pkg-config --cflags QtCore QtGui QtXml QtNetwork 2>/dev/null | sed 's/QtNetwork/QtUiTools/'`
+    libqt=`pkg-config --libs QtCore QtGui QtXml QtNetwork 2>/dev/null | sed 's/QtNetwork/QtUiTools/'`
+    unset PKG_CONFIG_LIBDIR
+    if [[ "x$incqt" != "x" -a "x$libqt" != "x" ]]; then
+	HAVE_QT4=yes
+	QT4_INC="$incqt"
+	QT4_LIB="$libqt"
+	QT4_MOC=`echo "$incqt" | sed -n 's,^.*-I\([[^ ]]\+\)/include .*$,\1/bin/moc,p'`
+	test -z "$QT4_MOC" && QT4_MOC="moc"
+	QT4_VER=`echo "$verqt" | sed "$vsed" | sed "$vsed" | sed 's/\(..\)\.\(..\)\.\(..\)/\1\2\3/'`
+	ac_cv_use_libqt="no"
+    else
+	verqt="no"
+    fi
+    AC_MSG_RESULT([$verqt])
+fi
+AC_SUBST(HAVE_QT4)
+AC_SUBST(QT4_INC)
+AC_SUBST(QT4_LIB)
+AC_SUBST(QT4_MOC)
+AC_SUBST(QT4_VER)
+
+
+HAVE_COREDUMPER=no
+COREDUMPER_INC=""
+COREDUMPER_LIB=""
+AC_ARG_WITH(coredumper,AC_HELP_STRING([--with-coredumper],[use Google coredumper if available (default)]),[ac_cv_use_coredumper=$withval],[ac_cv_use_coredumper=yes])
+gcdinc="include/google/coredumper.h"
+if [[ "x$ac_cv_use_coredumper" = "xyes" ]]; then
+for i in /usr /usr/local; do
+    ac_cv_use_coredumper="$i"
+    test -f "$ac_cv_use_coredumper/$gcdinc" && break
+done
+fi
+if [[ "x$ac_cv_use_coredumper" != "xno" ]]; then
+AC_MSG_CHECKING([for coredumper.h in $ac_cv_use_coredumper])
+if [[ -f "$ac_cv_use_coredumper/$gcdinc" ]]; then
+    HAVE_COREDUMPER=yes
+    COREDUMPER_INC="-I$ac_cv_use_coredumper"
+    COREDUMPER_LIB="-L$ac_cv_use_coredumper -lcoredumper"
+fi
+AC_MSG_RESULT([$HAVE_COREDUMPER])
+fi
+AC_SUBST(HAVE_COREDUMPER)
+AC_SUBST(COREDUMPER_INC)
+AC_SUBST(COREDUMPER_LIB)
+
+
+RTTI_OPT=""
+AC_ARG_ENABLE(rtti,AC_HELP_STRING([--enable-rtti],[Enable RTTI support (default: like pwlib)]),want_rtti=$enableval,want_rtti=auto)
+AC_MSG_CHECKING([whether to enable RTTI support])
+USE_RTTI="$want_rtti"
+case "x$want_rtti" in
+    xyes|xno|xnone)
+	;;
+    xauto)
+	USE_RTTI="$PWLIB_RTTI"
+	;;
+    *)
+	AC_ERROR([Invalid argument passed to --enable-rtti])
+	;;
+esac
+case "$USE_RTTI" in
+    yes)
+	RTTI_OPT="-frtti"
+	;;
+    no)
+	RTTI_OPT="-fno-rtti"
+	;;
+esac
+AC_MSG_RESULT([$USE_RTTI])
+AC_SUBST(USE_RTTI)
+AC_SUBST(RTTI_OPT)
+
+if [[ "x$HAVE_H323" != "xno" ]]; then
+if [[ "x$USE_RTTI" != "x$PWLIB_RTTI" ]]; then
+AC_MSG_WARN([Mismatched RTTI setting between Yate ($USE_RTTI) and pwlib ($PWLIB_RTTI)])
+fi
+fi
+
+
+INSTALL_D="install -D"
+MODULE_CFLAGS="-fno-exceptions -fPIC $HAVE_GCC_FORMAT_CHECK"
+MODULE_CPPFLAGS="-fno-check-new $RTTI_OPT $MODULE_CFLAGS"
+MODULE_LDRELAX="-export-dynamic -shared"
+case "x$uname_os" in
+    x*BSD)
+	INSTALL_D="install"
+	MODULE_LDRELAX="$MODULE_LDRELAX -lc"
+	;;
+esac
+MODULE_LDFLAGS="$MODULE_LDRELAX $GCC_UNRESOLVED_SYMBOLS"
+MODULE_SYMBOLS="-Wl,--retain-symbols-file,/dev/null"
+AC_SUBST(INSTALL_D)
+AC_SUBST(MODULE_CFLAGS)
+AC_SUBST(MODULE_CPPFLAGS)
+AC_SUBST(MODULE_LDRELAX)
+AC_SUBST(MODULE_LDFLAGS)
+AC_SUBST(MODULE_SYMBOLS)
+
+
+DOXYGEN_BIN=""
+AC_ARG_WITH(doxygen,AC_HELP_STRING([--with-doxygen=EXE],[use doxygen to generate API docs (default: PATH)]),[ac_cv_use_doxygen=$withval],[ac_cv_use_doxygen=yes])
+if [[ "x$ac_cv_use_doxygen" != "xno" ]]; then
+test "x$ac_cv_use_doxygen" = "xyes" && ac_cv_use_doxygen=`which doxygen 2>/dev/null`
+AC_MSG_CHECKING([for doxygen version])
+if [[ "x$ac_cv_use_doxygen" != "x" -a -x "$ac_cv_use_doxygen" ]]; then
+DOXYGEN_BIN="$ac_cv_use_doxygen"
+ac_cv_use_doxygen=`$DOXYGEN_BIN --version 2>/dev/null`
+else
+ac_cv_use_doxygen="no"
+fi
+AC_MSG_RESULT([$ac_cv_use_doxygen])
+fi
+AC_SUBST(DOXYGEN_BIN)
+
+
+KDOC_BIN=""
+AC_ARG_WITH(kdoc,AC_HELP_STRING([--with-kdoc=EXE],[use kdoc to generate API docs (default: PATH)]),[ac_cv_use_kdoc=$withval],[ac_cv_use_kdoc=yes])
+if [[ "x$ac_cv_use_kdoc" != "xno" ]]; then
+test "x$ac_cv_use_kdoc" = "xyes" && ac_cv_use_kdoc=`which kdoc 2>/dev/null`
+AC_MSG_CHECKING([for kdoc version])
+if [[ "x$ac_cv_use_kdoc" != "x" -a -x "$ac_cv_use_kdoc" ]]; then
+KDOC_BIN="$ac_cv_use_kdoc"
+ac_cv_use_kdoc=`$KDOC_BIN --version 2>&1 | awk '{ print $2 }'`
+else
+ac_cv_use_kdoc="no"
+fi
+AC_MSG_RESULT([$ac_cv_use_kdoc])
+fi
+AC_SUBST(KDOC_BIN)
+
+
+m4_sinclude(./YateLocal.ac)
+
+AC_CONFIG_FILES([packing/rpm/yate.spec
+                 yate.pc
+		 yateversn.h
+		 yateiss.inc
+                 Makefile
+                 engine/Makefile
+                 modules/Makefile
+                 modules/test/Makefile
+                 clients/Makefile
+                 clients/qt4/Makefile
+                 libs/ilbc/Makefile
+                 libs/ysip/Makefile
+                 libs/yrtp/Makefile
+		 libs/yiax/Makefile
+		 libs/yxml/Makefile
+		 libs/yjingle/Makefile
+		 libs/ymgcp/Makefile
+		 libs/ysig/Makefile
+                 libs/ypbx/Makefile
+                 libs/ymodem/Makefile
+                 share/Makefile
+                 share/scripts/Makefile
+                 share/skins/Makefile
+                 share/sounds/Makefile
+                 share/help/Makefile
+                 conf.d/Makefile])
+AC_CONFIG_FILES([yate-config],[chmod +x yate-config])
+AC_CONFIG_FILES([run],[chmod +x run])
+CONFIGURE_FILES=`echo "$ac_config_files config.status config.log" | sed 's,packing/yate\.spec *,,'`
+AC_SUBST(CONFIGURE_FILES)
+AC_OUTPUT

@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<TITLE>class SocketAddr</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SocketAddr</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A socket address holder. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SocketAddr</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SocketAddr.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">SocketAddr</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref2">SocketAddr</A></b> (const SocketAddr& value) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">SocketAddr</A></b> (int family) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">SocketAddr</A></b> (const struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> len = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~SocketAddr</A></b> () 
+</LI>
+<LI>inline SocketAddr& &nbsp;<b><A HREF="#ref6">operator=</A></b> (const SocketAddr& value) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">operator==</A></b> (const SocketAddr& other)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">operator!=</A></b> (const SocketAddr& other)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">clear</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">assign</A></b> (int family) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">assign</A></b> (const struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> len = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">local</A></b> (const SocketAddr& remote) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">valid</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">null</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref15">family</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref16">host</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">host</A></b> (const String& name) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref18">port</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">port</A></b> (int newport) 
+</LI>
+<LI>inline struct sockaddr* &nbsp;<b><A HREF="#ref20">address</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#socklen_t">socklen_t</A> &nbsp;<b><A HREF="#ref21">length</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref22">supports</A></b> (int family) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref23">stringify</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>struct sockaddr* <b><A HREF="#ref24">m_address</A></b></LI>
+<LI>socklen_t <b><A HREF="#ref25">m_length</A></b></LI>
+<LI>String <b><A HREF="#ref26">m_host</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Wrapper class to keep a socket address
+</p>
+<A NAME="SocketAddr"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SocketAddr</strong> ()
+<br></td><td align="right"><h3><strong>SocketAddr</strong></h3></td></tr></table><p></p><p>
+ Default constructor of an empty address
+     </p>
+<A NAME="SocketAddr"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SocketAddr</strong> (const SocketAddr& value)
+<br></td><td align="right"><h3><strong>SocketAddr</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Address to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="SocketAddr"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SocketAddr</strong> (int family)
+<br></td><td align="right"><h3><strong>SocketAddr</strong></h3></td></tr></table><p></p><p>
+ Constructor of a null address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>family</i></TD><TD align="left" valign="top">Family of the address to create
+     </TD></TR>
+</TABLE></P>
+<A NAME="SocketAddr"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SocketAddr</strong> (const struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> len = 0)
+<br></td><td align="right"><h3><strong>SocketAddr</strong></h3></td></tr></table><p></p><p>
+ Constructor that stores a copy of an address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Pointer to the address to store
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the stored address, zero to use default
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SocketAddr"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SocketAddr</strong> ()
+<br></td><td align="right"><h3><strong>~SocketAddr</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor that frees and zeroes out everything
+     </p>
+<A NAME="operator="></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SocketAddr& &nbsp;<strong>operator=</strong> (const SocketAddr& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Address to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="operator=="></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator==</strong> (const SocketAddr& other)
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Equality comparation operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>other</i></TD><TD align="left" valign="top">Address to compare to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the addresses are equal
+     </p>
+<A NAME="operator!="></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>operator!=</strong> (const SocketAddr& other)
+<br></td><td align="right"><h3><strong>operator!=</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Inequality comparation operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>other</i></TD><TD align="left" valign="top">Address to compare to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the addresses are different
+     </p>
+<A NAME="clear"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clears up the address, frees the memory
+     </p>
+<A NAME="assign"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>assign</strong> (int family)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assigns an empty address of a specific type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>family</i></TD><TD align="left" valign="top">Family of the address to create
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the address family is supported
+     </p>
+<A NAME="assign"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>assign</strong> (const struct sockaddr* addr, <A HREF="#socklen_t">socklen_t</A> len = 0)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><p>
+ Assigns a new address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Pointer to the address to store
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the stored address, zero to use default
+     </TD></TR>
+</TABLE></P>
+<A NAME="local"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>local</strong> (const SocketAddr& remote)
+<br></td><td align="right"><h3><strong>local</strong></h3></td></tr></table><p></p><p>
+ Attempt to guess a local address that will be used to reach a remote one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>remote</i></TD><TD align="left" valign="top">Remote address to reach
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if guessed an address, false if failed
+     </p>
+<A NAME="valid"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a non-null address is held
+</p>
+<p><b>Returns</b>: True if a valid address is held, false if null
+     </p>
+<A NAME="null"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>null</strong> ()
+<br></td><td align="right"><h3><strong>null</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a null address is held
+</p>
+<p><b>Returns</b>: True if a null address is held
+     </p>
+<A NAME="family"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>family</strong> ()
+<br></td><td align="right"><h3><strong>family</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the family of the stored address
+</p>
+<p><b>Returns</b>: Address family of the stored address or zero (AF_UNSPEC)
+     </p>
+<A NAME="host"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>host</strong> ()
+<br></td><td align="right"><h3><strong>host</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the host of this address
+</p>
+<p><b>Returns</b>: Host name as String
+     </p>
+<A NAME="host"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>host</strong> (const String& name)
+<br></td><td align="right"><h3><strong>host</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Set the hostname of this address
+</p>
+<p><b>Returns</b>: True if new host set, false if name could not be parsed
+     </p>
+<A NAME="port"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>port</strong> ()
+<br></td><td align="right"><h3><strong>port</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the port of the stored address (if supported)
+</p>
+<p><b>Returns</b>: Port number of the socket address or zero
+     </p>
+<A NAME="port"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>port</strong> (int newport)
+<br></td><td align="right"><h3><strong>port</strong></h3></td></tr></table><p></p><p>
+ Set the port of the stored address (if supported)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newport</i></TD><TD align="left" valign="top">Port number to set in the socket address
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if new port set, false if not supported
+     </p>
+<A NAME="address"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline struct sockaddr* &nbsp;<strong>address</strong> ()
+<br></td><td align="right"><h3><strong>address</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the contained socket address
+</p>
+<p><b>Returns</b>: A pointer to the socket address
+     </p>
+<A NAME="length"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#socklen_t">socklen_t</A> &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the address
+</p>
+<p><b>Returns</b>: Length of the stored address
+     </p>
+<A NAME="supports"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>supports</strong> (int family)
+<br></td><td align="right"><h3><strong>supports</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if an address family is supported by the library
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>family</i></TD><TD align="left" valign="top">Family of the address to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the address family is supported
+     </p>
+<A NAME="stringify"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>stringify</strong> ()
+<br></td><td align="right"><h3><strong>stringify</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Convert the host address to a String stored in m_host
+     </p>
+<A NAME="m_address"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>struct sockaddr*  <strong>m_address</strong>
+</td><td align="right"><h3><strong>m_address</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_length"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#socklen_t">socklen_t</A>  <strong>m_length</strong>
+</td><td align="right"><h3><strong>m_length</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_host"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_host</strong>
+</td><td align="right"><h3><strong>m_host</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

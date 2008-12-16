@@ -1,0 +1,368 @@
+<HTML>
+<HEAD>
+<TITLE>class XMPPUser</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMPPUser</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An XMPP remote user.
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMPPUser</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMPPUser.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">XMPPUser</A></b> (XMPPUserRoster* local, const char* node, const char* domain,
+	XMPPDirVal sub, bool subTo = true, bool sendProbe = true) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~XMPPUser</A></b> () 
+</LI>
+<LI>inline const JabberID& &nbsp;<b><A HREF="#ref5">jid</A></b> ()  const
+</LI>
+<LI>inline XMPPUserRoster* &nbsp;<b><A HREF="#ref6">local</A></b> ()  const
+</LI>
+<LI>inline XMPPDirVal& &nbsp;<b><A HREF="#ref7">subscription</A></b> () 
+</LI>
+<LI>inline JIDResourceList& &nbsp;<b><A HREF="#ref8">localRes</A></b> () 
+</LI>
+<LI>inline JIDResourceList& &nbsp;<b><A HREF="#ref9">remoteRes</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">addLocalRes</A></b> (JIDResource* resource, bool send = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">removeLocalRes</A></b> (JIDResource* resource) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">clearLocalRes</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">addRemoteRes</A></b> (JIDResource* resource) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">removeRemoteRes</A></b> (JIDResource* resource) 
+</LI>
+<LI>inline JIDResource* &nbsp;<b><A HREF="#ref15">getAudio</A></b> (bool local, bool availableOnly = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">processError</A></b> (JBEvent* event) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">processProbe</A></b> (JBEvent* event, const String* resName = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">processPresence</A></b> (JBEvent* event, bool available) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">processSubscribe</A></b> (JBEvent* event, JBPresence::Presence type) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">probe</A></b> (JBStream* stream, <A HREF="#u_int64_t">u_int64_t</A> time = Time::msecNow()) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref21">sendSubscribe</A></b> (JBPresence::Presence type, JBStream* stream) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">sendUnavailable</A></b> (JBStream* stream) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref23">sendPresence</A></b> (JIDResource* resource, JBStream* stream = 0, bool force = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref24">timeout</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">notifyResource</A></b> (bool remote, const String& name,
+	JBStream* stream = 0, bool force = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref26">notifyResources</A></b> (bool remote, JBStream* stream = 0, bool force = false) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref27">updateSubscription</A></b> (bool from, bool value, JBStream* stream) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref28">updateTimeout</A></b> (bool from, <A HREF="#u_int64_t">u_int64_t</A> time = Time::msecNow()) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a remote XMPP user along with his resources and subscribe state.
+</p>
+<A NAME="XMPPUser"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMPPUser</strong> (XMPPUserRoster* local, const char* node, const char* domain,
+	XMPPDirVal sub, bool subTo = true, bool sendProbe = true)
+<br></td><td align="right"><h3><strong>XMPPUser</strong></h3></td></tr></table><p></p><p>
+ Create a remote user.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">The local (owner) user peer.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">The node (username) of the remote peer.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">The domain of the remote peer.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sub</i></TD><TD align="left" valign="top">The subscription state.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>subTo</i></TD><TD align="left" valign="top">True to force a subscribe request to remote peer if not subscribed.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sendProbe</i></TD><TD align="left" valign="top">True to probe the new user.
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XMPPUser"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XMPPUser</strong> ()
+<br></td><td align="right"><h3><strong>~XMPPUser</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor.
+ Send unavailable if not already done.
+     </p>
+<A NAME="jid"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const JabberID& &nbsp;<strong>jid</strong> ()
+<br></td><td align="right"><h3><strong>jid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the jid of this user.
+</p>
+<p><b>Returns</b>: The jid of this user.
+     </p>
+<A NAME="local"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPUserRoster* &nbsp;<strong>local</strong> ()
+<br></td><td align="right"><h3><strong>local</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the roster this user belongs to.
+</p>
+<p><b>Returns</b>: Pointer to the roster this user belongs to.
+     </p>
+<A NAME="subscription"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPDirVal& &nbsp;<strong>subscription</strong> ()
+<br></td><td align="right"><h3><strong>subscription</strong></h3></td></tr></table><p></p><p>
+ Get the subscription state of this user
+</p>
+<p><b>Returns</b>: The subscription state of this user
+     </p>
+<A NAME="localRes"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JIDResourceList& &nbsp;<strong>localRes</strong> ()
+<br></td><td align="right"><h3><strong>localRes</strong></h3></td></tr></table><p></p><p>
+ Get the local resource list
+</p>
+<p><b>Returns</b>: The local resource list
+     </p>
+<A NAME="remoteRes"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JIDResourceList& &nbsp;<strong>remoteRes</strong> ()
+<br></td><td align="right"><h3><strong>remoteRes</strong></h3></td></tr></table><p></p><p>
+ Get the remote resource list
+</p>
+<p><b>Returns</b>: The remote resource list
+     </p>
+<A NAME="addLocalRes"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addLocalRes</strong> (JIDResource* resource, bool send = true)
+<br></td><td align="right"><h3><strong>addLocalRes</strong></h3></td></tr></table><p></p><p>
+ Add a local resource to the list.
+ Send presence if the remote peer is subscribed to the local one.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to add.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>send</i></TD><TD align="left" valign="top">True to send presence from the resource if it is a new one
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the the resource already exists in the list.
+     </p>
+<A NAME="removeLocalRes"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeLocalRes</strong> (JIDResource* resource)
+<br></td><td align="right"><h3><strong>removeLocalRes</strong></h3></td></tr></table><p></p><p>
+ Remove a local resource from the list.
+ Send unavailable if the remote peer is subscribed to the local one.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to remove.
+     </TD></TR>
+</TABLE></P>
+<A NAME="clearLocalRes"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearLocalRes</strong> ()
+<br></td><td align="right"><h3><strong>clearLocalRes</strong></h3></td></tr></table><p></p><p>
+ Remove all local resources.
+ Send unavailable if the remote peer is subscribed to the local one.
+ This method is thread safe.
+     </p>
+<A NAME="addRemoteRes"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>addRemoteRes</strong> (JIDResource* resource)
+<br></td><td align="right"><h3><strong>addRemoteRes</strong></h3></td></tr></table><p></p><p>
+ Add a remote resource to the list. This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to add
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the the resource already exists in the list
+     </p>
+<A NAME="removeRemoteRes"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeRemoteRes</strong> (JIDResource* resource)
+<br></td><td align="right"><h3><strong>removeRemoteRes</strong></h3></td></tr></table><p></p><p>
+ Remove a remote resource from the list. This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="getAudio"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JIDResource* &nbsp;<strong>getAudio</strong> (bool local, bool availableOnly = true)
+<br></td><td align="right"><h3><strong>getAudio</strong></h3></td></tr></table><p></p><p>
+ Get the first remote resource with audio capability.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">True to request a local resource, false for a remote one.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>availableOnly</i></TD><TD align="left" valign="top">True to get only if available.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the resource or 0.
+     </p>
+<A NAME="processError"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processError</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processError</strong></h3></td></tr></table><p></p><p>
+ Process received error elements.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element.
+     </TD></TR>
+</TABLE></P>
+<A NAME="processProbe"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processProbe</strong> (JBEvent* event, const String* resName = 0)
+<br></td><td align="right"><h3><strong>processProbe</strong></h3></td></tr></table><p></p><p>
+ Process received probe from remote peer.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>resName</i></TD><TD align="left" valign="top">The probed resource if any.
+     </TD></TR>
+</TABLE></P>
+<A NAME="processPresence"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>processPresence</strong> (JBEvent* event, bool available)
+<br></td><td align="right"><h3><strong>processPresence</strong></h3></td></tr></table><p></p><p>
+ Process received presence from remote peer.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>available</i></TD><TD align="left" valign="top">The availability of the user.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if remote user has no more resources available.
+     </p>
+<A NAME="processSubscribe"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processSubscribe</strong> (JBEvent* event, JBPresence::Presence type)
+<br></td><td align="right"><h3><strong>processSubscribe</strong></h3></td></tr></table><p></p><p>
+ Process received subscription from remote peer.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The subscription type: subscribe/unsubscribe/subscribed/unsubscribed.
+     </TD></TR>
+</TABLE></P>
+<A NAME="probe"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>probe</strong> (JBStream* stream, <A HREF="#u_int64_t">u_int64_t</A> time = Time::msecNow())
+<br></td><td align="right"><h3><strong>probe</strong></h3></td></tr></table><p></p><p>
+ Probe the remote user.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send the request.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Probe time.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if send succeedded.
+     </p>
+<A NAME="sendSubscribe"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendSubscribe</strong> (JBPresence::Presence type, JBStream* stream)
+<br></td><td align="right"><h3><strong>sendSubscribe</strong></h3></td></tr></table><p></p><p>
+ Send subscription to remote peer.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The subscription type: subscribe/unsubscribe/subscribed/unsubscribed.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send the data.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if send succeedded.
+     </p>
+<A NAME="sendUnavailable"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendUnavailable</strong> (JBStream* stream)
+<br></td><td align="right"><h3><strong>sendUnavailable</strong></h3></td></tr></table><p></p><p>
+ Send unavailable to remote peer.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send the data.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if send succeedded.
+     </p>
+<A NAME="sendPresence"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendPresence</strong> (JIDResource* resource, JBStream* stream = 0, bool force = false)
+<br></td><td align="right"><h3><strong>sendPresence</strong></h3></td></tr></table><p></p><p>
+ Send presence to remote peer.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to send from.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send the data.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to send even if we've already sent presence from this resource.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if send succeedded.
+     </p>
+<A NAME="timeout"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>timeout</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p></p><p>
+ Check if this user sent us any presence data for a given interval.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the user timed out.
+     </p>
+<A NAME="notifyResource"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>notifyResource</strong> (bool remote, const String& name,
+	JBStream* stream = 0, bool force = false)
+<br></td><td align="right"><h3><strong>notifyResource</strong></h3></td></tr></table><p></p><p>
+ Notify the state of a resource.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>remote</i></TD><TD align="left" valign="top">True for a remote resource: notify the presence engine.
+  False for a local resource: send presence to remote user.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Resource name.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send the data if remote is false.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to send even if we've already sent presence from this resource.
+     </TD></TR>
+</TABLE></P>
+<A NAME="notifyResources"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>notifyResources</strong> (bool remote, JBStream* stream = 0, bool force = false)
+<br></td><td align="right"><h3><strong>notifyResources</strong></h3></td></tr></table><p></p><p>
+ Notify the state of all resources.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>remote</i></TD><TD align="left" valign="top">True for remote resources: notify the presence engine.
+  False for local resources: send presence to remote user.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send the data if remote is false.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to send even if we've already sent presence from a resource.
+     </TD></TR>
+</TABLE></P>
+<A NAME="updateSubscription"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>updateSubscription</strong> (bool from, bool value, JBStream* stream)
+<br></td><td align="right"><h3><strong>updateSubscription</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Update subscription state.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">True for subscription from remote user. False for subscription to the remote user.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">True if subscribed. False is unsubscribed.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use to send presence if subscription from remote user changed to true.
+     </TD></TR>
+</TABLE></P>
+<A NAME="updateTimeout"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>updateTimeout</strong> (bool from, <A HREF="#u_int64_t">u_int64_t</A> time = Time::msecNow())
+<br></td><td align="right"><h3><strong>updateTimeout</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Update user timeout data.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">True if the update is made on incoming data. False if timeout is made on outgoing probe.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time.
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

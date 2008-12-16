@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<TITLE>class XMLParser</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMLParser</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An XML parser. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMLParser</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmlparser_h.html">libs/yjingle/xmlparser.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__TiXmlDocument.html">TelEngine::TiXmlDocument</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMLParser.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">XMLParser</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~XMLParser</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref3">consume</A></b> (const char* data, <A HREF="#u_int32_t">u_int32_t</A> len) 
+</LI>
+<LI>XMLElement* &nbsp;<b><A HREF="#ref4">extract</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref5">bufLen</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">getBuffer</A></b> (String& dest)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">reset</A></b> () 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static u_int32_t <b><A HREF="#ref8">s_maxDataBuffer</A></b></LI>
+<LI>static TiXmlEncoding <b><A HREF="#ref9">s_xmlEncoding</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is responsable of parsing incoming data.
+ Keeps the resulting XML elements and the input buffer
+</p>
+<A NAME="XMLParser"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>XMLParser</strong> ()
+<br></td><td align="right"><h3><strong>XMLParser</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Constructs an XML parser
+     </p>
+<A NAME="~XMLParser"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XMLParser</strong> ()
+<br></td><td align="right"><h3><strong>~XMLParser</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="consume"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>consume</strong> (const char* data, <A HREF="#u_int32_t">u_int32_t</A> len)
+<br></td><td align="right"><h3><strong>consume</strong></h3></td></tr></table><p></p><p>
+ Add data to buffer. Parse the buffer.
+ On success, the already parsed data is removed from buffer.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to the data to consume
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Data length
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on successfully parsed
+     </p>
+<A NAME="extract"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMLElement* &nbsp;<strong>extract</strong> ()
+<br></td><td align="right"><h3><strong>extract</strong></h3></td></tr></table><p></p><p>
+ Extract the first XML element from document.
+ Remove non-element children of the document (e.g. declaration).
+ This method is thread safe
+</p>
+<p><b>Returns</b>: Pointer to an XMLElement or 0 if the document is empty
+     </p>
+<A NAME="bufLen"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>bufLen</strong> ()
+<br></td><td align="right"><h3><strong>bufLen</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the buffer length (incomplete data)
+</p>
+<p><b>Returns</b>: The number of bytes belonging to an incomplete XML element
+     </p>
+<A NAME="getBuffer"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>getBuffer</strong> (String& dest)
+<br></td><td align="right"><h3><strong>getBuffer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a copy of the parser's buffer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+     </TD></TR>
+</TABLE></P>
+<A NAME="reset"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p></p><p>
+ Clear the parser's input buffer and already parsed elements. Reset data
+     </p>
+<A NAME="s_maxDataBuffer"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static <A HREF="#u_int32_t">u_int32_t</A>  <strong>s_maxDataBuffer</strong>
+</td><td align="right"><h3><strong>s_maxDataBuffer</strong></h3></td></tr></table><p></p><A NAME="s_xmlEncoding"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TiXmlEncoding  <strong>s_xmlEncoding</strong>
+</td><td align="right"><h3><strong>s_xmlEncoding</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

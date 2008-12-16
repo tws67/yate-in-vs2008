@@ -1,0 +1,308 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingCallControl</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingCallControl</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract phone call signalling. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingCallControl</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ISDNQ931.html">ISDNQ931</A>, <A HREF="TelEngine__ISDNQ931Monitor.html">ISDNQ931Monitor</A>, <A HREF="TelEngine__SS7BICC.html">SS7BICC</A>, <A HREF="TelEngine__SS7ISUP.html">SS7ISUP</A>, <A HREF="TelEngine__SS7TUP.html">SS7TUP</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingCallControl.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref5">SignallingCallControl</A></b> (const NamedList& params, const char* msgPrefix = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref6">~SignallingCallControl</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">setExiting</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">exiting</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">verify</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref10">msgPrefix</A></b> ()  const
+</LI>
+<LI>inline SignallingCircuitGroup* &nbsp;<b><A HREF="#ref11">circuits</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">attach</A></b> (SignallingCircuitGroup* circuits) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">reserveCircuit</A></b> (SignallingCircuit*& cic, const char* range = 0, int checkLock = -1,
+	const String* list = 0,	bool mandatory = true, bool reverseRestrict = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">releaseCircuit</A></b> (SignallingCircuit*& cic, bool sync = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">releaseCircuit</A></b> (unsigned int code, bool sync = false) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref16">cleanup</A></b> (const char* reason = "offline") 
+</LI>
+<LI>virtual  SignallingEvent* &nbsp;<b><A HREF="#ref17">getEvent</A></b> (const Time& when) 
+</LI>
+<LI>virtual  SignallingCall* &nbsp;<b><A HREF="#ref18">call</A></b> (SignallingMessage* msg, String& reason) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref19">buildVerifyEvent</A></b> (NamedList& params) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">setDumper</A></b> (SignallingDumper* dumper = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline int &nbsp;<b><A HREF="#ref21">strategy</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref22">processEvent</A></b> (SignallingEvent* event) 
+</LI>
+<LI>virtual  SignallingEvent* &nbsp;<b><A HREF="#ref23">processCircuitEvent</A></b> (SignallingCircuitEvent& event,
+	SignallingCall* call = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref24">clearCalls</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">removeCall</A></b> (SignallingCall* call, bool del = false) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref26">dump</A></b> (const DataBlock& data, bool sent = false, int link = 0) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ObjList <b><A HREF="#ref27">m_calls</A></b></LI>
+<LI>String <b><A HREF="#ref28">m_msgPrefix</A></b></LI>
+<LI>bool <b><A HREF="#ref29">m_verifyEvent</A></b></LI>
+<LI>SignallingTimer <b><A HREF="#ref30">m_verifyTimer</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Interface of protocol independent signalling for phone calls
+</p>
+<A NAME="SignallingCallControl"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingCallControl</strong> (const NamedList& params, const char* msgPrefix = 0)
+<br></td><td align="right"><h3><strong>SignallingCallControl</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Call controller's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msgPrefix</i></TD><TD align="left" valign="top">Optional prefix to be added before a decoded message's
+  parameters or retrive message parameters from a list
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingCallControl"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingCallControl</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingCallControl</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="setExiting"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setExiting</strong> ()
+<br></td><td align="right"><h3><strong>setExiting</strong></h3></td></tr></table><p></p><p>
+ Set exiting flag
+     </p>
+<A NAME="exiting"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>exiting</strong> ()
+<br></td><td align="right"><h3><strong>exiting</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get exiting flag
+</p>
+<p><b>Returns</b>: The exiting flag
+     </p>
+<A NAME="verify"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>verify</strong> ()
+<br></td><td align="right"><h3><strong>verify</strong></h3></td></tr></table><p></p><p>
+ Check the verify event flag. Reset it if true is returned
+</p>
+<p><b>Returns</b>: True if the verify event flag is set
+     </p>
+<A NAME="msgPrefix"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>msgPrefix</strong> ()
+<br></td><td align="right"><h3><strong>msgPrefix</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the prefix used by this call controller when decoding message parameters or
+  retrive message parameters from a list
+</p>
+<p><b>Returns</b>: Message parameters prefix used by this call controller
+     </p>
+<A NAME="circuits"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCircuitGroup* &nbsp;<strong>circuits</strong> ()
+<br></td><td align="right"><h3><strong>circuits</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the circuit group attached to this call controller
+</p>
+<p><b>Returns</b>: The circuit group attached to this call controller
+     </p>
+<A NAME="attach"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>attach</strong> (SignallingCircuitGroup* circuits)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p></p><p>
+ Attach/detach a circuit group to this call controller. Set group's allocation strategy.
+ Set locked flags for all circuits belonging to the attached circuit group.
+ Cleanup controller before detaching the group or attaching a new one
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuits</i></TD><TD align="left" valign="top">Pointer to the SignallingCircuitGroup to attach. 0 to detach and force a cleanup
+     </TD></TR>
+</TABLE></P>
+<A NAME="reserveCircuit"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>reserveCircuit</strong> (SignallingCircuit*& cic, const char* range = 0, int checkLock = -1,
+	const String* list = 0,	bool mandatory = true, bool reverseRestrict = false)
+<br></td><td align="right"><h3><strong>reserveCircuit</strong></h3></td></tr></table><p></p><p>
+ Reserve a circuit for later use. If the circuit list is 0, try to reserve a circuit from
+  the group using its strategy. Release the given circuit before trying to reserve it.
+  Set cic to 0 on failure.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Destination circuit
+</TD></TR>
+<TR><TD align="left" valign="top"><i>checkLock</i></TD><TD align="left" valign="top">Lock flags to check. If the given lock flags are set, reservation will fail
+</TD></TR>
+<TR><TD align="left" valign="top"><i>range</i></TD><TD align="left" valign="top">Optional range name to restrict circuit reservation within attached circuit group
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Comma separated list of circuits
+</TD></TR>
+<TR><TD align="left" valign="top"><i>mandatory</i></TD><TD align="left" valign="top">The list is mandatory. If false and none of the circuits in
+  the list are available, try to reserve a free one. Ignored if list is 0
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reverseRestrict</i></TD><TD align="left" valign="top">Used when failed to reserve circuit from list. If true and the circuit allocation
+  strategy includes any restriction (odd or even) use the opposite restriction to reserve a circuit.
+  Ignored if mandatory is true
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the operation failed
+     </p>
+<A NAME="releaseCircuit"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>releaseCircuit</strong> (SignallingCircuit*& cic, bool sync = false)
+<br></td><td align="right"><h3><strong>releaseCircuit</strong></h3></td></tr></table><p></p><p>
+ Initiate a release of a circuit. Set cic to 0.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">The circuit to release
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">Synchronous release requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the circuit release was initiated
+     </p>
+<A NAME="releaseCircuit"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>releaseCircuit</strong> (unsigned int code, bool sync = false)
+<br></td><td align="right"><h3><strong>releaseCircuit</strong></h3></td></tr></table><p></p><p>
+ Initiate a release of a circuit from the attached group
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The circuit's code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">Synchronous release requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the circuit release was initiated
+     </p>
+<A NAME="cleanup"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> (const char* reason = "offline")
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Cleanup
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Cleanup reason
+     </TD></TR>
+</TABLE></P>
+<A NAME="getEvent"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingEvent* &nbsp;<strong>getEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Iterate through the call list to get an event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingEvent pointer or 0 if no events
+     </p>
+<A NAME="call"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingCall* &nbsp;<strong>call</strong> (SignallingMessage* msg, String& reason)
+<br></td><td align="right"><h3><strong>call</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create an outgoing call. Send a NewCall event with the given msg parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Failure reason if any
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced SignallingCall pointer on success or 0 on failure
+     </p>
+<A NAME="buildVerifyEvent"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildVerifyEvent</strong> (NamedList& params)
+<br></td><td align="right"><h3><strong>buildVerifyEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Build the parameters of a Verify event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list of parameters to fill
+     </TD></TR>
+</TABLE></P>
+<A NAME="setDumper"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setDumper</strong> (SignallingDumper* dumper = 0)
+<br></td><td align="right"><h3><strong>setDumper</strong></h3></td></tr></table><p></p><p>
+ Set or remove the data dumper
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dumper</i></TD><TD align="left" valign="top">Pointer to the data dumper object, 0 to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="strategy"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>strategy</strong> ()
+<br></td><td align="right"><h3><strong>strategy</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Get the strategy used by the attached circuit group to allocate circuits
+</p>
+<p><b>Returns</b>: The strategy used by the attached circuit group to allocate circuits
+     </p>
+<A NAME="processEvent"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>processEvent</strong> (SignallingEvent* event)
+<br></td><td align="right"><h3><strong>processEvent</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process an event received from a call. This will give to derived classes an opportunity
+  to intercept events generated by their calls
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the event was processed by the controller.
+  False to deliver the event to the requestor
+     </p>
+<A NAME="processCircuitEvent"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingEvent* &nbsp;<strong>processCircuitEvent</strong> (SignallingCircuitEvent& event,
+	SignallingCall* call = 0)
+<br></td><td align="right"><h3><strong>processCircuitEvent</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process an event received from a non-reserved circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">Optional signalling call whose circuit generated the event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Signalling event pointer or 0
+     </p>
+<A NAME="clearCalls"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearCalls</strong> ()
+<br></td><td align="right"><h3><strong>clearCalls</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Clear call list
+     </p>
+<A NAME="removeCall"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeCall</strong> (SignallingCall* call, bool del = false)
+<br></td><td align="right"><h3><strong>removeCall</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Remove a call from list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">The call to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>del</i></TD><TD align="left" valign="top">True to delete it. False to remove without destruct
+     </TD></TR>
+</TABLE></P>
+<A NAME="dump"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>dump</strong> (const DataBlock& data, bool sent = false, int link = 0)
+<br></td><td align="right"><h3><strong>dump</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Dump data if the dumper is valid
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Buffer to dump
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sent</i></TD><TD align="left" valign="top">True if data is being sent, false if is being received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>link</i></TD><TD align="left" valign="top">Link number (relevant to MTP2 only)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the data was dumped successfully
+     </p>
+<A NAME="m_calls"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_calls</strong>
+</td><td align="right"><h3><strong>m_calls</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_msgPrefix"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_msgPrefix</strong>
+</td><td align="right"><h3><strong>m_msgPrefix</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_verifyEvent"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_verifyEvent</strong>
+</td><td align="right"><h3><strong>m_verifyEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_verifyTimer"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingTimer  <strong>m_verifyTimer</strong>
+</td><td align="right"><h3><strong>m_verifyTimer</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

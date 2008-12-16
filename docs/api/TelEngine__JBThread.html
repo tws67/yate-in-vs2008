@@ -1,0 +1,132 @@
+<HTML>
+<HEAD>
+<TITLE>class JBThread</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBThread</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber thread that can be added to a list of threads. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBThread</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBThread.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	StreamConnect,                   
+	EngineReceive,                   
+	EngineProcess,                   
+	Presence,                        
+	Jingle,                          
+	Message                          
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~JBThread</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref3">type</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref4">cancelThread</A></i></b> (bool hard = false) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref5">start</A></b> (Type type, JBThreadList* list, void* client, int sleep, int prio) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref6">JBThread</A></b> (Type type, JBThreadList* owner, void* client, int sleep = 2) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref7">runClient</A></b> () 
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref8">client</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds encapsulates a private library thread
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	StreamConnect,                   
+	EngineReceive,                   
+	EngineProcess,                   
+	Presence,                        
+	Jingle,                          
+	Message                          
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Thread type enumeration. Used to do a specific client processing
+     </p>
+<A NAME="~JBThread"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBThread</strong> ()
+<br></td><td align="right"><h3><strong>~JBThread</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Remove itself from the owner's list
+     </p>
+<A NAME="type"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this thread
+</p>
+<p><b>Returns</b>: Thread type as enumeration
+     </p>
+<A NAME="cancelThread"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>cancelThread</strong></i> (bool hard = false)
+<br></td><td align="right"><h3><i><strong>cancelThread</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Cancel (terminate) this thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hard</i></TD><TD align="left" valign="top">Kill the thread the hard way rather than just setting
+  an exit check marker
+     </TD></TR>
+</TABLE></P>
+<A NAME="start"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>start</strong> (Type type, JBThreadList* list, void* client, int sleep, int prio)
+<br></td><td align="right"><h3><strong>start</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create and start a private thread
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Thread type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list owning this thread
+</TD></TR>
+<TR><TD align="left" valign="top"><i>client</i></TD><TD align="left" valign="top">The client to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sleep</i></TD><TD align="left" valign="top">Time to sleep if there is nothing to do
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread priority
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if failed to start the requested thread
+     </p>
+<A NAME="JBThread"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBThread</strong> (Type type, JBThreadList* owner, void* client, int sleep = 2)
+<br></td><td align="right"><h3><strong>JBThread</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor. Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Thread type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The list owning this thread
+</TD></TR>
+<TR><TD align="left" valign="top"><i>client</i></TD><TD align="left" valign="top">The client to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sleep</i></TD><TD align="left" valign="top">Time to sleep if there is nothing to do
+     </TD></TR>
+</TABLE></P>
+<A NAME="runClient"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>runClient</strong> ()
+<br></td><td align="right"><h3><strong>runClient</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process the client
+     </p>
+<A NAME="client"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>client</strong> ()
+<br></td><td align="right"><h3><strong>client</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Get the stream's client
+</p>
+<p><b>Returns</b>: The stream's client
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

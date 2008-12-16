@@ -1,0 +1,243 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlBase</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlBase</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"> TiXmlBase is a base class for every class in TinyXml. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlBase</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__TiXmlAttribute.html">TiXmlAttribute</A>, <A HREF="TelEngine__TiXmlComment.html">TiXmlComment</A>, <A HREF="TelEngine__TiXmlDeclaration.html">TiXmlDeclaration</A>, <A HREF="TelEngine__TiXmlDocument.html">TiXmlDocument</A>, <A HREF="TelEngine__TiXmlElement.html">TiXmlElement</A>, <i><A HREF="TelEngine__TiXmlNode.html">TiXmlNode</A></i>, <A HREF="TelEngine__TiXmlText.html">TiXmlText</A>, <A HREF="TelEngine__TiXmlUnknown.html">TiXmlUnknown</A>, <A HREF="TelEngine__XMLParser.html">XMLParser</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlBase.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref15"></A> {		TIXML_NO_ERROR = 0,
+		TIXML_ERROR,
+		TIXML_ERROR_OPENING_FILE,
+		TIXML_ERROR_OUT_OF_MEMORY,
+		TIXML_ERROR_PARSING_ELEMENT,
+		TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME,
+		TIXML_ERROR_READING_ELEMENT_VALUE,
+		TIXML_ERROR_READING_ATTRIBUTES,
+		TIXML_ERROR_PARSING_EMPTY,
+		TIXML_ERROR_READING_END_TAG,
+		TIXML_ERROR_PARSING_UNKNOWN,
+		TIXML_ERROR_PARSING_COMMENT,
+		TIXML_ERROR_PARSING_DECLARATION,
+		TIXML_ERROR_DOCUMENT_EMPTY,
+		TIXML_ERROR_EMBEDDED_NULL,
+		TIXML_ERROR_PARSING_CDATA,
+		TIXML_ERROR_INCOMPLETE,
+		TIXML_ERROR_BUFFEROVERRUN,
+		TIXML_ERROR_STRING_COUNT
+	}
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref4">TiXmlBase</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~TiXmlBase</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref6">Print</A></i></b> ( FILE* cfile, int depth )  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref9">Row</A></b> ()  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref10">Column</A></b> ()  const
+</LI>
+<LI>void  &nbsp;<b><A HREF="#ref11">SetUserData</A></b> ( void* user ) 
+</LI>
+<LI>void* &nbsp;<b><A HREF="#ref12">GetUserData</A></b> () 
+</LI>
+<LI>virtual  const char* &nbsp;<b><i><A HREF="#ref14">Parse</A></i></b> (const char* p, 
+				  TiXmlParsingData* data, 
+				  TiXmlEncoding encoding  ) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref20">StreamOut</A></i></b> (TIXML_OSTREAM *, bool = false)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref7">SetCondenseWhiteSpace</A></b> ( bool condense ) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref8">IsWhiteSpaceCondensed</A></b> () 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static const int <b><A HREF="#ref13">utf8ByteTable[256]</A></b></LI>
+</ul><h4>Protected Types</h4><ul><LI>class <A HREF="TelEngine__TiXmlBase__StringToBuffer.html">StringToBuffer</A>
+</LI>
+</ul><h4>Protected Static Methods</h4><ul><LI>static  const char*	&nbsp;<b><A HREF="#ref17">SkipWhiteSpace</A></b> ( const char*, TiXmlEncoding encoding ) 
+</LI>
+<LI>static inline  bool	&nbsp;<b><A HREF="#ref18">IsWhiteSpace</A></b> ( char c ) 
+</LI>
+<LI>static inline  bool	&nbsp;<b><A HREF="#ref19">IsWhiteSpace</A></b> ( int c ) 
+</LI>
+<LI>static  bool	&nbsp;<b><A HREF="#ref21">StreamWhiteSpace</A></b> ( TIXML_ISTREAM * in, TIXML_STRING * tag ) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref22">StreamTo</A></b> ( TIXML_ISTREAM * in, int character, TIXML_STRING * tag ) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref23">ReadName</A></b> ( const char* p, TIXML_STRING* name, TiXmlEncoding encoding ) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref24">ReadText</A></b> (const char* in,              
+				    TIXML_STRING* text,          
+				    bool ignoreWhiteSpace,       
+				    const char* endTag,          
+				    bool ignoreCase,             
+				    TiXmlEncoding encoding,      
+				    bool* eof = 0) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref25">GetEntity</A></b> ( const char* in, char* value, int* length, TiXmlEncoding encoding ) 
+</LI>
+<LI>static inline  const char* &nbsp;<b><A HREF="#ref26">GetChar</A></b> ( const char* p, char* _value, int* length, TiXmlEncoding encoding ) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref27">PutString</A></b> ( const TIXML_STRING& str, TIXML_OSTREAM* out ) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref28">PutString</A></b> ( const TIXML_STRING& str, TIXML_STRING* out ) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref29">StringEqual</A></b> (const char* p,
+				const char* endTag,
+				bool ignoreCase,
+				TiXmlEncoding encoding,
+				bool* eof = 0) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref33">IsAlpha</A></b> ( unsigned char anyByte, TiXmlEncoding encoding ) 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref34">IsAlphaNum</A></b> ( unsigned char anyByte, TiXmlEncoding encoding ) 
+</LI>
+<LI>static inline  int &nbsp;<b><A HREF="#ref35">ToLower</A></b> ( int v, TiXmlEncoding encoding ) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref36">ConvertUTF32ToUTF8</A></b> ( unsigned long input, char* output, int* length ) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>static const char* <b><A HREF="#ref30">errorString[ TIXML_ERROR_STRING_COUNT ]</A></b></LI>
+<LI>TiXmlCursor <b><A HREF="#ref31">location</A></b></LI>
+<LI>void*			<b><A HREF="#ref32">userData</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p> TiXmlBase is a base class for every class in TinyXml.
+	It does little except to establish that TinyXml classes
+	can be printed and provide some utility functions.
+</p>
+<p>	In XML, the document and elements can contain
+	other elements and other types of nodes.
+</p>
+<p>	@verbatim
+	A Document can contain:	Element	(container or leaf)
+							Comment (leaf)
+							Unknown (leaf)
+							Declaration( leaf )
+</p>
+<p>	An Element can contain:	Element (container or leaf)
+							Text	(leaf)
+							Attributes (not on tree)
+							Comment (leaf)
+							Unknown (leaf)
+</p>
+<p>	A Decleration contains: Attributes (not on tree)
+	@endverbatim
+</p>
+<A NAME="TiXmlBase"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlBase</strong> ()
+<br></td><td align="right"><h3><strong>TiXmlBase</strong></h3></td></tr></table><p></p><A NAME="~TiXmlBase"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~TiXmlBase</strong> ()
+<br></td><td align="right"><h3><strong>~TiXmlBase</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="Print"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>Print</strong></i> ( FILE* cfile, int depth )
+<br></td><td align="right"><h3><i><strong>Print</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>	All TinyXml classes can print themselves to a filestream.
+		This is a formatted print, and will insert tabs and newlines.
+</p>
+<p>		(For an unformatted stream, use the << operator.)
+	</p>
+<A NAME="SetCondenseWhiteSpace"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>SetCondenseWhiteSpace</strong> ( bool condense )
+<br></td><td align="right"><h3><strong>SetCondenseWhiteSpace</strong></h3></td></tr></table><p> <small>[static]</small></p><p>	The world does not agree on whether white space should be kept or
+		not. In order to make everyone happy, these global, static functions
+		are provided to set whether or not TinyXml will condense all white space
+		into a single space or not. The default is to condense. Note changing this
+		values is not thread safe.
+	</p>
+<A NAME="IsWhiteSpaceCondensed"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>IsWhiteSpaceCondensed</strong> ()
+<br></td><td align="right"><h3><strong>IsWhiteSpaceCondensed</strong></h3></td></tr></table><p> <small>[static]</small></p><A NAME="Row"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>Row</strong> ()
+<br></td><td align="right"><h3><strong>Row</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return the position, in the original source file, of this node or attribute.
+		The row and column are 1-based. (That is the first row and first column is
+		1,1). If the returns values are 0 or less, then the parser does not have
+		a row and column value.
+</p>
+<p>		Generally, the row and column value will be set when the TiXmlDocument::Load(),
+		TiXmlDocument::LoadFile(), or any TiXmlNode::Parse() is called. It will NOT be set
+		when the DOM was created from operator>>.
+</p>
+<p>		The values reflect the initial load. Once the DOM is modified programmatically
+		(by adding or changing nodes and attributes) the new values will NOT update to
+		reflect changes in the document.
+</p>
+<p>		There is a minor performance cost to computing the row and column. Computation
+		can be disabled if TiXmlDocument::SetTabSize() is called with 0 as the value.
+</p>
+<p>		@sa TiXmlDocument::SetTabSize()
+	</p>
+<A NAME="Column"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>Column</strong> ()
+<br></td><td align="right"><h3><strong>Column</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="SetUserData"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void  &nbsp;<strong>SetUserData</strong> ( void* user )
+<br></td><td align="right"><h3><strong>SetUserData</strong></h3></td></tr></table><p></p><A NAME="GetUserData"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void* &nbsp;<strong>GetUserData</strong> ()
+<br></td><td align="right"><h3><strong>GetUserData</strong></h3></td></tr></table><p></p><A NAME="utf8ByteTable[256]"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const int  <strong>utf8ByteTable[256]</strong>
+</td><td align="right"><h3><strong>utf8ByteTable[256]</strong></h3></td></tr></table><p></p><A NAME="Parse"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<i><strong>Parse</strong></i> (const char* p, 
+				  TiXmlParsingData* data, 
+				  TiXmlEncoding encoding  )
+<br></td><td align="right"><h3><i><strong>Parse</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><A NAME=""></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong></strong> {		TIXML_NO_ERROR = 0,
+		TIXML_ERROR,
+		TIXML_ERROR_OPENING_FILE,
+		TIXML_ERROR_OUT_OF_MEMORY,
+		TIXML_ERROR_PARSING_ELEMENT,
+		TIXML_ERROR_FAILED_TO_READ_ELEMENT_NAME,
+		TIXML_ERROR_READING_ELEMENT_VALUE,
+		TIXML_ERROR_READING_ATTRIBUTES,
+		TIXML_ERROR_PARSING_EMPTY,
+		TIXML_ERROR_READING_END_TAG,
+		TIXML_ERROR_PARSING_UNKNOWN,
+		TIXML_ERROR_PARSING_COMMENT,
+		TIXML_ERROR_PARSING_DECLARATION,
+		TIXML_ERROR_DOCUMENT_EMPTY,
+		TIXML_ERROR_EMBEDDED_NULL,
+		TIXML_ERROR_PARSING_CDATA,
+		TIXML_ERROR_INCOMPLETE,
+		TIXML_ERROR_BUFFEROVERRUN,
+		TIXML_ERROR_STRING_COUNT
+	}
+</td><td align="right"><h3><strong></strong></h3></td></tr></table><p></p><A NAME="TelEngine__TiXmlBase__StringToBuffer.html"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td><strong>StringToBuffer</strong> <small>(class)</small></td><td align="right"><h3><strong>StringToBuffer</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="SkipWhiteSpace"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char*	&nbsp;<strong>SkipWhiteSpace</strong> ( const char*, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>SkipWhiteSpace</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="IsWhiteSpace"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool	&nbsp;<strong>IsWhiteSpace</strong> ( char c )
+<br></td><td align="right"><h3><strong>IsWhiteSpace</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="IsWhiteSpace"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  bool	&nbsp;<strong>IsWhiteSpace</strong> ( int c )
+<br></td><td align="right"><h3><strong>IsWhiteSpace</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="StreamOut"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>StreamOut</strong></i> (TIXML_OSTREAM *, bool = false)
+<br></td><td align="right"><h3><i><strong>StreamOut</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><A NAME="StreamWhiteSpace"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool	&nbsp;<strong>StreamWhiteSpace</strong> ( TIXML_ISTREAM * in, TIXML_STRING * tag )
+<br></td><td align="right"><h3><strong>StreamWhiteSpace</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="StreamTo"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>StreamTo</strong> ( TIXML_ISTREAM * in, int character, TIXML_STRING * tag )
+<br></td><td align="right"><h3><strong>StreamTo</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="ReadName"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>ReadName</strong> ( const char* p, TIXML_STRING* name, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>ReadName</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="ReadText"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>ReadText</strong> (const char* in,              
+				    TIXML_STRING* text,          
+				    bool ignoreWhiteSpace,       
+				    const char* endTag,          
+				    bool ignoreCase,             
+				    TiXmlEncoding encoding,      
+				    bool* eof = 0)
+<br></td><td align="right"><h3><strong>ReadText</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="GetEntity"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>GetEntity</strong> ( const char* in, char* value, int* length, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>GetEntity</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="GetChar"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  const char* &nbsp;<strong>GetChar</strong> ( const char* p, char* _value, int* length, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>GetChar</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="PutString"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>PutString</strong> ( const TIXML_STRING& str, TIXML_OSTREAM* out )
+<br></td><td align="right"><h3><strong>PutString</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="PutString"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>PutString</strong> ( const TIXML_STRING& str, TIXML_STRING* out )
+<br></td><td align="right"><h3><strong>PutString</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="StringEqual"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>StringEqual</strong> (const char* p,
+				const char* endTag,
+				bool ignoreCase,
+				TiXmlEncoding encoding,
+				bool* eof = 0)
+<br></td><td align="right"><h3><strong>StringEqual</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="errorString[%20TIXML_ERROR_STRING_COUNT%20]"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const char*  <strong>errorString[ TIXML_ERROR_STRING_COUNT ]</strong>
+</td><td align="right"><h3><strong>errorString[ TIXML_ERROR_STRING_COUNT ]</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="location"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlCursor  <strong>location</strong>
+</td><td align="right"><h3><strong>location</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="userData"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void*			 <strong>userData</strong>
+</td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="IsAlpha"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>IsAlpha</strong> ( unsigned char anyByte, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>IsAlpha</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="IsAlphaNum"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>IsAlphaNum</strong> ( unsigned char anyByte, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>IsAlphaNum</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="ToLower"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  int &nbsp;<strong>ToLower</strong> ( int v, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>ToLower</strong></h3></td></tr></table><p> <small>[protected static]</small></p><A NAME="ConvertUTF32ToUTF8"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>ConvertUTF32ToUTF8</strong> ( unsigned long input, char* output, int* length )
+<br></td><td align="right"><h3><strong>ConvertUTF32ToUTF8</strong></h3></td></tr></table><p> <small>[protected static]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<TITLE>class SIPParty</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SIPParty</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SIPParty</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysip___yatesip_h.html">libs/ysip/yatesip.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SIPParty.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SIPParty</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">SIPParty</A></b> (bool reliable) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SIPParty</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref4">transmit</A></i></b> (SIPEvent* event) 
+</LI>
+<LI>virtual  const char* &nbsp;<b><i><A HREF="#ref5">getProtoName</A></i></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref6">setParty</A></i></b> (const URI& uri) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref7">getLocalAddr</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">getPartyAddr</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref9">getLocalPort</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref10">getPartyPort</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">isReliable</A></b> ()  const
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>bool <b><A HREF="#ref12">m_reliable</A></b></LI>
+<LI>bool <b><A HREF="#ref13">m_init</A></b></LI>
+<LI>String <b><A HREF="#ref14">m_local</A></b></LI>
+<LI>String <b><A HREF="#ref15">m_party</A></b></LI>
+<LI>int <b><A HREF="#ref16">m_localPort</A></b></LI>
+<LI>int <b><A HREF="#ref17">m_partyPort</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><A NAME="SIPParty"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPParty</strong> ()
+<br></td><td align="right"><h3><strong>SIPParty</strong></h3></td></tr></table><p></p><A NAME="SIPParty"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPParty</strong> (bool reliable)
+<br></td><td align="right"><h3><strong>SIPParty</strong></h3></td></tr></table><p></p><A NAME="~SIPParty"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SIPParty</strong> ()
+<br></td><td align="right"><h3><strong>~SIPParty</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="transmit"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>transmit</strong></i> (SIPEvent* event)
+<br></td><td align="right"><h3><i><strong>transmit</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><A NAME="getProtoName"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<i><strong>getProtoName</strong></i> ()
+<br></td><td align="right"><h3><i><strong>getProtoName</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><A NAME="setParty"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>setParty</strong></i> (const URI& uri)
+<br></td><td align="right"><h3><i><strong>setParty</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><A NAME="getLocalAddr"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getLocalAddr</strong> ()
+<br></td><td align="right"><h3><strong>getLocalAddr</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="getPartyAddr"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getPartyAddr</strong> ()
+<br></td><td align="right"><h3><strong>getPartyAddr</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="getLocalPort"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getLocalPort</strong> ()
+<br></td><td align="right"><h3><strong>getLocalPort</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="getPartyPort"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getPartyPort</strong> ()
+<br></td><td align="right"><h3><strong>getPartyPort</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="isReliable"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isReliable</strong> ()
+<br></td><td align="right"><h3><strong>isReliable</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="m_reliable"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_reliable</strong>
+</td><td align="right"><h3><strong>m_reliable</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_init"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_init</strong>
+</td><td align="right"><h3><strong>m_init</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_local"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_local</strong>
+</td><td align="right"><h3><strong>m_local</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_party"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_party</strong>
+</td><td align="right"><h3><strong>m_party</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_localPort"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_localPort</strong>
+</td><td align="right"><h3><strong>m_localPort</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_partyPort"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_partyPort</strong>
+</td><td align="right"><h3><strong>m_partyPort</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

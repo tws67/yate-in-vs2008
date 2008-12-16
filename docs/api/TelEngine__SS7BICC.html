@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7BICC</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7BICC</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">SS7 BICC implementation. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7BICC</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SS7ISUP.html">TelEngine::SS7ISUP</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7BICC.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SS7BICC</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~SS7BICC</A></b> () 
+</LI>
+<LI>virtual  SS7MSU* &nbsp;<b><A HREF="#ref3">createMSU</A></b> (SS7MsgISUP::Type type, unsigned char ssf,
+	const SS7Label& label, unsigned int cic, const NamedList* params = 0)  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref4">getObject</A></b> (const String& name)  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref5">receivedMSU</A></b> (const SS7MSU& msu, const SS7Label& label, SS7Layer3* network, int sls) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Implementation of SS7 Bearer Independent Call Control User Part
+</p>
+<A NAME="SS7BICC"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7BICC</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>SS7BICC</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Call controller's parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7BICC"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SS7BICC</strong> ()
+<br></td><td align="right"><h3><strong>~SS7BICC</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+ Terminate all calls
+     </p>
+<A NAME="createMSU"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SS7MSU* &nbsp;<strong>createMSU</strong> (SS7MsgISUP::Type type, unsigned char ssf,
+	const SS7Label& label, unsigned int cic, const NamedList* params = 0)
+<br></td><td align="right"><h3><strong>createMSU</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Create a new MSU populated with type, routing label and space for fixed part
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of ISUP message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ssf</i></TD><TD align="left" valign="top">Subservice Field
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label for the new MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">Circuit Identification Code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameter list
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the new MSU or NULL if an error occured
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7ISUP.html#createMSU">SS7ISUP</A>.</p>
+<A NAME="getObject"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this object or other data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7ISUP.html#getObject">SS7ISUP</A>.</p>
+<A NAME="receivedMSU"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>receivedMSU</strong> (const SS7MSU& msu, const SS7Label& label, SS7Layer3* network, int sls)
+<br></td><td align="right"><h3><strong>receivedMSU</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a MSU received from a Layer 3 component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">Message data, starting with Service Indicator Octet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label of the received MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">Network layer that delivered the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sls</i></TD><TD align="left" valign="top">Signalling Link the MSU was received from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the MSU was processed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7ISUP.html#receivedMSU">SS7ISUP</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,115 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlString</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlString</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlString</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinystr_h.html">libs/yxml/tinystr.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__TiXmlOutStream.html">TiXmlOutStream</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlString.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>typedef size_t  <A HREF="#ref1">size_type</A>
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">TiXmlString</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">TiXmlString</A></b> ( const TiXmlString & copy) 
+</LI>
+<LI>TIXML_EXPLICIT &nbsp;<b><A HREF="#ref5">TiXmlString</A></b> ( const char * copy) 
+</LI>
+<LI>TIXML_EXPLICIT &nbsp;<b><A HREF="#ref6">TiXmlString</A></b> ( const char * str, size_type len) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref7">~TiXmlString</A></b> () 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref8">operator = </A></b> (const char * copy) 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref9">operator = </A></b> (const TiXmlString & copy) 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref10">operator += </A></b> (const char * suffix) 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref11">operator += </A></b> (char single) 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref12">operator += </A></b> (const TiXmlString & suffix) 
+</LI>
+<LI>const char * &nbsp;<b><A HREF="#ref13">c_str</A></b> ()  const
+</LI>
+<LI>const char * &nbsp;<b><A HREF="#ref14">data</A></b> ()  const
+</LI>
+<LI>size_type &nbsp;<b><A HREF="#ref15">length</A></b> ()  const
+</LI>
+<LI>size_type &nbsp;<b><A HREF="#ref16">size</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref17">empty</A></b> ()  const
+</LI>
+<LI>size_type &nbsp;<b><A HREF="#ref18">capacity</A></b> ()  const
+</LI>
+<LI>const char& &nbsp;<b><A HREF="#ref19">at</A></b> (size_type index)  const
+</LI>
+<LI>char& &nbsp;<b><A HREF="#ref20">operator [] </A></b> (size_type index)  const
+</LI>
+<LI>size_type &nbsp;<b><A HREF="#ref21">find</A></b> (char lookup)  const
+</LI>
+<LI>size_type &nbsp;<b><A HREF="#ref22">find</A></b> (char tofind, size_type offset)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">clear</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref24">reserve</A></b> (size_type cap) 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref25">assign</A></b> (const char* str, size_type len) 
+</LI>
+<LI>TiXmlString& &nbsp;<b><A HREF="#ref26">append</A></b> (const char* str, size_type len) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">swap</A></b> (TiXmlString& other) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static const size_type <b><A HREF="#ref2">npos</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><A NAME="size_type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>typedef size_t  <strong>size_type</strong></td><td align="right"><h3><strong>size_type</strong></h3></td></tr></table><p></p><A NAME="npos"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static const size_type  <strong>npos</strong>
+</td><td align="right"><h3><strong>npos</strong></h3></td></tr></table><p></p><A NAME="TiXmlString"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlString</strong> ()
+<br></td><td align="right"><h3><strong>TiXmlString</strong></h3></td></tr></table><p></p><A NAME="TiXmlString"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlString</strong> ( const TiXmlString & copy)
+<br></td><td align="right"><h3><strong>TiXmlString</strong></h3></td></tr></table><p></p><A NAME="TiXmlString"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TIXML_EXPLICIT &nbsp;<strong>TiXmlString</strong> ( const char * copy)
+<br></td><td align="right"><h3><strong>TiXmlString</strong></h3></td></tr></table><p></p><A NAME="TiXmlString"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TIXML_EXPLICIT &nbsp;<strong>TiXmlString</strong> ( const char * str, size_type len)
+<br></td><td align="right"><h3><strong>TiXmlString</strong></h3></td></tr></table><p></p><A NAME="~TiXmlString"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~TiXmlString</strong> ()
+<br></td><td align="right"><h3><strong>~TiXmlString</strong></h3></td></tr></table><p></p><A NAME="operator%20=%20"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>operator = </strong> (const char * copy)
+<br></td><td align="right"><h3><strong>operator = </strong></h3></td></tr></table><p></p><A NAME="operator%20=%20"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>operator = </strong> (const TiXmlString & copy)
+<br></td><td align="right"><h3><strong>operator = </strong></h3></td></tr></table><p></p><A NAME="operator%20+=%20"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>operator += </strong> (const char * suffix)
+<br></td><td align="right"><h3><strong>operator += </strong></h3></td></tr></table><p></p><A NAME="operator%20+=%20"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>operator += </strong> (char single)
+<br></td><td align="right"><h3><strong>operator += </strong></h3></td></tr></table><p></p><A NAME="operator%20+=%20"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>operator += </strong> (const TiXmlString & suffix)
+<br></td><td align="right"><h3><strong>operator += </strong></h3></td></tr></table><p></p><A NAME="c_str"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char * &nbsp;<strong>c_str</strong> ()
+<br></td><td align="right"><h3><strong>c_str</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="data"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char * &nbsp;<strong>data</strong> ()
+<br></td><td align="right"><h3><strong>data</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="length"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>size_type &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="size"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>size_type &nbsp;<strong>size</strong> ()
+<br></td><td align="right"><h3><strong>size</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="empty"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>empty</strong> ()
+<br></td><td align="right"><h3><strong>empty</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="capacity"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>size_type &nbsp;<strong>capacity</strong> ()
+<br></td><td align="right"><h3><strong>capacity</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="at"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char& &nbsp;<strong>at</strong> (size_type index)
+<br></td><td align="right"><h3><strong>at</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="operator%20[]%20"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>char& &nbsp;<strong>operator [] </strong> (size_type index)
+<br></td><td align="right"><h3><strong>operator [] </strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="find"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>size_type &nbsp;<strong>find</strong> (char lookup)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="find"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>size_type &nbsp;<strong>find</strong> (char tofind, size_type offset)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="clear"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><A NAME="reserve"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>reserve</strong> (size_type cap)
+<br></td><td align="right"><h3><strong>reserve</strong></h3></td></tr></table><p></p><A NAME="assign"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>assign</strong> (const char* str, size_type len)
+<br></td><td align="right"><h3><strong>assign</strong></h3></td></tr></table><p></p><A NAME="append"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlString& &nbsp;<strong>append</strong> (const char* str, size_type len)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><A NAME="swap"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>swap</strong> (TiXmlString& other)
+<br></td><td align="right"><h3><strong>swap</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,301 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNLayer2</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNLayer2</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract ISDN layer 2 (Q.921) message transport. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNLayer2</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingComponent.html">TelEngine::SignallingComponent</A> <small>[virtual public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ISDNIUA.html">ISDNIUA</A>, <A HREF="TelEngine__ISDNQ921.html">ISDNQ921</A>, <A HREF="TelEngine__ISDNQ921Pasive.html">ISDNQ921Pasive</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNLayer2.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">State</A> {	Released,                        
+	WaitEstablish,                   
+	Established,                     
+	WaitRelease,                     
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~ISDNLayer2</A></b> () 
+</LI>
+<LI>inline State &nbsp;<b><A HREF="#ref3">state</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref4">network</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref5">detectType</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref6">sapi</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref7">tei</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref8">maxUserData</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">teiAssigned</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">allowUnack</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">autoRestart</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref12">multipleFrame</A></b> (bool establish, bool force) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">sendData</A></b> (const DataBlock& data, bool ack) 
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref14">cleanup</A></i></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref15">attach</A></b> (ISDNLayer3* layer3) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref16">stateName</A></b> (State s) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref17">ISDNLayer2</A></b> (const NamedList& params, const char* name = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">multipleFrameEstablished</A></b> (bool confirm, bool timeout) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">multipleFrameReleased</A></b> (bool confirm, bool timeout) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">dataLinkState</A></b> (bool cmd, bool value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref21">idleTimeout</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">receiveData</A></b> (const DataBlock& data, bool ack) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">teiAssigned</A></b> (bool status) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref24">changeState</A></b> (State newState) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref25">changeType</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An interface to a Layer 2 (Q.921) ISDN message transport
+</p>
+<A NAME="State"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {	Released,                        
+	WaitEstablish,                   
+	Established,                     
+	WaitRelease,                     
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ Layer states if it has a TEI assigned
+     </p>
+<A NAME="~ISDNLayer2"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNLayer2</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNLayer2</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="state"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline State &nbsp;<strong>state</strong> ()
+<br></td><td align="right"><h3><strong>state</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the layer's state
+</p>
+<p><b>Returns</b>: The layer's state as enumeration
+     </p>
+<A NAME="network"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>network</strong> ()
+<br></td><td align="right"><h3><strong>network</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this interface is the network or CPE (user) side of the link
+</p>
+<p><b>Returns</b>: True if this interface is the network side of the link
+     </p>
+<A NAME="detectType"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>detectType</strong> ()
+<br></td><td align="right"><h3><strong>detectType</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this interface should change its type
+</p>
+<p><b>Returns</b>: True if type change is allowed
+     </p>
+<A NAME="sapi"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>sapi</strong> ()
+<br></td><td align="right"><h3><strong>sapi</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the SAPI (Service Access Point Identifier) of this interface
+</p>
+<p><b>Returns</b>: The SAPI (Service Access Point Identifier) of this interface
+     </p>
+<A NAME="tei"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>tei</strong> ()
+<br></td><td align="right"><h3><strong>tei</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the TEI (Terminal Endpoint Identifier) of this interface
+</p>
+<p><b>Returns</b>: The TEI (Terminal Endpoint Identifier) of this interface
+     </p>
+<A NAME="maxUserData"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>maxUserData</strong> ()
+<br></td><td align="right"><h3><strong>maxUserData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the maximum length of user data transported through this layer
+</p>
+<p><b>Returns</b>: The maximum length of user data transported through this layer
+     </p>
+<A NAME="teiAssigned"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>teiAssigned</strong> ()
+<br></td><td align="right"><h3><strong>teiAssigned</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this interface has a TEI assigned
+</p>
+<p><b>Returns</b>: True if this interface has a TEI assigned
+     </p>
+<A NAME="allowUnack"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>allowUnack</strong> ()
+<br></td><td align="right"><h3><strong>allowUnack</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if unacknoledged data is allowed to pass through this interface
+</p>
+<p><b>Returns</b>: True if unacknoledged data is allowed to pass through this interface
+     </p>
+<A NAME="autoRestart"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>autoRestart</strong> ()
+<br></td><td align="right"><h3><strong>autoRestart</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this interface will automatically re-establish when released
+</p>
+<p><b>Returns</b>: The auto restart flag
+     </p>
+<A NAME="multipleFrame"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>multipleFrame</strong> (bool establish, bool force)
+<br></td><td align="right"><h3><strong>multipleFrame</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Implements Q.921 DL-ESTABLISH and DL-RELEASE request primitives
+ Descendants must implement this method to fullfill the request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>establish</i></TD><TD align="left" valign="top">True to establish. False to release
+</TD></TR>
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to establish even if we already are in this mode. This
+  parameter is ignored if establish is false
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the request was accepted
+     </p>
+<A NAME="sendData"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>sendData</strong> (const DataBlock& data, bool ack)
+<br></td><td align="right"><h3><strong>sendData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Implements Q.921 DL-DATA and DL-UNIT DATA request primitives
+ Descendants must implement this method to fullfill the request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ack</i></TD><TD align="left" valign="top">True to send an acknoledged frame, false to send an unacknoledged one
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the request was accepted
+     </p>
+<A NAME="cleanup"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>cleanup</strong></i> ()
+<br></td><td align="right"><h3><i><strong>cleanup</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Emergency release.
+ Descendants must implement this method to cleanup/reset data
+     </p>
+<A NAME="attach"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>attach</strong> (ISDNLayer3* layer3)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Attach an ISDN Q.931 Layer 3 if the given parameter is different from the one we have
+ Cleanup the object before ataching the new Layer 3
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>layer3</i></TD><TD align="left" valign="top">Pointer to the Q.931 Layer 3 to attach
+     </TD></TR>
+</TABLE></P>
+<A NAME="stateName"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>stateName</strong> (State s)
+<br></td><td align="right"><h3><strong>stateName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated with a given state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>s</i></TD><TD align="left" valign="top">The state to get the text for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text associated with the given state
+     </p>
+<A NAME="ISDNLayer2"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNLayer2</strong> (const NamedList& params, const char* name = 0)
+<br></td><td align="right"><h3><strong>ISDNLayer2</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+ Initialize this interface and the component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Layer's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name of the component
+     </TD></TR>
+</TABLE></P>
+<A NAME="multipleFrameEstablished"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>multipleFrameEstablished</strong> (bool confirm, bool timeout)
+<br></td><td align="right"><h3><strong>multipleFrameEstablished</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Implements Q.921 DL-ESTABLISH indication/confirmation primitive
+  of 'multiple frame acknoledged' mode established
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>confirm</i></TD><TD align="left" valign="top">True if this is a confirmation of a previous request.
+  False if it is an indication of state change on remote request
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">True if the reason is a timeout.
+     </TD></TR>
+</TABLE></P>
+<A NAME="multipleFrameReleased"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>multipleFrameReleased</strong> (bool confirm, bool timeout)
+<br></td><td align="right"><h3><strong>multipleFrameReleased</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Implements Q.921 DL-RELEASE indication/confirmation primitive
+  of 'multiple frame acknoledged' mode released
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>confirm</i></TD><TD align="left" valign="top">True if this is a confirmation of a previous request.
+  False if it is an indication of state change on remote request
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timeout</i></TD><TD align="left" valign="top">True if the reason is a timeout.
+     </TD></TR>
+</TABLE></P>
+<A NAME="dataLinkState"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>dataLinkState</strong> (bool cmd, bool value)
+<br></td><td align="right"><h3><strong>dataLinkState</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Notify layer 3 of data link set/release command or response
+ Used for stateless layer 2
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cmd</i></TD><TD align="left" valign="top">True if received a command, false if received a response
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The value of the notification
+	If 'cmd' is true (command), the value is true if a request to establish data link was received
+   or false if received a request to release data link
+	If 'cmd' is false (response), the value is the response
+     </TD></TR>
+</TABLE></P>
+<A NAME="idleTimeout"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>idleTimeout</strong> ()
+<br></td><td align="right"><h3><strong>idleTimeout</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Notify layer 3 of data link idle timeout
+ Used for stateless layer 2
+     </p>
+<A NAME="receiveData"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>receiveData</strong> (const DataBlock& data, bool ack)
+<br></td><td align="right"><h3><strong>receiveData</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Implements Q.921 DL-DATA and DL-UNIT DATA indication primitives
+ Receive data from remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Received data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ack</i></TD><TD align="left" valign="top">True if data is an acknoledged frame, false if it is an unacknoledged one
+     </TD></TR>
+</TABLE></P>
+<A NAME="teiAssigned"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>teiAssigned</strong> (bool status)
+<br></td><td align="right"><h3><strong>teiAssigned</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set TEI assigned status. Print a debug message. If status is false calls cleanup()
+ Descendants are responsable for TEI assigned status management
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>status</i></TD><TD align="left" valign="top">The new TEI assigned status
+     </TD></TR>
+</TABLE></P>
+<A NAME="changeState"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>changeState</strong> (State newState)
+<br></td><td align="right"><h3><strong>changeState</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the state
+ Descendants are responsable for multiple frame status management
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">The new state
+     </TD></TR>
+</TABLE></P>
+<A NAME="changeType"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>changeType</strong> ()
+<br></td><td align="right"><h3><strong>changeType</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Change the interface type
+</p>
+<p><b>Returns</b>: True if interface type changed
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

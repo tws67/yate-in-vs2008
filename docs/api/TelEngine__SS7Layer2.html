@@ -1,0 +1,222 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7Layer2</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7Layer2</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract SS7 layer 2 (data link) message transfer part. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7Layer2</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__SignallingComponent.html">TelEngine::SignallingComponent</A> <small>[virtual public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__SS7M2PA.html">SS7M2PA</A>, <A HREF="TelEngine__SS7M2UA.html">SS7M2UA</A>, <A HREF="TelEngine__SS7MTP2.html">SS7MTP2</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7Layer2.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">LinkStatus</A> {	OutOfAlignment = 0,
+	NormalAlignment = 1,
+	EmergencyAlignment = 2,
+	OutOfService = 3,
+	ProcessorOutage = 4,
+	Busy = 5,
+	O = OutOfAlignment,
+	N = NormalAlignment,
+	E = EmergencyAlignment,
+	OS = OutOfService,
+	PO = ProcessorOutage,
+	B = Busy,
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Operation</A> {	Pause  = 0x100,
+	Resume = 0x200,
+	Align  = 0x300,
+	Status = 0x400,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  bool &nbsp;<b><i><A HREF="#ref3">transmitMSU</A></i></b> (const SS7MSU& msu) 
+</LI>
+<LI>virtual  ObjList* &nbsp;<b><i><A HREF="#ref4">recoverMSU</A></i></b> () 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref5">status</A></b> ()  const
+</LI>
+<LI>virtual  const char* &nbsp;<b><A HREF="#ref6">statusName</A></b> (unsigned int status, bool brief)  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref7">statusName</A></b> (bool brief = false)  const
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref8">operational</A></i></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">attach</A></b> (SS7L2User* l2user) 
+</LI>
+<LI>inline SS7L2User* &nbsp;<b><A HREF="#ref10">user</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref11">sls</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">sls</A></b> (int linkSel) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">control</A></b> (Operation oper, NamedList* params = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref14">SS7Layer2</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">receivedMSU</A></b> (const SS7MSU& msu) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref16">notify</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An interface to a Layer 2 (data link) SS7 message transfer part
+</p>
+<A NAME="LinkStatus"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>LinkStatus</strong> {	OutOfAlignment = 0,
+	NormalAlignment = 1,
+	EmergencyAlignment = 2,
+	OutOfService = 3,
+	ProcessorOutage = 4,
+	Busy = 5,
+	O = OutOfAlignment,
+	N = NormalAlignment,
+	E = EmergencyAlignment,
+	OS = OutOfService,
+	PO = ProcessorOutage,
+	B = Busy,
+    }
+</td><td align="right"><h3><strong>LinkStatus</strong></h3></td></tr></table><p></p><p>
+ LSSU Status Indications
+     </p>
+<A NAME="Operation"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Operation</strong> {	Pause  = 0x100,
+	Resume = 0x200,
+	Align  = 0x300,
+	Status = 0x400,
+    }
+</td><td align="right"><h3><strong>Operation</strong></h3></td></tr></table><p></p><p>
+ Control primitives
+     </p>
+<A NAME="transmitMSU"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>transmitMSU</strong></i> (const SS7MSU& msu)
+<br></td><td align="right"><h3><i><strong>transmitMSU</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Push a Message Signal Unit down the protocol stack
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">Message data, starting with Service Indicator Octet
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if message was successfully queued
+     </p>
+<A NAME="recoverMSU"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<i><strong>recoverMSU</strong></i> ()
+<br></td><td align="right"><h3><i><strong>recoverMSU</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Remove the MSUs waiting in the transmit queue and return them
+</p>
+<p><b>Returns</b>: List of MSUs taken from the queue
+     </p>
+<A NAME="status"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>status</strong> ()
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Retrive the current link status indications
+</p>
+<p><b>Returns</b>: Link status indication bits
+     </p>
+<A NAME="statusName"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>statusName</strong> (unsigned int status, bool brief)
+<br></td><td align="right"><h3><strong>statusName</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the name of a Layer 2 status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>status</i></TD><TD align="left" valign="top">Status indication value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>brief</i></TD><TD align="left" valign="top">Request to return the short status name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String describing the status
+     </p>
+<A NAME="statusName"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>statusName</strong> (bool brief = false)
+<br></td><td align="right"><h3><strong>statusName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the name of the current local Layer 2 status
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>brief</i></TD><TD align="left" valign="top">Request to return the short status name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String describing the status
+     </p>
+<A NAME="operational"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>operational</strong></i> ()
+<br></td><td align="right"><h3><i><strong>operational</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p>
+ Check if the link is fully operational
+</p>
+<p><b>Returns</b>: True if the link is aligned and operational
+     </p>
+<A NAME="attach"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>attach</strong> (SS7L2User* l2user)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p></p><p>
+ Attach a Layer 2 user component to the data link. Detach from the old one if valid
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>l2user</i></TD><TD align="left" valign="top">Pointer to Layer 2 user component to attach
+     </TD></TR>
+</TABLE></P>
+<A NAME="user"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7L2User* &nbsp;<strong>user</strong> ()
+<br></td><td align="right"><h3><strong>user</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Layer 2 user component that works with this data link
+</p>
+<p><b>Returns</b>: Pointer to the user component to which the messages are sent
+     </p>
+<A NAME="sls"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>sls</strong> ()
+<br></td><td align="right"><h3><strong>sls</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Signalling Link Selection number allocated to this link
+</p>
+<p><b>Returns</b>: SLS value assigned by the upper layer
+     </p>
+<A NAME="sls"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>sls</strong> (int linkSel)
+<br></td><td align="right"><h3><strong>sls</strong></h3></td></tr></table><p></p><p>
+ Assign a new Signalling Link Selection number
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>linkSel</i></TD><TD align="left" valign="top">New SLS to assign to this link
+     </TD></TR>
+</TABLE></P>
+<A NAME="control"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>control</strong> (Operation oper, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>control</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Execute a control operation. Operations can change the link status or
+  can query the aligned status.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>oper</i></TD><TD align="left" valign="top">Operation to execute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameters for the operation
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the command completed successfully, for query operations
+  also indicates the data link is aligned and operational
+     </p>
+<A NAME="SS7Layer2"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7Layer2</strong> ()
+<br></td><td align="right"><h3><strong>SS7Layer2</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+     </p>
+<A NAME="receivedMSU"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>receivedMSU</strong> (const SS7MSU& msu)
+<br></td><td align="right"><h3><strong>receivedMSU</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Push a received Message Signal Unit up the protocol stack
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">Message data, starting with Service Indicator Octet
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if message was successfully delivered to the user component
+     </p>
+<A NAME="notify"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>notify</strong> ()
+<br></td><td align="right"><h3><strong>notify</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Notify out user part about a status change
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

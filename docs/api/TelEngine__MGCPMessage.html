@@ -1,0 +1,227 @@
+<HTML>
+<HEAD>
+<TITLE>class MGCPMessage</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MGCPMessage</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An MGCP command or response. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MGCPMessage</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ymgcp___yatemgcp_h.html">libs/ymgcp/yatemgcp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MGCPMessage.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">MGCPMessage</A></b> (MGCPEngine* engine, const char* name, const char* ep, const char* ver = "MGCP 1.0") 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">MGCPMessage</A></b> (MGCPTransaction* trans, unsigned int code, const char* comment = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~MGCPMessage</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref5">valid</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">name</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref7">code</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">version</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">comment</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">isCommand</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">isResponse</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">isAck</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref13">transactionId</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref14">endpointId</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">toString</A></b> (String& dest)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  bool &nbsp;<b><A HREF="#ref16">parse</A></b> (MGCPEngine* engine, ObjList& dest,
+	const unsigned char* buffer, unsigned int len,
+	const char* sdpType = "application/sdp") 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>NamedList <b><A HREF="#ref17">params</A></b></LI>
+<LI>ObjList <b><A HREF="#ref18">sdp</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref19">MGCPMessage</A></b> (MGCPEngine* engine, const char* name, int code,
+	unsigned int transId, const char* epId, const char* ver) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds an MGCP message, either command or response, along with
+  its parameters. The 
+</p>
+<A NAME="MGCPMessage"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MGCPMessage</strong> (MGCPEngine* engine, const char* name, const char* ep, const char* ver = "MGCP 1.0")
+<br></td><td align="right"><h3><strong>MGCPMessage</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct an outgoing command message.
+ A transaction id will be requested from the endpoint's engine.
+ The message will be invalidated if failed to get a transaction id or the
+  command name is unknown
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine sending this message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Command name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ep</i></TD><TD align="left" valign="top">The id of the endpoint issuing this command
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ver</i></TD><TD align="left" valign="top">The protocol version to use
+     </TD></TR>
+</TABLE></P>
+<A NAME="MGCPMessage"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MGCPMessage</strong> (MGCPTransaction* trans, unsigned int code, const char* comment = 0)
+<br></td><td align="right"><h3><strong>MGCPMessage</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct an outgoing response message
+ The message will be invalidated if failed to get a transaction id or the
+  code is greater then 999
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">The transaction to respond
+</TD></TR>
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The response code ranging from 0 to 999
+</TD></TR>
+<TR><TD align="left" valign="top"><i>comment</i></TD><TD align="left" valign="top">Optional response comment
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MGCPMessage"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MGCPMessage</strong> ()
+<br></td><td align="right"><h3><strong>~MGCPMessage</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="valid"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this is a valid message
+</p>
+<p><b>Returns</b>: True if this is a valid message
+     </p>
+<A NAME="name"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the command name or response code text representation of this message
+</p>
+<p><b>Returns</b>: The command name or response text representation of this message
+     </p>
+<A NAME="code"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>code</strong> ()
+<br></td><td align="right"><h3><strong>code</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the response code if this is a response message
+</p>
+<p><b>Returns</b>: The response code contained in this message
+     </p>
+<A NAME="version"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>version</strong> ()
+<br></td><td align="right"><h3><strong>version</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the protocol version of a command message
+</p>
+<p><b>Returns</b>: The protocol version of this message
+     </p>
+<A NAME="comment"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>comment</strong> ()
+<br></td><td align="right"><h3><strong>comment</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the comment from a response message
+</p>
+<p><b>Returns</b>: The comment of this message
+     </p>
+<A NAME="isCommand"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isCommand</strong> ()
+<br></td><td align="right"><h3><strong>isCommand</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this is a command (code is a negative value)
+</p>
+<p><b>Returns</b>: True if this message is a command
+     </p>
+<A NAME="isResponse"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isResponse</strong> ()
+<br></td><td align="right"><h3><strong>isResponse</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this is a response message (code is greater then or equal to 100)
+</p>
+<p><b>Returns</b>: True if this message is a response
+     </p>
+<A NAME="isAck"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isAck</strong> ()
+<br></td><td align="right"><h3><strong>isAck</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message is a response ACK (code is between 0 and 99, including the margins)
+</p>
+<p><b>Returns</b>: True if this message is a response ACK
+     </p>
+<A NAME="transactionId"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>transactionId</strong> ()
+<br></td><td align="right"><h3><strong>transactionId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the message's transaction id
+</p>
+<p><b>Returns</b>: The message's transaction id
+     </p>
+<A NAME="endpointId"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>endpointId</strong> ()
+<br></td><td align="right"><h3><strong>endpointId</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the message's endpoint id if this is a command
+</p>
+<p><b>Returns</b>: The message's endpoint id if this is a command
+     </p>
+<A NAME="toString"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Convert this message to a string representation to be sent to the remote
+  endpoint or printed to output
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="parse"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>parse</strong> (MGCPEngine* engine, ObjList& dest,
+	const unsigned char* buffer, unsigned int len,
+	const char* sdpType = "application/sdp")
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Parse a received buffer according to RFC 3435. Command and protocol names are converted to upper case.
+  The enpoint id is converted to lower case. Message parameter names are converted to lower case if
+  the engine's flag is set. Message parameter values and SDP(s) are stored unchanged
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The receiving engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The list of received messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">The buffer to parse
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The buffer length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sdpType</i></TD><TD align="left" valign="top">The MIME SDP content type if the message contains any SDP body
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on failure, true on success. If failed, the destination
+  list may contain a response message to be sent
+     </p>
+<A NAME="params"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList  <strong>params</strong>
+</td><td align="right"><h3><strong>params</strong></h3></td></tr></table><p></p><A NAME="sdp"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>sdp</strong>
+</td><td align="right"><h3><strong>sdp</strong></h3></td></tr></table><p></p><A NAME="MGCPMessage"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MGCPMessage</strong> (MGCPEngine* engine, const char* name, int code,
+	unsigned int transId, const char* epId, const char* ver)
+<br></td><td align="right"><h3><strong>MGCPMessage</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor. Used by the parser to construct an incoming message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine receiving this message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Command name or response comment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The response code in the range 0 to 999 or -1 if the received
+  message is a command
+</TD></TR>
+<TR><TD align="left" valign="top"><i>transId</i></TD><TD align="left" valign="top">The id of the transaction owning this message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>epId</i></TD><TD align="left" valign="top">The id of the endpoint issuing this command
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ver</i></TD><TD align="left" valign="top">The protocol version
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

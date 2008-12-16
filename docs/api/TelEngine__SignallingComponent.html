@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingComponent</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingComponent</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract signalling component that can be managed by the engine. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingComponent</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__AnalogLineGroup.html">AnalogLineGroup</A>, <A HREF="TelEngine__ISDNIUA.html">ISDNIUA</A>, <i><A HREF="TelEngine__ISDNLayer2.html">ISDNLayer2</A></i>, <i><A HREF="TelEngine__ISDNLayer3.html">ISDNLayer3</A></i>, <A HREF="TelEngine__ISDNQ921.html">ISDNQ921</A>, <A HREF="TelEngine__ISDNQ921.html">ISDNQ921</A>, <A HREF="TelEngine__ISDNQ921Pasive.html">ISDNQ921Pasive</A>, <A HREF="TelEngine__ISDNQ921Pasive.html">ISDNQ921Pasive</A>, <A HREF="TelEngine__ISDNQ931.html">ISDNQ931</A>, <A HREF="TelEngine__ISDNQ931Monitor.html">ISDNQ931Monitor</A>, <A HREF="TelEngine__SS7ASP.html">SS7ASP</A>, <A HREF="TelEngine__SS7BICC.html">SS7BICC</A>, <A HREF="TelEngine__SS7ISUP.html">SS7ISUP</A>, <i><A HREF="TelEngine__SS7L2User.html">SS7L2User</A></i>, <i><A HREF="TelEngine__SS7L3User.html">SS7L3User</A></i>, <i><A HREF="TelEngine__SS7Layer2.html">SS7Layer2</A></i>, <i><A HREF="TelEngine__SS7Layer3.html">SS7Layer3</A></i>, <A HREF="TelEngine__SS7Layer4.html">SS7Layer4</A>, <A HREF="TelEngine__SS7M2PA.html">SS7M2PA</A>, <A HREF="TelEngine__SS7M2UA.html">SS7M2UA</A>, <A HREF="TelEngine__SS7M3UA.html">SS7M3UA</A>, <A HREF="TelEngine__SS7MTP2.html">SS7MTP2</A>, <A HREF="TelEngine__SS7MTP2.html">SS7MTP2</A>, <A HREF="TelEngine__SS7MTP3.html">SS7MTP3</A>, <A HREF="TelEngine__SS7MTP3.html">SS7MTP3</A>, <A HREF="TelEngine__SS7Maintenance.html">SS7Maintenance</A>, <A HREF="TelEngine__SS7Management.html">SS7Management</A>, <A HREF="TelEngine__SS7Router.html">SS7Router</A>, <A HREF="TelEngine__SS7Router.html">SS7Router</A>, <A HREF="TelEngine__SS7SCCP.html">SS7SCCP</A>, <A HREF="TelEngine__SS7TCAP.html">SS7TCAP</A>, <A HREF="TelEngine__SS7TUP.html">SS7TUP</A>, <A HREF="TelEngine__SignallingCircuitGroup.html">SignallingCircuitGroup</A>, <i><A HREF="TelEngine__SignallingInterface.html">SignallingInterface</A></i>, <i><A HREF="TelEngine__SignallingReceiver.html">SignallingReceiver</A></i></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingComponent.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~SignallingComponent</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref3">toString</A></b> ()  const
+</LI>
+<LI>inline SignallingEngine* &nbsp;<b><A HREF="#ref4">engine</A></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref5">SignallingComponent</A></b> (const char* name = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">insert</A></b> (SignallingComponent* component) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">detach</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref8">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">setName</A></b> (const char* name) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Interface to an abstract signalling component that is managed by an engine.
+ The engine will periodically poll each component to keep them alive.
+</p>
+<A NAME="~SignallingComponent"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingComponent</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingComponent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, detaches the engine and other components
+     </p>
+<A NAME="toString"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the component's name so it can be used for list searches
+</p>
+<p><b>Returns</b>: A reference to the name by which the component is known to engine
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="engine"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingEngine* &nbsp;<strong>engine</strong> ()
+<br></td><td align="right"><h3><strong>engine</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the <A HREF="TelEngine__SignallingEngine.html">TelEngine::SignallingEngine</A> that manages this component
+</p>
+<p><b>Returns</b>: Pointer to engine or NULL if not managed by an engine
+     </p>
+<A NAME="SignallingComponent"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SignallingComponent</strong> (const char* name = 0)
+<br></td><td align="right"><h3><strong>SignallingComponent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor with a default empty component name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+     </TD></TR>
+</TABLE></P>
+<A NAME="insert"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>insert</strong> (SignallingComponent* component)
+<br></td><td align="right"><h3><strong>insert</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Insert another component in the same engine as this one.
+ This method should be called for every component we attach.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>component</i></TD><TD align="left" valign="top">Pointer to component to insert in engine
+     </TD></TR>
+</TABLE></P>
+<A NAME="detach"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>detach</strong> ()
+<br></td><td align="right"><h3><strong>detach</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Detach this component from all its links - components and engine.
+ Reimplement this method in all components that keep pointers to
+  other components.
+ The default implementation detaches from the engine.
+     </p>
+<A NAME="timerTick"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically by the engine to keep everything alive
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for events and timeouts
+     </TD></TR>
+</TABLE></P>
+<A NAME="setName"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setName</strong> (const char* name)
+<br></td><td align="right"><h3><strong>setName</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Change the name of the component after it was constructed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

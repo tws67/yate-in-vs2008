@@ -1,0 +1,166 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPSender</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPSender</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">RTP/RTCP packet sender. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPSender</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__RTPBaseIO.html">TelEngine::RTPBaseIO</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPSender.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">RTPSender</A></b> (RTPSession* session = 0, bool randomTs = true) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~RTPSender</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref3">rtpSend</A></b> (bool marker, int payload, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref4">rtpSendData</A></b> (bool marker, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">rtpSendEvent</A></b> (int event, int duration, int volume = 0, unsigned int timestamp = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">rtpSendKey</A></b> (char key, int duration, int volume = 0, unsigned int timestamp = 0) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref7">padding</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">padding</A></b> (int chunk) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref9">timerTick</A></b> (const Time& when) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Class that builds and sends RTP and RTCP packets
+</p>
+<A NAME="RTPSender"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>RTPSender</strong> (RTPSession* session = 0, bool randomTs = true)
+<br></td><td align="right"><h3><strong>RTPSender</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>session</i></TD><TD align="left" valign="top">RTP session the sender belongs
+</TD></TR>
+<TR><TD align="left" valign="top"><i>randomTs</i></TD><TD align="left" valign="top">Initialize a random timestamp offset
+     </TD></TR>
+</TABLE></P>
+<A NAME="~RTPSender"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPSender</strong> ()
+<br></td><td align="right"><h3><strong>~RTPSender</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Do-nothing destructor
+     </p>
+<A NAME="rtpSend"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>rtpSend</strong> (bool marker, int payload, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpSend</strong></h3></td></tr></table><p></p><p>
+ Send one RTP payload packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit must be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>payload</i></TD><TD align="left" valign="top">Payload number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="rtpSendData"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>rtpSendData</strong> (bool marker, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpSendData</strong></h3></td></tr></table><p></p><p>
+ Send one RTP data packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit must be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="rtpSendEvent"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>rtpSendEvent</strong> (int event, int duration, int volume = 0, unsigned int timestamp = 0)
+<br></td><td align="right"><h3><strong>rtpSendEvent</strong></h3></td></tr></table><p></p><p>
+ Send one RTP event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Event code to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>duration</i></TD><TD align="left" valign="top">Duration of the event as number of samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>volume</i></TD><TD align="left" valign="top">Attenuation of the tone, zero for don't care
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data, zero to use current
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="rtpSendKey"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>rtpSendKey</strong> (char key, int duration, int volume = 0, unsigned int timestamp = 0)
+<br></td><td align="right"><h3><strong>rtpSendKey</strong></h3></td></tr></table><p></p><p>
+ Send one RTP key event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Key to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>duration</i></TD><TD align="left" valign="top">Duration of the event as number of samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>volume</i></TD><TD align="left" valign="top">Attenuation of the tone, zero for don't care
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data, zero to use current
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="padding"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>padding</strong> ()
+<br></td><td align="right"><h3><strong>padding</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the payload padding size
+</p>
+<p><b>Returns</b>: Chunk size to pad the payload to a multiple of
+     </p>
+<A NAME="padding"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>padding</strong> (int chunk)
+<br></td><td align="right"><h3><strong>padding</strong></h3></td></tr></table><p></p><p>
+ Set the padding to a multiple of a data chunk
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chunk</i></TD><TD align="left" valign="top">Size to pad the payload to a multiple of
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the new chunk size is valid
+     </p>
+<A NAME="timerTick"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to send events and buffered data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as base in all computing
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPBaseIO.html#timerTick">RTPBaseIO</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

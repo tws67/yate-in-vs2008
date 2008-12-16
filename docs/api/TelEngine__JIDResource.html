@@ -1,0 +1,275 @@
+<HTML>
+<HEAD>
+<TITLE>class JIDResource</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JIDResource</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A JID resource. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JIDResource</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JIDResource.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Capability</A> {	CapChat                = 1,      
+	CapAudio               = 2,      
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Presence</A> {	Unknown                = 0,      
+	Available              = 1,      
+	Unavailable            = 2,      
+    }
+</LI>
+<LI>enum <A HREF="#ref3">Show</A> {	ShowAway,                        
+	ShowChat,                        
+	ShowDND,                         
+	ShowXA,                          
+	ShowNone,                        
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref4">JIDResource</A></b> (const char* name, Presence presence = Unknown,
+	<A HREF="#u_int32_t">u_int32_t</A> capability = CapChat) 
+</LI>
+<LI>virtual inline  &nbsp;<b><A HREF="#ref5">~JIDResource</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">name</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">setName</A></b> (const char* name) 
+</LI>
+<LI>inline Presence &nbsp;<b><A HREF="#ref8">presence</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">available</A></b> ()  const
+</LI>
+<LI>inline Show &nbsp;<b><A HREF="#ref10">show</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">show</A></b> (Show s) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref12">status</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref13">status</A></b> (const char* s) 
+</LI>
+<LI>inline ObjList* &nbsp;<b><A HREF="#ref14">infoXml</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">setPresence</A></b> (bool value) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">hasCap</A></b> (Capability capability)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref17">fromXML</A></b> (XMLElement* element) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">addTo</A></b> (XMLElement* element, bool addInfo = true) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const char* &nbsp;<b><A HREF="#ref19">getShow</A></b> (XMLElement* element) 
+</LI>
+<LI>static  const char* &nbsp;<b><A HREF="#ref20">getStatus</A></b> (XMLElement* element) 
+</LI>
+<LI>static  inline Show &nbsp;<b><A HREF="#ref21">showType</A></b> (const char* text) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref22">showText</A></b> (Show show) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>static TokenDict <b><A HREF="#ref23">s_show[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a JID resource (name,presence,capabilities)
+</p>
+<A NAME="Capability"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Capability</strong> {	CapChat                = 1,      
+	CapAudio               = 2,      
+    }
+</td><td align="right"><h3><strong>Capability</strong></h3></td></tr></table><p></p><p>
+ Resource capabilities enumeration.
+     </p>
+<A NAME="Presence"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Presence</strong> {	Unknown                = 0,      
+	Available              = 1,      
+	Unavailable            = 2,      
+    }
+</td><td align="right"><h3><strong>Presence</strong></h3></td></tr></table><p></p><p>
+ Resource presence enumeration
+     </p>
+<A NAME="Show"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Show</strong> {	ShowAway,                        
+	ShowChat,                        
+	ShowDND,                         
+	ShowXA,                          
+	ShowNone,                        
+    }
+</td><td align="right"><h3><strong>Show</strong></h3></td></tr></table><p></p><p>
+ Values of the 'show' child of a presence element
+     </p>
+<A NAME="JIDResource"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>JIDResource</strong> (const char* name, Presence presence = Unknown,
+	<A HREF="#u_int32_t">u_int32_t</A> capability = CapChat)
+<br></td><td align="right"><h3><strong>JIDResource</strong></h3></td></tr></table><p></p><p>
+ Constructor. Set data members
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The resource name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>presence</i></TD><TD align="left" valign="top">The resource presence
+</TD></TR>
+<TR><TD align="left" valign="top"><i>capability</i></TD><TD align="left" valign="top">The resource capability
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JIDResource"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline  &nbsp;<strong>~JIDResource</strong> ()
+<br></td><td align="right"><h3><strong>~JIDResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="name"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the resource name
+</p>
+<p><b>Returns</b>: The resource name
+     </p>
+<A NAME="setName"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setName</strong> (const char* name)
+<br></td><td align="right"><h3><strong>setName</strong></h3></td></tr></table><p></p><p>
+ Set the resource name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The new name of the resource
+     </TD></TR>
+</TABLE></P>
+<A NAME="presence"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Presence &nbsp;<strong>presence</strong> ()
+<br></td><td align="right"><h3><strong>presence</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the presence attribute
+</p>
+<p><b>Returns</b>: The presence attribute
+     </p>
+<A NAME="available"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>available</strong> ()
+<br></td><td align="right"><h3><strong>available</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the resource is available
+</p>
+<p><b>Returns</b>: True if the resource is available
+     </p>
+<A NAME="show"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Show &nbsp;<strong>show</strong> ()
+<br></td><td align="right"><h3><strong>show</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the show attribute as enumeration
+</p>
+<p><b>Returns</b>: The show attribute as enumeration
+     </p>
+<A NAME="show"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>show</strong> (Show s)
+<br></td><td align="right"><h3><strong>show</strong></h3></td></tr></table><p></p><p>
+ Set the show attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>s</i></TD><TD align="left" valign="top">The new show attribute
+     </TD></TR>
+</TABLE></P>
+<A NAME="status"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>status</strong> ()
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the status of this resource
+</p>
+<p><b>Returns</b>: The status of this resource
+     </p>
+<A NAME="status"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>status</strong> (const char* s)
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p></p><p>
+ Set the status of this resource
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>s</i></TD><TD align="left" valign="top">The new status of this resource
+     </TD></TR>
+</TABLE></P>
+<A NAME="infoXml"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList* &nbsp;<strong>infoXml</strong> ()
+<br></td><td align="right"><h3><strong>infoXml</strong></h3></td></tr></table><p></p><p>
+ Get the list containing XML elements with additional data describing this resource
+</p>
+<p><b>Returns</b>: The info list
+     </p>
+<A NAME="setPresence"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setPresence</strong> (bool value)
+<br></td><td align="right"><h3><strong>setPresence</strong></h3></td></tr></table><p></p><p>
+ Set the presence information
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">True if available, False if not
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if presence changed
+     </p>
+<A NAME="hasCap"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasCap</strong> (Capability capability)
+<br></td><td align="right"><h3><strong>hasCap</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the resource has the required capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>capability</i></TD><TD align="left" valign="top">The required capability
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the resource has the required capability
+     </p>
+<A NAME="fromXML"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>fromXML</strong> (XMLElement* element)
+<br></td><td align="right"><h3><strong>fromXML</strong></h3></td></tr></table><p></p><p>
+ Update resource from a presence element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">A presence element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if presence or capability changed changed
+     </p>
+<A NAME="addTo"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addTo</strong> (XMLElement* element, bool addInfo = true)
+<br></td><td align="right"><h3><strong>addTo</strong></h3></td></tr></table><p></p><p>
+ Add capabilities to a presence element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The target presence element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addInfo</i></TD><TD align="left" valign="top">True to add the elements from info list
+     </TD></TR>
+</TABLE></P>
+<A NAME="getShow"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>getShow</strong> (XMLElement* element)
+<br></td><td align="right"><h3><strong>getShow</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the 'show' child of a presence element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The XML element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text or 0
+     </p>
+<A NAME="getStatus"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>getStatus</strong> (XMLElement* element)
+<br></td><td align="right"><h3><strong>getStatus</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the 'show' child of a presence element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The XML element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text or 0
+     </p>
+<A NAME="showType"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline Show &nbsp;<strong>showType</strong> (const char* text)
+<br></td><td align="right"><h3><strong>showType</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the type of a 'show' element as enumeration
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Show type as enumeration
+     </p>
+<A NAME="showText"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>showText</strong> (Show show)
+<br></td><td align="right"><h3><strong>showText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text from a show type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>show</i></TD><TD align="left" valign="top">The type to get text for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The associated text or 0
+     </p>
+<A NAME="s_show[]"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_show[]</strong>
+</td><td align="right"><h3><strong>s_show[]</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

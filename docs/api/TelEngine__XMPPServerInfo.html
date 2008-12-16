@@ -1,0 +1,151 @@
+<HTML>
+<HEAD>
+<TITLE>class XMPPServerInfo</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMPPServerInfo</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Server info class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMPPServerInfo</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmpputils_h.html">libs/yjingle/xmpputils.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMPPServerInfo.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">ServerFlag</A> {	NoAutoRestart     = 0x0001,      
+	KeepRoster        = 0x0002,      
+	TlsRequired       = 0x0004,      
+	OldStyleAuth      = 0x0008,      
+	AllowPlainAuth    = 0x0020,      
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">XMPPServerInfo</A></b> (const char* name, const char* address, int port,
+	const char* password, const char* identity, const char* fullidentity,
+	int flags) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">XMPPServerInfo</A></b> (const char* name, int port) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref4">address</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref5">name</A></b> ()  const
+</LI>
+<LI>inline const int &nbsp;<b><A HREF="#ref6">port</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref7">password</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">identity</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">fullIdentity</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">flag</A></b> (int mask)  const
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref11">s_flagName[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds informations about a server
+</p>
+<A NAME="ServerFlag"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>ServerFlag</strong> {	NoAutoRestart     = 0x0001,      
+	KeepRoster        = 0x0002,      
+	TlsRequired       = 0x0004,      
+	OldStyleAuth      = 0x0008,      
+	AllowPlainAuth    = 0x0020,      
+    }
+</td><td align="right"><h3><strong>ServerFlag</strong></h3></td></tr></table><p></p><p>
+ Server flags
+     </p>
+<A NAME="XMPPServerInfo"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>XMPPServerInfo</strong> (const char* name, const char* address, int port,
+	const char* password, const char* identity, const char* fullidentity,
+	int flags)
+<br></td><td align="right"><h3><strong>XMPPServerInfo</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct a full server info object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Server domain name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>address</i></TD><TD align="left" valign="top">IP address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">IP port
+</TD></TR>
+<TR><TD align="left" valign="top"><i>password</i></TD><TD align="left" valign="top">Component only: Password used for authentication
+</TD></TR>
+<TR><TD align="left" valign="top"><i>identity</i></TD><TD align="left" valign="top">Component only: The stream identity used when connecting
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fullidentity</i></TD><TD align="left" valign="top">Component only: The user identity
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Server flags
+     </TD></TR>
+</TABLE></P>
+<A NAME="XMPPServerInfo"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>XMPPServerInfo</strong> (const char* name, int port)
+<br></td><td align="right"><h3><strong>XMPPServerInfo</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct a partial server info object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Server domain name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">IP port
+     </TD></TR>
+</TABLE></P>
+<A NAME="address"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>address</strong> ()
+<br></td><td align="right"><h3><strong>address</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the server's address
+</p>
+<p><b>Returns</b>: The server's address
+     </p>
+<A NAME="name"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the server's domain name
+</p>
+<p><b>Returns</b>: The server's domain name
+     </p>
+<A NAME="port"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const int &nbsp;<strong>port</strong> ()
+<br></td><td align="right"><h3><strong>port</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the server's port used to connect to
+</p>
+<p><b>Returns</b>: The server's port used to connect to
+     </p>
+<A NAME="password"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>password</strong> ()
+<br></td><td align="right"><h3><strong>password</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the server's port used to connect to
+</p>
+<p><b>Returns</b>: The server's port used to connect to
+     </p>
+<A NAME="identity"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>identity</strong> ()
+<br></td><td align="right"><h3><strong>identity</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the server's identity
+</p>
+<p><b>Returns</b>: The server's identity
+     </p>
+<A NAME="fullIdentity"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>fullIdentity</strong> ()
+<br></td><td align="right"><h3><strong>fullIdentity</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the server's full identity
+</p>
+<p><b>Returns</b>: The server's full identity
+     </p>
+<A NAME="flag"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>flag</strong> (int mask)
+<br></td><td align="right"><h3><strong>flag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a given flag (or mask) is set
+</p>
+<p><b>Returns</b>: True if the flag is set
+     </p>
+<A NAME="s_flagName[]"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_flagName[]</strong>
+</td><td align="right"><h3><strong>s_flagName[]</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

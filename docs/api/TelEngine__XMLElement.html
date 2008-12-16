@@ -1,0 +1,578 @@
+<HTML>
+<HEAD>
+<TITLE>class XMLElement</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMLElement</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An XML element. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMLElement</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmlparser_h.html">libs/yjingle/xmlparser.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMLElement.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Type</A> {	StreamStart,                     
+	StreamEnd,                       
+	StreamError,                     
+	StreamFeatures,                  
+	Register,                        
+	Starttls,                        
+	Handshake,                       
+	Auth,                            
+	Challenge,                       
+	Abort,                           
+	Aborted,                         
+	Response,                        
+	Proceed,                         
+	Success,                         
+	Failure,                         
+	Mechanisms,                      
+	Mechanism,                       
+	Session,                         
+	Iq,                              
+	Message,                         
+	Presence,                        
+	Error,                           
+	Query,                           
+	Jingle,                          
+	Description,                     
+	PayloadType,                     
+	Transport,                       
+	Candidate,                       
+	Body,                            
+	Feature,                         
+	Bind,                            
+	Resource,                        
+	Jid,                             
+	Username,                        
+	Password,                        
+	Digest,                          
+	Required,                        
+	Dtmf,                            
+	DtmfMethod,                      
+	Command,                         
+	Text,                            
+	Item,                            
+	Group,                           
+	Unknown,                         
+	Invalid,                         
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">XMLElement</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">XMLElement</A></b> (const XMLElement& src) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">XMLElement</A></b> (const XMLElement& src, bool response, bool result) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref6">XMLElement</A></b> (const char* name, NamedList* attributes = 0, const char* text = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref7">XMLElement</A></b> (Type type, NamedList* attributes = 0, const char* text = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref8">XMLElement</A></b> (NamedList& src, const char* prefix) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref9">~XMLElement</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref10">type</A></b> ()  const
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref11">name</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">nameIs</A></b> (const char* text)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">valid</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref14">changeType</A></b> (Type t) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">toString</A></b> (String& dest, bool unclose = false)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">toList</A></b> (NamedList& dest, const char* prefix) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">setAttribute</A></b> (const char* name, const char* value) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref18">setAttributeValid</A></b> (const char* name, const String& value) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref19">setAttribute</A></b> (const char* name, int value) 
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref20">getAttribute</A></b> (const char* name)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref21">getAttribute</A></b> (const char* name, String& value)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">hasAttribute</A></b> (const char* name, const char* value)  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref23">getText</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref24">addChild</A></b> (XMLElement* element) 
+</LI>
+<LI>XMLElement* &nbsp;<b><A HREF="#ref25">findFirstChild</A></b> (const char* name = 0) 
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref26">findFirstChild</A></b> (Type type) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref27">hasChild</A></b> (const char* name) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref28">hasChild</A></b> (Type type) 
+</LI>
+<LI>XMLElement* &nbsp;<b><A HREF="#ref29">findNextChild</A></b> (XMLElement* element, const char* name = 0) 
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref30">findNextChild</A></b> (XMLElement* element, Type type) 
+</LI>
+<LI>inline const TiXmlAttribute* &nbsp;<b><A HREF="#ref31">firstAttribute</A></b> ()  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref34">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref35">toString</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref36">destruct</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref32">typeName</A></b> (Type type) 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref33">isType</A></b> (const char* txt, Type type) 
+</LI>
+<LI>static  XMLElement* &nbsp;<b><A HREF="#ref37">getXml</A></b> (NamedList& list, bool stole = false,
+	const char* name = "xml", const char* value = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref38">XMLElement</A></b> (TiXmlElement* element, bool owner) 
+</LI>
+<LI>inline TiXmlElement* &nbsp;<b><A HREF="#ref39">get</A></b> ()  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref40">releaseOwnership</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>static TokenDict <b><A HREF="#ref41">s_names[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds an XML element
+</p>
+<A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	StreamStart,                     
+	StreamEnd,                       
+	StreamError,                     
+	StreamFeatures,                  
+	Register,                        
+	Starttls,                        
+	Handshake,                       
+	Auth,                            
+	Challenge,                       
+	Abort,                           
+	Aborted,                         
+	Response,                        
+	Proceed,                         
+	Success,                         
+	Failure,                         
+	Mechanisms,                      
+	Mechanism,                       
+	Session,                         
+	Iq,                              
+	Message,                         
+	Presence,                        
+	Error,                           
+	Query,                           
+	Jingle,                          
+	Description,                     
+	PayloadType,                     
+	Transport,                       
+	Candidate,                       
+	Body,                            
+	Feature,                         
+	Bind,                            
+	Resource,                        
+	Jid,                             
+	Username,                        
+	Password,                        
+	Digest,                          
+	Required,                        
+	Dtmf,                            
+	DtmfMethod,                      
+	Command,                         
+	Text,                            
+	Item,                            
+	Group,                           
+	Unknown,                         
+	Invalid,                         
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Element type as enumeration
+     </p>
+<A NAME="XMLElement"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> ()
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Constructs a StreamEnd element
+     </p>
+<A NAME="XMLElement"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> (const XMLElement& src)
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source element
+     </TD></TR>
+</TABLE></P>
+<A NAME="XMLElement"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> (const XMLElement& src, bool response, bool result)
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p></p><p>
+ Constructor. Partially build this element from another one.
+ Copy name and 'to', 'from', 'type', 'id' attributes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>response</i></TD><TD align="left" valign="top">True to reverse 'to' and 'from' attributes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>result</i></TD><TD align="left" valign="top">True to set type to "result", false to set it to "error".
+  Ignored if response is false
+     </TD></TR>
+</TABLE></P>
+<A NAME="XMLElement"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> (const char* name, NamedList* attributes = 0, const char* text = 0)
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Constructs an XML element with a TiXmlElement element with the given name.
+ Used for outgoing elements
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The element's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>attributes</i></TD><TD align="left" valign="top">Optional list of attributes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text for the XML element
+     </TD></TR>
+</TABLE></P>
+<A NAME="XMLElement"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> (Type type, NamedList* attributes = 0, const char* text = 0)
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Constructs an XML element with a TiXmlElement element with the given type's name.
+ Used for outgoing elements
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The element's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>attributes</i></TD><TD align="left" valign="top">Optional list of attributes
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text for the XML element
+     </TD></TR>
+</TABLE></P>
+<A NAME="XMLElement"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> (NamedList& src, const char* prefix)
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p></p><p>
+ Constructor.
+ Build this XML element from a list containing name, attributes and text.
+ Element's name must be a parameter whose name must be equal to prefix.
+ Element's text must be a parameter whose name is prefix followed by a dot.
+ The list of attributes will be built from parameters starting with prefix.attributename
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The list containing data used to build this XML element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">The prefix used to search the list of parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XMLElement"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XMLElement</strong> ()
+<br></td><td align="right"><h3><strong>~XMLElement</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Deletes the underlying TiXmlElement if owned
+     </p>
+<A NAME="type"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this object
+</p>
+<p><b>Returns</b>: The type of this object as enumeration
+     </p>
+<A NAME="name"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the TiXmlElement's name
+</p>
+<p><b>Returns</b>: The name of the TiXmlElement object or 0
+     </p>
+<A NAME="nameIs"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>nameIs</strong> (const char* text)
+<br></td><td align="right"><h3><strong>nameIs</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the TiXmlElement's name is the given text
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text to compare with
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if text is 0 or not equal to name
+     </p>
+<A NAME="valid"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the validity of this object
+</p>
+<p><b>Returns</b>: True if m_element is non null
+     </p>
+<A NAME="changeType"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>changeType</strong> (Type t)
+<br></td><td align="right"><h3><strong>changeType</strong></h3></td></tr></table><p></p><p>
+ Change the type of this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>t</i></TD><TD align="left" valign="top">The new type of this object
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, bool unclose = false)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Put the element in a buffer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>unclose</i></TD><TD align="left" valign="top">True to leave the tag unclosed
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="toList"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toList</strong> (NamedList& dest, const char* prefix)
+<br></td><td align="right"><h3><strong>toList</strong></h3></td></tr></table><p></p><p>
+ Put this element's name, text and attributes to a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">Prefix to add to parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAttribute"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setAttribute</strong> (const char* name, const char* value)
+<br></td><td align="right"><h3><strong>setAttribute</strong></h3></td></tr></table><p></p><p>
+ Set the value of an existing attribute or adds a new one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Attribute's value
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAttributeValid"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setAttributeValid</strong> (const char* name, const String& value)
+<br></td><td align="right"><h3><strong>setAttributeValid</strong></h3></td></tr></table><p></p><p>
+ Set the value of an existing attribute or adds a new one if the value's length is not 0
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Attribute's value
+     </TD></TR>
+</TABLE></P>
+<A NAME="setAttribute"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setAttribute</strong> (const char* name, int value)
+<br></td><td align="right"><h3><strong>setAttribute</strong></h3></td></tr></table><p></p><p>
+ Set the value of an existing attribute or adds a new one from an integer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Attribute's value
+     </TD></TR>
+</TABLE></P>
+<A NAME="getAttribute"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getAttribute</strong> (const char* name)
+<br></td><td align="right"><h3><strong>getAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the value of an attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Attribute's value. May be 0 if doesn't exists or empty
+     </p>
+<A NAME="getAttribute"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>getAttribute</strong> (const char* name, String& value)
+<br></td><td align="right"><h3><strong>getAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the value of an attribute
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if attribute with the given name exists and is not empty
+     </p>
+<A NAME="hasAttribute"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hasAttribute</strong> (const char* name, const char* value)
+<br></td><td align="right"><h3><strong>hasAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if an attribute with the given name and value exists
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Attribute's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Attribute's value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True/False
+     </p>
+<A NAME="getText"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getText</strong> ()
+<br></td><td align="right"><h3><strong>getText</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the text of this XML element
+</p>
+<p><b>Returns</b>: Pointer to the text of this XML element or 0
+     </p>
+<A NAME="addChild"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addChild</strong> (XMLElement* element)
+<br></td><td align="right"><h3><strong>addChild</strong></h3></td></tr></table><p></p><p>
+ Add a child to this object. Release the received element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">XMLElement to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="findFirstChild"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMLElement* &nbsp;<strong>findFirstChild</strong> (const char* name = 0)
+<br></td><td align="right"><h3><strong>findFirstChild</strong></h3></td></tr></table><p></p><p>
+ Find the first child element of this one.
+ If an element is returned, it is a newly allocated one, not owning its TiXmlElement pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name of the child
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an XMLElement or 0 if not found
+     </p>
+<A NAME="findFirstChild"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>findFirstChild</strong> (Type type)
+<br></td><td align="right"><h3><strong>findFirstChild</strong></h3></td></tr></table><p></p><p>
+ Find the first child element of the given type.
+ If an element is returned, it is a newly allocated one, not owning its TiXmlElement pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Child's type to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an XMLElement or 0 if not found
+     </p>
+<A NAME="hasChild"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasChild</strong> (const char* name)
+<br></td><td align="right"><h3><strong>hasChild</strong></h3></td></tr></table><p></p><p>
+ Check if this element has a given child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name of the child (check for the first one if 0)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if this element has the desired child
+     </p>
+<A NAME="hasChild"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasChild</strong> (Type type)
+<br></td><td align="right"><h3><strong>hasChild</strong></h3></td></tr></table><p></p><p>
+ Check if this element has a given child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Child's type to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if this element has the desired child
+     </p>
+<A NAME="findNextChild"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMLElement* &nbsp;<strong>findNextChild</strong> (XMLElement* element, const char* name = 0)
+<br></td><td align="right"><h3><strong>findNextChild</strong></h3></td></tr></table><p></p><p>
+ Find the next child element. Delete the starting element if not 0.
+ If an element is returned, it is a newly allocated one, not owning its TiXmlElement pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Starting XMLElement. O to find from the beginning
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional name of the child
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an XMLElement or 0 if not found
+     </p>
+<A NAME="findNextChild"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>findNextChild</strong> (XMLElement* element, Type type)
+<br></td><td align="right"><h3><strong>findNextChild</strong></h3></td></tr></table><p></p><p>
+ Find the next child element of the given type. Delete the starting element if not 0.
+ If an element is returned, it is a newly allocated one, not owning its TiXmlElement pointer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Starting XMLElement. O to find from the beginning
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Child's type to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an XMLElement or 0 if not found
+     </p>
+<A NAME="firstAttribute"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const TiXmlAttribute* &nbsp;<strong>firstAttribute</strong> ()
+<br></td><td align="right"><h3><strong>firstAttribute</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find the first attribute
+</p>
+<p><b>Returns</b>: Pointer to the first attribute or 0
+     </p>
+<A NAME="typeName"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeName</strong> (Type type)
+<br></td><td align="right"><h3><strong>typeName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the name associated with the given type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Element type as enumeration
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the name or 0
+     </p>
+<A NAME="isType"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>isType</strong> (const char* txt, Type type)
+<br></td><td align="right"><h3><strong>isType</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if the given text is equal to the one associated with the given type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>txt</i></TD><TD align="left" valign="top">Text to compare
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Element type as enumeration
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if txt equals the text associated with the given type
+     </p>
+<A NAME="getObject"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this object
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="toString"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="destruct"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="getXml"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>getXml</strong> (NamedList& list, bool stole = false,
+	const char* name = "xml", const char* value = 0)
+<br></td><td align="right"><h3><strong>getXml</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get an xml element from a list's parameter
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The list to be searched for the given parameter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stole</i></TD><TD align="left" valign="top">True to release parameter ownership (defaults to false)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Parameter name (defaults to 'xml')
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Optional parameter value to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XMLElement pointer or 0. If a valid pointer is returned and
+  stole is true the caller will own the pointer
+     </p>
+<A NAME="XMLElement"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMLElement</strong> (TiXmlElement* element, bool owner)
+<br></td><td align="right"><h3><strong>XMLElement</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor.
+ Constructs an XML element from a TiXmlElement.
+ Used to extract elements from parser and access the children.
+ When extracting elements from parser the object will own the TiXmlElement.
+ When accessing the children, the object will not own the TiXmlElement
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Pointer to a valid TiXmlElement
+</TD></TR>
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">Owner flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="get"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline TiXmlElement* &nbsp;<strong>get</strong> ()
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>
+ Get the underlying TiXmlElement
+</p>
+<p><b>Returns</b>: The underlying TiXmlElement object or 0
+     </p>
+<A NAME="releaseOwnership"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>releaseOwnership</strong> ()
+<br></td><td align="right"><h3><strong>releaseOwnership</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Release the ownership of the underlying TiXmlElement
+  and returns it if the object owns it
+</p>
+<p><b>Returns</b>: The underlying TiXmlElement object or 0 if not owned or 0
+     </p>
+<A NAME="s_names[]"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_names[]</strong>
+</td><td align="right"><h3><strong>s_names[]</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

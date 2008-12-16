@@ -1,0 +1,319 @@
+# Makefile
+# This file holds the make rules for the Telephony Engine
+
+# override DESTDIR at install time to prefix the install directory
+DESTDIR :=
+
+# override DEBUG at compile time to enable full debug or remove it all
+DEBUG :=
+
+CXX := @CXX@ -Wall
+SED := sed
+DEFS :=
+LIBTHR:= -lpthread
+INCLUDES := -I. -I@srcdir@
+CFLAGS := -O2 @MODULE_CPPFLAGS@ @INLINE_FLAGS@
+LDFLAGS:= @LDFLAGS@
+LDCONFIG:=true
+
+MKDEPS := ./config.status
+PROGS:= yate
+YLIB := libyate.so.@PACKAGE_VERSION@
+SLIBS:= $(YLIB) libyate.so libyatesig.so.@PACKAGE_VERSION@ libyatesig.so
+INCS := yateclass.h yatemime.h yatengine.h yatephone.h yatecbase.h
+GENS := yateversn.h
+LIBS :=
+MAN8 := yate.8 yate-config.8
+DOCS := README COPYING ChangeLog
+OBJS := main.o
+
+CLEANS = $(PROGS) $(SLIBS) $(LIBS) $(OBJS) yatepaths.h core
+COMPILE = $(CXX) $(DEFS) $(DEBUG) $(INCLUDES) $(CFLAGS)
+LINK = $(CXX) $(LDFLAGS)
+
+DOCGEN_F := $(INCS)
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+datarootdir = @datarootdir@
+
+datadir = @datadir@
+confdir = @sysconfdir@/yate
+bindir = @bindir@
+libdir = @libdir@
+incdir = @includedir@/yate
+mandir = @mandir@
+docdir = @datadir@/doc/yate-@PACKAGE_VERSION@
+vardir = @localstatedir@/lib/yate
+moddir = @libdir@/yate
+shrdir = $(datadir)/yate
+
+# include optional local make rules
+-include YateLocal.mak
+
+DOCGEN :=
+DOCGEN_K :=
+DOCGEN_D :=
+ifneq (_@KDOC_BIN@,_)
+DOCGEN_K := @KDOC_BIN@ -C ./docs/doc-filter.sh -d docs/api/ $(DOCGEN_F)
+DOCGEN := $(DOCGEN_K)
+endif
+ifneq (_@DOXYGEN_BIN@,_)
+DOCGEN_D := (cat docs/Doxyfile; echo 'INPUT = $(DOCGEN_F)') | @DOXYGEN_BIN@ -
+DOCGEN := $(DOCGEN_D)
+endif
+
+.PHONY: all everything debug ddebug xdebug ndebug
+all: engine modules clients
+
+everything: engine libs modules clients test apidocs
+
+debug:
+	$(MAKE) all DEBUG=-g3 MODSTRIP=
+
+ddebug:
+	$(MAKE) all DEBUG='-g3 -DDEBUG' MODSTRIP=
+
+xdebug:
+	$(MAKE) all DEBUG='-g3 -DXDEBUG' MODSTRIP=
+
+ndebug:
+	$(MAKE) all DEBUG='-g0 -DNDEBUG'
+
+.PHONY: clean distclean cvsclean clean-config-files clean-tables clean-apidocs
+clean:
+	@-$(RM) $(CLEANS) 2>/dev/null
+	$(MAKE) -C ./engine $@
+	$(MAKE) -C ./modules $@
+	$(MAKE) -C ./clients $@
+	@for i in libs/*; do \
+	    test ! -f "$$i/Makefile" || $(MAKE) -C "$$i" clean ; \
+	done
+
+check-topdir:
+	@test -f configure || (echo "Must make this target in the top source directory"; exit 1)
+
+check-root:
+	@test `id -u` = '0' || (echo "You must run this command as root"; exit 1)
+
+clean-config-files: check-topdir
+	-rm -rf auto*.cache
+	-rm -f @CONFIGURE_FILES@
+
+clean-tables: check-topdir
+	-rm -f packing/rpm/yate.spec
+	$(MAKE) -C ./engine/tables -f Makefile.tables mrproper
+
+clean-apidocs: check-topdir
+	-rm docs/api/*.*
+
+distclean: check-topdir clean clean-config-files
+
+cvsclean: check-topdir clean clean-tables clean-apidocs clean-config-files
+	-rm -f configure
+
+.PHONY: engine libs modules clients test apidocs-build apidocs-kdoc apidocs-doxygen apidocs-everything check-topdir windows
+engine: tables library libyate.so $(PROGS)
+
+apidocs-kdoc: check-topdir
+	@if [ -n "$(DOCGEN_K)" ]; then \
+	    $(DOCGEN_K) ; \
+	else \
+	    echo "Executable kdoc is not installed!" ; exit 1 ; \
+	fi
+
+apidocs-doxygen: check-topdir
+	@if [ -n "$(DOCGEN_D)" ]; then \
+	    $(DOCGEN_D) ; \
+	else \
+	    echo "Executable doxygen is not installed!" ; exit 1 ; \
+	fi
+
+apidocs-build:
+	@if [ -n "$(DOCGEN)" ]; then \
+	    cd @srcdir@ ; $(DOCGEN) ; \
+	else \
+	    echo "Neither kdoc or doxygen is installed!" ; exit 1 ; \
+	fi
+
+apidocs-everything: check-topdir
+	$(MAKE) apidocs-build DOCGEN_F="$(DOCGEN_F) `echo libs/y*/*.h`"
+
+apidocs: @srcdir@/docs/api/index.html
+
+@srcdir@/docs/api/index.html: @srcdir@/docs/Doxyfile \
+    @srcdir@/yateclass.h @srcdir@/yatemime.h @srcdir@/yatengine.h \
+    @srcdir@/yatephone.h @srcdir@/yatecbase.h
+	$(MAKE) apidocs-build
+
+.PHONY: strip sex love war
+strip: all
+	-strip --strip-debug --discard-locals $(PROGS) $(SLIBS)
+
+sex: strip
+	@echo 'Stripped for you!'
+
+# Let's have a little fun
+love:
+	@echo 'Not war?'
+
+war:
+	@echo 'Please make love instead!'
+
+modules clients test: engine
+	$(MAKE) -C ./$@ all
+
+libs: engine
+	@for i in libs/*; do \
+	    test ! -f "$$i/Makefile" || $(MAKE) -C "$$i" all ; \
+	done
+
+tables: @srcdir@/engine/tables/all.h
+
+@srcdir@/engine/tables/all.h:
+	$(MAKE) -C @srcdir@/engine/tables -f Makefile.tables all
+
+yatepaths.h: $(MKDEPS)
+	@echo '#define CFG_PATH "$(confdir)"' > $@
+	@echo '#define MOD_PATH "$(moddir)"' >> $@
+	@echo '#define SHR_PATH "$(shrdir)"' >> $@
+
+windows: check-topdir
+	@cmp -s yateversn.h $@/yateversn.h || cp -p yateversn.h $@/yateversn.h
+	@cmp -s yateiss.inc $@/yateiss.inc || cp -p yateiss.inc $@/yateiss.inc
+
+.PHONY: install install-root install-noapi install-api uninstall uninstall-root
+install install-root: all apidocs install-noapi install-api
+
+install-noapi: all
+	@mkdir -p "$(DESTDIR)$(libdir)/" && \
+	for i in $(SLIBS) ; do \
+	    if [ -h "$$i" ]; then \
+		f=`readlink "$$i"` ; \
+		ln -sf "$$f" "$(DESTDIR)$(libdir)/$$i" ; \
+	    else \
+		install $$i "$(DESTDIR)$(libdir)/" ; \
+	    fi \
+	done && $(LDCONFIG)
+	@mkdir -p "$(DESTDIR)$(bindir)/" && \
+	install $(PROGS) yate-config "$(DESTDIR)$(bindir)/"
+	$(MAKE) -C ./modules install
+	$(MAKE) -C ./clients install
+	$(MAKE) -C ./share install
+	$(MAKE) -C ./conf.d install
+	@mkdir -p "$(DESTDIR)$(mandir)/man8/" && \
+	for i in $(MAN8) ; do \
+	    install -m 0644 @srcdir@/docs/man/$$i "$(DESTDIR)$(mandir)/man8/" ; \
+	done
+	@mkdir -p "$(DESTDIR)$(libdir)/pkgconfig/" && \
+	install -m 0644 yate.pc "$(DESTDIR)$(libdir)/pkgconfig/"
+	@mkdir -p "$(DESTDIR)$(incdir)/" && \
+	for i in $(INCS) ; do \
+	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(incdir)/" ; \
+	done
+	@for i in $(GENS) ; do \
+	    install -m 0644 $$i "$(DESTDIR)$(incdir)/" ; \
+	done
+	@mkdir -p "$(DESTDIR)$(docdir)/api/" && \
+	for i in $(DOCS) ; do \
+	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(docdir)/" ; \
+	done ;
+
+install-api: apidocs
+	@mkdir -p "$(DESTDIR)$(docdir)/api/" && \
+	install -m 0644 @srcdir@/docs/*.html "$(DESTDIR)$(docdir)/" && \
+	install -m 0644 @srcdir@/docs/api/*.* "$(DESTDIR)$(docdir)/api/"
+
+uninstall uninstall-root:
+	@-for i in $(SLIBS) ; do \
+	    rm "$(DESTDIR)$(libdir)/$$i" ; \
+	done; \
+	$(MAKE) -C ./clients uninstall
+	@$(LDCONFIG)
+	@-for i in $(PROGS) yate-config ; do \
+	    rm "$(DESTDIR)$(bindir)/$$i" ; \
+	done
+	@-rm "$(DESTDIR)$(libdir)/pkgconfig/yate.pc" && \
+	    rmdir $(DESTDIR)$(libdir)/pkgconfig
+	@-for i in $(INCS) $(GENS) ; do \
+	    rm "$(DESTDIR)$(incdir)/$$i" ; \
+	done; \
+	rmdir "$(DESTDIR)$(incdir)"
+	@-for i in $(MAN8) ; do \
+	    rm "$(DESTDIR)$(mandir)/man8/$$i" ; \
+	done
+	@rm -rf "$(DESTDIR)$(docdir)/"
+	$(MAKE) -C ./modules uninstall
+	$(MAKE) -C ./share uninstall
+	$(MAKE) -C ./conf.d uninstall
+
+install-root uninstall-root: LDCONFIG:=ldconfig
+
+.PHONY: snapshot tarball rpm srpm
+snapshot tarball: check-topdir clean tables windows apidocs
+	@if [ $@ = snapshot ]; then ver="`date '+SVN-%Y%m%d'`"; else ver="@PACKAGE_VERSION@-@PACKAGE_STATUS@@PACKAGE_RELEASE@"; fi ; \
+	wd=`pwd|sed 's,^.*/,,'`; \
+	mkdir -p packing/tarballs; cd ..; \
+	echo $$wd/tar-exclude >$$wd/tar-exclude; \
+	find $$wd -name Makefile >>$$wd/tar-exclude; \
+	find $$wd -name 'YateLocal*' >>$$wd/tar-exclude; \
+	find $$wd/conf.d -name '*.conf' >>$$wd/tar-exclude; \
+	find $$wd -name '*.cache' >>$$wd/tar-exclude; \
+	find $$wd -name '*~' >>$$wd/tar-exclude; \
+	find $$wd -name '.*.swp' >>$$wd/tar-exclude; \
+	if [ $@ = tarball ]; then \
+	    find $$wd -name .svn >>$$wd/tar-exclude; \
+	    find $$wd -name CVS >>$$wd/tar-exclude; \
+	    find $$wd -name .cvsignore >>$$wd/tar-exclude; \
+	else \
+	    echo "$$wd/packing/rpm/yate.spec" >>$$wd/tar-exclude; \
+	fi ; \
+	tar czf $$wd/packing/tarballs/@PACKAGE_TARNAME@-$$ver.tar.gz \
+	--exclude $$wd/packing/tarballs \
+	--exclude $$wd/config.status \
+	--exclude $$wd/config.log \
+	--exclude $$wd/run \
+	--exclude $$wd/yate-config \
+	--exclude $$wd/yate.pc \
+	--exclude $$wd/yatepaths.h \
+	--exclude $$wd/yateversn.h \
+	-X $$wd/tar-exclude \
+	$$wd; \
+	rm $$wd/tar-exclude
+
+rpm: check-root tarball
+	rpmbuild -tb packing/tarballs/@PACKAGE_TARNAME@-@PACKAGE_VERSION@-@PACKAGE_STATUS@@PACKAGE_RELEASE@.tar.gz
+
+srpm: check-root tarball
+	rpmbuild -ta packing/tarballs/@PACKAGE_TARNAME@-@PACKAGE_VERSION@-@PACKAGE_STATUS@@PACKAGE_RELEASE@.tar.gz
+
+%.o: @srcdir@/%.cpp $(MKDEPS) @srcdir@/yatengine.h
+	$(COMPILE) -c $<
+
+@srcdir@/configure: @srcdir@/configure.in
+	cd @srcdir@ && autoconf
+
+config.status: @srcdir@/configure
+	./config.status --recheck
+
+Makefile: @srcdir@/Makefile.in $(MKDEPS)
+	./config.status
+
+yate: libyate.so $(OBJS) $(LIBS)
+	$(LINK) -o $@ $(LIBTHR) $^
+
+libyate.so: $(YLIB)
+	ln -sf $^ $@
+
+.PHONY: library
+library $(YLIB): yatepaths.h
+	$(MAKE) -C ./engine all
+
+.PHONY: help
+help:
+	@echo -e 'Usual make targets:\n'\
+	'    all engine libs modules clients apidocs test everything\n'\
+	'    install uninstall install-noapi install-root uninstall-root\n'\
+	'    clean distclean cvsclean (avoid this one!) clean-apidocs\n'\
+	'    debug ddebug xdebug (carefull!)\n'\
+	'    snapshot tarball rpm srpm'

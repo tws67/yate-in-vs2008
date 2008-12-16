@@ -1,0 +1,337 @@
+<HTML>
+<HEAD>
+<TITLE>class NamedList</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class NamedList</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A named string container class. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::NamedList</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__CallInfo.html">CallInfo</A>, <A HREF="TelEngine__ISDNQ931IE.html">ISDNQ931IE</A>, <A HREF="TelEngine__Message.html">Message</A>, <A HREF="TelEngine__SignallingCircuitEvent.html">SignallingCircuitEvent</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__NamedList.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">NamedList</A></b> (const char* name) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">NamedList</A></b> (const NamedList& original) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref3">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref4">length</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref5">count</A></b> ()  const
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref6">addParam</A></b> (NamedString* param) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref7">addParam</A></b> (const char* name, const char* value) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref8">setParam</A></b> (NamedString* param) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref9">setParam</A></b> (const char* name, const char* value) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref10">clearParam</A></b> (const String& name, char childSep = 0) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref11">copyParam</A></b> (const NamedList& original, const String& name, char childSep = 0) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref12">copyParams</A></b> (const NamedList& original, ObjList* list, char childSep = 0) 
+</LI>
+<LI>NamedList& &nbsp;<b><A HREF="#ref13">copyParams</A></b> (const NamedList& original, const String& list, char childSep = 0) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref14">getIndex</A></b> (const NamedString* param)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref15">getIndex</A></b> (const String& name)  const
+</LI>
+<LI>NamedString* &nbsp;<b><A HREF="#ref16">getParam</A></b> (const String& name)  const
+</LI>
+<LI>NamedString* &nbsp;<b><A HREF="#ref17">getParam</A></b> (unsigned int index)  const
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref18">operator[]</A></b> (const String& name)  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref19">getValue</A></b> (const String& name, const char* defvalue = 0)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref20">getIntValue</A></b> (const String& name, int defvalue = 0)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref21">getIntValue</A></b> (const String& name, const TokenDict* tokens, int defvalue = 0)  const
+</LI>
+<LI>double &nbsp;<b><A HREF="#ref22">getDoubleValue</A></b> (const String& name, double defvalue = 0.0)  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref23">getBoolValue</A></b> (const String& name, bool defvalue = false)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref24">replaceParams</A></b> (String& str, bool sqlEsc = false, char extraEsc = 0)  const
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a named list of named strings
+</p>
+<A NAME="NamedList"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>NamedList</strong> (const char* name)
+<br></td><td align="right"><h3><strong>NamedList</strong></h3></td></tr></table><p></p><p>
+ Creates a new named list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the list - must not be NULL or empty
+     </TD></TR>
+</TABLE></P>
+<A NAME="NamedList"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>NamedList</strong> (const NamedList& original)
+<br></td><td align="right"><h3><strong>NamedList</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Named list we are copying
+     </TD></TR>
+</TABLE></P>
+<A NAME="getObject"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a derived class given that class name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the class we are asking for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested class or NULL if this object doesn't implement it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#getObject">String</A>.</p>
+<A NAME="length"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>length</strong> ()
+<br></td><td align="right"><h3><strong>length</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of parameters
+</p>
+<p><b>Returns</b>: Count of named strings
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#length">String</A>.</p>
+<A NAME="count"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of non-null parameters
+</p>
+<p><b>Returns</b>: Count of existing named strings
+     </p>
+<A NAME="addParam"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>addParam</strong> (NamedString* param)
+<br></td><td align="right"><h3><strong>addParam</strong></h3></td></tr></table><p></p><p>
+ Add a named string to the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="addParam"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>addParam</strong> (const char* name, const char* value)
+<br></td><td align="right"><h3><strong>addParam</strong></h3></td></tr></table><p></p><p>
+ Add a named string to the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the new string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value of the new string
+     </TD></TR>
+</TABLE></P>
+<A NAME="setParam"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>setParam</strong> (NamedString* param)
+<br></td><td align="right"><h3><strong>setParam</strong></h3></td></tr></table><p></p><p>
+ Set a named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter to set or add
+     </TD></TR>
+</TABLE></P>
+<A NAME="setParam"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>setParam</strong> (const char* name, const char* value)
+<br></td><td align="right"><h3><strong>setParam</strong></h3></td></tr></table><p></p><p>
+ Set a named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Value of the string
+     </TD></TR>
+</TABLE></P>
+<A NAME="clearParam"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>clearParam</strong> (const String& name, char childSep = 0)
+<br></td><td align="right"><h3><strong>clearParam</strong></h3></td></tr></table><p></p><p>
+ Clears all instances of a named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the string to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>childSep</i></TD><TD align="left" valign="top">If set clears all child parameters in format name+childSep+anything
+     </TD></TR>
+</TABLE></P>
+<A NAME="copyParam"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>copyParam</strong> (const NamedList& original, const String& name, char childSep = 0)
+<br></td><td align="right"><h3><strong>copyParam</strong></h3></td></tr></table><p></p><p>
+ Copy a parameter from another NamedList, clears it if not present there
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">NamedList to copy the parameter from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the string to copy or clear
+</TD></TR>
+<TR><TD align="left" valign="top"><i>childSep</i></TD><TD align="left" valign="top">If set copies all child parameters in format name+childSep+anything
+     </TD></TR>
+</TABLE></P>
+<A NAME="copyParams"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>copyParams</strong> (const NamedList& original, ObjList* list, char childSep = 0)
+<br></td><td align="right"><h3><strong>copyParams</strong></h3></td></tr></table><p></p><p>
+ Copy multiple parameters from another NamedList, clears them if not present there
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">NamedList to copy the parameters from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">List of objects (usually String) whose name (blanks stripped) is used as parameters names
+</TD></TR>
+<TR><TD align="left" valign="top"><i>childSep</i></TD><TD align="left" valign="top">If set copies all child parameters in format name+childSep+anything
+     </TD></TR>
+</TABLE></P>
+<A NAME="copyParams"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedList& &nbsp;<strong>copyParams</strong> (const NamedList& original, const String& list, char childSep = 0)
+<br></td><td align="right"><h3><strong>copyParams</strong></h3></td></tr></table><p></p><p>
+ Copy multiple parameters from another NamedList, clears it if not present there
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">NamedList to copy the parameter from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Comma separated list of parameters to copy or clear
+</TD></TR>
+<TR><TD align="left" valign="top"><i>childSep</i></TD><TD align="left" valign="top">If set copies all child parameters in format name+childSep+anything
+     </TD></TR>
+</TABLE></P>
+<A NAME="getIndex"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>getIndex</strong> (const NamedString* param)
+<br></td><td align="right"><h3><strong>getIndex</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the index of a named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Pointer to the parameter to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Index of the named string or -1 if not found
+     </p>
+<A NAME="getIndex"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>getIndex</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getIndex</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the index of first matching named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Index of the first matching named string or -1 if not found
+     </p>
+<A NAME="getParam"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedString* &nbsp;<strong>getParam</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getParam</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate a named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the named string or NULL.
+     </p>
+<A NAME="getParam"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NamedString* &nbsp;<strong>getParam</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>getParam</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Locate a named string in the parameter list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">Index of the parameter to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the named string or NULL.
+     </p>
+<A NAME="operator[]"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>operator[]</strong> (const String& name)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Parameter access operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the parameter to return
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String value of the parameter, <A HREF="TelEngine__String.html#empty">String::empty</A>() if missing
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator[]">String</A>.</p>
+<A NAME="getValue"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getValue</strong> (const String& name, const char* defvalue = 0)
+<br></td><td align="right"><h3><strong>getValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the value of a named parameter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The string contained in the named parameter or the default
+     </p>
+<A NAME="getIntValue"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>getIntValue</strong> (const String& name, int defvalue = 0)
+<br></td><td align="right"><h3><strong>getIntValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the numeric value of a parameter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number contained in the named parameter or the default
+     </p>
+<A NAME="getIntValue"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>getIntValue</strong> (const String& name, const TokenDict* tokens, int defvalue = 0)
+<br></td><td align="right"><h3><strong>getIntValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the numeric value of a parameter trying first a table lookup.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">A pointer to an array of tokens to try to lookup
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number contained in the named parameter or the default
+     </p>
+<A NAME="getDoubleValue"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>double &nbsp;<strong>getDoubleValue</strong> (const String& name, double defvalue = 0.0)
+<br></td><td align="right"><h3><strong>getDoubleValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the floating point value of a parameter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number contained in the named parameter or the default
+     </p>
+<A NAME="getBoolValue"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getBoolValue</strong> (const String& name, bool defvalue = false)
+<br></td><td align="right"><h3><strong>getBoolValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the boolean value of a parameter.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of parameter to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defvalue</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The boolean value contained in the named parameter or the default
+     </p>
+<A NAME="replaceParams"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>replaceParams</strong> (String& str, bool sqlEsc = false, char extraEsc = 0)
+<br></td><td align="right"><h3><strong>replaceParams</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Replaces all ${paramname} in a String with the corresponding parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>str</i></TD><TD align="left" valign="top">String in which the replacements will be made
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sqlEsc</i></TD><TD align="left" valign="top">True to apply SQL escaping to parameter values
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extraEsc</i></TD><TD align="left" valign="top">Character to escape other than the SQL default ones
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of replacements made, -1 if an error occured
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

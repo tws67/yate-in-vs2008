@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+<TITLE>class JBMessage</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBMessage</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber message service. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBMessage</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__JBService.html">TelEngine::JBService</A> <small>[public ]</small>, <A HREF="TelEngine__JBThreadList.html">TelEngine::JBThreadList</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBMessage.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">MsgType</A> {	Chat,                            
+	GroupChat,                       
+	HeadLine,                        
+	Normal,                          
+	Error,                           
+	None,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">JBMessage</A></b> (JBEngine* engine, const NamedList* params, int prio = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~JBMessage</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">initialize</A></b> (const NamedList& params) 
+</LI>
+<LI>inline JBEvent* &nbsp;<b><A HREF="#ref5">getMessage</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">processMessage</A></b> (JBEvent* event) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  XMLElement* &nbsp;<b><A HREF="#ref7">createMessage</A></b> (MsgType type, const char* from,
+	const char* to, const char* id, const char* message) 
+</LI>
+<LI>static  inline MsgType &nbsp;<b><A HREF="#ref8">msgType</A></b> (const char* text) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref9">msgText</A></b> (MsgType msg) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref10">s_msg[]</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref11">accept</A></b> (JBEvent* event, bool& processed, bool& insert) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is a message receiver service for the Jabber engine
+</p>
+<A NAME="MsgType"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>MsgType</strong> {	Chat,                            
+	GroupChat,                       
+	HeadLine,                        
+	Normal,                          
+	Error,                           
+	None,
+    }
+</td><td align="right"><h3><strong>MsgType</strong></h3></td></tr></table><p></p><p>
+ Message type enumeration
+     </p>
+<A NAME="JBMessage"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>JBMessage</strong> (JBEngine* engine, const NamedList* params, int prio = 0)
+<br></td><td align="right"><h3><strong>JBMessage</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs a Jabber message service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The Jabber engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">The priority of this service
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JBMessage"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBMessage</strong> ()
+<br></td><td align="right"><h3><strong>~JBMessage</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Cancel private thread(s)
+     </p>
+<A NAME="initialize"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Initialize the service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__JBService.html#initialize">JBService</A>.</p>
+<A NAME="getMessage"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JBEvent* &nbsp;<strong>getMessage</strong> ()
+<br></td><td align="right"><h3><strong>getMessage</strong></h3></td></tr></table><p></p><p>
+ Get a message from queue
+</p>
+<p><b>Returns</b>: JBEvent pointer or 0 if no messages
+     </p>
+<A NAME="processMessage"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processMessage</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processMessage</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Message processor. The derived classes must override this method
+  to process received messages
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to process
+     </TD></TR>
+</TABLE></P>
+<A NAME="createMessage"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createMessage</strong> (MsgType type, const char* from,
+	const char* to, const char* id, const char* message)
+<br></td><td align="right"><h3><strong>createMessage</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create a 'message' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Message type as enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The 'from' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The 'to' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The 'id' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">The message body
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="msgType"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline MsgType &nbsp;<strong>msgType</strong> (const char* text)
+<br></td><td align="right"><h3><strong>msgType</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the type of a 'message' stanza
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Message type as enumeration
+     </p>
+<A NAME="msgText"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>msgText</strong> (MsgType msg)
+<br></td><td align="right"><h3><strong>msgText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text from a message type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message type
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The associated text or 0
+     </p>
+<A NAME="s_msg[]"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_msg[]</strong>
+</td><td align="right"><h3><strong>s_msg[]</strong></h3></td></tr></table><p></p><A NAME="accept"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>accept</strong> (JBEvent* event, bool& processed, bool& insert)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Accept an event from the engine and process it if configured to do that
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to accept
+</TD></TR>
+<TR><TD align="left" valign="top"><i>processed</i></TD><TD align="left" valign="top">Set to true on exit to signal that the event was already processed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>insert</i></TD><TD align="left" valign="top">Set to true if accepted to insert on top of the event queue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if not accepted, let the engine try another service
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__JBService.html#accept">JBService</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

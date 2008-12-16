@@ -1,0 +1,544 @@
+<HTML>
+<HEAD>
+<TITLE>class JBPresence</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBPresence</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber presence service. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBPresence</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__JBService.html">TelEngine::JBService</A> <small>[public ]</small>, <A HREF="TelEngine__JBThreadList.html">TelEngine::JBThreadList</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBPresence.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Presence</A> {	Error         = 0,               
+	Probe         = 1,               
+	Subscribe     = 2,               
+	Subscribed    = 3,               
+	Unavailable   = 4,               
+	Unsubscribe   = 5,               
+	Unsubscribed  = 6,               
+	None          = 7,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">JBPresence</A></b> (JBEngine* engine, const NamedList* params, int prio = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~JBPresence</A></b> () 
+</LI>
+<LI>inline XMPPDirVal &nbsp;<b><A HREF="#ref5">autoSubscribe</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref6">delUnavailable</A></b> ()  const
+</LI>
+<LI>inline XMPPDirVal &nbsp;<b><A HREF="#ref7">addOnSubscribe</A></b> ()  const
+</LI>
+<LI>inline XMPPDirVal &nbsp;<b><A HREF="#ref8">addOnProbe</A></b> ()  const
+</LI>
+<LI>inline XMPPDirVal &nbsp;<b><A HREF="#ref9">addOnPresence</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">autoRoster</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">ignoreNonRoster</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref12">probeInterval</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref13">expireInterval</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">initialize</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref15">process</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref16">checkTimeout</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref17">processDisco</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref18">processError</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref19">processProbe</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref20">processSubscribe</A></b> (JBEvent* event, Presence presence) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref21">processUnavailable</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref22">processPresence</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref23">notifyProbe</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref24">notifySubscribe</A></b> (JBEvent* event, Presence presence) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref25">notifySubscribe</A></b> (XMPPUser* user, Presence presence) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref26">notifyPresence</A></b> (JBEvent* event, bool available) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref27">notifyPresence</A></b> (XMPPUser* user, JIDResource* resource) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref28">notifyNewUser</A></b> (XMPPUser* user) 
+</LI>
+<LI>XMPPUserRoster* &nbsp;<b><A HREF="#ref29">getRoster</A></b> (const JabberID& jid, bool add, bool* added) 
+</LI>
+<LI>XMPPUser* &nbsp;<b><A HREF="#ref30">getRemoteUser</A></b> (const JabberID& local, const JabberID& remote,
+	bool addLocal, bool* addedLocal, bool addRemote, bool* addedRemote) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref31">removeRemoteUser</A></b> (const JabberID& local, const JabberID& remote) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref32">validDomain</A></b> (const String& domain) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref33">sendStanza</A></b> (XMLElement* element, JBStream* stream) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref34">sendError</A></b> (XMPPError::Type type, const String& from, const String& to,
+	XMLElement* element, JBStream* stream = 0, const String* id = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref39">cleanup</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  XMLElement* &nbsp;<b><A HREF="#ref35">createPresence</A></b> (const char* from,
+	const char* to, Presence type = None) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref36">decodeError</A></b> (const XMLElement* element,
+	String& code, String& type, String& error) 
+</LI>
+<LI>static  inline Presence &nbsp;<b><A HREF="#ref37">presenceType</A></b> (const char* text) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref38">presenceText</A></b> (Presence presence) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref40">accept</A></b> (JBEvent* event, bool& processed, bool& insert) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>static TokenDict <b><A HREF="#ref41">s_presence[]</A></b></LI>
+<LI>XMPPDirVal <b><A HREF="#ref42">m_autoSubscribe</A></b></LI>
+<LI>bool <b><A HREF="#ref43">m_delUnavailable</A></b></LI>
+<LI>bool <b><A HREF="#ref44">m_autoRoster</A></b></LI>
+<LI>bool <b><A HREF="#ref45">m_ignoreNonRoster</A></b></LI>
+<LI>XMPPDirVal <b><A HREF="#ref46">m_addOnSubscribe</A></b></LI>
+<LI>XMPPDirVal <b><A HREF="#ref47">m_addOnProbe</A></b></LI>
+<LI>XMPPDirVal <b><A HREF="#ref48">m_addOnPresence</A></b></LI>
+<LI>bool <b><A HREF="#ref49">m_autoProbe</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref50">m_probeInterval</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref51">m_expireInterval</A></b></LI>
+<LI>ObjList <b><A HREF="#ref52">m_rosters</A></b></LI>
+<LI>JIDIdentity* <b><A HREF="#ref53">m_defIdentity</A></b></LI>
+<LI>JIDFeatureList <b><A HREF="#ref54">m_defFeatures</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is a presence service for Jabber engine. Handle presence stanzas and
+  iq query info or items with destination containing a node and a valid domain
+</p>
+<A NAME="Presence"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Presence</strong> {	Error         = 0,               
+	Probe         = 1,               
+	Subscribe     = 2,               
+	Subscribed    = 3,               
+	Unavailable   = 4,               
+	Unsubscribe   = 5,               
+	Unsubscribed  = 6,               
+	None          = 7,
+    }
+</td><td align="right"><h3><strong>Presence</strong></h3></td></tr></table><p></p><p>
+ Presence type enumeration
+     </p>
+<A NAME="JBPresence"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBPresence</strong> (JBEngine* engine, const NamedList* params, int prio = 0)
+<br></td><td align="right"><h3><strong>JBPresence</strong></h3></td></tr></table><p></p><p>
+ Constructor. Constructs a Jabber Component presence service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The Jabber engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">The priority of this service
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JBPresence"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBPresence</strong> ()
+<br></td><td align="right"><h3><strong>~JBPresence</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="autoSubscribe"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPDirVal &nbsp;<strong>autoSubscribe</strong> ()
+<br></td><td align="right"><h3><strong>autoSubscribe</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the auto subscribe parameter
+</p>
+<p><b>Returns</b>: The auto subscribe parameter
+     </p>
+<A NAME="delUnavailable"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>delUnavailable</strong> ()
+<br></td><td align="right"><h3><strong>delUnavailable</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the unavailable resources must be deleted
+</p>
+<p><b>Returns</b>: The delete unavailable parameter
+     </p>
+<A NAME="addOnSubscribe"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPDirVal &nbsp;<strong>addOnSubscribe</strong> ()
+<br></td><td align="right"><h3><strong>addOnSubscribe</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the 'add on subscribe' flags
+</p>
+<p><b>Returns</b>: The 'add on subscribe' flags
+     </p>
+<A NAME="addOnProbe"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPDirVal &nbsp;<strong>addOnProbe</strong> ()
+<br></td><td align="right"><h3><strong>addOnProbe</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the 'add on probe' flags
+</p>
+<p><b>Returns</b>: The 'add on probe' flags
+     </p>
+<A NAME="addOnPresence"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPDirVal &nbsp;<strong>addOnPresence</strong> ()
+<br></td><td align="right"><h3><strong>addOnPresence</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the 'add on presence' flags
+</p>
+<p><b>Returns</b>: The 'add on presence' flags
+     </p>
+<A NAME="autoRoster"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>autoRoster</strong> ()
+<br></td><td align="right"><h3><strong>autoRoster</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this service should add new users when receiving presence, probe or subscribe
+</p>
+<p><b>Returns</b>: True if should add a new user when receiving presence, probe or subscribe
+     </p>
+<A NAME="ignoreNonRoster"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>ignoreNonRoster</strong> ()
+<br></td><td align="right"><h3><strong>ignoreNonRoster</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this service should ignore destination users not in roster
+</p>
+<p><b>Returns</b>: True if non existent destinations should be ignored
+     </p>
+<A NAME="probeInterval"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>probeInterval</strong> ()
+<br></td><td align="right"><h3><strong>probeInterval</strong></h3></td></tr></table><p></p><p>
+ Get the probe interval. Time to send a probe if nothing was received from that user
+</p>
+<p><b>Returns</b>: The probe interval
+     </p>
+<A NAME="expireInterval"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>expireInterval</strong> ()
+<br></td><td align="right"><h3><strong>expireInterval</strong></h3></td></tr></table><p></p><p>
+ Get the expire after probe interval
+</p>
+<p><b>Returns</b>: The expire after probe interval
+     </p>
+<A NAME="initialize"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Initialize the presence service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__JBService.html#initialize">JBService</A>.</p>
+<A NAME="process"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>process</strong> ()
+<br></td><td align="right"><h3><strong>process</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process an event from the receiving list
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False if the list is empty
+     </p>
+<A NAME="checkTimeout"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>checkTimeout</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>checkTimeout</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check presence timeout
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time
+     </TD></TR>
+</TABLE></P>
+<A NAME="processDisco"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processDisco</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processDisco</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process disco info elements
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+     </TD></TR>
+</TABLE></P>
+<A NAME="processError"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processError</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processError</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a presence error element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+     </TD></TR>
+</TABLE></P>
+<A NAME="processProbe"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processProbe</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processProbe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a presence probe element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+     </TD></TR>
+</TABLE></P>
+<A NAME="processSubscribe"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processSubscribe</strong> (JBEvent* event, Presence presence)
+<br></td><td align="right"><h3><strong>processSubscribe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a presence subscribe element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>presence</i></TD><TD align="left" valign="top">Presence type: Subscribe,Subscribed,Unsubscribe,Unsubscribed
+     </TD></TR>
+</TABLE></P>
+<A NAME="processUnavailable"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processUnavailable</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processUnavailable</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a presence unavailable element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+     </TD></TR>
+</TABLE></P>
+<A NAME="processPresence"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processPresence</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>processPresence</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a presence element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+     </TD></TR>
+</TABLE></P>
+<A NAME="notifyProbe"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>notifyProbe</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>notifyProbe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notify on probe request with users we don't know about
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False to send item-not-found error
+     </p>
+<A NAME="notifySubscribe"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>notifySubscribe</strong> (JBEvent* event, Presence presence)
+<br></td><td align="right"><h3><strong>notifySubscribe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notify on subscribe event with users we don't know about
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>presence</i></TD><TD align="left" valign="top">Presence type: Subscribe,Subscribed,Unsubscribe,Unsubscribed
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False to send item-not-found error
+     </p>
+<A NAME="notifySubscribe"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>notifySubscribe</strong> (XMPPUser* user, Presence presence)
+<br></td><td align="right"><h3><strong>notifySubscribe</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notify on subscribe event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">The user that received the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>presence</i></TD><TD align="left" valign="top">Presence type: Subscribe,Subscribed,Unsubscribe,Unsubscribed
+     </TD></TR>
+</TABLE></P>
+<A NAME="notifyPresence"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>notifyPresence</strong> (JBEvent* event, bool available)
+<br></td><td align="right"><h3><strong>notifyPresence</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notify on presence event with users we don't know about or presence unavailable
+  received without resource (the remote user is entirely unavailable)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event with the element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>available</i></TD><TD align="left" valign="top">The availability of the remote user
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False to send item-not-found error
+     </p>
+<A NAME="notifyPresence"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>notifyPresence</strong> (XMPPUser* user, JIDResource* resource)
+<br></td><td align="right"><h3><strong>notifyPresence</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notify on state/capabilities change
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">The user that received the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource that changet its state or capabilities
+     </TD></TR>
+</TABLE></P>
+<A NAME="notifyNewUser"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>notifyNewUser</strong> (XMPPUser* user)
+<br></td><td align="right"><h3><strong>notifyNewUser</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notify when a new user is added
+ Used basically to add a local resource
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">The new user
+     </TD></TR>
+</TABLE></P>
+<A NAME="getRoster"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPUserRoster* &nbsp;<strong>getRoster</strong> (const JabberID& jid, bool add, bool* added)
+<br></td><td align="right"><h3><strong>getRoster</strong></h3></td></tr></table><p></p><p>
+ Get a roster. Add a new one if requested.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">The user's jid
+</TD></TR>
+<TR><TD align="left" valign="top"><i>add</i></TD><TD align="left" valign="top">True to add the user if doesn't exists
+</TD></TR>
+<TR><TD align="left" valign="top"><i>added</i></TD><TD align="left" valign="top">Optional parameter to be set if a new user was added
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced pointer or 0 if none
+     </p>
+<A NAME="getRemoteUser"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPUser* &nbsp;<strong>getRemoteUser</strong> (const JabberID& local, const JabberID& remote,
+	bool addLocal, bool* addedLocal, bool addRemote, bool* addedRemote)
+<br></td><td align="right"><h3><strong>getRemoteUser</strong></h3></td></tr></table><p></p><p>
+ Get a remote peer of a local one. Add a new one if requested.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">The local peer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>remote</i></TD><TD align="left" valign="top">The remote peer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addLocal</i></TD><TD align="left" valign="top">True to add the local user if doesn't exists
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addedLocal</i></TD><TD align="left" valign="top">Optional parameter to be set if a new local user was added
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addRemote</i></TD><TD align="left" valign="top">True to add the remote user if doesn't exists
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addedRemote</i></TD><TD align="left" valign="top">Optional parameter to be set if a new remote user was added
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced pointer or 0 if none
+     </p>
+<A NAME="removeRemoteUser"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>removeRemoteUser</strong> (const JabberID& local, const JabberID& remote)
+<br></td><td align="right"><h3><strong>removeRemoteUser</strong></h3></td></tr></table><p></p><p>
+ Remove a remote peer of a local one
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">The local peer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>remote</i></TD><TD align="left" valign="top">The remote peer
+     </TD></TR>
+</TABLE></P>
+<A NAME="validDomain"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>validDomain</strong> (const String& domain)
+<br></td><td align="right"><h3><strong>validDomain</strong></h3></td></tr></table><p></p><p>
+ Check if the given domain is a valid (known) one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">The domain name to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given domain is a valid one
+     </p>
+<A NAME="sendStanza"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendStanza</strong> (XMLElement* element, JBStream* stream)
+<br></td><td align="right"><h3><strong>sendStanza</strong></h3></td></tr></table><p></p><p>
+ Send an element through the given stream.
+ If the stream is 0 try to get one from the engine.
+ In any case the element is consumed (deleted)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">Element to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream to send through
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of send operation. False if element is 0
+     </p>
+<A NAME="sendError"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendError</strong> (XMPPError::Type type, const String& from, const String& to,
+	XMLElement* element, JBStream* stream = 0, const String* id = 0)
+<br></td><td align="right"><h3><strong>sendError</strong></h3></td></tr></table><p></p><p>
+ Send an error. Error type is 'modify'.
+ If id is 0 sent element will be of type 'presence'. Otherwise: 'iq'
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The error
+</TD></TR>
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The from attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The to attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The element that generated the error
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">Optional stream to use
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Optional id. If present (even if empty) the error element will be of type 'iq'
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of send operation
+     </p>
+<A NAME="createPresence"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> XMLElement* &nbsp;<strong>createPresence</strong> (const char* from,
+	const char* to, Presence type = None)
+<br></td><td align="right"><h3><strong>createPresence</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Create an 'presence' element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The 'from' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The 'to' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Presence type as enumeration
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid XMLElement pointer
+     </p>
+<A NAME="decodeError"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>decodeError</strong> (const XMLElement* element,
+	String& code, String& type, String& error)
+<br></td><td align="right"><h3><strong>decodeError</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode an error element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The XML element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The 'code' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The 'type' attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The name of the 'error' child
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if 'element' is 0 or is not a presence one
+     </p>
+<A NAME="presenceType"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline Presence &nbsp;<strong>presenceType</strong> (const char* text)
+<br></td><td align="right"><h3><strong>presenceType</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the type of a 'presence' stanza as enumeration
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">The text to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Presence type as enumeration
+     </p>
+<A NAME="presenceText"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>presenceText</strong> (Presence presence)
+<br></td><td align="right"><h3><strong>presenceText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text from a presence type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>presence</i></TD><TD align="left" valign="top">The presence type
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The associated text or 0
+     </p>
+<A NAME="cleanup"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p></p><p>
+ Cleanup rosters
+     </p>
+<A NAME="accept"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>accept</strong> (JBEvent* event, bool& processed, bool& insert)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Accept an event from the engine
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to accept
+</TD></TR>
+<TR><TD align="left" valign="top"><i>processed</i></TD><TD align="left" valign="top">Set to true on exit to signal that the event was already processed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>insert</i></TD><TD align="left" valign="top">Set to true if accepted to insert on top of the event queue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if not accepted, let the engine try another service
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__JBService.html#accept">JBService</A>.</p>
+<A NAME="s_presence[]"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_presence[]</strong>
+</td><td align="right"><h3><strong>s_presence[]</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_autoSubscribe"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPDirVal  <strong>m_autoSubscribe</strong>
+</td><td align="right"><h3><strong>m_autoSubscribe</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_delUnavailable"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_delUnavailable</strong>
+</td><td align="right"><h3><strong>m_delUnavailable</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_autoRoster"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_autoRoster</strong>
+</td><td align="right"><h3><strong>m_autoRoster</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_ignoreNonRoster"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_ignoreNonRoster</strong>
+</td><td align="right"><h3><strong>m_ignoreNonRoster</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_addOnSubscribe"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPDirVal  <strong>m_addOnSubscribe</strong>
+</td><td align="right"><h3><strong>m_addOnSubscribe</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_addOnProbe"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPDirVal  <strong>m_addOnProbe</strong>
+</td><td align="right"><h3><strong>m_addOnProbe</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_addOnPresence"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPDirVal  <strong>m_addOnPresence</strong>
+</td><td align="right"><h3><strong>m_addOnPresence</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_autoProbe"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_autoProbe</strong>
+</td><td align="right"><h3><strong>m_autoProbe</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_probeInterval"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_probeInterval</strong>
+</td><td align="right"><h3><strong>m_probeInterval</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_expireInterval"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_expireInterval</strong>
+</td><td align="right"><h3><strong>m_expireInterval</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_rosters"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_rosters</strong>
+</td><td align="right"><h3><strong>m_rosters</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_defIdentity"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JIDIdentity*  <strong>m_defIdentity</strong>
+</td><td align="right"><h3><strong>m_defIdentity</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_defFeatures"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JIDFeatureList  <strong>m_defFeatures</strong>
+</td><td align="right"><h3><strong>m_defFeatures</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

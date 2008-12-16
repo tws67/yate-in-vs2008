@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlAttribute</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlAttribute</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"> An attribute is a name-value pair. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlAttribute</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__TiXmlBase.html">TelEngine::TiXmlBase</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlAttribute.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref3">TiXmlAttribute</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">TiXmlAttribute</A></b> ( const std::string& _name, const std::string& _value ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">TiXmlAttribute</A></b> ( const char * _name, const char * _value ) 
+</LI>
+<LI>const char*		&nbsp;<b><A HREF="#ref6">Name</A></b> ()  const
+</LI>
+<LI>const char*		&nbsp;<b><A HREF="#ref7">Value</A></b> ()  const
+</LI>
+<LI>int				&nbsp;<b><A HREF="#ref8">IntValue</A></b> ()  const
+</LI>
+<LI>double			&nbsp;<b><A HREF="#ref9">DoubleValue</A></b> ()  const
+</LI>
+<LI>const TIXML_STRING& &nbsp;<b><A HREF="#ref10">NameTStr</A></b> ()  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref11">QueryIntValue</A></b> ( int* _value )  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref12">QueryDoubleValue</A></b> ( double* _value )  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">SetName</A></b> ( const char* _name ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">SetValue</A></b> ( const char* _value ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">SetIntValue</A></b> ( int _value ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">SetDoubleValue</A></b> ( double _value ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">SetName</A></b> ( const std::string& _name ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">SetValue</A></b> ( const std::string& _value ) 
+</LI>
+<LI>const TiXmlAttribute* &nbsp;<b><A HREF="#ref19">Next</A></b> ()  const
+</LI>
+<LI>TiXmlAttribute* &nbsp;<b><A HREF="#ref20">Next</A></b> () 
+</LI>
+<LI>const TiXmlAttribute* &nbsp;<b><A HREF="#ref21">Previous</A></b> ()  const
+</LI>
+<LI>TiXmlAttribute* &nbsp;<b><A HREF="#ref22">Previous</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref23">operator==</A></b> ( const TiXmlAttribute& rhs )  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref24">operator<</A></b> ( const TiXmlAttribute& rhs )  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref25">operator></A></b> ( const TiXmlAttribute& rhs )  const
+</LI>
+<LI>virtual  const char* &nbsp;<b><A HREF="#ref26">Parse</A></b> ( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding ) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref27">Print</A></b> ( FILE* cfile, int depth )  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref28">StreamOut</A></b> ( TIXML_OSTREAM * out, bool unclosed = false )  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref29">SetDocument</A></b> ( TiXmlDocument* doc ) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p> An attribute is a name-value pair. Elements have an arbitrary
+	number of attributes, each with a unique name.
+</p>
+<p>	@note The attributes are not TiXmlNodes, since they are not
+		  part of the tinyXML document object model. There are other
+		  suggested ways to look at this problem.
+</p>
+<A NAME="TiXmlAttribute"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlAttribute</strong> ()
+<br></td><td align="right"><h3><strong>TiXmlAttribute</strong></h3></td></tr></table><p></p><A NAME="TiXmlAttribute"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlAttribute</strong> ( const std::string& _name, const std::string& _value )
+<br></td><td align="right"><h3><strong>TiXmlAttribute</strong></h3></td></tr></table><p></p><A NAME="TiXmlAttribute"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlAttribute</strong> ( const char * _name, const char * _value )
+<br></td><td align="right"><h3><strong>TiXmlAttribute</strong></h3></td></tr></table><p></p><A NAME="Name"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char*		&nbsp;<strong>Name</strong> ()
+<br></td><td align="right"><h3><strong>Name</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Value"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char*		&nbsp;<strong>Value</strong> ()
+<br></td><td align="right"><h3><strong>Value</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="IntValue"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int				&nbsp;<strong>IntValue</strong> ()
+<br></td><td align="right"><h3><strong>IntValue</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="DoubleValue"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>double			&nbsp;<strong>DoubleValue</strong> ()
+<br></td><td align="right"><h3><strong>DoubleValue</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="NameTStr"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TIXML_STRING& &nbsp;<strong>NameTStr</strong> ()
+<br></td><td align="right"><h3><strong>NameTStr</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="QueryIntValue"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>QueryIntValue</strong> ( int* _value )
+<br></td><td align="right"><h3><strong>QueryIntValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p> QueryIntValue examines the value string. It is an alternative to the
+		IntValue() method with richer error checking.
+		If the value is an integer, it is stored in 'value' and 
+		the call returns TIXML_SUCCESS. If it is not
+		an integer, it returns TIXML_WRONG_TYPE.
+</p>
+<p>		A specialized but useful call. Note that for success it returns 0,
+		which is the opposite of almost all other TinyXml calls.
+	</p>
+<A NAME="QueryDoubleValue"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>QueryDoubleValue</strong> ( double* _value )
+<br></td><td align="right"><h3><strong>QueryDoubleValue</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="SetName"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetName</strong> ( const char* _name )
+<br></td><td align="right"><h3><strong>SetName</strong></h3></td></tr></table><p></p><A NAME="SetValue"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetValue</strong> ( const char* _value )
+<br></td><td align="right"><h3><strong>SetValue</strong></h3></td></tr></table><p></p><A NAME="SetIntValue"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetIntValue</strong> ( int _value )
+<br></td><td align="right"><h3><strong>SetIntValue</strong></h3></td></tr></table><p></p><A NAME="SetDoubleValue"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetDoubleValue</strong> ( double _value )
+<br></td><td align="right"><h3><strong>SetDoubleValue</strong></h3></td></tr></table><p></p><A NAME="SetName"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetName</strong> ( const std::string& _name )
+<br></td><td align="right"><h3><strong>SetName</strong></h3></td></tr></table><p></p><A NAME="SetValue"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetValue</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>SetValue</strong></h3></td></tr></table><p></p><A NAME="Next"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlAttribute* &nbsp;<strong>Next</strong> ()
+<br></td><td align="right"><h3><strong>Next</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Next"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlAttribute* &nbsp;<strong>Next</strong> ()
+<br></td><td align="right"><h3><strong>Next</strong></h3></td></tr></table><p></p><A NAME="Previous"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlAttribute* &nbsp;<strong>Previous</strong> ()
+<br></td><td align="right"><h3><strong>Previous</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Previous"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlAttribute* &nbsp;<strong>Previous</strong> ()
+<br></td><td align="right"><h3><strong>Previous</strong></h3></td></tr></table><p></p><A NAME="operator=="></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator==</strong> ( const TiXmlAttribute& rhs )
+<br></td><td align="right"><h3><strong>operator==</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="operator%3C"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator<</strong> ( const TiXmlAttribute& rhs )
+<br></td><td align="right"><h3><strong>operator<</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="operator%3E"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>operator></strong> ( const TiXmlAttribute& rhs )
+<br></td><td align="right"><h3><strong>operator></strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Parse"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>Parse</strong> ( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>Parse</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Parse">TiXmlBase</A>.</p>
+<A NAME="Print"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>Print</strong> ( FILE* cfile, int depth )
+<br></td><td align="right"><h3><strong>Print</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Print">TiXmlBase</A>.</p>
+<A NAME="StreamOut"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamOut</strong> ( TIXML_OSTREAM * out, bool unclosed = false )
+<br></td><td align="right"><h3><strong>StreamOut</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#StreamOut">TiXmlBase</A>.</p>
+<A NAME="SetDocument"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetDocument</strong> ( TiXmlDocument* doc )
+<br></td><td align="right"><h3><strong>SetDocument</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

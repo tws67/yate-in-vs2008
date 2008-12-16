@@ -1,0 +1,121 @@
+<HTML>
+<HEAD>
+<TITLE>class JIDResourceList</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JIDResourceList</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A resource list. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JIDResourceList</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JIDResourceList.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref3">JIDResourceList</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref4">add</A></b> (const String& name) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">add</A></b> (JIDResource* resource) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">remove</A></b> (JIDResource* resource, bool del = true) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">clear</A></b> () 
+</LI>
+<LI>JIDResource* &nbsp;<b><A HREF="#ref8">get</A></b> (const String& name) 
+</LI>
+<LI>inline JIDResource* &nbsp;<b><A HREF="#ref9">getFirst</A></b> () 
+</LI>
+<LI>JIDResource* &nbsp;<b><A HREF="#ref10">getAudio</A></b> (bool availableOnly = true) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a resource list
+</p>
+<A NAME="JIDResourceList"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>JIDResourceList</strong> ()
+<br></td><td align="right"><h3><strong>JIDResourceList</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="add"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>add</strong> (const String& name)
+<br></td><td align="right"><h3><strong>add</strong></h3></td></tr></table><p></p><p>
+ Add a resource to the list if a resource with the given name
+  doesn't exists
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The resource name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the the resource already exists in the list
+     </p>
+<A NAME="add"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>add</strong> (JIDResource* resource)
+<br></td><td align="right"><h3><strong>add</strong></h3></td></tr></table><p></p><p>
+ Add a resource to the list if not already there.
+ Destroy the received resource if not added
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to add
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the the resource already exists in the list
+     </p>
+<A NAME="remove"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>remove</strong> (JIDResource* resource, bool del = true)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Remove a resource from the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>resource</i></TD><TD align="left" valign="top">The resource to remove
+</TD></TR>
+<TR><TD align="left" valign="top"><i>del</i></TD><TD align="left" valign="top">True to delete the resource
+     </TD></TR>
+</TABLE></P>
+<A NAME="clear"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the list
+     </p>
+<A NAME="get"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JIDResource* &nbsp;<strong>get</strong> (const String& name)
+<br></td><td align="right"><h3><strong>get</strong></h3></td></tr></table><p></p><p>
+ Get a resource with the given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The resource name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the resource or 0
+     </p>
+<A NAME="getFirst"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JIDResource* &nbsp;<strong>getFirst</strong> ()
+<br></td><td align="right"><h3><strong>getFirst</strong></h3></td></tr></table><p></p><p>
+ Get the first resource from the list
+</p>
+<p><b>Returns</b>: A pointer to the resource or 0
+     </p>
+<A NAME="getAudio"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JIDResource* &nbsp;<strong>getAudio</strong> (bool availableOnly = true)
+<br></td><td align="right"><h3><strong>getAudio</strong></h3></td></tr></table><p></p><p>
+ Get the first resource with audio capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>availableOnly</i></TD><TD align="left" valign="top">True to get only if available
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the resource or 0
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,192 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPTransport</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPTransport</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Low level transport for RTP and RTCP. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPTransport</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__RTPProcessor.html">TelEngine::RTPProcessor</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPTransport.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Activation</A> {	Inactive,
+	Bound,
+	Active
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">RTPTransport</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~RTPTransport</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref4">setProcessor</A></b> (RTPProcessor* processor = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">setMonitor</A></b> (RTPProcessor* monitor = 0) 
+</LI>
+<LI>inline const SocketAddr& &nbsp;<b><A HREF="#ref6">localAddr</A></b> ()  const
+</LI>
+<LI>inline const SocketAddr& &nbsp;<b><A HREF="#ref7">remoteAddr</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">localAddr</A></b> (SocketAddr& addr, bool rtcp = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">remoteAddr</A></b> (SocketAddr& addr, bool sniff = false) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">setTOS</A></b> (int tos) 
+</LI>
+<LI>inline Socket* &nbsp;<b><A HREF="#ref11">rtpSock</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">drillHole</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref13">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">rtpData</A></b> (const void* data, int len) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref15">rtcpData</A></b> (const void* data, int len) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Class that holds sockets and addresses for transporting RTP and RTCP packets.
+</p>
+<A NAME="Activation"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Activation</strong> {	Inactive,
+	Bound,
+	Active
+    }
+</td><td align="right"><h3><strong>Activation</strong></h3></td></tr></table><p></p><p>
+ Activation status of the transport
+     </p>
+<A NAME="RTPTransport"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>RTPTransport</strong> ()
+<br></td><td align="right"><h3><strong>RTPTransport</strong></h3></td></tr></table><p></p><p>
+ Constructor, creates an unconnected transport
+     </p>
+<A NAME="~RTPTransport"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPTransport</strong> ()
+<br></td><td align="right"><h3><strong>~RTPTransport</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="setProcessor"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setProcessor</strong> (RTPProcessor* processor = 0)
+<br></td><td align="right"><h3><strong>setProcessor</strong></h3></td></tr></table><p></p><p>
+ Set the RTP/RTCP processor of data received by this transport
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>processor</i></TD><TD align="left" valign="top">A pointer to the RTPProcessor for this transport
+     </TD></TR>
+</TABLE></P>
+<A NAME="setMonitor"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setMonitor</strong> (RTPProcessor* monitor = 0)
+<br></td><td align="right"><h3><strong>setMonitor</strong></h3></td></tr></table><p></p><p>
+ Set the RTP/RTCP monitor of data received by this transport
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>monitor</i></TD><TD align="left" valign="top">A pointer to a second RTPProcessor for this transport
+     </TD></TR>
+</TABLE></P>
+<A NAME="localAddr"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SocketAddr& &nbsp;<strong>localAddr</strong> ()
+<br></td><td align="right"><h3><strong>localAddr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the local network address of the RTP transport
+</p>
+<p><b>Returns</b>: Reference to the local RTP transport address
+     </p>
+<A NAME="remoteAddr"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SocketAddr& &nbsp;<strong>remoteAddr</strong> ()
+<br></td><td align="right"><h3><strong>remoteAddr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the remote network address of the RTP transport
+</p>
+<p><b>Returns</b>: Reference to the remote RTP transport address
+     </p>
+<A NAME="localAddr"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>localAddr</strong> (SocketAddr& addr, bool rtcp = true)
+<br></td><td align="right"><h3><strong>localAddr</strong></h3></td></tr></table><p></p><p>
+ Set the local network address of the RTP transport
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">New local RTP transport address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>rtcp</i></TD><TD align="left" valign="top">Enable RTCP transport
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if address set, false if a failure occured
+     </p>
+<A NAME="remoteAddr"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>remoteAddr</strong> (SocketAddr& addr, bool sniff = false)
+<br></td><td align="right"><h3><strong>remoteAddr</strong></h3></td></tr></table><p></p><p>
+ Set the remote network address of the RTP transport
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">New remote RTP transport address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sniff</i></TD><TD align="left" valign="top">Automatically adjust the address from the first incoming packet
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if address set, false if a failure occured
+     </p>
+<A NAME="setTOS"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setTOS</strong> (int tos)
+<br></td><td align="right"><h3><strong>setTOS</strong></h3></td></tr></table><p></p><p>
+ Set the Type Of Service for the RTP socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tos</i></TD><TD align="left" valign="top">Type Of Service bits to set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="rtpSock"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Socket* &nbsp;<strong>rtpSock</strong> ()
+<br></td><td align="right"><h3><strong>rtpSock</strong></h3></td></tr></table><p></p><p>
+ Get the RTP socket used by this transport
+</p>
+<p><b>Returns</b>: Pointer to the RTP socket
+     </p>
+<A NAME="drillHole"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>drillHole</strong> ()
+<br></td><td align="right"><h3><strong>drillHole</strong></h3></td></tr></table><p></p><p>
+ Drill a hole in a firewall or NAT for the RTP and RTCP sockets
+</p>
+<p><b>Returns</b>: True if at least a packet was sent for the RTP socket
+     </p>
+<A NAME="timerTick"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to read data out of sockets
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as base in all computing
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPProcessor.html#timerTick">RTPProcessor</A>.</p>
+<A NAME="rtpData"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpData</strong> (const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpData</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is called to send a RTP packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to raw RTP data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data packet
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPProcessor.html#rtpData">RTPProcessor</A>.</p>
+<A NAME="rtcpData"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtcpData</strong> (const void* data, int len)
+<br></td><td align="right"><h3><strong>rtcpData</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is called to send a RTCP packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to raw RTCP data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data packet
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPProcessor.html#rtcpData">RTPProcessor</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>
