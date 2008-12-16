@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<TITLE>class RefObject</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RefObject</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ A reference counted object. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RefObject</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__AnalogLine.html">AnalogLine</A>, <A HREF="TelEngine__Array.html">Array</A>, <A HREF="TelEngine__CallEndpoint.html">CallEndpoint</A>, <A HREF="TelEngine__ChanAssist.html">ChanAssist</A>, <A HREF="TelEngine__Channel.html">Channel</A>, <A HREF="TelEngine__ClientAccount.html">ClientAccount</A>, <A HREF="TelEngine__ClientChannel.html">ClientChannel</A>, <A HREF="TelEngine__ClientContact.html">ClientContact</A>, <A HREF="TelEngine__ClientResource.html">ClientResource</A>, <i><A HREF="TelEngine__DataConsumer.html">DataConsumer</A></i>, <A HREF="TelEngine__DataEndpoint.html">DataEndpoint</A>, <A HREF="TelEngine__DataNode.html">DataNode</A>, <A HREF="TelEngine__DataSource.html">DataSource</A>, <A HREF="TelEngine__DataTranslator.html">DataTranslator</A>, <A HREF="TelEngine__DurationUpdate.html">DurationUpdate</A>, <A HREF="TelEngine__IAXFrame.html">IAXFrame</A>, <A HREF="TelEngine__IAXFrameOut.html">IAXFrameOut</A>, <A HREF="TelEngine__IAXFullFrame.html">IAXFullFrame</A>, <A HREF="TelEngine__IAXInfoElement.html">IAXInfoElement</A>, <A HREF="TelEngine__IAXInfoElementBinary.html">IAXInfoElementBinary</A>, <A HREF="TelEngine__IAXInfoElementNumeric.html">IAXInfoElementNumeric</A>, <A HREF="TelEngine__IAXInfoElementString.html">IAXInfoElementString</A>, <A HREF="TelEngine__IAXMetaTrunkFrame.html">IAXMetaTrunkFrame</A>, <A HREF="TelEngine__IAXTransaction.html">IAXTransaction</A>, <A HREF="TelEngine__ISDNFrame.html">ISDNFrame</A>, <A HREF="TelEngine__ISDNQ931Call.html">ISDNQ931Call</A>, <A HREF="TelEngine__ISDNQ931CallMonitor.html">ISDNQ931CallMonitor</A>, <A HREF="TelEngine__ISDNQ931Message.html">ISDNQ931Message</A>, <A HREF="TelEngine__JBClientStream.html">JBClientStream</A>, <A HREF="TelEngine__JBComponentStream.html">JBComponentStream</A>, <A HREF="TelEngine__JBEvent.html">JBEvent</A>, <A HREF="TelEngine__JBStream.html">JBStream</A>, <A HREF="TelEngine__JGSession.html">JGSession</A>, <A HREF="TelEngine__JGTransport.html">JGTransport</A>, <A HREF="TelEngine__JIDFeature.html">JIDFeature</A>, <A HREF="TelEngine__JIDFeatureSasl.html">JIDFeatureSasl</A>, <A HREF="TelEngine__JIDIdentity.html">JIDIdentity</A>, <A HREF="TelEngine__JIDResource.html">JIDResource</A>, <A HREF="TelEngine__MGCPEndpoint.html">MGCPEndpoint</A>, <A HREF="TelEngine__MGCPMessage.html">MGCPMessage</A>, <A HREF="TelEngine__MGCPTransaction.html">MGCPTransaction</A>, <A HREF="TelEngine__SIPMessage.html">SIPMessage</A>, <i><A HREF="TelEngine__SIPParty.html">SIPParty</A></i>, <A HREF="TelEngine__SIPTransaction.html">SIPTransaction</A>, <A HREF="TelEngine__SS7ISUPCall.html">SS7ISUPCall</A>, <A HREF="TelEngine__SS7MsgISUP.html">SS7MsgISUP</A>, <A HREF="TelEngine__SS7MsgSNM.html">SS7MsgSNM</A>, <i><A HREF="TelEngine__SignallingCall.html">SignallingCall</A></i>, <A HREF="TelEngine__SignallingCircuit.html">SignallingCircuit</A>, <A HREF="TelEngine__SignallingMessage.html">SignallingMessage</A>, <i><A HREF="TelEngine__ThreadedSource.html">ThreadedSource</A></i>, <A HREF="TelEngine__XMLElementOut.html">XMLElementOut</A>, <A HREF="TelEngine__XMPPServerInfo.html">XMPPServerInfo</A>, <A HREF="TelEngine__XMPPUser.html">XMPPUser</A>, <A HREF="TelEngine__XMPPUserRoster.html">XMPPUserRoster</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RefObject.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">RefObject</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~RefObject</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref3">alive</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref4">ref</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">deref</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref6">refcount</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">destruct</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  Mutex& &nbsp;<b><A HREF="#ref8">refMutex</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref9">zeroRefs</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">zeroRefsTest</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">refInternal</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">resurrect</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref13">destroyed</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A reference counted object.
+ Whenever using multiple inheritance you should inherit this class virtually.
+ </p>
+<A NAME="RefObject"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>RefObject</strong> ()
+<br></td><td align="right"><h3><strong>RefObject</strong></h3></td></tr></table><p></p><p>
+ The constructor initializes the reference counter to 1!
+ Use deref() to destruct the object when safe
+     </p>
+<A NAME="~RefObject"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RefObject</strong> ()
+<br></td><td align="right"><h3><strong>~RefObject</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor.
+     </p>
+<A NAME="alive"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>alive</strong> ()
+<br></td><td align="right"><h3><strong>alive</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the object is still referenced and safe to access.
+ Note that you should not trust this result unless the object is locked
+  by other means.
+</p>
+<p><b>Returns</b>: True if the object is referenced and safe to access
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#alive">GenObject</A>.</p>
+<A NAME="ref"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>ref</strong> ()
+<br></td><td align="right"><h3><strong>ref</strong></h3></td></tr></table><p></p><p>
+ Increments the reference counter if not already zero
+</p>
+<p><b>Returns</b>: True if the object was successfully referenced and is safe to access
+     </p>
+<A NAME="deref"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>deref</strong> ()
+<br></td><td align="right"><h3><strong>deref</strong></h3></td></tr></table><p></p><p>
+ Decrements the reference counter, destroys the object if it reaches zero
+</p><table border="0" width="100%">
+<tr>
+<td bgcolor="#BEEAE0">
+<pre>
+
+ // Deref this object, return quickly if the object was deleted
+ if (<A HREF="TelEngine__RefObject.html#deref">deref</A>()) return;
+
+</pre>
+</td></tr>
+
+</table> <p>
+</p>
+<p><b>Returns</b>: True if the object may have been deleted, false if it still exists and is safe to access
+     </p>
+<A NAME="refcount"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>refcount</strong> ()
+<br></td><td align="right"><h3><strong>refcount</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current value of the reference counter
+</p>
+<p><b>Returns</b>: The value of the reference counter
+     </p>
+<A NAME="destruct"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Refcounted objects should just have the counter decremented.
+ That will destroy them only when the refcount reaches zero.
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="refMutex"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Mutex& &nbsp;<strong>refMutex</strong> ()
+<br></td><td align="right"><h3><strong>refMutex</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrieve the mutex that protects ref() and deref() for all objects
+</p>
+<p><b>Returns</b>: Reference to the global mutex used for all counter operations
+     </p>
+<A NAME="zeroRefs"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>zeroRefs</strong> ()
+<br></td><td align="right"><h3><strong>zeroRefs</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is called when the reference count reaches zero after
+  unlocking the mutex if the call to zeroRefsTest() returned true.
+ The default behaviour is to delete the object.
+     </p>
+<A NAME="zeroRefsTest"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>zeroRefsTest</strong> ()
+<br></td><td align="right"><h3><strong>zeroRefsTest</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ This method is called when the reference count reaches zero just before
+  calling zeroRefs() with the non-recursive mutex still locked.
+ Extra care must be taken to prevent deadlocks, normally the code should
+  only change some variables and return.
+ The default implementation just returns true.
+</p>
+<p><b>Returns</b>: True to call zeroRefs() after releasing the mutex
+     </p>
+<A NAME="refInternal"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>refInternal</strong> ()
+<br></td><td align="right"><h3><strong>refInternal</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Increments the reference counter if not already zero without locking
+  the mutex. The caller must make sure to hold the refMutex() locked.
+</p>
+<p><b>Returns</b>: True if the object was successfully referenced
+     </p>
+<A NAME="resurrect"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>resurrect</strong> ()
+<br></td><td align="right"><h3><strong>resurrect</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Bring the object back alive by setting the reference counter to one.
+ Note that it works only if the counter was zero previously
+</p>
+<p><b>Returns</b>: True if the object was resurrected - its name may be Lazarus ;-)
+     </p>
+<A NAME="destroyed"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Pre-destruction notification, called just before the object is deleted.
+ Unlike in the destructor it is safe to call virtual methods here.
+ Reimplementing this method allows to perform any object cleanups.
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<TITLE>class XMPPUserRoster</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMPPUserRoster</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">The roster of a local user.
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMPPUserRoster</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMPPUserRoster.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref4">~XMPPUserRoster</A></b> () 
+</LI>
+<LI>const JabberID& &nbsp;<b><A HREF="#ref5">jid</A></b> ()  const
+</LI>
+<LI>JBPresence* &nbsp;<b><A HREF="#ref6">engine</A></b> () 
+</LI>
+<LI>inline JIDResourceList& &nbsp;<b><A HREF="#ref7">resources</A></b> () 
+</LI>
+<LI>XMPPUser* &nbsp;<b><A HREF="#ref8">getUser</A></b> (const JabberID& jid, bool add = false, bool* added = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">removeUser</A></b> (const JabberID& remote) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">cleanup</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">timeout</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref12">createDiscoInfoResult</A></b> (const char* from, const char* to,
+	const char* id) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref13">XMPPUserRoster</A></b> (JBPresence* engine, const char* node, const char* domain,
+	JBEngine::Protocol proto = JBEngine::Component) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds the roster for a local user.
+</p>
+<A NAME="~XMPPUserRoster"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XMPPUserRoster</strong> ()
+<br></td><td align="right"><h3><strong>~XMPPUserRoster</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor.
+ Remove this roster from engine's queue.
+     </p>
+<A NAME="jid"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const JabberID& &nbsp;<strong>jid</strong> ()
+<br></td><td align="right"><h3><strong>jid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the local user's jid.
+</p>
+<p><b>Returns</b>: The local user's jid.
+     </p>
+<A NAME="engine"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JBPresence* &nbsp;<strong>engine</strong> ()
+<br></td><td align="right"><h3><strong>engine</strong></h3></td></tr></table><p></p><p>
+ Get the presence engine this user belongs to.
+</p>
+<p><b>Returns</b>: Pointer to the presence engine this user belongs to.
+     </p>
+<A NAME="resources"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JIDResourceList& &nbsp;<strong>resources</strong> ()
+<br></td><td align="right"><h3><strong>resources</strong></h3></td></tr></table><p></p><p>
+ Get the list of available resources belonging to the same user
+</p>
+<p><b>Returns</b>: The list of available resources
+     </p>
+<A NAME="getUser"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPUser* &nbsp;<strong>getUser</strong> (const JabberID& jid, bool add = false, bool* added = 0)
+<br></td><td align="right"><h3><strong>getUser</strong></h3></td></tr></table><p></p><p>
+ Get a remote user.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">User's jid.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>add</i></TD><TD align="left" valign="top">True to add if not found.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>added</i></TD><TD align="left" valign="top">Optional flag to set if added a new user.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced pointer to the user or 0.
+     </p>
+<A NAME="removeUser"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>removeUser</strong> (const JabberID& remote)
+<br></td><td align="right"><h3><strong>removeUser</strong></h3></td></tr></table><p></p><p>
+ Remove a remote user.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>remote</i></TD><TD align="left" valign="top">The user to remove.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if no more users.
+     </p>
+<A NAME="cleanup"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p></p><p>()
+ Clear remote user list.
+     </p>
+<A NAME="timeout"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>timeout</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p></p><p>
+ Check timeout.
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True to remove the roster.
+     </p>
+<A NAME="createDiscoInfoResult"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>createDiscoInfoResult</strong> (const char* from, const char* to,
+	const char* id)
+<br></td><td align="right"><h3><strong>createDiscoInfoResult</strong></h3></td></tr></table><p></p><p>
+ Create an iq result to respond to disco info. Add user's features and identity
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>from</i></TD><TD align="left" valign="top">The from attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>to</i></TD><TD align="left" valign="top">The to attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id attribute
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: XMLElement pointer
+     </p>
+<A NAME="XMPPUserRoster"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>XMPPUserRoster</strong> (JBPresence* engine, const char* node, const char* domain,
+	JBEngine::Protocol proto = JBEngine::Component)
+<br></td><td align="right"><h3><strong>XMPPUserRoster</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">Pointer to the presence engine this user belongs to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>node</i></TD><TD align="left" valign="top">User's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>domain</i></TD><TD align="left" valign="top">User's domain
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proto</i></TD><TD align="left" valign="top">Protocol. Used to create identity
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<TITLE>class MGCPEndpoint</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MGCPEndpoint</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An MGCP endpoint. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MGCPEndpoint</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ymgcp___yatemgcp_h.html">libs/ymgcp/yatemgcp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__MGCPEndpointId.html">TelEngine::MGCPEndpointId</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MGCPEndpoint.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">MGCPEndpoint</A></b> (MGCPEngine* engine, const char* user, const char* host, int port) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~MGCPEndpoint</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref3">toString</A></b> ()  const
+</LI>
+<LI>inline MGCPEngine* &nbsp;<b><A HREF="#ref4">engine</A></b> () 
+</LI>
+<LI>MGCPEpInfo* &nbsp;<b><A HREF="#ref5">append</A></b> (const char* endpoint, const char* host, int port = 0) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">clear</A></b> () 
+</LI>
+<LI>MGCPEpInfo* &nbsp;<b><A HREF="#ref7">find</A></b> (const char* epId) 
+</LI>
+<LI>MGCPEpInfo* &nbsp;<b><A HREF="#ref8">peer</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a local MGCP endpoint (either gateway or call agent) along
+  with its remote peer(s).
+ If the engine owning this endpoint is an MGCP gateway, only 1 remote peer (Call Agent) is allowed
+</p>
+<A NAME="MGCPEndpoint"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MGCPEndpoint</strong> (MGCPEngine* engine, const char* user, const char* host, int port)
+<br></td><td align="right"><h3><strong>MGCPEndpoint</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct this endpoint. Append itself to the engine's list.
+ The endpoint's id will be created from the received user and engine's address
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine owning this endpoint
+</TD></TR>
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">The user part of the endpoint's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>host</i></TD><TD align="left" valign="top">The host part of the endpoint's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">The port part of the endpoint's id
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MGCPEndpoint"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MGCPEndpoint</strong> ()
+<br></td><td align="right"><h3><strong>~MGCPEndpoint</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Remove itself from engine's list
+     </p>
+<A NAME="toString"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this endpoint
+</p>
+<p><b>Returns</b>: A string representation of this endpoint
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="engine"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline MGCPEngine* &nbsp;<strong>engine</strong> ()
+<br></td><td align="right"><h3><strong>engine</strong></h3></td></tr></table><p></p><p>
+ Get the engine owning this endpoint
+</p>
+<p><b>Returns</b>: The engine owning this endpoint
+     </p>
+<A NAME="append"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MGCPEpInfo* &nbsp;<strong>append</strong> (const char* endpoint, const char* host, int port = 0)
+<br></td><td align="right"><h3><strong>append</strong></h3></td></tr></table><p></p><p>
+ Append info about a remote endpoint controlled by or controlling this endpoint.
+ If the engine owning this endpoint is an MGCP gateway, only 1 remote peer (Call Agent) is allowed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>endpoint</i></TD><TD align="left" valign="top">The endpoint part of the remote endpoint's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>host</i></TD><TD align="left" valign="top">The IP address of the remote endpoint
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">The port used to send data to this endpoint.
+  Set to 0 to set it to the default port defined by the protocol and the
+  opposite of the engine's mode
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid MGCPEpInfo pointer or 0 if the data wasn't added
+     </p>
+<A NAME="clear"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the list or remote endpoints
+     </p>
+<A NAME="find"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MGCPEpInfo* &nbsp;<strong>find</strong> (const char* epId)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p></p><p>
+ Find the info object associated with a remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>epId</i></TD><TD align="left" valign="top">The remote endpoint's id to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MGCPEpInfo pointer or 0 if not found
+     </p>
+<A NAME="peer"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MGCPEpInfo* &nbsp;<strong>peer</strong> ()
+<br></td><td align="right"><h3><strong>peer</strong></h3></td></tr></table><p></p><p>
+ Find the info object associated with an unique remote peer
+</p>
+<p><b>Returns</b>: MGCPEpInfo pointer or 0 if not exactly one peer
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

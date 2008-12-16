@@ -1,0 +1,6 @@
+#include "tables/a2s.h"
+#include "tables/a2u.h"
+#include "tables/s2a.h"
+#include "tables/s2u.h"
+#include "tables/u2a.h"
+#include "tables/u2s.h"

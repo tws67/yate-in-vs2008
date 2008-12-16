@@ -1,0 +1,438 @@
+<HTML>
+<HEAD>
+<TITLE>class JGSession</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JGSession</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jingle session. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JGSession</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejingle_h.html">libs/yjingle/yatejingle.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JGSession.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">State</A> {	Idle    = 0,                     
+	Pending = 1,                     
+	Active  = 2,                     
+	Ending  = 3,                     
+	Destroy = 4,                     
+    }
+</LI>
+<LI>enum <A HREF="#ref4">Action</A> {	ActAccept,                       
+	ActInitiate,                     
+	ActReject,                       
+	ActTerminate,                    
+	ActTransport,                    
+	ActTransportInfo,                
+	ActTransportCandidates,          
+	ActTransportAccept,              
+	ActContentInfo,                  
+	ActDtmf,                         
+	ActDtmfMethod,                   
+	ActCount,
+    }
+</LI>
+<LI>enum <A HREF="#ref5">TransportType</A> {	TransportUnknown,               
+	TransportInfo,                  
+	TransportCandidates,            
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref6">~JGSession</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">outgoing</A></b> ()  const
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref8">sid</A></b> ()  const
+</LI>
+<LI>const JabberID& &nbsp;<b><A HREF="#ref9">local</A></b> ()  const
+</LI>
+<LI>const JabberID& &nbsp;<b><A HREF="#ref10">remote</A></b> ()  const
+</LI>
+<LI>inline State &nbsp;<b><A HREF="#ref11">state</A></b> ()  const
+</LI>
+<LI>inline const JBStream* &nbsp;<b><A HREF="#ref12">stream</A></b> ()  const
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref13">userData</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref14">userData</A></b> (void* userdata) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">accept</A></b> (XMLElement* description) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">hangup</A></b> (bool reject = false, const char* msg = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref17">confirm</A></b> (XMLElement* xml, XMPPError::Type error = XMPPError::NoError,
+	const char* text = 0, XMPPError::ErrorType type = XMPPError::TypeModify) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">sendDtmf</A></b> (const char* dtmf, bool buttonUp = true) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">sendDtmfMethod</A></b> (const char* method) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">denyDtmfMethod</A></b> (XMLElement* element) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref21">acceptTransport</A></b> (JGTransport* transport = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref22">sendTransport</A></b> (JGTransport* transport) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref23">sendMessage</A></b> (const char* msg) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref24">JGSession</A></b> (JGEngine* engine, JBStream* stream,
+	const String& callerJID, const String& calledJID,
+	XMLElement* media, XMLElement* transport,
+	bool sid, const char* msg = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref25">JGSession</A></b> (JGEngine* engine, JBEvent* event, const String& id, bool sid) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref26">destroyed</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">enqueue</A></b> (JBEvent* event) 
+</LI>
+<LI>JGEvent* &nbsp;<b><A HREF="#ref28">getEvent</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref29">sendStanza</A></b> (XMLElement* stanza, bool confirmation = true) 
+</LI>
+<LI>JGEvent* &nbsp;<b><A HREF="#ref30">decodeJingle</A></b> (JBEvent* jbev) 
+</LI>
+<LI>XMLElement* &nbsp;<b><A HREF="#ref31">createJingle</A></b> (Action action, XMLElement* element1 = 0, XMLElement* element2 = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref32">sendTransport</A></b> (JGTransport* transport, Action act) 
+</LI>
+</ul><h4>Protected Static Methods</h4><ul><LI>static  const char* &nbsp;<b><A HREF="#ref33">lookupState</A></b> (int state) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class does the management of a Jingle session
+</p>
+<A NAME="State"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {	Idle    = 0,                     
+	Pending = 1,                     
+	Active  = 2,                     
+	Ending  = 3,                     
+	Destroy = 4,                     
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ Session state enumeration
+     </p>
+<A NAME="Action"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Action</strong> {	ActAccept,                       
+	ActInitiate,                     
+	ActReject,                       
+	ActTerminate,                    
+	ActTransport,                    
+	ActTransportInfo,                
+	ActTransportCandidates,          
+	ActTransportAccept,              
+	ActContentInfo,                  
+	ActDtmf,                         
+	ActDtmfMethod,                   
+	ActCount,
+    }
+</td><td align="right"><h3><strong>Action</strong></h3></td></tr></table><p></p><p>
+ Jingle action enumeration
+     </p>
+<A NAME="TransportType"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>TransportType</strong> {	TransportUnknown,               
+	TransportInfo,                  
+	TransportCandidates,            
+    }
+</td><td align="right"><h3><strong>TransportType</strong></h3></td></tr></table><p></p><p>
+ Jingle transport type enumeration
+     </p>
+<A NAME="~JGSession"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JGSession</strong> ()
+<br></td><td align="right"><h3><strong>~JGSession</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Hangup if Pending or Active
+     </p>
+<A NAME="outgoing"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>outgoing</strong> ()
+<br></td><td align="right"><h3><strong>outgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the session direction
+</p>
+<p><b>Returns</b>: True if it is an outgoing session
+     </p>
+<A NAME="sid"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>sid</strong> ()
+<br></td><td align="right"><h3><strong>sid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the session id
+</p>
+<p><b>Returns</b>: The session id
+     </p>
+<A NAME="local"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const JabberID& &nbsp;<strong>local</strong> ()
+<br></td><td align="right"><h3><strong>local</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the local peer's JID
+</p>
+<p><b>Returns</b>: The local peer's JID
+     </p>
+<A NAME="remote"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const JabberID& &nbsp;<strong>remote</strong> ()
+<br></td><td align="right"><h3><strong>remote</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the remote peer's JID
+</p>
+<p><b>Returns</b>: The remote peer's JID
+     </p>
+<A NAME="state"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline State &nbsp;<strong>state</strong> ()
+<br></td><td align="right"><h3><strong>state</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the session state.
+</p>
+<p><b>Returns</b>: The session state as enumeration.
+     </p>
+<A NAME="stream"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const JBStream* &nbsp;<strong>stream</strong> ()
+<br></td><td align="right"><h3><strong>stream</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the stream this session is bound to
+</p>
+<p><b>Returns</b>: The stream this session is bound to
+     </p>
+<A NAME="userData"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>userData</strong> ()
+<br></td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p></p><p>
+ Get the arbitrary user data of this session
+</p>
+<p><b>Returns</b>: The arbitrary user data of this session
+     </p>
+<A NAME="userData"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>userData</strong> (void* userdata)
+<br></td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p></p><p>
+ Set the arbitrary user data of this session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>userdata</i></TD><TD align="left" valign="top">The new arbitrary user data's value
+     </TD></TR>
+</TABLE></P>
+<A NAME="accept"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>accept</strong> (XMLElement* description)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p></p><p>
+ Accept a Pending incoming session.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>description</i></TD><TD align="left" valign="top">The media description element to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="hangup"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>hangup</strong> (bool reject = false, const char* msg = 0)
+<br></td><td align="right"><h3><strong>hangup</strong></h3></td></tr></table><p></p><p>
+ Close a Pending or Active session
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reject</i></TD><TD align="left" valign="top">True to reject. False to terminate gracefully
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Optional message to send before hangup
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="confirm"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>confirm</strong> (XMLElement* xml, XMPPError::Type error = XMPPError::NoError,
+	const char* text = 0, XMPPError::ErrorType type = XMPPError::TypeModify)
+<br></td><td align="right"><h3><strong>confirm</strong></h3></td></tr></table><p></p><p>
+ Confirm a received element. If the error is NoError a result stanza will be sent.
+  Otherwise, an error stanza will be created and sent and the received element is
+  consumed (attached to the sent error stanza)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">The element to confirm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>error</i></TD><TD align="left" valign="top">The error condition
+</TD></TR>
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Optional text to add to the error element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Error type
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed or element is 0
+     </p>
+<A NAME="sendDtmf"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendDtmf</strong> (const char* dtmf, bool buttonUp = true)
+<br></td><td align="right"><h3><strong>sendDtmf</strong></h3></td></tr></table><p></p><p>
+ Send a dtmf string to remote peer. If the string's lenght is greater then 1, each
+  character is added as a 'dtmf' child of the jingle element
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dtmf</i></TD><TD align="left" valign="top">The dtmf string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buttonUp</i></TD><TD align="left" valign="top">True to send button-up action. False to send button-down
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="sendDtmfMethod"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendDtmfMethod</strong> (const char* method)
+<br></td><td align="right"><h3><strong>sendDtmfMethod</strong></h3></td></tr></table><p></p><p>
+ Send a dtmf method to remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>method</i></TD><TD align="left" valign="top">The method to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="denyDtmfMethod"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>denyDtmfMethod</strong> (XMLElement* element)
+<br></td><td align="right"><h3><strong>denyDtmfMethod</strong></h3></td></tr></table><p></p><p>
+ Deny a dtmf method request from remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The received 'iq' element with the method
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="acceptTransport"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>acceptTransport</strong> (JGTransport* transport = 0)
+<br></td><td align="right"><h3><strong>acceptTransport</strong></h3></td></tr></table><p></p><p>
+ Send a 'transport-accept' element to the remote peer.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>transport</i></TD><TD align="left" valign="top">Optional transport data to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="sendTransport"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendTransport</strong> (JGTransport* transport)
+<br></td><td align="right"><h3><strong>sendTransport</strong></h3></td></tr></table><p></p><p>
+ Send a 'transport-info' element to the remote peer.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>transport</i></TD><TD align="left" valign="top">The transport data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if send failed
+     </p>
+<A NAME="sendMessage"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendMessage</strong> (const char* msg)
+<br></td><td align="right"><h3><strong>sendMessage</strong></h3></td></tr></table><p></p><p>
+ Send a message to the remote peer.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on socket error
+     </p>
+<A NAME="JGSession"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JGSession</strong> (JGEngine* engine, JBStream* stream,
+	const String& callerJID, const String& calledJID,
+	XMLElement* media, XMLElement* transport,
+	bool sid, const char* msg = 0)
+<br></td><td align="right"><h3><strong>JGSession</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor. Create an outgoing session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this session
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream this session is bound to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callerJID</i></TD><TD align="left" valign="top">The caller's full JID
+</TD></TR>
+<TR><TD align="left" valign="top"><i>calledJID</i></TD><TD align="left" valign="top">The called party's full JID
+</TD></TR>
+<TR><TD align="left" valign="top"><i>media</i></TD><TD align="left" valign="top">The session media description
+</TD></TR>
+<TR><TD align="left" valign="top"><i>transport</i></TD><TD align="left" valign="top">The session transport method(s)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sid</i></TD><TD align="left" valign="top">True to used 'sid' instead of 'id' as session id attribute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Optional message to be sent before session initiate
+     </TD></TR>
+</TABLE></P>
+<A NAME="JGSession"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JGSession</strong> (JGEngine* engine, JBEvent* event, const String& id, bool sid)
+<br></td><td align="right"><h3><strong>JGSession</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor. Create an incoming session.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this session
+</TD></TR>
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">A valid Jabber Jingle event with action session initiate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Session id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sid</i></TD><TD align="left" valign="top">True to used 'sid' instead of 'id' as session id attribute
+     </TD></TR>
+</TABLE></P>
+<A NAME="destroyed"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Release this session and its memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="enqueue"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>enqueue</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>enqueue</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Enqueue a Jabber engine event.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event event to process
+     </TD></TR>
+</TABLE></P>
+<A NAME="getEvent"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JGEvent* &nbsp;<strong>getEvent</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Get a Jingle event from the queue.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time in miliseconds
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: JGEvent pointer or 0
+     </p>
+<A NAME="sendStanza"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendStanza</strong> (XMLElement* stanza, bool confirmation = true)
+<br></td><td align="right"><h3><strong>sendStanza</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a stanza to the remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stanza</i></TD><TD align="left" valign="top">The stanza to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>confirmation</i></TD><TD align="left" valign="top">True if the stanza needs confirmation (add 'id' attribute)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="decodeJingle"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JGEvent* &nbsp;<strong>decodeJingle</strong> (JBEvent* jbev)
+<br></td><td align="right"><h3><strong>decodeJingle</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Decode a valid jingle set event. Set the event's data on success
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jbev</i></TD><TD align="left" valign="top">The event to decode
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: JGEvent pointer or 0
+     </p>
+<A NAME="createJingle"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMLElement* &nbsp;<strong>createJingle</strong> (Action action, XMLElement* element1 = 0, XMLElement* element2 = 0)
+<br></td><td align="right"><h3><strong>createJingle</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Create an 'iq' of type 'set' with a 'jingle' child
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>action</i></TD><TD align="left" valign="top">The action of the Jingle stanza
+</TD></TR>
+<TR><TD align="left" valign="top"><i>element1</i></TD><TD align="left" valign="top">Optional child element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>element2</i></TD><TD align="left" valign="top">Optional child element
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Valid XMLElement pointer
+     </p>
+<A NAME="sendTransport"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendTransport</strong> (JGTransport* transport, Action act)
+<br></td><td align="right"><h3><strong>sendTransport</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a transport related element to the remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>transport</i></TD><TD align="left" valign="top">Transport data to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>act</i></TD><TD align="left" valign="top">The element's type (info, accept, etc)
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="lookupState"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>lookupState</strong> (int state)
+<br></td><td align="right"><h3><strong>lookupState</strong></h3></td></tr></table><p> <small>[protected static]</small></p><p>
+ Get the name of a session state
+</p>
+<p><b>Returns</b>: The name of a session state
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

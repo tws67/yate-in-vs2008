@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931CallMonitor</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931CallMonitor</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Q.931 ISDN call monitor. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931CallMonitor</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__ISDNQ931State.html">TelEngine::ISDNQ931State</A> <small>[public ]</small>, <i><A HREF="TelEngine__SignallingCall.html">TelEngine::SignallingCall</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931CallMonitor.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~ISDNQ931CallMonitor</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref3">netInit</A></b> ()  const
+</LI>
+<LI>virtual  SignallingEvent* &nbsp;<b><A HREF="#ref4">getEvent</A></b> (const Time& when) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">setTerminate</A></b> (const char* reason) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref6">getObject</A></b> (const String& name)  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref7">ISDNQ931CallMonitor</A></b> (ISDNQ931Monitor* controller, <A HREF="#u_int32_t">u_int32_t</A> callRef, bool netInit) 
+</LI>
+<LI>SignallingEvent* &nbsp;<b><A HREF="#ref8">releaseComplete</A></b> (const char* reason = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN call monitor
+</p>
+<A NAME="~ISDNQ931CallMonitor"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ931CallMonitor</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ931CallMonitor</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="netInit"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>netInit</strong> ()
+<br></td><td align="right"><h3><strong>netInit</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the initiator is from the network side of the data link
+</p>
+<p><b>Returns</b>: True if the initiator is from the network side of the data link, false if it is from the user side
+     </p>
+<A NAME="getEvent"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingEvent* &nbsp;<strong>getEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an event from this call
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingEvent pointer or 0 if no events
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCall.html#getEvent">SignallingCall</A>.</p>
+<A NAME="setTerminate"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setTerminate</strong> (const char* reason)
+<br></td><td align="right"><h3><strong>setTerminate</strong></h3></td></tr></table><p></p><p>
+ Set termination flag
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Terminate reason
+     </TD></TR>
+</TABLE></P>
+<A NAME="getObject"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a data member or this call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="ISDNQ931CallMonitor"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931CallMonitor</strong> (ISDNQ931Monitor* controller, <A HREF="#u_int32_t">u_int32_t</A> callRef, bool netInit)
+<br></td><td align="right"><h3><strong>ISDNQ931CallMonitor</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>controller</i></TD><TD align="left" valign="top">The call controller
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRef</i></TD><TD align="left" valign="top">The call reference
+</TD></TR>
+<TR><TD align="left" valign="top"><i>netInit</i></TD><TD align="left" valign="top">True if the initiator is from the network side of the link
+     </TD></TR>
+</TABLE></P>
+<A NAME="releaseComplete"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingEvent* &nbsp;<strong>releaseComplete</strong> (const char* reason = 0)
+<br></td><td align="right"><h3><strong>releaseComplete</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Clear all call data
+ Remove from controller's queue. Decrease the object's refence count
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Optional release reason. If missing, the last reason is used
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an SignallingEvent of type Release
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

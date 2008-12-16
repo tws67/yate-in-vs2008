@@ -1,0 +1,180 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931Call</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931Call</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Q.931 ISDN call. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931Call</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__ISDNQ931State.html">TelEngine::ISDNQ931State</A> <small>[public ]</small>, <i><A HREF="TelEngine__SignallingCall.html">TelEngine::SignallingCall</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931Call.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~ISDNQ931Call</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref3">callRef</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref4">callRefLen</A></b> ()  const
+</LI>
+<LI>inline SignallingCircuit* &nbsp;<b><A HREF="#ref5">circuit</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">setTerminate</A></b> (bool destroy, const char* reason) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">sendEvent</A></b> (SignallingEvent* event) 
+</LI>
+<LI>virtual  SignallingEvent* &nbsp;<b><A HREF="#ref8">getEvent</A></b> (const Time& when) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">dataLinkState</A></b> (bool up) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref10">getObject</A></b> (const String& name)  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref11">ISDNQ931Call</A></b> (ISDNQ931* controller, bool outgoing, <A HREF="#u_int32_t">u_int32_t</A> callRef,
+	<A HREF="#u_int8_t">u_int8_t</A> callRefLen) 
+</LI>
+<LI>SignallingEvent* &nbsp;<b><A HREF="#ref12">releaseComplete</A></b> (const char* reason = 0, const char* diag = 0) 
+</LI>
+<LI>SignallingEvent* &nbsp;<b><A HREF="#ref13">getCircuitEvent</A></b> (const Time& when) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN call
+</p>
+<A NAME="~ISDNQ931Call"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ931Call</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ931Call</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="callRef"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>callRef</strong> ()
+<br></td><td align="right"><h3><strong>callRef</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the id of this call
+</p>
+<p><b>Returns</b>: The call reference
+     </p>
+<A NAME="callRefLen"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>callRefLen</strong> ()
+<br></td><td align="right"><h3><strong>callRefLen</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the call reference
+</p>
+<p><b>Returns</b>: The length of the call reference
+     </p>
+<A NAME="circuit"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCircuit* &nbsp;<strong>circuit</strong> ()
+<br></td><td align="right"><h3><strong>circuit</strong></h3></td></tr></table><p></p><p>
+ Get the circuit this call had reserved
+</p>
+<p><b>Returns</b>: The circuit reserved by this call
+     </p>
+<A NAME="setTerminate"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setTerminate</strong> (bool destroy, const char* reason)
+<br></td><td align="right"><h3><strong>setTerminate</strong></h3></td></tr></table><p></p><p>
+ Set termination (and destroy) flags
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>destroy</i></TD><TD align="left" valign="top">The destroy flag. If true, the call will be destroyed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Terminate reason
+     </TD></TR>
+</TABLE></P>
+<A NAME="sendEvent"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>sendEvent</strong> (SignallingEvent* event)
+<br></td><td align="right"><h3><strong>sendEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Send an event to this call
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The sent event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation succedded
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCall.html#sendEvent">SignallingCall</A>.</p>
+<A NAME="getEvent"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingEvent* &nbsp;<strong>getEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get an event from this call
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingEvent pointer or 0 if no events
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCall.html#getEvent">SignallingCall</A>.</p>
+<A NAME="dataLinkState"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>dataLinkState</strong> (bool up)
+<br></td><td align="right"><h3><strong>dataLinkState</strong></h3></td></tr></table><p></p><p>
+ Data link (interface) state notification
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>up</i></TD><TD align="left" valign="top">The data link state
+     </TD></TR>
+</TABLE></P>
+<A NAME="getObject"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to a data member or this call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer or 0 if not exists
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="ISDNQ931Call"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931Call</strong> (ISDNQ931* controller, bool outgoing, <A HREF="#u_int32_t">u_int32_t</A> callRef,
+	<A HREF="#u_int8_t">u_int8_t</A> callRefLen)
+<br></td><td align="right"><h3><strong>ISDNQ931Call</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>controller</i></TD><TD align="left" valign="top">The call controller
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">The call direction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRef</i></TD><TD align="left" valign="top">The call reference
+</TD></TR>
+<TR><TD align="left" valign="top"><i>callRefLen</i></TD><TD align="left" valign="top">The call reference length in bytes
+     </TD></TR>
+</TABLE></P>
+<A NAME="releaseComplete"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingEvent* &nbsp;<strong>releaseComplete</strong> (const char* reason = 0, const char* diag = 0)
+<br></td><td align="right"><h3><strong>releaseComplete</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send RELEASE COMPLETE if not in Null state.
+ Clear all call data.
+ Remove from controller's queue. Decrease the object's refence count
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Optional release reason. If missing, the last reason is used
+</TD></TR>
+<TR><TD align="left" valign="top"><i>diag</i></TD><TD align="left" valign="top">Optional hexified string for the cause diagnostic
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an SignallingEvent of type Release, with no message
+     </p>
+<A NAME="getCircuitEvent"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingEvent* &nbsp;<strong>getCircuitEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getCircuitEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Get an event from the circuit reserved for this call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingEvent pointer or 0 if no events
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

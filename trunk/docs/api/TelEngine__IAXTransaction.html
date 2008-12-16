@@ -1,0 +1,1129 @@
+<HTML>
+<HEAD>
+<TITLE>class IAXTransaction</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class IAXTransaction</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An IAX2 transaction. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::IAXTransaction</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yiax___yateiax_h.html">libs/yiax/yateiax.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__IAXTransaction.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">Type</A> {	Incorrect,			
+	New,				
+	RegReq,				
+	RegRel,				
+	Poke,				
+    }
+</LI>
+<LI>enum <A HREF="#ref4">State</A> {        Connected,		     	
+	NewLocalInvite,		     	
+	NewLocalInvite_AuthRecv,     	
+	NewLocalInvite_RepSent,	     	
+	NewRemoteInvite,             	
+	NewRemoteInvite_AuthSent,    	
+	NewRemoteInvite_RepRecv,     	
+	Unknown,                     	
+	Terminated,                  	
+        Terminating,                 	
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref7">~IAXTransaction</A></b> () 
+</LI>
+<LI>inline IAXEngine* &nbsp;<b><A HREF="#ref8">getEngine</A></b> ()  const
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref9">type</A></b> ()  const
+</LI>
+<LI>inline State &nbsp;<b><A HREF="#ref10">state</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref11">timeStamp</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">outgoing</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref13">setUserData</A></b> (void* data) 
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref14">getUserData</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref15">localCallNo</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<b><A HREF="#ref16">remoteCallNo</A></b> ()  const
+</LI>
+<LI>inline const SocketAddr& &nbsp;<b><A HREF="#ref17">remoteAddr</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref18">username</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref19">callingNo</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref20">callingName</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref21">calledNo</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref22">calledContext</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref23">challenge</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref24">format</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref25">formatIn</A></b> () 
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref26">formatOut</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref27">capability</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref28">expire</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref29">authdata</A></b> () 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref30">processFrame</A></b> (IAXFrame* frame) 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref31">processMedia</A></b> (DataBlock& data, <A HREF="#u_int32_t">u_int32_t</A> tStamp, bool voice = false) 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref32">sendMedia</A></b> (const DataBlock& data, <A HREF="#u_int32_t">u_int32_t</A> format) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref33">getEvent</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref36">sendAnswer</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref37">sendRinging</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref38">sendProgress</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref39">sendAccept</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref40">sendHangup</A></b> (const char* cause = 0, <A HREF="#u_int8_t">u_int8_t</A> code = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref41">sendReject</A></b> (const char* cause = 0, <A HREF="#u_int8_t">u_int8_t</A> code = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref42">sendAuth</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref43">sendAuthReply</A></b> (const String& response) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref44">sendDtmf</A></b> (<A HREF="#u_int8_t">u_int8_t</A> dtmf) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref45">sendText</A></b> (const char* text) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref46">sendNoise</A></b> (<A HREF="#u_int8_t">u_int8_t</A> noise) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref47">abortReg</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref48">enableTrunking</A></b> (IAXMetaTrunkFrame* trunkFrame) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref49">print</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  IAXTransaction* &nbsp;<b><A HREF="#ref5">factoryIn</A></b> (IAXEngine* engine, IAXFullFrame* frame, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr,
+		void* data = 0) 
+</LI>
+<LI>static  IAXTransaction* &nbsp;<b><A HREF="#ref6">factoryOut</A></b> (IAXEngine* engine, Type type, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr,
+		IAXIEList& ieList, void* data = 0) 
+</LI>
+<LI>static  unsigned char &nbsp;<b><A HREF="#ref34">getMaxFrameList</A></b> () 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref35">setMaxFrameList</A></b> (unsigned char value) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static String <b><A HREF="#ref50">s_iax_modNoAuthMethod</A></b></LI>
+<LI>static String <b><A HREF="#ref51">s_iax_modNoMediaFormat</A></b></LI>
+<LI>static String <b><A HREF="#ref52">s_iax_modInvalidAuth</A></b></LI>
+<LI>static String <b><A HREF="#ref53">s_iax_modNoUsername</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref54">IAXTransaction</A></b> (IAXEngine* engine, IAXFullFrame* frame, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr,
+	void* data = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref55">IAXTransaction</A></b> (IAXEngine* engine, Type type, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr, IAXIEList& ieList,
+	void* data = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref56">init</A></b> (IAXIEList& ieList) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref57">incrementSeqNo</A></b> (const IAXFullFrame* frame, bool inbound) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref58">isFrameAcceptable</A></b> (const IAXFullFrame* frame) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref59">changeState</A></b> (State newState) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref60">terminate</A></b> (<A HREF="#u_int8_t">u_int8_t</A> evType, bool local, const IAXFullFrame* frame = 0, bool createIEList = true) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref61">waitForTerminate</A></b> (<A HREF="#u_int8_t">u_int8_t</A> evType, bool local, const IAXFullFrame* frame) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref62">postFrame</A></b> (IAXFrame::Type type, <A HREF="#u_int32_t">u_int32_t</A> subclass, void* data = 0, <A HREF="#u_int16_t">u_int16_t</A> len = 0, <A HREF="#u_int32_t">u_int32_t</A> tStamp = 0,
+		bool ackOnly = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref63">sendFrame</A></b> (IAXFrameOut* frame, bool vnak = false) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref64">createEvent</A></b> (<A HREF="#u_int8_t">u_int8_t</A> evType, bool local, const  IAXFullFrame* frame, State newState) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref65">createResponse</A></b> (IAXFrameOut* frame, <A HREF="#u_int8_t">u_int8_t</A> findType, <A HREF="#u_int8_t">u_int8_t</A> findSubclass, <A HREF="#u_int8_t">u_int8_t</A> evType, bool local, State newState) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref66">getEventResponse</A></b> (IAXFrameOut* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref67">getEventResponse_New</A></b> (IAXFrameOut* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref68">processAuthReq</A></b> (IAXEvent* event) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref69">processAccept</A></b> (IAXEvent* event) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref70">processAuthRep</A></b> (IAXEvent* event) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref71">getEventResponse_Reg</A></b> (IAXFrameOut* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref72">processRegAck</A></b> (IAXEvent* event) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref73">getEventStartTrans</A></b> (IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref74">getEventRequest</A></b> (IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref75">getEventRequest_New</A></b> (IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXFullFrame* &nbsp;<b><A HREF="#ref76">findInFrame</A></b> (IAXFrame::Type type, <A HREF="#u_int32_t">u_int32_t</A> subclass) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref77">findInFrameTimestamp</A></b> (const IAXFullFrame* frameOut, IAXFrame::Type type, <A HREF="#u_int32_t">u_int32_t</A> subclass) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref78">findInFrameAck</A></b> (const IAXFullFrame* frameOut) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref79">ackInFrames</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref80">sendConnected</A></b> (IAXFullFrame::ControlType subclass, IAXFrame::Type frametype = IAXFrame::Control) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref81">sendAck</A></b> (const IAXFullFrame* frame) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref82">sendInval</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref83">sendVNAK</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref84">sendUnsupport</A></b> (<A HREF="#u_int32_t">u_int32_t</A> subclass) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref85">processInternalOutgoingRequest</A></b> (IAXFrameOut* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref86">processInternalIncomingRequest</A></b> (const IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref87">processMidCallControl</A></b> (const IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref88">processMidCallIAXControl</A></b> (const IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref89">remoteRejectCall</A></b> (const IAXFullFrame* frame, bool& delFrame) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref90">getEventTerminating</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref91">processVoiceFrame</A></b> (const IAXFullFrame* frame) 
+</LI>
+<LI>IAXTransaction* &nbsp;<b><A HREF="#ref92">retransmitOnVNAK</A></b> (<A HREF="#u_int16_t">u_int16_t</A> seqNo) 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref93">internalAccept</A></b> () 
+</LI>
+<LI>IAXEvent* &nbsp;<b><A HREF="#ref94">internalReject</A></b> (String& reason) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref95">eventTerminated</A></b> (IAXEvent* event) 
+</LI>
+<LI>inline IAXEvent* &nbsp;<b><A HREF="#ref96">keepEvent</A></b> (IAXEvent* event) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds all the data needded for the management of an IAX2 transaction
+  which might be a call leg, a register/unregister or a poke one
+</p>
+<A NAME="Type"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Incorrect,			
+	New,				
+	RegReq,				
+	RegRel,				
+	Poke,				
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ The transaction type as enumeration
+     </p>
+<A NAME="State"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {        Connected,		     	
+	NewLocalInvite,		     	
+	NewLocalInvite_AuthRecv,     	
+	NewLocalInvite_RepSent,	     	
+	NewRemoteInvite,             	
+	NewRemoteInvite_AuthSent,    	
+	NewRemoteInvite_RepRecv,     	
+	Unknown,                     	
+	Terminated,                  	
+        Terminating,                 	
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ The transaction state as enumeration
+     </p>
+<A NAME="factoryIn"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> IAXTransaction* &nbsp;<strong>factoryIn</strong> (IAXEngine* engine, IAXFullFrame* frame, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr,
+		void* data = 0)
+<br></td><td align="right"><h3><strong>factoryIn</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Constructs an incoming transaction from a received full frame with an IAX
+  control message that needs a new transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">A valid full frame
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lcallno</i></TD><TD align="left" valign="top">Local call number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address from where the frame was received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to arbitrary user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="factoryOut"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> IAXTransaction* &nbsp;<strong>factoryOut</strong> (IAXEngine* engine, Type type, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr,
+		IAXIEList& ieList, void* data = 0)
+<br></td><td align="right"><h3><strong>factoryOut</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Constructs an outgoing transaction with an IAX control message that needs a new transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Transaction type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lcallno</i></TD><TD align="left" valign="top">Local call number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to use
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ieList</i></TD><TD align="left" valign="top">Starting IE list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to arbitrary user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="~IAXTransaction"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~IAXTransaction</strong> ()
+<br></td><td align="right"><h3><strong>~IAXTransaction</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="getEngine"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline IAXEngine* &nbsp;<strong>getEngine</strong> ()
+<br></td><td align="right"><h3><strong>getEngine</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ The IAX engine this transaction belongs to
+</p>
+<p><b>Returns</b>: Pointer to the IAXEngine of this transaction
+     </p>
+<A NAME="type"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this transaction
+</p>
+<p><b>Returns</b>: The type of the transaction as enumeration
+     </p>
+<A NAME="state"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline State &nbsp;<strong>state</strong> ()
+<br></td><td align="right"><h3><strong>state</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the state of this transaction
+</p>
+<p><b>Returns</b>: The state of the transaction as enumeration
+     </p>
+<A NAME="timeStamp"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>timeStamp</strong> ()
+<br></td><td align="right"><h3><strong>timeStamp</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the timestamp of this transaction
+</p>
+<p><b>Returns</b>: The timestamp of this transaction
+     </p>
+<A NAME="outgoing"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>outgoing</strong> ()
+<br></td><td align="right"><h3><strong>outgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the direction of this transaction
+</p>
+<p><b>Returns</b>: True if it is an outgoing transaction
+     </p>
+<A NAME="setUserData"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setUserData</strong> (void* data)
+<br></td><td align="right"><h3><strong>setUserData</strong></h3></td></tr></table><p></p><p>
+ Store a pointer to arbitrary user data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">User provided pointer
+     </TD></TR>
+</TABLE></P>
+<A NAME="getUserData"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>getUserData</strong> ()
+<br></td><td align="right"><h3><strong>getUserData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Return the opaque user data stored in the transaction
+</p>
+<p><b>Returns</b>: Pointer set by user
+     </p>
+<A NAME="localCallNo"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>localCallNo</strong> ()
+<br></td><td align="right"><h3><strong>localCallNo</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the local call number
+</p>
+<p><b>Returns</b>: 15-bit local call number
+     </p>
+<A NAME="remoteCallNo"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int16_t">u_int16_t</A> &nbsp;<strong>remoteCallNo</strong> ()
+<br></td><td align="right"><h3><strong>remoteCallNo</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the remote call number
+</p>
+<p><b>Returns</b>: 15-bit remote call number
+     </p>
+<A NAME="remoteAddr"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SocketAddr& &nbsp;<strong>remoteAddr</strong> ()
+<br></td><td align="right"><h3><strong>remoteAddr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the remote host+port address
+</p>
+<p><b>Returns</b>: A reference to the remote address
+     </p>
+<A NAME="username"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>username</strong> ()
+<br></td><td align="right"><h3><strong>username</strong></h3></td></tr></table><p></p><p>
+ Retrive the username
+</p>
+<p><b>Returns</b>: A reference to the username
+     </p>
+<A NAME="callingNo"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>callingNo</strong> ()
+<br></td><td align="right"><h3><strong>callingNo</strong></h3></td></tr></table><p></p><p>
+ Retrive the calling number
+</p>
+<p><b>Returns</b>: A reference to the calling number
+     </p>
+<A NAME="callingName"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>callingName</strong> ()
+<br></td><td align="right"><h3><strong>callingName</strong></h3></td></tr></table><p></p><p>
+ Retrive the calling name
+</p>
+<p><b>Returns</b>: A reference to the calling name
+     </p>
+<A NAME="calledNo"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>calledNo</strong> ()
+<br></td><td align="right"><h3><strong>calledNo</strong></h3></td></tr></table><p></p><p>
+ Retrive the called number
+</p>
+<p><b>Returns</b>: A reference to the called number
+     </p>
+<A NAME="calledContext"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>calledContext</strong> ()
+<br></td><td align="right"><h3><strong>calledContext</strong></h3></td></tr></table><p></p><p>
+ Retrive the called context
+</p>
+<p><b>Returns</b>: A reference to the called context
+     </p>
+<A NAME="challenge"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>challenge</strong> ()
+<br></td><td align="right"><h3><strong>challenge</strong></h3></td></tr></table><p></p><p>
+ Retrive the challenge sent/received during authentication
+</p>
+<p><b>Returns</b>: A reference to the challenge
+     </p>
+<A NAME="format"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>format</strong> ()
+<br></td><td align="right"><h3><strong>format</strong></h3></td></tr></table><p></p><p>
+ Retrive the media format used during initialization
+</p>
+<p><b>Returns</b>: The initial media format
+     </p>
+<A NAME="formatIn"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>formatIn</strong> ()
+<br></td><td align="right"><h3><strong>formatIn</strong></h3></td></tr></table><p></p><p>
+ Retrive the incoming media format
+</p>
+<p><b>Returns</b>: The incoming media format
+     </p>
+<A NAME="formatOut"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>formatOut</strong> ()
+<br></td><td align="right"><h3><strong>formatOut</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the outgoing media format
+</p>
+<p><b>Returns</b>: The outgoing media format
+     </p>
+<A NAME="capability"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>capability</strong> ()
+<br></td><td align="right"><h3><strong>capability</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the media capability of this transaction
+</p>
+<p><b>Returns</b>: The media capability of this transaction
+     </p>
+<A NAME="expire"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>expire</strong> ()
+<br></td><td align="right"><h3><strong>expire</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the expiring time for a register/unregister transaction
+</p>
+<p><b>Returns</b>: The expiring time for a register/unregister transaction
+     </p>
+<A NAME="authdata"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>authdata</strong> ()
+<br></td><td align="right"><h3><strong>authdata</strong></h3></td></tr></table><p></p><p>
+ Retrive the authentication data sent/received during authentication
+</p>
+<p><b>Returns</b>: A reference to the authentication data
+     </p>
+<A NAME="processFrame"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>processFrame</strong> (IAXFrame* frame)
+<br></td><td align="right"><h3><strong>processFrame</strong></h3></td></tr></table><p></p><p>
+ Process a frame from remote peer
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">IAX frame belonging to this transaction to process
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 'this' if successful or NULL if the frame is invalid
+     </p>
+<A NAME="processMedia"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>processMedia</strong> (DataBlock& data, <A HREF="#u_int32_t">u_int32_t</A> tStamp, bool voice = false)
+<br></td><td align="right"><h3><strong>processMedia</strong></h3></td></tr></table><p></p><p>
+ Process received mini frame data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Received data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">Mini frame timestamp
+</TD></TR>
+<TR><TD align="left" valign="top"><i>voice</i></TD><TD align="left" valign="top">True if received mini frame inside a Voice full frame
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0
+     </p>
+<A NAME="sendMedia"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>sendMedia</strong> (const DataBlock& data, <A HREF="#u_int32_t">u_int32_t</A> format)
+<br></td><td align="right"><h3><strong>sendMedia</strong></h3></td></tr></table><p></p><p>
+ Send media data to remote peer. Update the outgoing media format if changed
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>format</i></TD><TD align="left" valign="top">Data format
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 'this' if successful or 0
+     </p>
+<A NAME="getEvent"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEvent</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p></p><p>
+ Get an IAX event from the queue
+ This method is thread safe.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">The time this method was called
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0 if none available
+     </p>
+<A NAME="getMaxFrameList"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned char &nbsp;<strong>getMaxFrameList</strong> ()
+<br></td><td align="right"><h3><strong>getMaxFrameList</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the maximum allowed number of full frames in the incoming frame list
+</p>
+<p><b>Returns</b>: The maximum allowed number of full frames in the incoming frame list
+     </p>
+<A NAME="setMaxFrameList"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>setMaxFrameList</strong> (unsigned char value)
+<br></td><td align="right"><h3><strong>setMaxFrameList</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the maximum allowed number of full frames in the incoming frame list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The new value of m_maxInFrames
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if value is greater then IAX2_MAX_TRANSINFRAMELIST
+     </p>
+<A NAME="sendAnswer"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendAnswer</strong> ()
+<br></td><td align="right"><h3><strong>sendAnswer</strong></h3></td></tr></table><p></p><p>
+ Send an ANSWER frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False if the current transaction state is not Connected
+     </p>
+<A NAME="sendRinging"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendRinging</strong> ()
+<br></td><td align="right"><h3><strong>sendRinging</strong></h3></td></tr></table><p></p><p>
+ Send a RINGING frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False if the current transaction state is not Connected
+     </p>
+<A NAME="sendProgress"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendProgress</strong> ()
+<br></td><td align="right"><h3><strong>sendProgress</strong></h3></td></tr></table><p></p><p>
+ Send a PROCEEDING frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False if the current transaction state is not Connected
+     </p>
+<A NAME="sendAccept"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendAccept</strong> ()
+<br></td><td align="right"><h3><strong>sendAccept</strong></h3></td></tr></table><p></p><p>
+ Send an ACCEPT/REGACK frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False if the transaction type is not New and state is NewRemoteInvite or NewRemoteInvite_AuthRep or
+  if the transaction type is not RegReq and state is NewRemoteInvite or
+  type is not RegReq/RegRel and state is NewRemoteInvite_AuthRep
+     </p>
+<A NAME="sendHangup"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendHangup</strong> (const char* cause = 0, <A HREF="#u_int8_t">u_int8_t</A> code = 0)
+<br></td><td align="right"><h3><strong>sendHangup</strong></h3></td></tr></table><p></p><p>
+ Send a HANGUP frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cause</i></TD><TD align="left" valign="top">Optional reason for hangup
+</TD></TR>
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Optional code of reason
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the transaction type is not New or state is Terminated/Terminating
+     </p>
+<A NAME="sendReject"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendReject</strong> (const char* cause = 0, <A HREF="#u_int8_t">u_int8_t</A> code = 0)
+<br></td><td align="right"><h3><strong>sendReject</strong></h3></td></tr></table><p></p><p>
+ Send a REJECT/REGREJ frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cause</i></TD><TD align="left" valign="top">Optional reason for reject
+</TD></TR>
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Optional code of reason
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the transaction type is not New/RegReq/RegRel or state is Terminated/Terminating
+     </p>
+<A NAME="sendAuth"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendAuth</strong> ()
+<br></td><td align="right"><h3><strong>sendAuth</strong></h3></td></tr></table><p></p><p>
+ Send an AUTHREQ/REGAUTH frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False if the current transaction state is not NewRemoteInvite
+     </p>
+<A NAME="sendAuthReply"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendAuthReply</strong> (const String& response)
+<br></td><td align="right"><h3><strong>sendAuthReply</strong></h3></td></tr></table><p></p><p>
+ Send an AUTHREP/REGREQ/REGREL frame to remote peer as a response to AUTHREQ/REGREQ/REGREL
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>response</i></TD><TD align="left" valign="top">Response to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the current transaction state is not NewLocalInvite_AuthRecv
+     </p>
+<A NAME="sendDtmf"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendDtmf</strong> (<A HREF="#u_int8_t">u_int8_t</A> dtmf)
+<br></td><td align="right"><h3><strong>sendDtmf</strong></h3></td></tr></table><p></p><p>
+ Send a DTMF frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dtmf</i></TD><TD align="left" valign="top">DTMF char to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the current transaction state is not Connected or dtmf is grater then 127
+     </p>
+<A NAME="sendText"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendText</strong> (const char* text)
+<br></td><td align="right"><h3><strong>sendText</strong></h3></td></tr></table><p></p><p>
+ Send a TEXT frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>text</i></TD><TD align="left" valign="top">Text to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the current transaction state is not Connected
+     </p>
+<A NAME="sendNoise"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendNoise</strong> (<A HREF="#u_int8_t">u_int8_t</A> noise)
+<br></td><td align="right"><h3><strong>sendNoise</strong></h3></td></tr></table><p></p><p>
+ Send a NOISE frame to remote peer
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>noise</i></TD><TD align="left" valign="top">Noise value to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the current transaction state is not Connected or noise is grater then 127
+     </p>
+<A NAME="abortReg"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>abortReg</strong> ()
+<br></td><td align="right"><h3><strong>abortReg</strong></h3></td></tr></table><p></p><p>
+ Abort a registration transaction
+ This method is thread safe
+</p>
+<p><b>Returns</b>: False transaction is not a registration one or is already terminating
+     </p>
+<A NAME="enableTrunking"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>enableTrunking</strong> (IAXMetaTrunkFrame* trunkFrame)
+<br></td><td align="right"><h3><strong>enableTrunking</strong></h3></td></tr></table><p></p><p>
+ Enable trunking for this transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trunkFrame</i></TD><TD align="left" valign="top">Pointer to IAXMetaTrunkFrame used to send trunked media
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False trunking is already enabled for this transactio or trunkFrame is 0
+     </p>
+<A NAME="print"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>print</strong> ()
+<br></td><td align="right"><h3><strong>print</strong></h3></td></tr></table><p></p><p>
+ Print transaction data on stdin
+     </p>
+<A NAME="s_iax_modNoAuthMethod"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_iax_modNoAuthMethod</strong>
+</td><td align="right"><h3><strong>s_iax_modNoAuthMethod</strong></h3></td></tr></table><p></p><A NAME="s_iax_modNoMediaFormat"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_iax_modNoMediaFormat</strong>
+</td><td align="right"><h3><strong>s_iax_modNoMediaFormat</strong></h3></td></tr></table><p></p><A NAME="s_iax_modInvalidAuth"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_iax_modInvalidAuth</strong>
+</td><td align="right"><h3><strong>s_iax_modInvalidAuth</strong></h3></td></tr></table><p></p><A NAME="s_iax_modNoUsername"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_iax_modNoUsername</strong>
+</td><td align="right"><h3><strong>s_iax_modNoUsername</strong></h3></td></tr></table><p></p><A NAME="IAXTransaction"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>IAXTransaction</strong> (IAXEngine* engine, IAXFullFrame* frame, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr,
+	void* data = 0)
+<br></td><td align="right"><h3><strong>IAXTransaction</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor: constructs an incoming transaction from a received full frame with an IAX
+  control message that needs a new transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">A valid full frame
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lcallno</i></TD><TD align="left" valign="top">Local call number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address from where the frame was received
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to arbitrary user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="IAXTransaction"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>IAXTransaction</strong> (IAXEngine* engine, Type type, <A HREF="#u_int16_t">u_int16_t</A> lcallno, const SocketAddr& addr, IAXIEList& ieList,
+	void* data = 0)
+<br></td><td align="right"><h3><strong>IAXTransaction</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor: constructs an outgoing transaction with an IAX control message that needs a new transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Transaction type: see Type enumeration
+</TD></TR>
+<TR><TD align="left" valign="top"><i>lcallno</i></TD><TD align="left" valign="top">Local call number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">Address to use
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ieList</i></TD><TD align="left" valign="top">Starting IE list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to arbitrary user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="init"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>init</strong> (IAXIEList& ieList)
+<br></td><td align="right"><h3><strong>init</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Init data members from an IE list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ieList</i></TD><TD align="left" valign="top">IE list to init from
+     </TD></TR>
+</TABLE></P>
+<A NAME="incrementSeqNo"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>incrementSeqNo</strong> (const IAXFullFrame* frame, bool inbound)
+<br></td><td align="right"><h3><strong>incrementSeqNo</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Increment sequence numbers (inbound or outbound) for the frames that need it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Received frame if inbound is true, otherwise a transmitted one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>inbound</i></TD><TD align="left" valign="top">True for inbound frames
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if incremented.
+     </p>
+<A NAME="isFrameAcceptable"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>isFrameAcceptable</strong> (const IAXFullFrame* frame)
+<br></td><td align="right"><h3><strong>isFrameAcceptable</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Test if frame is acceptable (not an out of order or a late one)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to test
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if frame can be added to incoming frame list
+     </p>
+<A NAME="changeState"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>changeState</strong> (State newState)
+<br></td><td align="right"><h3><strong>changeState</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Change the transaction state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">the new transaction state
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if trying to change a termination state into a non termination one
+     </p>
+<A NAME="terminate"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>terminate</strong> (<A HREF="#u_int8_t">u_int8_t</A> evType, bool local, const IAXFullFrame* frame = 0, bool createIEList = true)
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Terminate the transaction.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>evType</i></TD><TD align="left" valign="top">IAXEvent type to generate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">If true it is a locally generated event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to build event from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>createIEList</i></TD><TD align="left" valign="top">If true create IE list in the generated event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to a valid IAXEvent
+     </p>
+<A NAME="waitForTerminate"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>waitForTerminate</strong> (<A HREF="#u_int8_t">u_int8_t</A> evType, bool local, const IAXFullFrame* frame)
+<br></td><td align="right"><h3><strong>waitForTerminate</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Wait for ACK to terminate the transaction. No more events will be generated
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>evType</i></TD><TD align="left" valign="top">IAXEvent type to generate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">If true it is a locally generated event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to build event from
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to a valid IAXEvent
+     </p>
+<A NAME="postFrame"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>postFrame</strong> (IAXFrame::Type type, <A HREF="#u_int32_t">u_int32_t</A> subclass, void* data = 0, <A HREF="#u_int16_t">u_int16_t</A> len = 0, <A HREF="#u_int32_t">u_int32_t</A> tStamp = 0,
+		bool ackOnly = false)
+<br></td><td align="right"><h3><strong>postFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructs an IAXFrameOut frame, send it to remote peer and put it in the transmission list
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>subclass</i></TD><TD align="left" valign="top">Frame subclass
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Frame IE list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Frame IE list length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tStamp</i></TD><TD align="left" valign="top">Frame timestamp. If 0 the transaction timestamp will be used
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ackOnly</i></TD><TD align="left" valign="top">Frame's acknoledge only flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="sendFrame"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendFrame</strong> (IAXFrameOut* frame, bool vnak = false)
+<br></td><td align="right"><h3><strong>sendFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a full frame to remote peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>vnak</i></TD><TD align="left" valign="top">If true the transmission is a response to a VNAK frame
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="createEvent"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>createEvent</strong> (<A HREF="#u_int8_t">u_int8_t</A> evType, bool local, const  IAXFullFrame* frame, State newState)
+<br></td><td align="right"><h3><strong>createEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Create an event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>evType</i></TD><TD align="left" valign="top">Event type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">If true it is a locally generated event.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>frameOut</i></TD><TD align="left" valign="top">Frame to create from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">The transaction new state
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0 (invalid IE list)
+     </p>
+<A NAME="createResponse"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>createResponse</strong> (IAXFrameOut* frame, <A HREF="#u_int8_t">u_int8_t</A> findType, <A HREF="#u_int8_t">u_int8_t</A> findSubclass, <A HREF="#u_int8_t">u_int8_t</A> evType, bool local, State newState)
+<br></td><td align="right"><h3><strong>createResponse</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Create an event from a received frame that is a response to a sent frame and
+  change the transaction state to newState. Remove the response from incoming list.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to create response for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>findType</i></TD><TD align="left" valign="top">Frame type to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>findSubclass</i></TD><TD align="left" valign="top">Frame subclass to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>evType</i></TD><TD align="left" valign="top">Event type to generate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>local</i></TD><TD align="left" valign="top">Local flag for the generated event.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">New transaction state if an event was generated
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0 (invalid IE list)
+     </p>
+<A NAME="getEventResponse"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventResponse</strong> (IAXFrameOut* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>getEventResponse</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find a response for a previously sent frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to find response for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a response was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0
+     </p>
+<A NAME="getEventResponse_New"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventResponse_New</strong> (IAXFrameOut* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>getEventResponse_New</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find a response for a previously sent frame if the transaction type is New
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to find response for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a response was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0
+     </p>
+<A NAME="processAuthReq"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processAuthReq</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>processAuthReq</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process an authentication request. If valid, send an authentication reply
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Already generated event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to a valid IAXEvent
+     </p>
+<A NAME="processAccept"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processAccept</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>processAccept</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process an accept. If not valid (call m_engine->acceptFormatAndCapability) send a reject.
+  Otherwise return the event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Already generated event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to a valid IAXEvent
+     </p>
+<A NAME="processAuthRep"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processAuthRep</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>processAuthRep</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process an authentication reply
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Already generated event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to a valid IAXEvent
+     </p>
+<A NAME="getEventResponse_Reg"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventResponse_Reg</strong> (IAXFrameOut* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>getEventResponse_Reg</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find a response for a previously sent frame if the transaction type is RegReq/RegRel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to find response for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a response was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0
+     </p>
+<A NAME="processRegAck"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processRegAck</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>processRegAck</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Update transaction data from the event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Already generated event
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The received event
+     </p>
+<A NAME="getEventStartTrans"></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventStartTrans</strong> (IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>getEventStartTrans</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find out if an incoming frame would start a transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, frame is valid
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0
+     </p>
+<A NAME="getEventRequest"></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventRequest</strong> (IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>getEventRequest</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find out if a frame is a remote request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete rame flag. If true on exit, a request was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0
+     </p>
+<A NAME="getEventRequest_New"></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventRequest_New</strong> (IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>getEventRequest_New</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Find out if a frame is a remote request if transaction type is New
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete rame flag. If true on exit, a request was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an IAXEvent or 0
+     </p>
+<A NAME="findInFrame"></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXFullFrame* &nbsp;<strong>findInFrame</strong> (IAXFrame::Type type, <A HREF="#u_int32_t">u_int32_t</A> subclass)
+<br></td><td align="right"><h3><strong>findInFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Search for a frame in m_inFrames having the given type and subclass
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type to find.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>subclass</i></TD><TD align="left" valign="top">Frame subclass to find.
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to frame if found or 0.
+     </p>
+<A NAME="findInFrameTimestamp"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>findInFrameTimestamp</strong> (const IAXFullFrame* frameOut, IAXFrame::Type type, <A HREF="#u_int32_t">u_int32_t</A> subclass)
+<br></td><td align="right"><h3><strong>findInFrameTimestamp</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Search in m_inFrames for a frame with the same timestamp as frameOut and deletes it.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frameOut</i></TD><TD align="left" valign="top">Frame to find response for
+</TD></TR>
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>subclass</i></TD><TD align="left" valign="top">Frame subclass to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if found.
+     </p>
+<A NAME="findInFrameAck"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>findInFrameAck</strong> (const IAXFullFrame* frameOut)
+<br></td><td align="right"><h3><strong>findInFrameAck</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Search in m_inFrames for an ACK frame which confirm the received frame and deletes it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frameOut</i></TD><TD align="left" valign="top">Frame to find response for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if found.
+     </p>
+<A NAME="ackInFrames"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>ackInFrames</strong> ()
+<br></td><td align="right"><h3><strong>ackInFrames</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Acknoledge the last received full frame
+     </p>
+<A NAME="sendConnected"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendConnected</strong> (IAXFullFrame::ControlType subclass, IAXFrame::Type frametype = IAXFrame::Control)
+<br></td><td align="right"><h3><strong>sendConnected</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send a frame to remote peer in state Connected
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>subclass</i></TD><TD align="left" valign="top">Frame subclass to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>subclass</i></TD><TD align="left" valign="top">Frame type to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the current transaction state is not Connected
+     </p>
+<A NAME="sendAck"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sendAck</strong> (const IAXFullFrame* frame)
+<br></td><td align="right"><h3><strong>sendAck</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send an ACK frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Aknoledged frame
+     </TD></TR>
+</TABLE></P>
+<A NAME="sendInval"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sendInval</strong> ()
+<br></td><td align="right"><h3><strong>sendInval</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send an INVAL frame
+     </p>
+<A NAME="sendVNAK"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sendVNAK</strong> ()
+<br></td><td align="right"><h3><strong>sendVNAK</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send an VNAK frame
+     </p>
+<A NAME="sendUnsupport"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sendUnsupport</strong> (<A HREF="#u_int32_t">u_int32_t</A> subclass)
+<br></td><td align="right"><h3><strong>sendUnsupport</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send an Unsupport frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>subclass</i></TD><TD align="left" valign="top">Unsupported frame's subclass
+     </TD></TR>
+</TABLE></P>
+<A NAME="processInternalOutgoingRequest"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processInternalOutgoingRequest</strong> (IAXFrameOut* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>processInternalOutgoingRequest</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Internal protocol outgoing frames processing (PING/LAGRQ)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a response was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0.
+     </p>
+<A NAME="processInternalIncomingRequest"></A><A NAME="ref86"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processInternalIncomingRequest</strong> (const IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>processInternalIncomingRequest</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Internal protocol incoming frames processing (PING/LAGRQ)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a request was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0.
+     </p>
+<A NAME="processMidCallControl"></A><A NAME="ref87"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processMidCallControl</strong> (const IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>processMidCallControl</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process mid call control frames
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a request was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid IAXEvent or 0
+     </p>
+<A NAME="processMidCallIAXControl"></A><A NAME="ref88"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>processMidCallIAXControl</strong> (const IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>processMidCallIAXControl</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process mid call IAX control frames
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a request was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid IAXEvent or 0
+     </p>
+<A NAME="remoteRejectCall"></A><A NAME="ref89"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>remoteRejectCall</strong> (const IAXFullFrame* frame, bool& delFrame)
+<br></td><td align="right"><h3><strong>remoteRejectCall</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Test if frame is a Reject/RegRej frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Frame to process.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>delFrame</i></TD><TD align="left" valign="top">Delete frame flag. If true on exit, a request was found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid IAXEvent or 0.
+     </p>
+<A NAME="getEventTerminating"></A><A NAME="ref90"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>getEventTerminating</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>getEventTerminating</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Terminate the transaction if state is Terminating on a remote request
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid IAXEvent or 0
+     </p>
+<A NAME="processVoiceFrame"></A><A NAME="ref91"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>processVoiceFrame</strong> (const IAXFullFrame* frame)
+<br></td><td align="right"><h3><strong>processVoiceFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process received Voice frames
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Received voice frame
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0
+     </p>
+<A NAME="retransmitOnVNAK"></A><A NAME="ref92"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXTransaction* &nbsp;<strong>retransmitOnVNAK</strong> (<A HREF="#u_int16_t">u_int16_t</A> seqNo)
+<br></td><td align="right"><h3><strong>retransmitOnVNAK</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Send all frames from outgoing queue with outbound sequence number starting with seqNo.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>seqNo</i></TD><TD align="left" valign="top">Requested sequence number
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: 0
+     </p>
+<A NAME="internalAccept"></A><A NAME="ref93"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>internalAccept</strong> ()
+<br></td><td align="right"><h3><strong>internalAccept</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Generate an Accept event after internally accepting a transaction
+</p>
+<p><b>Returns</b>: A valid IAXEvent
+     </p>
+<A NAME="internalReject"></A><A NAME="ref94"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXEvent* &nbsp;<strong>internalReject</strong> (String& reason)
+<br></td><td align="right"><h3><strong>internalReject</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Generate a Reject event after internally rejecting a transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">The reason of rejecting
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A valid IAXEvent
+     </p>
+<A NAME="eventTerminated"></A><A NAME="ref95"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>eventTerminated</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>eventTerminated</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Event terminated feedback
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event notifying termination
+     </TD></TR>
+</TABLE></P>
+<A NAME="keepEvent"></A><A NAME="ref96"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline IAXEvent* &nbsp;<strong>keepEvent</strong> (IAXEvent* event)
+<br></td><td align="right"><h3><strong>keepEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set the current event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event notifying termination
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: event
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

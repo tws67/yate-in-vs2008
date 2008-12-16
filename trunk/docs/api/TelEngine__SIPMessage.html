@@ -1,0 +1,440 @@
+<HTML>
+<HEAD>
+<TITLE>class SIPMessage</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SIPMessage</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ An object that holds the sip message parsed into this library model. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SIPMessage</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysip___yatesip_h.html">libs/ysip/yatesip.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SIPMessage.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SIPMessage</A></b> (const SIPMessage& original) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">SIPMessage</A></b> (const char* _method, const char* _uri, const char* _version = "SIP/2.0") 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">SIPMessage</A></b> (SIPParty* ep, const char* buf, int len = -1) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">SIPMessage</A></b> (const SIPMessage* message, int _code, const char* _reason = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">SIPMessage</A></b> (const SIPMessage* original, const SIPMessage* answer) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref6">~SIPMessage</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">complete</A></b> (SIPEngine* engine, const char* user = 0, const char* domain = 0, const char* dlgTag = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">copyHeader</A></b> (const SIPMessage* message, const char* name, const char* newName = 0) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref10">copyAllHeaders</A></b> (const SIPMessage* message, const char* name, const char* newName = 0) 
+</LI>
+<LI>inline SIPParty* &nbsp;<b><A HREF="#ref11">getParty</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">setParty</A></b> (SIPParty* ep = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">isValid</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">isAnswer</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">isOutgoing</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">isACK</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">isReliable</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref18">getCSeq</A></b> ()  const
+</LI>
+<LI>const MimeHeaderLine* &nbsp;<b><A HREF="#ref19">getHeader</A></b> (const char* name)  const
+</LI>
+<LI>const MimeHeaderLine* &nbsp;<b><A HREF="#ref20">getLastHeader</A></b> (const char* name)  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref21">countHeaders</A></b> (const char* name)  const
+</LI>
+<LI>const NamedString* &nbsp;<b><A HREF="#ref22">getParam</A></b> (const char* name, const char* param)  const
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref23">getHeaderValue</A></b> (const char* name)  const
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref24">getParamValue</A></b> (const char* name, const char* param)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref25">addHeader</A></b> (const char* name, const char* value = 0) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref26">addHeader</A></b> (MimeHeaderLine* line) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">clearHeaders</A></b> (const char* name) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref28">setHeader</A></b> (const char* name, const char* value = 0) 
+</LI>
+<LI>MimeAuthLine* &nbsp;<b><A HREF="#ref29">buildAuth</A></b> (const String& username, const String& password,
+	const String& meth, const String& uri, bool proxy = false)  const
+</LI>
+<LI>MimeAuthLine* &nbsp;<b><A HREF="#ref30">buildAuth</A></b> (const SIPMessage& original)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref31">setAutoAuth</A></b> (const char* username = 0, const char* password = 0) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref32">getAuthUsername</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref33">getAuthPassword</A></b> ()  const
+</LI>
+<LI>ObjList* &nbsp;<b><A HREF="#ref34">getRoutes</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref35">addRoutes</A></b> (const ObjList* routes) 
+</LI>
+<LI>const DataBlock& &nbsp;<b><A HREF="#ref36">getBuffer</A></b> ()  const
+</LI>
+<LI>const String& &nbsp;<b><A HREF="#ref37">getHeaders</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref38">setBody</A></b> (MimeBody* newbody = 0) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  SIPMessage* &nbsp;<b><A HREF="#ref7">fromParsing</A></b> (SIPParty* ep, const char* buf, int len = -1) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>String <b><A HREF="#ref39">version</A></b></LI>
+<LI>String <b><A HREF="#ref40">method</A></b></LI>
+<LI>String <b><A HREF="#ref41">uri</A></b></LI>
+<LI>int <b><A HREF="#ref42">code</A></b></LI>
+<LI>String <b><A HREF="#ref43">reason</A></b></LI>
+<LI>ObjList <b><A HREF="#ref44">header</A></b></LI>
+<LI>MimeBody* <b><A HREF="#ref45">body</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>bool &nbsp;<b><A HREF="#ref46">parse</A></b> (const char* buf, int len) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref47">parseFirst</A></b> (String& line) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>SIPParty* <b><A HREF="#ref48">m_ep</A></b></LI>
+<LI>bool <b><A HREF="#ref49">m_valid</A></b></LI>
+<LI>bool <b><A HREF="#ref50">m_answer</A></b></LI>
+<LI>bool <b><A HREF="#ref51">m_outgoing</A></b></LI>
+<LI>bool <b><A HREF="#ref52">m_ack</A></b></LI>
+<LI>int <b><A HREF="#ref53">m_cseq</A></b></LI>
+<LI>mutable String <b><A HREF="#ref54">m_string</A></b></LI>
+<LI>mutable DataBlock <b><A HREF="#ref55">m_data</A></b></LI>
+<LI>String <b><A HREF="#ref56">m_authUser</A></b></LI>
+<LI>String <b><A HREF="#ref57">m_authPass</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An object that holds the sip message parsed into this library model.
+ This class can be used to parse a sip message from a text buffer, or it
+ can be used to create a text buffer from a sip message.
+ </p>
+<A NAME="SIPMessage"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPMessage</strong> (const SIPMessage& original)
+<br></td><td align="right"><h3><strong>SIPMessage</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+     </p>
+<A NAME="SIPMessage"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPMessage</strong> (const char* _method, const char* _uri, const char* _version = "SIP/2.0")
+<br></td><td align="right"><h3><strong>SIPMessage</strong></h3></td></tr></table><p></p><p>
+ Creates a new, empty, outgoing SIPMessage.
+     </p>
+<A NAME="SIPMessage"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPMessage</strong> (SIPParty* ep, const char* buf, int len = -1)
+<br></td><td align="right"><h3><strong>SIPMessage</strong></h3></td></tr></table><p></p><p>
+ Creates a new SIPMessage from parsing a text buffer.
+     </p>
+<A NAME="SIPMessage"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPMessage</strong> (const SIPMessage* message, int _code, const char* _reason = 0)
+<br></td><td align="right"><h3><strong>SIPMessage</strong></h3></td></tr></table><p></p><p>
+ Creates a new SIPMessage as answer to another message.
+     </p>
+<A NAME="SIPMessage"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPMessage</strong> (const SIPMessage* original, const SIPMessage* answer)
+<br></td><td align="right"><h3><strong>SIPMessage</strong></h3></td></tr></table><p></p><p>
+ Creates an ACK message from an original message and a response.
+     </p>
+<A NAME="~SIPMessage"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SIPMessage</strong> ()
+<br></td><td align="right"><h3><strong>~SIPMessage</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroy the message and all
+     </p>
+<A NAME="fromParsing"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SIPMessage* &nbsp;<strong>fromParsing</strong> (SIPParty* ep, const char* buf, int len = -1)
+<br></td><td align="right"><h3><strong>fromParsing</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Construct a new SIP message by parsing a text buffer
+</p>
+<p><b>Returns</b>: A pointer to a valid new message or NULL
+     </p>
+<A NAME="complete"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>complete</strong> (SIPEngine* engine, const char* user = 0, const char* domain = 0, const char* dlgTag = 0)
+<br></td><td align="right"><h3><strong>complete</strong></h3></td></tr></table><p></p><p>
+ Complete missing fields with defaults taken from a SIP engine
+     </p>
+<A NAME="copyHeader"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>copyHeader</strong> (const SIPMessage* message, const char* name, const char* newName = 0)
+<br></td><td align="right"><h3><strong>copyHeader</strong></h3></td></tr></table><p></p><p>
+ Copy an entire header line (including all parameters) from another message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Pointer to the message to copy the header from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to copy
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newName</i></TD><TD align="left" valign="top">New name to force in headers, NULL to just copy
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the header was found and copied
+     </p>
+<A NAME="copyAllHeaders"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>copyAllHeaders</strong> (const SIPMessage* message, const char* name, const char* newName = 0)
+<br></td><td align="right"><h3><strong>copyAllHeaders</strong></h3></td></tr></table><p></p><p>
+ Copy multiple header lines (including all parameters) from another message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Pointer to the message to copy the header from
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the headers to copy
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newName</i></TD><TD align="left" valign="top">New name to force in headers, NULL to just copy
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of headers found and copied
+     </p>
+<A NAME="getParty"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SIPParty* &nbsp;<strong>getParty</strong> ()
+<br></td><td align="right"><h3><strong>getParty</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the endpoint this message uses
+</p>
+<p><b>Returns</b>: Pointer to the endpoint of this message
+     </p>
+<A NAME="setParty"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setParty</strong> (SIPParty* ep = 0)
+<br></td><td align="right"><h3><strong>setParty</strong></h3></td></tr></table><p></p><p>
+ Set the endpoint this message uses
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ep</i></TD><TD align="left" valign="top">Pointer to the endpoint of this message
+     </TD></TR>
+</TABLE></P>
+<A NAME="isValid"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isValid</strong> ()
+<br></td><td align="right"><h3><strong>isValid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message is valid as result of the parsing
+     </p>
+<A NAME="isAnswer"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isAnswer</strong> ()
+<br></td><td align="right"><h3><strong>isAnswer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message is an answer or a request
+     </p>
+<A NAME="isOutgoing"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isOutgoing</strong> ()
+<br></td><td align="right"><h3><strong>isOutgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message is an outgoing message
+</p>
+<p><b>Returns</b>: True if this message should be sent to remote
+     </p>
+<A NAME="isACK"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isACK</strong> ()
+<br></td><td align="right"><h3><strong>isACK</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message is an ACK message
+</p>
+<p><b>Returns</b>: True if this message has an ACK method
+     </p>
+<A NAME="isReliable"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isReliable</strong> ()
+<br></td><td align="right"><h3><strong>isReliable</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this message is handled by a reliable protocol
+</p>
+<p><b>Returns</b>: True if a reliable protocol (TCP, SCTP) is used
+     </p>
+<A NAME="getCSeq"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getCSeq</strong> ()
+<br></td><td align="right"><h3><strong>getCSeq</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Command Sequence number from this message
+     </p>
+<A NAME="getHeader"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const MimeHeaderLine* &nbsp;<strong>getHeader</strong> (const char* name)
+<br></td><td align="right"><h3><strong>getHeader</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find a header line by name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the first matching header line or 0 if not found
+     </p>
+<A NAME="getLastHeader"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const MimeHeaderLine* &nbsp;<strong>getLastHeader</strong> (const char* name)
+<br></td><td align="right"><h3><strong>getLastHeader</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find the last header line that matches a given name name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the last matching header line or 0 if not found
+     </p>
+<A NAME="countHeaders"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>countHeaders</strong> (const char* name)
+<br></td><td align="right"><h3><strong>countHeaders</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Count the header lines matching a specific name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Number of matching header lines
+     </p>
+<A NAME="getParam"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const NamedString* &nbsp;<strong>getParam</strong> (const char* name, const char* param)
+<br></td><td align="right"><h3><strong>getParam</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Find a header parameter by name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Name of the parameter to locate in the tag
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A pointer to the first matching header line or 0 if not found
+     </p>
+<A NAME="getHeaderValue"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>getHeaderValue</strong> (const char* name)
+<br></td><td align="right"><h3><strong>getHeaderValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a string value (without parameters) from a header line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The value hold in the header or an empty String
+     </p>
+<A NAME="getParamValue"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>getParamValue</strong> (const char* name, const char* param)
+<br></td><td align="right"><h3><strong>getParamValue</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a string value from a parameter in a header line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to locate
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Name of the parameter to locate in the tag
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The value hold in the parameter or an empty String
+     </p>
+<A NAME="addHeader"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>addHeader</strong> (const char* name, const char* value = 0)
+<br></td><td align="right"><h3><strong>addHeader</strong></h3></td></tr></table><p></p><p>
+ Append a new header line constructed from name and content
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Content of the new header line
+     </TD></TR>
+</TABLE></P>
+<A NAME="addHeader"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>addHeader</strong> (MimeHeaderLine* line)
+<br></td><td align="right"><h3><strong>addHeader</strong></h3></td></tr></table><p></p><p>
+ Append an already constructed header line
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">Header line to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="clearHeaders"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearHeaders</strong> (const char* name)
+<br></td><td align="right"><h3><strong>clearHeaders</strong></h3></td></tr></table><p></p><p>
+ Clear all header lines that match a name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of the header to clear
+     </TD></TR>
+</TABLE></P>
+<A NAME="setHeader"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setHeader</strong> (const char* name, const char* value = 0)
+<br></td><td align="right"><h3><strong>setHeader</strong></h3></td></tr></table><p></p><p>
+ Set a header line constructed from name and content
+     </p>
+<A NAME="buildAuth"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MimeAuthLine* &nbsp;<strong>buildAuth</strong> (const String& username, const String& password,
+	const String& meth, const String& uri, bool proxy = false)
+<br></td><td align="right"><h3><strong>buildAuth</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Construct a new authorization line based on credentials and challenge
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>username</i></TD><TD align="left" valign="top">User account name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>password</i></TD><TD align="left" valign="top">Clear text password for the account
+</TD></TR>
+<TR><TD align="left" valign="top"><i>meth</i></TD><TD align="left" valign="top">Method to include in the authorization digest
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">URI to include in the authorization digest
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proxy</i></TD><TD align="left" valign="top">Set to true to authenticate to a proxy, false to a server
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new authorization line to be used in a new transaction
+     </p>
+<A NAME="buildAuth"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MimeAuthLine* &nbsp;<strong>buildAuth</strong> (const SIPMessage& original)
+<br></td><td align="right"><h3><strong>buildAuth</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Construct a new authorization line based on this answer and original message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Origianl outgoing message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A new authorization line to be used in a new transaction
+     </p>
+<A NAME="setAutoAuth"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setAutoAuth</strong> (const char* username = 0, const char* password = 0)
+<br></td><td align="right"><h3><strong>setAutoAuth</strong></h3></td></tr></table><p></p><p>
+ Prepare the message for automatic client transaction authentication.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>username</i></TD><TD align="left" valign="top">Username for auto authentication
+</TD></TR>
+<TR><TD align="left" valign="top"><i>password</i></TD><TD align="left" valign="top">Password for auto authentication
+     </TD></TR>
+</TABLE></P>
+<A NAME="getAuthUsername"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getAuthUsername</strong> ()
+<br></td><td align="right"><h3><strong>getAuthUsername</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the username to be used for auto authentication
+</p>
+<p><b>Returns</b>: Username for auto authentication
+     </p>
+<A NAME="getAuthPassword"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getAuthPassword</strong> ()
+<br></td><td align="right"><h3><strong>getAuthPassword</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the password to be used for auto authentication
+</p>
+<p><b>Returns</b>: Password for auto authentication
+     </p>
+<A NAME="getRoutes"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList* &nbsp;<strong>getRoutes</strong> ()
+<br></td><td align="right"><h3><strong>getRoutes</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Extract routes from Record-Route: headers
+</p>
+<p><b>Returns</b>: A list of MimeHeaderLine representing SIP routes
+     </p>
+<A NAME="addRoutes"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addRoutes</strong> (const ObjList* routes)
+<br></td><td align="right"><h3><strong>addRoutes</strong></h3></td></tr></table><p></p><p>
+ Add Route: headers to an outgoing message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>routes</i></TD><TD align="left" valign="top">List of MimeHeaderLine representing SIP routes
+     </TD></TR>
+</TABLE></P>
+<A NAME="getBuffer"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const DataBlock& &nbsp;<strong>getBuffer</strong> ()
+<br></td><td align="right"><h3><strong>getBuffer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Creates a binary buffer from a SIPMessage.
+     </p>
+<A NAME="getHeaders"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const String& &nbsp;<strong>getHeaders</strong> ()
+<br></td><td align="right"><h3><strong>getHeaders</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Creates a text buffer from the headers.
+     </p>
+<A NAME="setBody"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setBody</strong> (MimeBody* newbody = 0)
+<br></td><td align="right"><h3><strong>setBody</strong></h3></td></tr></table><p></p><p>
+ Set a new body for this message
+     </p>
+<A NAME="version"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>version</strong>
+</td><td align="right"><h3><strong>version</strong></h3></td></tr></table><p></p><A NAME="method"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>method</strong>
+</td><td align="right"><h3><strong>method</strong></h3></td></tr></table><p></p><A NAME="uri"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>uri</strong>
+</td><td align="right"><h3><strong>uri</strong></h3></td></tr></table><p></p><A NAME="code"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>code</strong>
+</td><td align="right"><h3><strong>code</strong></h3></td></tr></table><p></p><A NAME="reason"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>reason</strong>
+</td><td align="right"><h3><strong>reason</strong></h3></td></tr></table><p></p><A NAME="header"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>header</strong>
+</td><td align="right"><h3><strong>header</strong></h3></td></tr></table><p></p><A NAME="body"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MimeBody*  <strong>body</strong>
+</td><td align="right"><h3><strong>body</strong></h3></td></tr></table><p></p><A NAME="parse"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parse</strong> (const char* buf, int len)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ All the body related things should be here, including the entire body and
+ the parsed body.
+     </p>
+<A NAME="parseFirst"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>parseFirst</strong> (String& line)
+<br></td><td align="right"><h3><strong>parseFirst</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_ep"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPParty*  <strong>m_ep</strong>
+</td><td align="right"><h3><strong>m_ep</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_valid"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_valid</strong>
+</td><td align="right"><h3><strong>m_valid</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_answer"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_answer</strong>
+</td><td align="right"><h3><strong>m_answer</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_outgoing"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_outgoing</strong>
+</td><td align="right"><h3><strong>m_outgoing</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_ack"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_ack</strong>
+</td><td align="right"><h3><strong>m_ack</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_cseq"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_cseq</strong>
+</td><td align="right"><h3><strong>m_cseq</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_string"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable String  <strong>m_string</strong>
+</td><td align="right"><h3><strong>m_string</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_data"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>mutable DataBlock  <strong>m_data</strong>
+</td><td align="right"><h3><strong>m_data</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_authUser"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_authUser</strong>
+</td><td align="right"><h3><strong>m_authUser</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_authPass"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_authPass</strong>
+</td><td align="right"><h3><strong>m_authPass</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

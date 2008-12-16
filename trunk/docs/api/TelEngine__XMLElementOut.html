@@ -1,0 +1,149 @@
+<HTML>
+<HEAD>
+<TITLE>class XMLElementOut</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMLElementOut</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An outgoing XML element. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMLElementOut</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmlparser_h.html">libs/yjingle/xmlparser.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMLElementOut.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">XMLElementOut</A></b> (XMLElement* element, const char* senderID = 0,
+	bool unclose = false) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~XMLElementOut</A></b> () 
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref3">element</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref4">sent</A></b> ()  const
+</LI>
+<LI>inline String& &nbsp;<b><A HREF="#ref5">buffer</A></b> () 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">id</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref7">dataCount</A></b> () 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref8">getData</A></b> (<A HREF="#u_int32_t">u_int32_t</A>& nCount) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">dataSent</A></b> (<A HREF="#u_int32_t">u_int32_t</A> nCount) 
+</LI>
+<LI>inline XMLElement* &nbsp;<b><A HREF="#ref10">release</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">toBuffer</A></b> (String& buffer) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">prepareToSend</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds an XML element to be sent through a stream
+</p>
+<A NAME="XMLElementOut"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>XMLElementOut</strong> (XMLElement* element, const char* senderID = 0,
+	bool unclose = false)
+<br></td><td align="right"><h3><strong>XMLElementOut</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>element</i></TD><TD align="left" valign="top">The XML element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>senderID</i></TD><TD align="left" valign="top">Optional sender id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>unclose</i></TD><TD align="left" valign="top">True to not close the tag when building the buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="~XMLElementOut"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~XMLElementOut</strong> ()
+<br></td><td align="right"><h3><strong>~XMLElementOut</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+ Delete m_element if not 0
+     </p>
+<A NAME="element"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>element</strong> ()
+<br></td><td align="right"><h3><strong>element</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the underlying element
+</p>
+<p><b>Returns</b>: The underlying element
+     </p>
+<A NAME="sent"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sent</strong> ()
+<br></td><td align="right"><h3><strong>sent</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this element was (partially) sent
+</p>
+<p><b>Returns</b>: True if an attempt to send this element was already done
+     </p>
+<A NAME="buffer"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline String& &nbsp;<strong>buffer</strong> ()
+<br></td><td align="right"><h3><strong>buffer</strong></h3></td></tr></table><p></p><p>
+ Get the data buffer
+</p>
+<p><b>Returns</b>: The data buffer
+     </p>
+<A NAME="id"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the id member
+</p>
+<p><b>Returns</b>: The id member
+     </p>
+<A NAME="dataCount"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>dataCount</strong> ()
+<br></td><td align="right"><h3><strong>dataCount</strong></h3></td></tr></table><p></p><p>
+ Get the remainig byte count to send
+</p>
+<p><b>Returns</b>: The unsent number of bytes
+     </p>
+<A NAME="getData"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>getData</strong> (<A HREF="#u_int32_t">u_int32_t</A>& nCount)
+<br></td><td align="right"><h3><strong>getData</strong></h3></td></tr></table><p></p><p>
+ Get the remainig data to send. Set the buffer if not already set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nCount</i></TD><TD align="left" valign="top">The number of unsent bytes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the remaining data or 0
+     </p>
+<A NAME="dataSent"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>dataSent</strong> (<A HREF="#u_int32_t">u_int32_t</A> nCount)
+<br></td><td align="right"><h3><strong>dataSent</strong></h3></td></tr></table><p></p><p>
+ Increase the offset with nCount bytes. Set the sent flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nCount</i></TD><TD align="left" valign="top">The number of bytes sent
+     </TD></TR>
+</TABLE></P>
+<A NAME="release"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMLElement* &nbsp;<strong>release</strong> ()
+<br></td><td align="right"><h3><strong>release</strong></h3></td></tr></table><p></p><p>
+ Release the ownership of m_element
+ The caller is responsable of returned pointer
+</p>
+<p><b>Returns</b>: XMLElement pointer or 0
+     </p>
+<A NAME="toBuffer"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>toBuffer</strong> (String& buffer)
+<br></td><td align="right"><h3><strong>toBuffer</strong></h3></td></tr></table><p></p><p>
+ Fill a buffer with the XML element to send
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">The buffer to fill
+     </TD></TR>
+</TABLE></P>
+<A NAME="prepareToSend"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>prepareToSend</strong> ()
+<br></td><td align="right"><h3><strong>prepareToSend</strong></h3></td></tr></table><p></p><p>
+ Fill the buffer with the XML element to send
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

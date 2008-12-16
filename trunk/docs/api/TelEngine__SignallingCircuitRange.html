@@ -1,0 +1,191 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingCircuitRange</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingCircuitRange</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A circuit range (set of circuits). <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingCircuitRange</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__String.html">TelEngine::String</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingCircuitRange.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SignallingCircuitRange</A></b> (const String& rangeStr, const char* name = 0,
+	int strategy = -1) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SignallingCircuitRange</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref4">count</A></b> ()  const
+</LI>
+<LI>inline const unsigned int* &nbsp;<b><A HREF="#ref5">range</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">clear</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref7">operator[]</A></b> (unsigned int index) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">set</A></b> (const String& rangeStr) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">add</A></b> (const String& rangeStr) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref10">add</A></b> (unsigned int* codes, unsigned int len) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">add</A></b> (unsigned int code) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">remove</A></b> (unsigned int code) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">find</A></b> (unsigned int code) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">destruct</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref15">updateLast</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>DataBlock <b><A HREF="#ref16">m_range</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref17">m_count</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref18">m_last</A></b></LI>
+<LI>int <b><A HREF="#ref19">m_strategy</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref20">m_used</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Keeps a range (set) of circuits. The circuit codes contained within a range may
+  not be contiguous.
+ See <A HREF="TelEngine__SignallingUtils.html#parseUIntArray">SignallingUtils::parseUIntArray</A>() for the format of the string ranges
+  this object can be built from
+</p>
+<A NAME="SignallingCircuitRange"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingCircuitRange</strong> (const String& rangeStr, const char* name = 0,
+	int strategy = -1)
+<br></td><td align="right"><h3><strong>SignallingCircuitRange</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>rangeStr</i></TD><TD align="left" valign="top">String used to build this range
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Range name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>strategy</i></TD><TD align="left" valign="top">Strategy used to allocate circuits from this range
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingCircuitRange"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingCircuitRange</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingCircuitRange</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="count"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the number of circuits contained by this range
+</p>
+<p><b>Returns</b>: The number of circuits contained by this range
+     </p>
+<A NAME="range"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const unsigned int* &nbsp;<strong>range</strong> ()
+<br></td><td align="right"><h3><strong>range</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the pointer to the circuit codes array
+</p>
+<p><b>Returns</b>: Pointer to the circuit codes array or 0
+     </p>
+<A NAME="clear"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Get the pointer to the circuit codes array
+</p>
+<p><b>Returns</b>: Pointer to the circuit codes array or 0
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#clear">String</A>.</p>
+<A NAME="operator[]"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>operator[]</strong> (unsigned int index)
+<br></td><td align="right"><h3><strong>operator[]</strong></h3></td></tr></table><p></p><p>
+ Indexing operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">The index in the array to retreive
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The code at the given index
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#operator[]">String</A>.</p>
+<A NAME="set"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>set</strong> (const String& rangeStr)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set this range from a string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>rangeStr</i></TD><TD align="left" valign="top">String used to (re)build this range
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the string has invalid format
+     </p>
+<A NAME="add"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>add</strong> (const String& rangeStr)
+<br></td><td align="right"><h3><strong>add</strong></h3></td></tr></table><p></p><p>
+ Add codes to this range from a string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>rangeStr</i></TD><TD align="left" valign="top">String containing the codes to be added to this range
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the string has invalid format
+     </p>
+<A NAME="add"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>add</strong> (unsigned int* codes, unsigned int len)
+<br></td><td align="right"><h3><strong>add</strong></h3></td></tr></table><p></p><p>
+ Add an array of circuit codes to this range
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>codes</i></TD><TD align="left" valign="top">The array to add
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The array's length
+     </TD></TR>
+</TABLE></P>
+<A NAME="add"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>add</strong> (unsigned int code)
+<br></td><td align="right"><h3><strong>add</strong></h3></td></tr></table><p></p><p>
+ Add a circuit code to this range
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The circuit code to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="remove"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>remove</strong> (unsigned int code)
+<br></td><td align="right"><h3><strong>remove</strong></h3></td></tr></table><p></p><p>
+ Remove a circuit code from this range
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The circuit code to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="find"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>find</strong> (unsigned int code)
+<br></td><td align="right"><h3><strong>find</strong></h3></td></tr></table><p></p><p>
+ Check if a circuit code is within this range
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The circuit code to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if found
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__String.html#find">String</A>.</p>
+<A NAME="destruct"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="updateLast"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>updateLast</strong> ()
+<br></td><td align="right"><h3><strong>updateLast</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_range"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>DataBlock  <strong>m_range</strong>
+</td><td align="right"><h3><strong>m_range</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_count"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_count</strong>
+</td><td align="right"><h3><strong>m_count</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_last"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_last</strong>
+</td><td align="right"><h3><strong>m_last</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_strategy"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_strategy</strong>
+</td><td align="right"><h3><strong>m_strategy</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_used"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_used</strong>
+</td><td align="right"><h3><strong>m_used</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

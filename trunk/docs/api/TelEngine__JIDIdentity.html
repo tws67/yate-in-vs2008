@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<TITLE>class JIDIdentity</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JIDIdentity</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A JID identity. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JIDIdentity</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmpputils_h.html">libs/yjingle/xmpputils.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JIDIdentity.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Category</A> {	Account,                         
+	Client,                          
+	Component,                       
+	Gateway,                         
+	CategoryUnknown
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Type</A> {	AccountRegistered,               
+	ClientPhone,                     
+	ComponentGeneric,                
+	ComponentPresence,               
+	GatewayGeneric,                  
+	TypeUnknown
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref3">JIDIdentity</A></b> (Category c, Type t, const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~JIDIdentity</A></b> () 
+</LI>
+<LI>XMLElement* &nbsp;<b><A HREF="#ref5">toXML</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref6">fromXML</A></b> (const XMLElement* element) 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref7">toString</A></b> ()  const
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref8">getObject</A></b> (const String& name)  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">setName</A></b> (const char* name) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref10">categoryText</A></b> (Category c) 
+</LI>
+<LI>static  inline Category &nbsp;<b><A HREF="#ref11">categoryValue</A></b> (const char* c) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref12">typeText</A></b> (Type t) 
+</LI>
+<LI>static  inline Type &nbsp;<b><A HREF="#ref13">typeValue</A></b> (const char* t) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds an identity for a JID
+</p>
+<A NAME="Category"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Category</strong> {	Account,                         
+	Client,                          
+	Component,                       
+	Gateway,                         
+	CategoryUnknown
+    }
+</td><td align="right"><h3><strong>Category</strong></h3></td></tr></table><p></p><p>
+ JID category enumeration
+     </p>
+<A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	AccountRegistered,               
+	ClientPhone,                     
+	ComponentGeneric,                
+	ComponentPresence,               
+	GatewayGeneric,                  
+	TypeUnknown
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ JID type enumeration
+     </p>
+<A NAME="JIDIdentity"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>JIDIdentity</strong> (Category c, Type t, const char* name = 0)
+<br></td><td align="right"><h3><strong>JIDIdentity</strong></h3></td></tr></table><p></p><p>
+ Constructor. Build a JID identity
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>c</i></TD><TD align="left" valign="top">The JID's category
+</TD></TR>
+<TR><TD align="left" valign="top"><i>t</i></TD><TD align="left" valign="top">The JID's type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of this identity
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JIDIdentity"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JIDIdentity</strong> ()
+<br></td><td align="right"><h3><strong>~JIDIdentity</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="toXML"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMLElement* &nbsp;<strong>toXML</strong> ()
+<br></td><td align="right"><h3><strong>toXML</strong></h3></td></tr></table><p></p><p>
+ Build an XML element from this identity
+</p>
+<p><b>Returns</b>: A valid XML element
+     </p>
+<A NAME="fromXML"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>fromXML</strong> (const XMLElement* element)
+<br></td><td align="right"><h3><strong>fromXML</strong></h3></td></tr></table><p></p><p>
+ Build this identity from an XML element
+</p>
+<p><b>Returns</b>: True on succes
+     </p>
+<A NAME="toString"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this object
+</p>
+<p><b>Returns</b>: This object's name
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="getObject"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer from this object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The requested pointer's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Requested pointer or 0
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="setName"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setName</strong> (const char* name)
+<br></td><td align="right"><h3><strong>setName</strong></h3></td></tr></table><p></p><p>
+ Set the name of this identity
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">New identity name
+     </TD></TR>
+</TABLE></P>
+<A NAME="categoryText"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>categoryText</strong> (Category c)
+<br></td><td align="right"><h3><strong>categoryText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Lookup for a text associated with a given category
+</p>
+<p><b>Returns</b>: The category's name
+     </p>
+<A NAME="categoryValue"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline Category &nbsp;<strong>categoryValue</strong> (const char* c)
+<br></td><td align="right"><h3><strong>categoryValue</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Lookup for a value associated with a given category name
+</p>
+<p><b>Returns</b>: The category's value
+     </p>
+<A NAME="typeText"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeText</strong> (Type t)
+<br></td><td align="right"><h3><strong>typeText</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Lookup for a text associated with a given category type
+</p>
+<p><b>Returns</b>: The category's type name
+     </p>
+<A NAME="typeValue"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline Type &nbsp;<strong>typeValue</strong> (const char* t)
+<br></td><td align="right"><h3><strong>typeValue</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Lookup for a value associated with a given category type
+</p>
+<p><b>Returns</b>: The category's type value
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

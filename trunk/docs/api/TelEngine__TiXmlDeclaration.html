@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlDeclaration</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlDeclaration</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"> In correct XML the declaration is the first entry in the file. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlDeclaration</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__TiXmlNode.html">TelEngine::TiXmlNode</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlDeclaration.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">TiXmlDeclaration</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">TiXmlDeclaration</A></b> (	const std::string& _version,
+						const std::string& _encoding,
+						const std::string& _standalone ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">TiXmlDeclaration</A></b> (	const char* _version,
+						const char* _encoding,
+						const char* _standalone ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">TiXmlDeclaration</A></b> ( const TiXmlDeclaration& copy ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">operator=</A></b> ( const TiXmlDeclaration& copy ) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref6">~TiXmlDeclaration</A></b> () 
+</LI>
+<LI>const char *&nbsp;<b><A HREF="#ref7">Version</A></b> ()  const
+</LI>
+<LI>const char *&nbsp;<b><A HREF="#ref8">Encoding</A></b> ()  const
+</LI>
+<LI>const char *&nbsp;<b><A HREF="#ref9">Standalone</A></b> ()  const
+</LI>
+<LI>virtual  TiXmlNode* &nbsp;<b><A HREF="#ref10">Clone</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">Print</A></b> ( FILE* cfile, int depth )  const
+</LI>
+<LI>virtual  const char* &nbsp;<b><A HREF="#ref12">Parse</A></b> ( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding ) 
+</LI>
+<LI>virtual  const TiXmlDeclaration* &nbsp;<b><A HREF="#ref13">ToDeclaration</A></b> ()  const
+</LI>
+<LI>virtual  TiXmlDeclaration*       &nbsp;<b><A HREF="#ref14">ToDeclaration</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref17">StreamOut</A></b> ( TIXML_OSTREAM * out, bool unclosed = false )  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref15">CopyTo</A></b> ( TiXmlDeclaration* target )  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref16">StreamIn</A></b> ( TIXML_ISTREAM * in, TIXML_STRING * tag ) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p> In correct XML the declaration is the first entry in the file.
+	@verbatim
+		<?xml version="1.0" standalone="yes"?>
+	@endverbatim
+</p>
+<p>	TinyXml will happily read or write files without a declaration,
+	however. There are 3 possible attributes to the declaration:
+	version, encoding, and standalone.
+</p>
+<p>	Note: In this version of the code, the attributes are
+	handled as special cases, not generic attributes, simply
+	because there can only be at most 3 and they are always the same.
+</p>
+<A NAME="TiXmlDeclaration"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>TiXmlDeclaration</strong></h3></td></tr></table><p></p><A NAME="TiXmlDeclaration"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDeclaration</strong> (	const std::string& _version,
+						const std::string& _encoding,
+						const std::string& _standalone )
+<br></td><td align="right"><h3><strong>TiXmlDeclaration</strong></h3></td></tr></table><p></p><A NAME="TiXmlDeclaration"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDeclaration</strong> (	const char* _version,
+						const char* _encoding,
+						const char* _standalone )
+<br></td><td align="right"><h3><strong>TiXmlDeclaration</strong></h3></td></tr></table><p></p><A NAME="TiXmlDeclaration"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDeclaration</strong> ( const TiXmlDeclaration& copy )
+<br></td><td align="right"><h3><strong>TiXmlDeclaration</strong></h3></td></tr></table><p></p><A NAME="operator="></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>operator=</strong> ( const TiXmlDeclaration& copy )
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#operator=">TiXmlNode</A>.</p>
+<A NAME="~TiXmlDeclaration"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~TiXmlDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>~TiXmlDeclaration</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="Version"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char *&nbsp;<strong>Version</strong> ()
+<br></td><td align="right"><h3><strong>Version</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Encoding"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char *&nbsp;<strong>Encoding</strong> ()
+<br></td><td align="right"><h3><strong>Encoding</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Standalone"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char *&nbsp;<strong>Standalone</strong> ()
+<br></td><td align="right"><h3><strong>Standalone</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Clone"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlNode* &nbsp;<strong>Clone</strong> ()
+<br></td><td align="right"><h3><strong>Clone</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#Clone">TiXmlNode</A>.</p>
+<A NAME="Print"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>Print</strong> ( FILE* cfile, int depth )
+<br></td><td align="right"><h3><strong>Print</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Print">TiXmlBase</A>.</p>
+<A NAME="Parse"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>Parse</strong> ( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>Parse</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Parse">TiXmlBase</A>.</p>
+<A NAME="ToDeclaration"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlDeclaration* &nbsp;<strong>ToDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>ToDeclaration</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#ToDeclaration">TiXmlNode</A>.</p>
+<A NAME="ToDeclaration"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlDeclaration*       &nbsp;<strong>ToDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>ToDeclaration</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#ToDeclaration">TiXmlNode</A>.</p>
+<A NAME="CopyTo"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>CopyTo</strong> ( TiXmlDeclaration* target )
+<br></td><td align="right"><h3><strong>CopyTo</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#CopyTo">TiXmlNode</A>.</p>
+<A NAME="StreamIn"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamIn</strong> ( TIXML_ISTREAM * in, TIXML_STRING * tag )
+<br></td><td align="right"><h3><strong>StreamIn</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#StreamIn">TiXmlNode</A>.</p>
+<A NAME="StreamOut"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamOut</strong> ( TIXML_OSTREAM * out, bool unclosed = false )
+<br></td><td align="right"><h3><strong>StreamOut</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#StreamOut">TiXmlBase</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

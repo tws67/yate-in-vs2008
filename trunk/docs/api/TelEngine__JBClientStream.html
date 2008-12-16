@@ -1,0 +1,172 @@
+<HTML>
+<HEAD>
+<TITLE>class JBClientStream</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBClientStream</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber client to server stream. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBClientStream</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__JBStream.html">TelEngine::JBStream</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBClientStream.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref2">~JBClientStream</A></b> () 
+</LI>
+<LI>inline XMPPUserRoster* &nbsp;<b><A HREF="#ref3">roster</A></b> () 
+</LI>
+<LI>inline JIDResource* &nbsp;<b><A HREF="#ref4">getResource</A></b> () 
+</LI>
+<LI>XMPPUser* &nbsp;<b><A HREF="#ref5">getRemote</A></b> (const JabberID& jid) 
+</LI>
+<LI>virtual  Error &nbsp;<b><A HREF="#ref6">sendStanza</A></b> (XMLElement* stanza, const char* senderId = 0) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref7">JBClientStream</A></b> (JBEngine* engine, XMPPServerInfo& info, const JabberID& jid,
+	const NamedList& params) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref8">JBClientStream</A></b> (JBEngine* engine, const JabberID& jid,
+	const String& password, const SocketAddr& address,
+	bool autoRestart, unsigned int maxRestart, <A HREF="#u_int64_t">u_int64_t</A> incRestartInterval,
+	bool allowPlainAuth = false, bool outgoing = true) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">streamRunning</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref10">processRunning</A></b> (XMLElement* xml) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref11">checkDestination</A></b> (XMLElement* xml, bool& respond) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a Jabber client stream used to connect an user to its server
+</p>
+<A NAME="~JBClientStream"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBClientStream</strong> ()
+<br></td><td align="right"><h3><strong>~JBClientStream</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="roster"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline XMPPUserRoster* &nbsp;<strong>roster</strong> ()
+<br></td><td align="right"><h3><strong>roster</strong></h3></td></tr></table><p></p><p>
+ Get the roster of this stream's client
+</p>
+<p><b>Returns</b>: Valid XMPPUserRoster
+     </p>
+<A NAME="getResource"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JIDResource* &nbsp;<strong>getResource</strong> ()
+<br></td><td align="right"><h3><strong>getResource</strong></h3></td></tr></table><p></p><p>
+ Get the client's resource
+</p>
+<p><b>Returns</b>: The client's resource
+     </p>
+<A NAME="getRemote"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>XMPPUser* &nbsp;<strong>getRemote</strong> (const JabberID& jid)
+<br></td><td align="right"><h3><strong>getRemote</strong></h3></td></tr></table><p></p><p>
+ Get a remote user from roster
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">The user's bare jid
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Referenced XMPPUser object or 0 if not found
+     </p>
+<A NAME="sendStanza"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Error &nbsp;<strong>sendStanza</strong> (XMLElement* stanza, const char* senderId = 0)
+<br></td><td align="right"><h3><strong>sendStanza</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Send a stanza. This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>stanza</i></TD><TD align="left" valign="top">Element to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>senderId</i></TD><TD align="left" valign="top">Optional sender's id. Used for notification events
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The result of posting the stanza
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__JBStream.html#sendStanza">JBStream</A>.</p>
+<A NAME="JBClientStream"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBClientStream</strong> (JBEngine* engine, XMPPServerInfo& info, const JabberID& jid,
+	const NamedList& params)
+<br></td><td align="right"><h3><strong>JBClientStream</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor. Build an outgoing stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>info</i></TD><TD align="left" valign="top">Structure containing data used to connect to remote server
+</TD></TR>
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">Client's full Jabber ID
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Other stream parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="JBClientStream"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBClientStream</strong> (JBEngine* engine, const JabberID& jid,
+	const String& password, const SocketAddr& address,
+	bool autoRestart, unsigned int maxRestart, <A HREF="#u_int64_t">u_int64_t</A> incRestartInterval,
+	bool allowPlainAuth = false, bool outgoing = true)
+<br></td><td align="right"><h3><strong>JBClientStream</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine that owns this stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>jid</i></TD><TD align="left" valign="top">User's JID
+</TD></TR>
+<TR><TD align="left" valign="top"><i>password</i></TD><TD align="left" valign="top">Password used for authentication
+</TD></TR>
+<TR><TD align="left" valign="top"><i>address</i></TD><TD align="left" valign="top">The remote address to connect to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>autoRestart</i></TD><TD align="left" valign="top">True to auto restart the stream
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxRestart</i></TD><TD align="left" valign="top">The maximum restart attempts allowed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>incRestartInterval</i></TD><TD align="left" valign="top">The interval to increase the restart counter
+</TD></TR>
+<TR><TD align="left" valign="top"><i>allowPlainAuth</i></TD><TD align="left" valign="top">Allow plain text password authentication
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">Stream direction
+     </TD></TR>
+</TABLE></P>
+<A NAME="streamRunning"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>streamRunning</strong> ()
+<br></td><td align="right"><h3><strong>streamRunning</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Notification from parent when steam is authenticated: get roster from server
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__JBStream.html#streamRunning">JBStream</A>.</p>
+<A NAME="processRunning"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processRunning</strong> (XMLElement* xml)
+<br></td><td align="right"><h3><strong>processRunning</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a received stanza in Running state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">Valid XMLElement pointer
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__JBStream.html#processRunning">JBStream</A>.</p>
+<A NAME="checkDestination"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>checkDestination</strong> (XMLElement* xml, bool& respond)
+<br></td><td align="right"><h3><strong>checkDestination</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Check the 'to' attribute of a received element against the local jid.
+ Accept empty or bare/full jid match. Set the 'to' attribute to local jid if empty
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>xml</i></TD><TD align="left" valign="top">The received element
+</TD></TR>
+<TR><TD align="left" valign="top"><i>respond</i></TD><TD align="left" valign="top">Action to be taken if not accepted. Always false on exit
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False to reject it
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__JBStream.html#checkDestination">JBStream</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

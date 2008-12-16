@@ -1,0 +1,173 @@
+<HTML>
+<HEAD>
+<TITLE>class XMPPDirVal</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class XMPPDirVal</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Direction flags. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::XMPPDirVal</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___xmpputils_h.html">libs/yjingle/xmpputils.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__XMPPDirVal.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Direction</A> {	None = 0,
+	To   = 1,
+	From = 2,
+	Both = 3,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">XMPPDirVal</A></b> (int flags = None) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">XMPPDirVal</A></b> (const char* name) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref4">replace</A></b> (int flag) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">replace</A></b> (const char* name) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref6">set</A></b> (int flag) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref7">reset</A></b> (int flag) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">flag</A></b> (int mask)  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref9">to</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">from</A></b> ()  const
+</LI>
+<LI>inline operator &nbsp;<b><A HREF="#ref11">int</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref12">lookup</A></b> (int flag, const char* defVal = "") 
+</LI>
+<LI>static  inline int &nbsp;<b><A HREF="#ref13">lookup</A></b> (const char* name, int defVal = None) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref14">s_names[]</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class holds a 4-state direction value (such as subscription states)
+</p>
+<A NAME="Direction"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Direction</strong> {	None = 0,
+	To   = 1,
+	From = 2,
+	Both = 3,
+    }
+</td><td align="right"><h3><strong>Direction</strong></h3></td></tr></table><p></p><A NAME="XMPPDirVal"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>XMPPDirVal</strong> (int flags = None)
+<br></td><td align="right"><h3><strong>XMPPDirVal</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">Flag(s) to set
+     </TD></TR>
+</TABLE></P>
+<A NAME="XMPPDirVal"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>XMPPDirVal</strong> (const char* name)
+<br></td><td align="right"><h3><strong>XMPPDirVal</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the flag used to initialize this object
+     </TD></TR>
+</TABLE></P>
+<A NAME="replace"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>replace</strong> (int flag)
+<br></td><td align="right"><h3><strong>replace</strong></h3></td></tr></table><p></p><p>
+ Replace all flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>flag</i></TD><TD align="left" valign="top">The new value of the flags
+     </TD></TR>
+</TABLE></P>
+<A NAME="replace"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>replace</strong> (const char* name)
+<br></td><td align="right"><h3><strong>replace</strong></h3></td></tr></table><p></p><p>
+ Replace all flags from a value's name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The name of the flag used to replace this value
+     </TD></TR>
+</TABLE></P>
+<A NAME="set"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>set</strong> (int flag)
+<br></td><td align="right"><h3><strong>set</strong></h3></td></tr></table><p></p><p>
+ Set one or more flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>flag</i></TD><TD align="left" valign="top">Flag(s) to set
+     </TD></TR>
+</TABLE></P>
+<A NAME="reset"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>reset</strong> (int flag)
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p></p><p>
+ Reset one or more flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>flag</i></TD><TD align="left" valign="top">Flag(s) to reset
+     </TD></TR>
+</TABLE></P>
+<A NAME="flag"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>flag</strong> (int mask)
+<br></td><td align="right"><h3><strong>flag</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a given bit mask is set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mask</i></TD><TD align="left" valign="top">Bit mask to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given bit mask is set
+     </p>
+<A NAME="to"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>to</strong> ()
+<br></td><td align="right"><h3><strong>to</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the 'To' flag is set
+</p>
+<p><b>Returns</b>: True if the 'To' flag is set
+     </p>
+<A NAME="from"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>from</strong> ()
+<br></td><td align="right"><h3><strong>from</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the 'From' flag is set
+</p>
+<p><b>Returns</b>: True if the 'From' flag is set
+     </p>
+<A NAME="int"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline operator &nbsp;<strong>int</strong> ()
+<br></td><td align="right"><h3><strong>int</strong></h3></td></tr></table><p></p><p>
+ Cast operator
+     </p>
+<A NAME="lookup"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>lookup</strong> (int flag, const char* defVal = "")
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the name of a flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>flag</i></TD><TD align="left" valign="top">The flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The name of the requested flag
+     </p>
+<A NAME="lookup"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline int &nbsp;<strong>lookup</strong> (const char* name, int defVal = None)
+<br></td><td align="right"><h3><strong>lookup</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the value associated with a flag name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The flag name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The value of the requested flag name
+     </p>
+<A NAME="s_names[]"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_names[]</strong>
+</td><td align="right"><h3><strong>s_names[]</strong></h3></td></tr></table><p></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

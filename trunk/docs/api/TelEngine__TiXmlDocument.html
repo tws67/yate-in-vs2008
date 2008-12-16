@@ -1,0 +1,210 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlDocument</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlDocument</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"> Always the top level node. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlDocument</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__TiXmlNode.html">TelEngine::TiXmlNode</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__XMLParser.html">XMLParser</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlDocument.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">TiXmlDocument</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref2">TiXmlDocument</A></b> ( const char * documentName ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">TiXmlDocument</A></b> ( const std::string& documentName ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">TiXmlDocument</A></b> ( const TiXmlDocument& copy ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref5">operator=</A></b> ( const TiXmlDocument& copy ) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref6">~TiXmlDocument</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">LoadFile</A></b> ( TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">SaveFile</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">LoadFile</A></b> ( const char * filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">SaveFile</A></b> ( const char * filename )  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">LoadFile</A></b> ( FILE*, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref12">SaveFile</A></b> ( FILE* )  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">LoadFile</A></b> ( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">SaveFile</A></b> ( const std::string& filename )  const
+</LI>
+<LI>virtual  const char* &nbsp;<b><A HREF="#ref15">Parse</A></b> ( const char* p, TiXmlParsingData* data = 0, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING ) 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref16">RootElement</A></b> ()  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref17">RootElement</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">Error</A></b> ()  const
+</LI>
+<LI>const char * &nbsp;<b><A HREF="#ref19">ErrorDesc</A></b> ()  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref20">ErrorId</A></b> ()  const
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref21">ErrorRow</A></b> () 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref22">ErrorCol</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">SetTabSize</A></b> ( int _tabsize ) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref24">TabSize</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">ClearError</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref26">Print</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref27">Print</A></b> ( FILE* cfile, int depth = 0 )  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref28">SetError</A></b> ( int err, const char* errorLocation, TiXmlParsingData* prevData, TiXmlEncoding encoding ) 
+</LI>
+<LI>virtual  const TiXmlDocument*    &nbsp;<b><A HREF="#ref29">ToDocument</A></b> ()  const
+</LI>
+<LI>virtual  TiXmlDocument*          &nbsp;<b><A HREF="#ref30">ToDocument</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref31">StreamOut</A></b> ( TIXML_OSTREAM * out, bool unclosed = false )  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  TiXmlNode* &nbsp;<b><A HREF="#ref32">Clone</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref33">StreamIn</A></b> ( TIXML_ISTREAM * in, TIXML_STRING * tag ) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p> Always the top level node. A document binds together all the
+	XML pieces. It can be saved, loaded, and printed to the screen.
+	The 'value' of a document node is the xml file name.
+</p>
+<A NAME="TiXmlDocument"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDocument</strong> ()
+<br></td><td align="right"><h3><strong>TiXmlDocument</strong></h3></td></tr></table><p></p><A NAME="TiXmlDocument"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDocument</strong> ( const char * documentName )
+<br></td><td align="right"><h3><strong>TiXmlDocument</strong></h3></td></tr></table><p></p><A NAME="TiXmlDocument"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDocument</strong> ( const std::string& documentName )
+<br></td><td align="right"><h3><strong>TiXmlDocument</strong></h3></td></tr></table><p></p><A NAME="TiXmlDocument"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlDocument</strong> ( const TiXmlDocument& copy )
+<br></td><td align="right"><h3><strong>TiXmlDocument</strong></h3></td></tr></table><p></p><A NAME="operator="></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>operator=</strong> ( const TiXmlDocument& copy )
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#operator=">TiXmlNode</A>.</p>
+<A NAME="~TiXmlDocument"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~TiXmlDocument</strong> ()
+<br></td><td align="right"><h3><strong>~TiXmlDocument</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="LoadFile"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>LoadFile</strong> ( TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )
+<br></td><td align="right"><h3><strong>LoadFile</strong></h3></td></tr></table><p></p><p> Load a file using the current document value.
+		Returns true if successful. Will delete any existing
+		document data before loading.
+	</p>
+<A NAME="SaveFile"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>SaveFile</strong> ()
+<br></td><td align="right"><h3><strong>SaveFile</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="LoadFile"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>LoadFile</strong> ( const char * filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )
+<br></td><td align="right"><h3><strong>LoadFile</strong></h3></td></tr></table><p></p><A NAME="SaveFile"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>SaveFile</strong> ( const char * filename )
+<br></td><td align="right"><h3><strong>SaveFile</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="LoadFile"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>LoadFile</strong> ( FILE*, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )
+<br></td><td align="right"><h3><strong>LoadFile</strong></h3></td></tr></table><p></p><p> Load a file using the given FILE*. Returns true if successful. Note that this method
+		doesn't stream - the entire object pointed at by the FILE*
+		will be interpreted as an XML file. TinyXML doesn't stream in XML from the current
+		file location. Streaming may be added in the future.
+	</p>
+<A NAME="SaveFile"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>SaveFile</strong> ( FILE* )
+<br></td><td align="right"><h3><strong>SaveFile</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="LoadFile"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>LoadFile</strong> ( const std::string& filename, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )
+<br></td><td align="right"><h3><strong>LoadFile</strong></h3></td></tr></table><p></p><A NAME="SaveFile"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>SaveFile</strong> ( const std::string& filename )
+<br></td><td align="right"><h3><strong>SaveFile</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="Parse"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>Parse</strong> ( const char* p, TiXmlParsingData* data = 0, TiXmlEncoding encoding = TIXML_DEFAULT_ENCODING )
+<br></td><td align="right"><h3><strong>Parse</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p> Parse the given null terminated block of xml data. Passing in an encoding to this
+		method (either TIXML_ENCODING_LEGACY or TIXML_ENCODING_UTF8 will force TinyXml
+		to use that encoding, regardless of what TinyXml might otherwise try to detect.
+</p>
+<p><b>Returns</b>: The location where parsing stopped. On error, this is the start point of the first level node that generated the error.
+	</p>
+<p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Parse">TiXmlBase</A>.</p>
+<A NAME="RootElement"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>RootElement</strong> ()
+<br></td><td align="right"><h3><strong>RootElement</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Get the root element -- the only top level element -- of the document.
+		In well formed XML, there should only be one. TinyXml is tolerant of
+		multiple elements at the document level.
+	</p>
+<A NAME="RootElement"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>RootElement</strong> ()
+<br></td><td align="right"><h3><strong>RootElement</strong></h3></td></tr></table><p></p><A NAME="Error"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>Error</strong> ()
+<br></td><td align="right"><h3><strong>Error</strong></h3></td></tr></table><p> <small>[const]</small></p><p> If an error occurs, Error will be set to true. Also,
+		- The ErrorId() will contain the integer identifier of the error (not generally useful)
+		- The ErrorDesc() method will return the name of the error. (very useful)
+		- The ErrorRow() and ErrorCol() will return the location of the error (if known)
+	</p>
+<A NAME="ErrorDesc"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char * &nbsp;<strong>ErrorDesc</strong> ()
+<br></td><td align="right"><h3><strong>ErrorDesc</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="ErrorId"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>ErrorId</strong> ()
+<br></td><td align="right"><h3><strong>ErrorId</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Generally, you probably want the error string ( ErrorDesc() ). But if you
+		prefer the ErrorId, this function will fetch it.
+	</p>
+<A NAME="ErrorRow"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>ErrorRow</strong> ()
+<br></td><td align="right"><h3><strong>ErrorRow</strong></h3></td></tr></table><p></p><p> Returns the location (if known) of the error. The first column is column 1, 
+		and the first row is row 1. A value of 0 means the row and column wasn't applicable
+		(memory errors, for example, have no row/column) or the parser lost the error. (An
+		error in the error reporting, in that case.)
+</p>
+<p>		@sa SetTabSize, Row, Column
+	</p>
+<A NAME="ErrorCol"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>ErrorCol</strong> ()
+<br></td><td align="right"><h3><strong>ErrorCol</strong></h3></td></tr></table><p></p><A NAME="SetTabSize"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetTabSize</strong> ( int _tabsize )
+<br></td><td align="right"><h3><strong>SetTabSize</strong></h3></td></tr></table><p></p><p> SetTabSize() allows the error reporting functions (ErrorRow() and ErrorCol())
+		to report the correct values for row and column. It does not change the output
+		or input in any way.
+</p>
+<p>		By calling this method, with a tab size
+		greater than 0, the row and column of each node and attribute is stored
+		when the file is loaded. Very useful for tracking the DOM back in to
+		the source file.
+</p>
+<p>		The tab size is required for calculating the location of nodes. If not
+		set, the default of 4 is used. The tabsize is set per document. Setting
+		the tabsize to 0 disables row/column tracking.
+</p>
+<p>		Note that row and column tracking is not supported when using operator>>.
+</p>
+<p>		The tab size needs to be enabled before the parse or load. Correct usage:
+		@verbatim
+		TiXmlDocument doc;
+		doc.SetTabSize( 8 );
+		doc.Load( "myfile.xml" );
+		@endverbatim
+</p>
+<p>		@sa Row, Column
+	</p>
+<A NAME="TabSize"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>TabSize</strong> ()
+<br></td><td align="right"><h3><strong>TabSize</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="ClearError"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>ClearError</strong> ()
+<br></td><td align="right"><h3><strong>ClearError</strong></h3></td></tr></table><p></p><p> If you have handled the error, it can be reset with this call. The error
+		state is automatically cleared if you Parse a new XML block.
+	</p>
+<A NAME="Print"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Print</strong> ()
+<br></td><td align="right"><h3><strong>Print</strong></h3></td></tr></table><p> <small>[const]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Print">TiXmlBase</A>.</p>
+<A NAME="Print"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>Print</strong> ( FILE* cfile, int depth = 0 )
+<br></td><td align="right"><h3><strong>Print</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Print">TiXmlBase</A>.</p>
+<A NAME="SetError"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetError</strong> ( int err, const char* errorLocation, TiXmlParsingData* prevData, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>SetError</strong></h3></td></tr></table><p></p><A NAME="ToDocument"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlDocument*    &nbsp;<strong>ToDocument</strong> ()
+<br></td><td align="right"><h3><strong>ToDocument</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#ToDocument">TiXmlNode</A>.</p>
+<A NAME="ToDocument"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlDocument*          &nbsp;<strong>ToDocument</strong> ()
+<br></td><td align="right"><h3><strong>ToDocument</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#ToDocument">TiXmlNode</A>.</p>
+<A NAME="StreamOut"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamOut</strong> ( TIXML_OSTREAM * out, bool unclosed = false )
+<br></td><td align="right"><h3><strong>StreamOut</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#StreamOut">TiXmlBase</A>.</p>
+<A NAME="Clone"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlNode* &nbsp;<strong>Clone</strong> ()
+<br></td><td align="right"><h3><strong>Clone</strong></h3></td></tr></table><p> <small>[protected const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#Clone">TiXmlNode</A>.</p>
+<A NAME="StreamIn"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamIn</strong> ( TIXML_ISTREAM * in, TIXML_STRING * tag )
+<br></td><td align="right"><h3><strong>StreamIn</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#StreamIn">TiXmlNode</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

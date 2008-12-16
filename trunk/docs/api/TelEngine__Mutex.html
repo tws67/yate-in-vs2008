@@ -1,0 +1,156 @@
+<HTML>
+<HEAD>
+<TITLE>class Mutex</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class Mutex</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Mutex support. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::Mutex</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yateclass_h.html">yateclass.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__AnalogLine.html">AnalogLine</A>, <A HREF="TelEngine__AnalogLineGroup.html">AnalogLineGroup</A>, <i><A HREF="TelEngine__ChanAssistList.html">ChanAssistList</A></i>, <A HREF="TelEngine__ClientAccount.html">ClientAccount</A>, <A HREF="TelEngine__ClientAccountList.html">ClientAccountList</A>, <i><A HREF="TelEngine__ClientDriver.html">ClientDriver</A></i>, <i><A HREF="TelEngine__Driver.html">Driver</A></i>, <A HREF="TelEngine__IAXEngine.html">IAXEngine</A>, <A HREF="TelEngine__IAXMetaTrunkFrame.html">IAXMetaTrunkFrame</A>, <A HREF="TelEngine__IAXTransaction.html">IAXTransaction</A>, <A HREF="TelEngine__ISDNQ931.html">ISDNQ931</A>, <A HREF="TelEngine__ISDNQ931Monitor.html">ISDNQ931Monitor</A>, <A HREF="TelEngine__JBEngine.html">JBEngine</A>, <A HREF="TelEngine__JBMessage.html">JBMessage</A>, <A HREF="TelEngine__JBPresence.html">JBPresence</A>, <A HREF="TelEngine__JBService.html">JBService</A>, <A HREF="TelEngine__JGEngine.html">JGEngine</A>, <A HREF="TelEngine__JGSession.html">JGSession</A>, <A HREF="TelEngine__JIDResourceList.html">JIDResourceList</A>, <A HREF="TelEngine__MGCPEngine.html">MGCPEngine</A>, <A HREF="TelEngine__MGCPTransaction.html">MGCPTransaction</A>, <A HREF="TelEngine__Module.html">Module</A>, <A HREF="TelEngine__RTPGroup.html">RTPGroup</A>, <A HREF="TelEngine__SS7BICC.html">SS7BICC</A>, <A HREF="TelEngine__SS7ISUP.html">SS7ISUP</A>, <A HREF="TelEngine__SS7MTP2.html">SS7MTP2</A>, <A HREF="TelEngine__SS7MTP3.html">SS7MTP3</A>, <A HREF="TelEngine__SS7Router.html">SS7Router</A>, <A HREF="TelEngine__SS7TUP.html">SS7TUP</A>, <A HREF="TelEngine__SignallingCallControl.html">SignallingCallControl</A>, <A HREF="TelEngine__SignallingCircuitGroup.html">SignallingCircuitGroup</A>, <A HREF="TelEngine__SignallingEngine.html">SignallingEngine</A>, <A HREF="TelEngine__XMLParser.html">XMLParser</A>, <A HREF="TelEngine__XMPPUser.html">XMPPUser</A>, <A HREF="TelEngine__XMPPUserRoster.html">XMPPUserRoster</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__Mutex.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">Mutex</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">Mutex</A></b> (bool recursive) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">Mutex</A></b> (const Mutex& original) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">~Mutex</A></b> () 
+</LI>
+<LI>Mutex& &nbsp;<b><A HREF="#ref6">operator=</A></b> (const Mutex& original) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">lock</A></b> (long maxwait = -1) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">unlock</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">locked</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">check</A></b> (long maxwait = -1) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref11">recursive</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  int &nbsp;<b><A HREF="#ref12">count</A></b> () 
+</LI>
+<LI>static  int &nbsp;<b><A HREF="#ref13">locks</A></b> () 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref14">wait</A></b> (unsigned long maxwait) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A simple mutual exclusion for locking access between threads
+</p>
+<A NAME="Mutex"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Mutex</strong> ()
+<br></td><td align="right"><h3><strong>Mutex</strong></h3></td></tr></table><p></p><p>
+ Construct a new unlocked fast mutex
+     </p>
+<A NAME="Mutex"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Mutex</strong> (bool recursive)
+<br></td><td align="right"><h3><strong>Mutex</strong></h3></td></tr></table><p></p><p>
+ Construct a new unlocked mutex
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>recursive</i></TD><TD align="left" valign="top">True if the mutex has to be recursive (reentrant),
+  false for a normal fast mutex
+     </TD></TR>
+</TABLE></P>
+<A NAME="Mutex"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>Mutex</strong> (const Mutex& original)
+<br></td><td align="right"><h3><strong>Mutex</strong></h3></td></tr></table><p></p><p>
+ Copy constructor creates a shared mutex
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Reference of the mutex to share
+     </TD></TR>
+</TABLE></P>
+<A NAME="~Mutex"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>~Mutex</strong> ()
+<br></td><td align="right"><h3><strong>~Mutex</strong></h3></td></tr></table><p></p><p>
+ Destroy the mutex
+     </p>
+<A NAME="operator="></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex& &nbsp;<strong>operator=</strong> (const Mutex& original)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator makes the mutex shared with the original
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>original</i></TD><TD align="left" valign="top">Reference of the mutex to share
+     </TD></TR>
+</TABLE></P>
+<A NAME="lock"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>lock</strong> (long maxwait = -1)
+<br></td><td align="right"><h3><strong>lock</strong></h3></td></tr></table><p></p><p>
+ Attempt to lock the mutex and eventually wait for it
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for the mutex, -1 wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully locked, false on failure
+     </p>
+<A NAME="unlock"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>unlock</strong> ()
+<br></td><td align="right"><h3><strong>unlock</strong></h3></td></tr></table><p></p><p>
+ Unlock the mutex, does never wait
+     </p>
+<A NAME="locked"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>locked</strong> ()
+<br></td><td align="right"><h3><strong>locked</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the mutex is currently locked - as it's asynchronous it
+  guarantees nothing if other thread changes the mutex's status
+</p>
+<p><b>Returns</b>: True if the mutex was locked when the function was called
+     </p>
+<A NAME="check"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>check</strong> (long maxwait = -1)
+<br></td><td align="right"><h3><strong>check</strong></h3></td></tr></table><p></p><p>
+ Check if the mutex is unlocked (try to lock and unlock the mutex)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Time in microseconds to wait for the mutex, -1 wait forever
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully locked and unlocked, false on failure
+     </p>
+<A NAME="recursive"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>recursive</strong> ()
+<br></td><td align="right"><h3><strong>recursive</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this mutex is recursive or not
+</p>
+<p><b>Returns</b>: True if this is a recursive mutex, false for a fast mutex
+     </p>
+<A NAME="count"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>count</strong> ()
+<br></td><td align="right"><h3><strong>count</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the number of mutexes counting the shared ones only once
+</p>
+<p><b>Returns</b>: Count of individual mutexes
+     </p>
+<A NAME="locks"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> int &nbsp;<strong>locks</strong> ()
+<br></td><td align="right"><h3><strong>locks</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the number of currently locked mutexes
+</p>
+<p><b>Returns</b>: Count of locked mutexes, should be zero at program exit
+     </p>
+<A NAME="wait"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>wait</strong> (unsigned long maxwait)
+<br></td><td align="right"><h3><strong>wait</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set a maximum mutex wait time for debugging purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>maxwait</i></TD><TD align="left" valign="top">Maximum time in microseconds to wait for any mutex
+  when no time limit was requested, zero to disable limit
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

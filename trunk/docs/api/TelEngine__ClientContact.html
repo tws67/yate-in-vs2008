@@ -1,0 +1,332 @@
+<HTML>
+<HEAD>
+<TITLE>class ClientContact</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ClientContact</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A client contact. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ClientContact</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="yatecbase_h.html">yatecbase.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ClientContact.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">ClientContact</A></b> (ClientAccount* owner, const char* id, const char* name = 0,
+	bool chat = false) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">ClientContact</A></b> (ClientAccount* owner, NamedList& params, bool chat) 
+</LI>
+<LI>inline ClientAccount* &nbsp;<b><A HREF="#ref4">account</A></b> () 
+</LI>
+<LI>inline const URI& &nbsp;<b><A HREF="#ref5">uri</A></b> ()  const
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref6">resources</A></b> () 
+</LI>
+<LI>inline ObjList& &nbsp;<b><A HREF="#ref7">groups</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref8">toString</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">buildContactId</A></b> (String& dest) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref10">isChatWnd</A></b> (Window* wnd) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">hasChat</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref12">isChatVisible</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref13">showChat</A></b> (bool active) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">createChatWindow</A></b> (bool force = false, const char* name = "chat") 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref15">destroyChatWindow</A></b> () 
+</LI>
+<LI>virtual  String* &nbsp;<b><A HREF="#ref16">findGroup</A></b> (const String& group) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref17">appendGroup</A></b> (const String& group) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref18">removeGroup</A></b> (const String& group) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref19">findResource</A></b> (const String& id, bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref20">findAudioResource</A></b> (bool ref = false) 
+</LI>
+<LI>virtual  ClientResource* &nbsp;<b><A HREF="#ref21">appendResource</A></b> (const String& id) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref22">removeResource</A></b> (const String& id) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline bool &nbsp;<b><A HREF="#ref23">isChatWndPrefix</A></b> (Window* wnd) 
+</LI>
+<LI>static  inline void &nbsp;<b><A HREF="#ref24">buildContactId</A></b> (String& dest, const String& account,
+	const String& contact) 
+</LI>
+<LI>static  inline void &nbsp;<b><A HREF="#ref25">splitContactId</A></b> (const String& src, String& account,
+	String& contact) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static String <b><A HREF="#ref26">s_chatPrefix</A></b></LI>
+<LI>String <b><A HREF="#ref27">m_name</A></b></LI>
+<LI>String <b><A HREF="#ref28">m_subscription</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref29">destroyed</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>ClientAccount* <b><A HREF="#ref30">m_owner</A></b></LI>
+<LI>String <b><A HREF="#ref31">m_id</A></b></LI>
+<LI>URI <b><A HREF="#ref32">m_uri</A></b></LI>
+<LI>ObjList <b><A HREF="#ref33">m_resources</A></b></LI>
+<LI>ObjList <b><A HREF="#ref34">m_groups</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A client contact
+ The contact is using the owner's mutex to lock it's operations
+</p>
+<A NAME="ClientContact"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ClientContact</strong> (ClientAccount* owner, const char* id, const char* name = 0,
+	bool chat = false)
+<br></td><td align="right"><h3><strong>ClientContact</strong></h3></td></tr></table><p></p><p>
+ Constructor. Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The contact's owner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The contact's id
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Optional display name. Defaults to the id's value if 0
+</TD></TR>
+<TR><TD align="left" valign="top"><i>chat</i></TD><TD align="left" valign="top">True to create the chat window
+     </TD></TR>
+</TABLE></P>
+<A NAME="ClientContact"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ClientContact</strong> (ClientAccount* owner, NamedList& params, bool chat)
+<br></td><td align="right"><h3><strong>ClientContact</strong></h3></td></tr></table><p></p><p>
+ Constructor. Build a contact from a list of parameters.
+     . Append itself to the owner's list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>owner</i></TD><TD align="left" valign="top">The contact's owner
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list of parameters used to build this contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>chat</i></TD><TD align="left" valign="top">True to create the chat window
+     </TD></TR>
+</TABLE></P>
+<A NAME="account"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ClientAccount* &nbsp;<strong>account</strong> ()
+<br></td><td align="right"><h3><strong>account</strong></h3></td></tr></table><p></p><p>
+ Get this contact's account
+</p>
+<p><b>Returns</b>: This contact's account
+     </p>
+<A NAME="uri"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const URI& &nbsp;<strong>uri</strong> ()
+<br></td><td align="right"><h3><strong>uri</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get this contact's URI
+</p>
+<p><b>Returns</b>: This contact's URI
+     </p>
+<A NAME="resources"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>resources</strong> ()
+<br></td><td align="right"><h3><strong>resources</strong></h3></td></tr></table><p></p><p>
+ Get the resource list of this contact
+</p>
+<p><b>Returns</b>: The resource list of this contact
+     </p>
+<A NAME="groups"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ObjList& &nbsp;<strong>groups</strong> ()
+<br></td><td align="right"><h3><strong>groups</strong></h3></td></tr></table><p></p><p>
+ Get the group list of this contact
+</p>
+<p><b>Returns</b>: The group list of this contact
+     </p>
+<A NAME="toString"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a string representation of this object
+</p>
+<p><b>Returns</b>: The contact's id
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="buildContactId"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>buildContactId</strong> (String& dest)
+<br></td><td align="right"><h3><strong>buildContactId</strong></h3></td></tr></table><p></p><p>
+ Build a contact id to be used in UI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+     </TD></TR>
+</TABLE></P>
+<A NAME="isChatWnd"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isChatWnd</strong> (Window* wnd)
+<br></td><td align="right"><h3><strong>isChatWnd</strong></h3></td></tr></table><p></p><p>
+ Check if a window is this contact's chat
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given window is this contact's chat
+     </p>
+<A NAME="hasChat"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hasChat</strong> ()
+<br></td><td align="right"><h3><strong>hasChat</strong></h3></td></tr></table><p></p><p>
+ Check if this contact has a chat window
+</p>
+<p><b>Returns</b>: True if this contact has a chat window
+     </p>
+<A NAME="isChatVisible"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>isChatVisible</strong> ()
+<br></td><td align="right"><h3><strong>isChatVisible</strong></h3></td></tr></table><p></p><p>
+ Check if this contact's chat window is visible
+</p>
+<p><b>Returns</b>: True if this contact's chat window is visible
+     </p>
+<A NAME="showChat"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>showChat</strong> (bool active)
+<br></td><td align="right"><h3><strong>showChat</strong></h3></td></tr></table><p></p><p>
+ Show or hide this contact's chat window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>active</i></TD><TD align="left" valign="top">The chat window's visibility flag
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="createChatWindow"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>createChatWindow</strong> (bool force = false, const char* name = "chat")
+<br></td><td align="right"><h3><strong>createChatWindow</strong></h3></td></tr></table><p></p><p>
+ Create the chat window
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>force</i></TD><TD align="left" valign="top">True to destroy the current one if any
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">The window's name
+     </TD></TR>
+</TABLE></P>
+<A NAME="destroyChatWindow"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>destroyChatWindow</strong> ()
+<br></td><td align="right"><h3><strong>destroyChatWindow</strong></h3></td></tr></table><p></p><p>
+ Close (desrtoy) the chat window
+     </p>
+<A NAME="findGroup"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td> String* &nbsp;<strong>findGroup</strong> (const String& group)
+<br></td><td align="right"><h3><strong>findGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a group this contact might belong to
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>group</i></TD><TD align="left" valign="top">The name of the group to find
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: String pointer or 0 if not found
+     </p>
+<A NAME="appendGroup"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>appendGroup</strong> (const String& group)
+<br></td><td align="right"><h3><strong>appendGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a group to this contact
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>group</i></TD><TD align="left" valign="top">Group's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the group already exists
+     </p>
+<A NAME="removeGroup"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeGroup</strong> (const String& group)
+<br></td><td align="right"><h3><strong>removeGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a contact's group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>group</i></TD><TD align="left" valign="top">Group's name
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the group was not found
+     </p>
+<A NAME="findResource"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>findResource</strong> (const String& id, bool ref = false)
+<br></td><td align="right"><h3><strong>findResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Find a resource having a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired resource
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<A NAME="findAudioResource"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>findAudioResource</strong> (bool ref = false)
+<br></td><td align="right"><h3><strong>findAudioResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get the first resource with audio capability
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ref</i></TD><TD align="left" valign="top">True to obtain a referenced pointer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if not found
+     </p>
+<A NAME="appendResource"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ClientResource* &nbsp;<strong>appendResource</strong> (const String& id)
+<br></td><td align="right"><h3><strong>appendResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Append a resource having a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired resource
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ClientResource pointer or 0 if a resource with the given name already exists
+     </p>
+<A NAME="removeResource"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeResource</strong> (const String& id)
+<br></td><td align="right"><h3><strong>removeResource</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove a resource having a given id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">The id of the desired resource
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the resource was removed
+     </p>
+<A NAME="isChatWndPrefix"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>isChatWndPrefix</strong> (Window* wnd)
+<br></td><td align="right"><h3><strong>isChatWndPrefix</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a window is a chat one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>wnd</i></TD><TD align="left" valign="top">The window to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given window's name starts with the chat refix
+     </p>
+<A NAME="buildContactId"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline void &nbsp;<strong>buildContactId</strong> (String& dest, const String& account,
+	const String& contact)
+<br></td><td align="right"><h3><strong>buildContactId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build a contact id to be used in UI
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">Account owning the contact
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">The contact's id
+     </TD></TR>
+</TABLE></P>
+<A NAME="splitContactId"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline void &nbsp;<strong>splitContactId</strong> (const String& src, String& account,
+	String& contact)
+<br></td><td align="right"><h3><strong>splitContactId</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Split a contact id
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">Source string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>account</i></TD><TD align="left" valign="top">Account name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>contact</i></TD><TD align="left" valign="top">Contact's name
+     </TD></TR>
+</TABLE></P>
+<A NAME="s_chatPrefix"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static String  <strong>s_chatPrefix</strong>
+</td><td align="right"><h3><strong>s_chatPrefix</strong></h3></td></tr></table><p></p><A NAME="m_name"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_name</strong>
+</td><td align="right"><h3><strong>m_name</strong></h3></td></tr></table><p></p><A NAME="m_subscription"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_subscription</strong>
+</td><td align="right"><h3><strong>m_subscription</strong></h3></td></tr></table><p></p><A NAME="destroyed"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="m_owner"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ClientAccount*  <strong>m_owner</strong>
+</td><td align="right"><h3><strong>m_owner</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_id"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_id</strong>
+</td><td align="right"><h3><strong>m_id</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_uri"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>URI  <strong>m_uri</strong>
+</td><td align="right"><h3><strong>m_uri</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_resources"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_resources</strong>
+</td><td align="right"><h3><strong>m_resources</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_groups"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>m_groups</strong>
+</td><td align="right"><h3><strong>m_groups</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

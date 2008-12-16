@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<TITLE>class MultiRouter</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MultiRouter</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MultiRouter</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ypbx___yatepbx_h.html">libs/ypbx/yatepbx.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__MessageReceiver.html">TelEngine::MessageReceiver</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MultiRouter.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1"></A> {	Route,
+	Execute,
+	Hangup,
+	Disconnected
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">MultiRouter</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~MultiRouter</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref4">setup</A></b> (int priority = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">received</A></b> (Message& msg, int id) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">msgRoute</A></b> (Message& msg, CallInfo& info, bool first) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">msgExecute</A></b> (Message& msg, CallInfo& info, bool first) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">msgDisconnected</A></b> (Message& msg, CallInfo& info) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">msgHangup</A></b> (Message& msg, CallInfo& info) 
+</LI>
+<LI>virtual  Message* &nbsp;<b><i><A HREF="#ref10">buildExecute</A></i></b> (CallInfo& info, bool reroute) 
+</LI>
+<LI>Message* &nbsp;<b><A HREF="#ref11">defaultExecute</A></b> (CallInfo& info, const char* route = 0) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>CallList <b><A HREF="#ref12">m_list</A></b></LI>
+<LI>Mutex <b><A HREF="#ref13">m_mutex</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><A NAME=""></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong></strong> {	Route,
+	Execute,
+	Hangup,
+	Disconnected
+    }
+</td><td align="right"><h3><strong></strong></h3></td></tr></table><p></p><A NAME="MultiRouter"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MultiRouter</strong> ()
+<br></td><td align="right"><h3><strong>MultiRouter</strong></h3></td></tr></table><p></p><A NAME="~MultiRouter"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MultiRouter</strong> ()
+<br></td><td align="right"><h3><strong>~MultiRouter</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="setup"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setup</strong> (int priority = 0)
+<br></td><td align="right"><h3><strong>setup</strong></h3></td></tr></table><p></p><A NAME="received"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>received</strong> (Message& msg, int id)
+<br></td><td align="right"><h3><strong>received</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__MessageReceiver.html#received">MessageReceiver</A>.</p>
+<A NAME="msgRoute"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgRoute</strong> (Message& msg, CallInfo& info, bool first)
+<br></td><td align="right"><h3><strong>msgRoute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="msgExecute"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgExecute</strong> (Message& msg, CallInfo& info, bool first)
+<br></td><td align="right"><h3><strong>msgExecute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="msgDisconnected"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgDisconnected</strong> (Message& msg, CallInfo& info)
+<br></td><td align="right"><h3><strong>msgDisconnected</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="msgHangup"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgHangup</strong> (Message& msg, CallInfo& info)
+<br></td><td align="right"><h3><strong>msgHangup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="buildExecute"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> Message* &nbsp;<i><strong>buildExecute</strong></i> (CallInfo& info, bool reroute)
+<br></td><td align="right"><h3><i><strong>buildExecute</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><A NAME="defaultExecute"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Message* &nbsp;<strong>defaultExecute</strong> (CallInfo& info, const char* route = 0)
+<br></td><td align="right"><h3><strong>defaultExecute</strong></h3></td></tr></table><p></p><A NAME="m_list"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>CallList  <strong>m_list</strong>
+</td><td align="right"><h3><strong>m_list</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_mutex"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex  <strong>m_mutex</strong>
+</td><td align="right"><h3><strong>m_mutex</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

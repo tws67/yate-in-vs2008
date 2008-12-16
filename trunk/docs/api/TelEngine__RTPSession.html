@@ -1,0 +1,544 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPSession</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPSession</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Full RTP session. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPSession</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__RTPProcessor.html">TelEngine::RTPProcessor</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPSession.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Direction</A> {	FullStop = 0,
+	RecvOnly = 1,
+	SendOnly = 2,
+	SendRecv = 3
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">RTPSession</A></b> () 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~RTPSession</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">rtpData</A></b> (const void* data, int len) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">rtcpData</A></b> (const void* data, int len) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">rtpRecvData</A></b> (bool marker, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">rtpRecvEvent</A></b> (int event, char key, int duration,
+	int volume, unsigned int timestamp) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref8">rtpNewPayload</A></b> (int payload, unsigned int timestamp) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">rtpNewSSRC</A></b> (<A HREF="#u_int32_t">u_int32_t</A> newSsrc, bool marker) 
+</LI>
+<LI>virtual  RTPSender* &nbsp;<b><A HREF="#ref10">createSender</A></b> () 
+</LI>
+<LI>virtual  RTPReceiver* &nbsp;<b><A HREF="#ref11">createReceiver</A></b> () 
+</LI>
+<LI>virtual  RTPTransport* &nbsp;<b><A HREF="#ref12">createTransport</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">initTransport</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">initGroup</A></b> (int msec = 0, Thread::Priority prio = Thread::Normal) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">rtpSend</A></b> (bool marker, int payload, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">rtpSendData</A></b> (bool marker, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">rtpSendEvent</A></b> (int event, int duration, int volume = 0, unsigned int timestamp = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref18">rtpSendKey</A></b> (char key, int duration, int volume = 0, unsigned int timestamp = 0) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref19">padding</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref20">padding</A></b> (int chunk) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref21">setDejitter</A></b> (unsigned int mindelay = 20, unsigned int maxdelay = 50) 
+</LI>
+<LI>inline RTPTransport* &nbsp;<b><A HREF="#ref22">transport</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">transport</A></b> (RTPTransport* trans) 
+</LI>
+<LI>inline RTPSender* &nbsp;<b><A HREF="#ref24">sender</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">sender</A></b> (RTPSender* send) 
+</LI>
+<LI>inline RTPReceiver* &nbsp;<b><A HREF="#ref26">receiver</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">receiver</A></b> (RTPReceiver* recv) 
+</LI>
+<LI>inline Direction &nbsp;<b><A HREF="#ref28">direction</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref29">direction</A></b> (Direction dir) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref30">addDirection</A></b> (Direction dir) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref31">delDirection</A></b> (Direction dir) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref32">dataPayload</A></b> (int type) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref33">eventPayload</A></b> (int type) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref34">silencePayload</A></b> (int type) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref35">localAddr</A></b> (SocketAddr& addr, bool rtcp = true) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref36">remoteAddr</A></b> (SocketAddr& addr, bool sniff = false) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref37">setTOS</A></b> (int tos) 
+</LI>
+<LI>inline Socket* &nbsp;<b><A HREF="#ref38">rtpSock</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref39">drillHole</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref40">setTimeout</A></b> (int interval) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref41">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref42">timeout</A></b> (bool initial) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An unidirectional or bidirectional RTP session
+</p>
+<A NAME="Direction"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Direction</strong> {	FullStop = 0,
+	RecvOnly = 1,
+	SendOnly = 2,
+	SendRecv = 3
+    }
+</td><td align="right"><h3><strong>Direction</strong></h3></td></tr></table><p></p><p>
+ Direction of the session
+     </p>
+<A NAME="RTPSession"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>RTPSession</strong> ()
+<br></td><td align="right"><h3><strong>RTPSession</strong></h3></td></tr></table><p></p><p>
+ Default constructor, creates a detached session
+     </p>
+<A NAME="~RTPSession"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPSession</strong> ()
+<br></td><td align="right"><h3><strong>~RTPSession</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor - shuts down the session and destroys the transport
+     </p>
+<A NAME="rtpData"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpData</strong> (const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ This method is called to process a RTP packet.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to raw RTP data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data packet
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPProcessor.html#rtpData">RTPProcessor</A>.</p>
+<A NAME="rtcpData"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtcpData</strong> (const void* data, int len)
+<br></td><td align="right"><h3><strong>rtcpData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ This method is called to process a RTCP packet.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to raw RTCP data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data packet
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPProcessor.html#rtcpData">RTPProcessor</A>.</p>
+<A NAME="rtpRecvData"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rtpRecvData</strong> (bool marker, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpRecvData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process one RTP data packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit is set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block in bytes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was handled
+     </p>
+<A NAME="rtpRecvEvent"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rtpRecvEvent</strong> (int event, char key, int duration,
+	int volume, unsigned int timestamp)
+<br></td><td align="right"><h3><strong>rtpRecvEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process one RTP event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Received event code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Received key (for events 0-16) or zero
+</TD></TR>
+<TR><TD align="left" valign="top"><i>duration</i></TD><TD align="left" valign="top">Duration of the event as number of samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>volume</i></TD><TD align="left" valign="top">Attenuation of the tone, zero for don't care
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the initial packet data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was handled
+     </p>
+<A NAME="rtpNewPayload"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpNewPayload</strong> (int payload, unsigned int timestamp)
+<br></td><td align="right"><h3><strong>rtpNewPayload</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Method called for unknown payload types just before attempting
+  to call rtpRecvData(). This is a good opportunity to change the
+  payload type and continue.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>payload</i></TD><TD align="left" valign="top">Payload number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the unexpected packet data
+     </TD></TR>
+</TABLE></P>
+<A NAME="rtpNewSSRC"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpNewSSRC</strong> (<A HREF="#u_int32_t">u_int32_t</A> newSsrc, bool marker)
+<br></td><td align="right"><h3><strong>rtpNewSSRC</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Method called when a packet with an unexpected SSRC is received
+  just before processing further. This is a good opportunity to
+  change the SSRC and continue
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newSsrc</i></TD><TD align="left" valign="top">SSRC received in packet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">True if marker bit is set in the RTP packet
+    </TD></TR>
+</TABLE></P>
+<A NAME="createSender"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> RTPSender* &nbsp;<strong>createSender</strong> ()
+<br></td><td align="right"><h3><strong>createSender</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a new RTP sender for this session.
+ Override this method to create objects derived from RTPSender.
+</p>
+<p><b>Returns</b>: Pointer to the new sender or NULL on failure
+     </p>
+<A NAME="createReceiver"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> RTPReceiver* &nbsp;<strong>createReceiver</strong> ()
+<br></td><td align="right"><h3><strong>createReceiver</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a new RTP receiver for this session.
+ Override this method to create objects derived from RTPReceiver.
+</p>
+<p><b>Returns</b>: Pointer to the new receiver or NULL on failure
+     </p>
+<A NAME="createTransport"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> RTPTransport* &nbsp;<strong>createTransport</strong> ()
+<br></td><td align="right"><h3><strong>createTransport</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Create a new RTP transport for this session.
+ Override this method to create objects derived from RTPTransport.
+</p>
+<p><b>Returns</b>: Pointer to the new transport or NULL on failure
+     </p>
+<A NAME="initTransport"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>initTransport</strong> ()
+<br></td><td align="right"><h3><strong>initTransport</strong></h3></td></tr></table><p></p><p>
+ Initialize the RTP session, attach a transport if there is none
+</p>
+<p><b>Returns</b>: True if initialized, false on some failure
+     </p>
+<A NAME="initGroup"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>initGroup</strong> (int msec = 0, Thread::Priority prio = Thread::Normal)
+<br></td><td align="right"><h3><strong>initGroup</strong></h3></td></tr></table><p></p><p>
+ Initialize the RTP session, attach a group if none is present
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msec</i></TD><TD align="left" valign="top">Minimum time to sleep in group loop in milliseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread priority to run the new group
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if initialized, false on some failure
+     </p>
+<A NAME="rtpSend"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>rtpSend</strong> (bool marker, int payload, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpSend</strong></h3></td></tr></table><p></p><p>
+ Send one RTP payload packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit must be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>payload</i></TD><TD align="left" valign="top">Payload number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="rtpSendData"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>rtpSendData</strong> (bool marker, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpSendData</strong></h3></td></tr></table><p></p><p>
+ Send one RTP data packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit must be set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="rtpSendEvent"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>rtpSendEvent</strong> (int event, int duration, int volume = 0, unsigned int timestamp = 0)
+<br></td><td align="right"><h3><strong>rtpSendEvent</strong></h3></td></tr></table><p></p><p>
+ Send one RTP event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Event code to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>duration</i></TD><TD align="left" valign="top">Duration of the event as number of samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>volume</i></TD><TD align="left" valign="top">Attenuation of the tone, zero for don't care
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data, zero to use current
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="rtpSendKey"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>rtpSendKey</strong> (char key, int duration, int volume = 0, unsigned int timestamp = 0)
+<br></td><td align="right"><h3><strong>rtpSendKey</strong></h3></td></tr></table><p></p><p>
+ Send one RTP key event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Key to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>duration</i></TD><TD align="left" valign="top">Duration of the event as number of samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>volume</i></TD><TD align="left" valign="top">Attenuation of the tone, zero for don't care
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data, zero to use current
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data sending was attempted
+     </p>
+<A NAME="padding"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>padding</strong> ()
+<br></td><td align="right"><h3><strong>padding</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the payload padding size
+</p>
+<p><b>Returns</b>: Chunk size to pad the payload to a multiple of
+     </p>
+<A NAME="padding"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>padding</strong> (int chunk)
+<br></td><td align="right"><h3><strong>padding</strong></h3></td></tr></table><p></p><p>
+ Set the padding to a multiple of a data chunk
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>chunk</i></TD><TD align="left" valign="top">Size to pad the payload to a multiple of
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the new chunk size is valid
+     </p>
+<A NAME="setDejitter"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDejitter</strong> (unsigned int mindelay = 20, unsigned int maxdelay = 50)
+<br></td><td align="right"><h3><strong>setDejitter</strong></h3></td></tr></table><p></p><p>
+ Allocate and set a new dejitter buffer for the receiver in the session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mindelay</i></TD><TD align="left" valign="top">Minimum length of the dejitter buffer in microseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxdelay</i></TD><TD align="left" valign="top">Maximum length of the dejitter buffer in microseconds
+     </TD></TR>
+</TABLE></P>
+<A NAME="transport"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RTPTransport* &nbsp;<strong>transport</strong> ()
+<br></td><td align="right"><h3><strong>transport</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the RTP/RTCP transport of data handled by this session.
+</p>
+<p><b>Returns</b>: A pointer to the RTPTransport of this session
+     </p>
+<A NAME="transport"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>transport</strong> (RTPTransport* trans)
+<br></td><td align="right"><h3><strong>transport</strong></h3></td></tr></table><p></p><p>
+ Set the RTP/RTCP transport of data handled by this session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">A pointer to the new RTPTransport for this session
+     </TD></TR>
+</TABLE></P>
+<A NAME="sender"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RTPSender* &nbsp;<strong>sender</strong> ()
+<br></td><td align="right"><h3><strong>sender</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the RTP/RTCP sender of this session
+</p>
+<p><b>Returns</b>: A pointer to the RTPSender of this session
+     </p>
+<A NAME="sender"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>sender</strong> (RTPSender* send)
+<br></td><td align="right"><h3><strong>sender</strong></h3></td></tr></table><p></p><p>
+ Set the RTP/RTCP sender of this session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>send</i></TD><TD align="left" valign="top">A pointer to the new RTPSender of this session or NULL
+     </TD></TR>
+</TABLE></P>
+<A NAME="receiver"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RTPReceiver* &nbsp;<strong>receiver</strong> ()
+<br></td><td align="right"><h3><strong>receiver</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the RTP/RTCP receiver of this session
+</p>
+<p><b>Returns</b>: A pointer to the RTPReceiver of this session
+     </p>
+<A NAME="receiver"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>receiver</strong> (RTPReceiver* recv)
+<br></td><td align="right"><h3><strong>receiver</strong></h3></td></tr></table><p></p><p>
+ Set the RTP/RTCP receiver of this session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>recv</i></TD><TD align="left" valign="top">A pointer to the new RTPReceiver of this session or NULL
+     </TD></TR>
+</TABLE></P>
+<A NAME="direction"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Direction &nbsp;<strong>direction</strong> ()
+<br></td><td align="right"><h3><strong>direction</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the direction of this session
+</p>
+<p><b>Returns</b>: Session's direction as a Direction enum
+     </p>
+<A NAME="direction"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>direction</strong> (Direction dir)
+<br></td><td align="right"><h3><strong>direction</strong></h3></td></tr></table><p></p><p>
+ Set the direction of this session. A transport must exist for this
+  method to succeed.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">New Direction for this session
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if direction was set, false if a failure occured
+     </p>
+<A NAME="addDirection"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>addDirection</strong> (Direction dir)
+<br></td><td align="right"><h3><strong>addDirection</strong></h3></td></tr></table><p></p><p>
+ Add a direction of this session. A transport must exist for this
+  method to succeed.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">New Direction to add for this session
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if direction was set, false if a failure occured
+     </p>
+<A NAME="delDirection"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>delDirection</strong> (Direction dir)
+<br></td><td align="right"><h3><strong>delDirection</strong></h3></td></tr></table><p></p><p>
+ Delete a direction of this session. A transport must exist for this
+  method to succeed.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dir</i></TD><TD align="left" valign="top">Direction to remove for this session
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if direction was set, false if a failure occured
+     </p>
+<A NAME="dataPayload"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dataPayload</strong> (int type)
+<br></td><td align="right"><h3><strong>dataPayload</strong></h3></td></tr></table><p></p><p>
+ Set the data payload type for both receiver and sender.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Payload type, -1 to disable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed, false if invalid payload type
+     </p>
+<A NAME="eventPayload"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>eventPayload</strong> (int type)
+<br></td><td align="right"><h3><strong>eventPayload</strong></h3></td></tr></table><p></p><p>
+ Set the event payload type for both receiver and sender.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Payload type, -1 to disable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed, false if invalid payload type
+     </p>
+<A NAME="silencePayload"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>silencePayload</strong> (int type)
+<br></td><td align="right"><h3><strong>silencePayload</strong></h3></td></tr></table><p></p><p>
+ Set the silence payload type for both receiver and sender.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Payload type, -1 to disable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed, false if invalid payload type
+     </p>
+<A NAME="localAddr"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>localAddr</strong> (SocketAddr& addr, bool rtcp = true)
+<br></td><td align="right"><h3><strong>localAddr</strong></h3></td></tr></table><p></p><p>
+ Set the local network address of the RTP transport of this session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">New local RTP transport address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>rtpc</i></TD><TD align="left" valign="top">Enable RTCP in this session
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if address set, false if a failure occured
+     </p>
+<A NAME="remoteAddr"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>remoteAddr</strong> (SocketAddr& addr, bool sniff = false)
+<br></td><td align="right"><h3><strong>remoteAddr</strong></h3></td></tr></table><p></p><p>
+ Set the remote network address of the RTP transport of this session
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>addr</i></TD><TD align="left" valign="top">New remote RTP transport address
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sniff</i></TD><TD align="left" valign="top">Automatically adjust the address from the first incoming packet
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if address set, false if a failure occured
+     </p>
+<A NAME="setTOS"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setTOS</strong> (int tos)
+<br></td><td align="right"><h3><strong>setTOS</strong></h3></td></tr></table><p></p><p>
+ Set the Type Of Service for the RTP transport socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>tos</i></TD><TD align="left" valign="top">Type Of Service bits to set
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if operation was successfull, false if an error occured
+     </p>
+<A NAME="rtpSock"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Socket* &nbsp;<strong>rtpSock</strong> ()
+<br></td><td align="right"><h3><strong>rtpSock</strong></h3></td></tr></table><p></p><p>
+ Get the RTP socket used by this session
+</p>
+<p><b>Returns</b>: Pointer to the RTP socket, NULL if no transport exists
+     </p>
+<A NAME="drillHole"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>drillHole</strong> ()
+<br></td><td align="right"><h3><strong>drillHole</strong></h3></td></tr></table><p></p><p>
+ Drill a hole in a firewall or NAT for the RTP and RTCP sockets
+</p>
+<p><b>Returns</b>: True if at least a packet was sent for the RTP socket
+     </p>
+<A NAME="setTimeout"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setTimeout</strong> (int interval)
+<br></td><td align="right"><h3><strong>setTimeout</strong></h3></td></tr></table><p></p><p>
+ Set the interval until receiver timeout is detected
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>interval</i></TD><TD align="left" valign="top">Milliseconds until receiver times out, zero to disable
+     </TD></TR>
+</TABLE></P>
+<A NAME="timerTick"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to push any asynchronous data or statistics
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as base in all computing
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPProcessor.html#timerTick">RTPProcessor</A>.</p>
+<A NAME="timeout"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timeout</strong> (bool initial)
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called when the receiver timed out
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>initial</i></TD><TD align="left" valign="top">True if no packet was ever received in this session
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

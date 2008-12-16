@@ -1,0 +1,391 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNFrame</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNFrame</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An ISDN frame. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNFrame</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNFrame.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Type</A> {	DISC = 1,                        
+	DM = 2,                          
+	FRMR = 3,                        
+	I = 4,                           
+	REJ = 5,                         
+	RNR = 6,                         
+	RR = 7,                          
+	SABME = 8,                       
+	UA = 9,                          
+	UI = 10,                         
+	XID = 11,                        
+	Invalid = 100,
+	ErrUnknownCR = 101,              
+	ErrHdrLength = 102,              
+	ErrDataLength = 103,             
+	ErrRxSeqNo = 104,                
+	ErrTxSeqNo = 105,                
+	ErrInvalidEA = 106,              
+	ErrInvalidAddress = 107,         
+	ErrUnsupported = 108,            
+	ErrInvalidCR = 109,              
+    }
+</LI>
+<LI>enum <A HREF="#ref3">Category</A> {	Data,                            
+	Supervisory,                     
+	Unnumbered,                      
+	Error
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref4">~ISDNFrame</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref5">type</A></b> ()  const
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref6">error</A></b> ()  const
+</LI>
+<LI>inline Category &nbsp;<b><A HREF="#ref7">category</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">command</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref9">sapi</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref10">tei</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref11">poll</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref12">ns</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref13">nr</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<b><A HREF="#ref14">headerLength</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<b><A HREF="#ref15">dataLength</A></b> ()  const
+</LI>
+<LI>inline const DataBlock& &nbsp;<b><A HREF="#ref16">buffer</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">sent</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref18">sent</A></b> (bool value) 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref19">name</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">update</A></b> (<A HREF="#u_int8_t">u_int8_t</A>* ns = 0, <A HREF="#u_int8_t">u_int8_t</A>* nr = 0) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref21">getData</A></b> (DataBlock& dest)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">toString</A></b> (String& dest, bool extendedDebug)  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  ISDNFrame* &nbsp;<b><A HREF="#ref23">parse</A></b> (const DataBlock& data, ISDNLayer2* receiver) 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref24">commandBit</A></b> (bool network) 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref25">responseBit</A></b> (bool network) 
+</LI>
+<LI>static  inline bool &nbsp;<b><A HREF="#ref26">isCommand</A></b> (<A HREF="#u_int8_t">u_int8_t</A> cr, bool senderNetwork) 
+</LI>
+<LI>static  inline const char* &nbsp;<b><A HREF="#ref27">typeName</A></b> (Type type) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref28">s_types[]</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref29">ISDNFrame</A></b> (Type type = Invalid) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref30">ISDNFrame</A></b> (Type type, bool command, bool senderNetwork,
+	<A HREF="#u_int8_t">u_int8_t</A> sapi, <A HREF="#u_int8_t">u_int8_t</A> tei, bool pf, <A HREF="#u_int8_t">u_int8_t</A> nr = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref31">ISDNFrame</A></b> (bool ack, bool senderNetwork, <A HREF="#u_int8_t">u_int8_t</A> sapi, <A HREF="#u_int8_t">u_int8_t</A> tei,
+	bool pf, const DataBlock& data) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Encapsulates an ISDN (Q.921) frame exchanged over a hardware HDLC interface
+</p>
+<A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	DISC = 1,                        
+	DM = 2,                          
+	FRMR = 3,                        
+	I = 4,                           
+	REJ = 5,                         
+	RNR = 6,                         
+	RR = 7,                          
+	SABME = 8,                       
+	UA = 9,                          
+	UI = 10,                         
+	XID = 11,                        
+	Invalid = 100,
+	ErrUnknownCR = 101,              
+	ErrHdrLength = 102,              
+	ErrDataLength = 103,             
+	ErrRxSeqNo = 104,                
+	ErrTxSeqNo = 105,                
+	ErrInvalidEA = 106,              
+	ErrInvalidAddress = 107,         
+	ErrUnsupported = 108,            
+	ErrInvalidCR = 109,              
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Frame type according to Q.921 3.6
+     </p>
+<A NAME="Category"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Category</strong> {	Data,                            
+	Supervisory,                     
+	Unnumbered,                      
+	Error
+    }
+</td><td align="right"><h3><strong>Category</strong></h3></td></tr></table><p></p><p>
+ Frame category
+     </p>
+<A NAME="~ISDNFrame"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNFrame</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNFrame</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of this frame
+</p>
+<p><b>Returns</b>: The type of this frame as enumeration
+     </p>
+<A NAME="error"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>error</strong> ()
+<br></td><td align="right"><h3><strong>error</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the error type
+</p>
+<p><b>Returns</b>: The error type of this frame as enumeration
+     </p>
+<A NAME="category"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Category &nbsp;<strong>category</strong> ()
+<br></td><td align="right"><h3><strong>category</strong></h3></td></tr></table><p></p><p>
+ Get the category of this frame
+</p>
+<p><b>Returns</b>: The category of this frame as enumeration
+     </p>
+<A NAME="command"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>command</strong> ()
+<br></td><td align="right"><h3><strong>command</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this frame is a command
+</p>
+<p><b>Returns</b>: True if this frame is a command. False if it is a response
+     </p>
+<A NAME="sapi"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>sapi</strong> ()
+<br></td><td align="right"><h3><strong>sapi</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the SAPI of this frame
+</p>
+<p><b>Returns</b>: The SAPI of this frame
+     </p>
+<A NAME="tei"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>tei</strong> ()
+<br></td><td align="right"><h3><strong>tei</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the TEI of this frame
+</p>
+<p><b>Returns</b>: The TEI of this frame
+     </p>
+<A NAME="poll"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>poll</strong> ()
+<br></td><td align="right"><h3><strong>poll</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this frame is a poll (expect response) or a final one
+</p>
+<p><b>Returns</b>: True if this a poll frame. False if it is a final one
+     </p>
+<A NAME="ns"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>ns</strong> ()
+<br></td><td align="right"><h3><strong>ns</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the transmitter send sequence number
+</p>
+<p><b>Returns</b>: The transmitter send sequence number
+     </p>
+<A NAME="nr"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>nr</strong> ()
+<br></td><td align="right"><h3><strong>nr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the transmitter receive sequence number
+</p>
+<p><b>Returns</b>: The transmitter receive sequence number
+     </p>
+<A NAME="headerLength"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int8_t">u_int8_t</A> &nbsp;<strong>headerLength</strong> ()
+<br></td><td align="right"><h3><strong>headerLength</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the frame's header
+</p>
+<p><b>Returns</b>: The length of the frame's header
+     </p>
+<A NAME="dataLength"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int32_t">u_int32_t</A> &nbsp;<strong>dataLength</strong> ()
+<br></td><td align="right"><h3><strong>dataLength</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of the data carried by this frame
+</p>
+<p><b>Returns</b>: The length of the data carried by this frame
+     </p>
+<A NAME="buffer"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const DataBlock& &nbsp;<strong>buffer</strong> ()
+<br></td><td align="right"><h3><strong>buffer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the frame's buffer
+</p>
+<p><b>Returns</b>: The frame's buffer
+     </p>
+<A NAME="sent"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sent</strong> ()
+<br></td><td align="right"><h3><strong>sent</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the frame was sent
+</p>
+<p><b>Returns</b>: True if the frame was sent
+     </p>
+<A NAME="sent"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>sent</strong> (bool value)
+<br></td><td align="right"><h3><strong>sent</strong></h3></td></tr></table><p></p><p>
+ Set transmitted flag
+     </p>
+<A NAME="name"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the text associated with the frame's type
+</p>
+<p><b>Returns</b>: The text associated with the frame's type
+     </p>
+<A NAME="update"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>update</strong> (<A HREF="#u_int8_t">u_int8_t</A>* ns = 0, <A HREF="#u_int8_t">u_int8_t</A>* nr = 0)
+<br></td><td align="right"><h3><strong>update</strong></h3></td></tr></table><p></p><p>
+ Update sequence numbers for I frames
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ns</i></TD><TD align="left" valign="top">Optional update send sequence number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nr</i></TD><TD align="left" valign="top">Optional update receive sequence number
+     </TD></TR>
+</TABLE></P>
+<A NAME="getData"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>getData</strong> (DataBlock& dest)
+<br></td><td align="right"><h3><strong>getData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the data transferred with this frame
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, bool extendedDebug)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Write this frame to a string for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extendedDebug</i></TD><TD align="left" valign="top">True to dump message header and data
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="parse"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ISDNFrame* &nbsp;<strong>parse</strong> (const DataBlock& data, ISDNLayer2* receiver)
+<br></td><td align="right"><h3><strong>parse</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Parse a received data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Data to parse
+</TD></TR>
+<TR><TD align="left" valign="top"><i>receiver</i></TD><TD align="left" valign="top">The receiver of the data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: ISDNFrame pointer or 0 (no control field)
+     </p>
+<A NAME="commandBit"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>commandBit</strong> (bool network)
+<br></td><td align="right"><h3><strong>commandBit</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the command bit value for a given side of a data link
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">True for the network side,
+  false for the user side of a data link
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The appropriate command bit value
+     </p>
+<A NAME="responseBit"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>responseBit</strong> (bool network)
+<br></td><td align="right"><h3><strong>responseBit</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the response bit value for a given side of a data link
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>network</i></TD><TD align="left" valign="top">True for the network side,
+  false for the user side of a data link
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The appropriate response bit value
+     </p>
+<A NAME="isCommand"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline bool &nbsp;<strong>isCommand</strong> (<A HREF="#u_int8_t">u_int8_t</A> cr, bool senderNetwork)
+<br></td><td align="right"><h3><strong>isCommand</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the command/response type from C/R bit value and sender type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cr</i></TD><TD align="left" valign="top">The value of the C/R bit
+</TD></TR>
+<TR><TD align="left" valign="top"><i>senderNetwork</i></TD><TD align="left" valign="top">True if the sender is the network side of the data link
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if it is a command
+     </p>
+<A NAME="typeName"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeName</strong> (Type type)
+<br></td><td align="right"><h3><strong>typeName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated with the given frame type
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type to get the text for
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text associated with the given frame type
+     </p>
+<A NAME="s_types[]"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_types[]</strong>
+</td><td align="right"><h3><strong>s_types[]</strong></h3></td></tr></table><p></p><A NAME="ISDNFrame"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNFrame</strong> (Type type = Invalid)
+<br></td><td align="right"><h3><strong>ISDNFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+ Used by the parser
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type
+     </TD></TR>
+</TABLE></P>
+<A NAME="ISDNFrame"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNFrame</strong> (Type type, bool command, bool senderNetwork,
+	<A HREF="#u_int8_t">u_int8_t</A> sapi, <A HREF="#u_int8_t">u_int8_t</A> tei, bool pf, <A HREF="#u_int8_t">u_int8_t</A> nr = 0)
+<br></td><td align="right"><h3><strong>ISDNFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+ Create U/S frames: SABME/DM/DISC/UA/FRMR/XID/RR/RNR/REJ
+ Set data members. Encode frame in buffer according to Q.921
+ Used by ISDNLayer2 to create outgoing frames
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Frame type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>command</i></TD><TD align="left" valign="top">Frame command/response's flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>senderNetwork</i></TD><TD align="left" valign="top">True if the sender is the network side of the data link
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sapi</i></TD><TD align="left" valign="top">SAPI value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tei</i></TD><TD align="left" valign="top">TEI value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pf</i></TD><TD align="left" valign="top">Poll/final flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nr</i></TD><TD align="left" valign="top">Optional transmitter receive sequence number
+     </TD></TR>
+</TABLE></P>
+<A NAME="ISDNFrame"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNFrame</strong> (bool ack, bool senderNetwork, <A HREF="#u_int8_t">u_int8_t</A> sapi, <A HREF="#u_int8_t">u_int8_t</A> tei,
+	bool pf, const DataBlock& data)
+<br></td><td align="right"><h3><strong>ISDNFrame</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor
+ Create I/UI frames
+ Set data members. Encode frame in buffer according to Q.921
+ Used by ISDNLayer2 to create outgoing frames
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ack</i></TD><TD align="left" valign="top">True to create an I frame. False to create an UI frame
+</TD></TR>
+<TR><TD align="left" valign="top"><i>senderNetwork</i></TD><TD align="left" valign="top">True if the sender is the network side of the data link
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sapi</i></TD><TD align="left" valign="top">SAPI value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tei</i></TD><TD align="left" valign="top">TEI value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>pf</i></TD><TD align="left" valign="top">Poll/final flag
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Transmitted data
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

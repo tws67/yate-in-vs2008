@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931State</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931State</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Q.931 ISDN call and call controller state. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931State</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ISDNQ931Call.html">ISDNQ931Call</A>, <A HREF="TelEngine__ISDNQ931CallMonitor.html">ISDNQ931CallMonitor</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931State.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">State</A> {	Null                    = 0x00,  
+	CallInitiated           = 0x01,  
+	OverlapSend             = 0x02,  
+	OutgoingProceeding      = 0x03,  
+	CallDelivered           = 0x04,  
+	CallPresent             = 0x06,  
+	CallReceived            = 0x07,  
+	ConnectReq              = 0x08,  
+	IncomingProceeding      = 0x09,  
+	Active                  = 0x0a,  
+	DisconnectReq           = 0x0b,  
+	DisconnectIndication    = 0x0c,  
+	SuspendReq              = 0x0f,  
+	ResumeReq               = 0x11,  
+	ReleaseReq              = 0x13,  
+	CallAbort               = 0x16,  
+	OverlapRecv             = 0x19,  
+	RestartReq              = 0x3d,  
+	Restart                 = 0x3e,  
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">ISDNQ931State</A></b> () 
+</LI>
+<LI>inline State &nbsp;<b><A HREF="#ref3">state</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const char* &nbsp;<b><A HREF="#ref4">stateName</A></b> (<A HREF="#u_int8_t">u_int8_t</A> s) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>static TokenDict <b><A HREF="#ref5">s_states[]</A></b></LI>
+</ul><h4>Protected Methods</h4><ul><LI>bool &nbsp;<b><A HREF="#ref6">checkStateRecv</A></b> (int type, bool* retrans) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">checkStateSend</A></b> (int type) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>State <b><A HREF="#ref8">m_state</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN call and call controller state
+</p>
+<A NAME="State"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {	Null                    = 0x00,  
+	CallInitiated           = 0x01,  
+	OverlapSend             = 0x02,  
+	OutgoingProceeding      = 0x03,  
+	CallDelivered           = 0x04,  
+	CallPresent             = 0x06,  
+	CallReceived            = 0x07,  
+	ConnectReq              = 0x08,  
+	IncomingProceeding      = 0x09,  
+	Active                  = 0x0a,  
+	DisconnectReq           = 0x0b,  
+	DisconnectIndication    = 0x0c,  
+	SuspendReq              = 0x0f,  
+	ResumeReq               = 0x11,  
+	ReleaseReq              = 0x13,  
+	CallAbort               = 0x16,  
+	OverlapRecv             = 0x19,  
+	RestartReq              = 0x3d,  
+	Restart                 = 0x3e,  
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ Call and call controller state enumeration values
+     </p>
+<A NAME="ISDNQ931State"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>ISDNQ931State</strong> ()
+<br></td><td align="right"><h3><strong>ISDNQ931State</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="state"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline State &nbsp;<strong>state</strong> ()
+<br></td><td align="right"><h3><strong>state</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the state
+</p>
+<p><b>Returns</b>: The state as enumeration
+     </p>
+<A NAME="stateName"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>stateName</strong> (<A HREF="#u_int8_t">u_int8_t</A> s)
+<br></td><td align="right"><h3><strong>stateName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated with a given state value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>s</i></TD><TD align="left" valign="top">The requested state value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text associated with the given state value or 0
+     </p>
+<A NAME="s_states[]"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>static TokenDict  <strong>s_states[]</strong>
+</td><td align="right"><h3><strong>s_states[]</strong></h3></td></tr></table><p></p><A NAME="checkStateRecv"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>checkStateRecv</strong> (int type, bool* retrans)
+<br></td><td align="right"><h3><strong>checkStateRecv</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Check if a received message type is valid in the current call state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>retrans</i></TD><TD align="left" valign="top">Optional flag to set on failure if the message is a retransmission
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the message is not valid in the current call state
+     </p>
+<A NAME="checkStateSend"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>checkStateSend</strong> (int type)
+<br></td><td align="right"><h3><strong>checkStateSend</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Check if a message is allowed to be sent in the current call state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the received message
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the message is not valid in the current call state
+     </p>
+<A NAME="m_state"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>State  <strong>m_state</strong>
+</td><td align="right"><h3><strong>m_state</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

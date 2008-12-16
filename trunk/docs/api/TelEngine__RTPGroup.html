@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPGroup</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPGroup</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A group of RTP processors handled by the same thread. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPGroup</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__Thread.html">TelEngine::Thread</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPGroup.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">RTPGroup</A></b> (int msec = 0, Priority prio = Normal) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~RTPGroup</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">cleanup</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">run</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref6">setMinSleep</A></b> (int msec) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref7">join</A></b> (RTPProcessor* proc) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">part</A></b> (RTPProcessor* proc) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Several possibly related RTP processors share the same RTP group which
+  holds the thread that keeps them running.
+</p>
+<A NAME="RTPGroup"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>RTPGroup</strong> (int msec = 0, Priority prio = Normal)
+<br></td><td align="right"><h3><strong>RTPGroup</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msec</i></TD><TD align="left" valign="top">Minimum time to sleep in loop in milliseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">Thread priority to run this group
+     </TD></TR>
+</TABLE></P>
+<A NAME="~RTPGroup"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPGroup</strong> ()
+<br></td><td align="right"><h3><strong>~RTPGroup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Group destructor, removes itself from all remaining processors
+     </p>
+<A NAME="cleanup"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> ()
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Inherited thread cleanup
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Thread.html#cleanup">Thread</A>.</p>
+<A NAME="run"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>run</strong> ()
+<br></td><td align="right"><h3><strong>run</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Inherited thread run method
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__Runnable.html#run">Runnable</A>.</p>
+<A NAME="setMinSleep"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>setMinSleep</strong> (int msec)
+<br></td><td align="right"><h3><strong>setMinSleep</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Set the system global minimum time to sleep in loop
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msec</i></TD><TD align="left" valign="top">Minimum time to sleep in loop in milliseconds
+     </TD></TR>
+</TABLE></P>
+<A NAME="join"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>join</strong> (RTPProcessor* proc)
+<br></td><td align="right"><h3><strong>join</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Add a RTP processor to this group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>proc</i></TD><TD align="left" valign="top">Pointer to the RTP processor to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="part"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>part</strong> (RTPProcessor* proc)
+<br></td><td align="right"><h3><strong>part</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Remove a RTP processor from this group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>proc</i></TD><TD align="left" valign="top">Pointer to the RTP processor to remove
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

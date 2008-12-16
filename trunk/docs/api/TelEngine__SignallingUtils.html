@@ -1,0 +1,335 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingUtils</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingUtils</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Library wide services and data provider. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingUtils</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingUtils.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Static Methods</h4><ul><LI>static  const TokenDict* &nbsp;<b><A HREF="#ref1">codings</A></b> () 
+</LI>
+<LI>static  const TokenDict* &nbsp;<b><A HREF="#ref2">locations</A></b> () 
+</LI>
+<LI>static  inline const TokenDict* &nbsp;<b><A HREF="#ref3">dict</A></b> (unsigned int index, unsigned char coding = 0) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref4">hasFlag</A></b> (const NamedList& list, const char* param, const char* flag) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref5">removeFlag</A></b> (String& flags, const char* flag) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref6">addKeyword</A></b> (NamedList& list, const char* param,
+	const TokenDict* tokens, unsigned int val) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref7">dumpData</A></b> (const SignallingComponent* comp, NamedList& list, const char* param,
+	const unsigned char* buf, unsigned int len, char sep = ' ') 
+</LI>
+<LI>static  unsigned int &nbsp;<b><A HREF="#ref8">dumpDataExt</A></b> (const SignallingComponent* comp, NamedList& list, const char* param,
+	const unsigned char* buf, unsigned int len, char sep = ' ') 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref9">decodeFlags</A></b> (const SignallingComponent* comp, NamedList& list, const char* param,
+	const SignallingFlags* flags, const unsigned char* buf, unsigned int len) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref10">decodeCause</A></b> (const SignallingComponent* comp, NamedList& list, const unsigned char* buf,
+	unsigned int len, const char* prefix, bool isup) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref11">decodeCaps</A></b> (const SignallingComponent* comp, NamedList& list, const unsigned char* buf,
+	unsigned int len, const char* prefix, bool isup) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref12">encodeFlags</A></b> (const SignallingComponent* comp, int& dest, const String& flags,
+	TokenDict* dict) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref13">encodeCause</A></b> (const SignallingComponent* comp, DataBlock& buf, const NamedList& params,
+	const char* prefix, bool isup, bool fail = false) 
+</LI>
+<LI>static  bool &nbsp;<b><A HREF="#ref14">encodeCaps</A></b> (const SignallingComponent* comp, DataBlock& buf, const NamedList& params,
+	const char* prefix, bool isup) 
+</LI>
+<LI>static  unsigned int* &nbsp;<b><A HREF="#ref15">parseUIntArray</A></b> (const String& source, unsigned int minVal, unsigned int maxVal,
+	unsigned int& count, bool discardDup) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Provides data and services for SS7 and ISDN
+</p>
+<A NAME="codings"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>codings</strong> ()
+<br></td><td align="right"><h3><strong>codings</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retreive the dictionary keeping the coding standard flags of ISUP and ISDN parameters as defined in Q.850
+</p>
+<p><b>Returns</b>: Pointer to the coding standards dictionary
+     </p>
+<A NAME="locations"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>locations</strong> ()
+<br></td><td align="right"><h3><strong>locations</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retreive the dictionary keeping the location flags of ISUP and ISDN parameters as defined in Q.850
+</p>
+<p><b>Returns</b>: Pointer to the locations dictionary
+     </p>
+<A NAME="dict"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const TokenDict* &nbsp;<strong>dict</strong> (unsigned int index, unsigned char coding = 0)
+<br></td><td align="right"><h3><strong>dict</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retreive a dictionary given by index and coding standard for ISUP and ISDN parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>index</i></TD><TD align="left" valign="top">The desired disctionary:
+  0: The release causes of ISUP and ISDN calls as defined in Q.850.
+  1: The formats negotiated in ISDN and ISUP parameters as defined in Q.931/Q.763.
+  2: The transfer capability negotiated in ISDN and ISUP parameters as defined in Q.931/Q.763.
+  3: The transfer mode negotiated in ISDN and ISUP parameters as defined in Q.931/Q.763.
+  4: The transfer rate negotiated in ISDN and ISUP parameters as defined in Q.931/Q.763.
+</TD></TR>
+<TR><TD align="left" valign="top"><i>coding</i></TD><TD align="left" valign="top">Optional coding standard. Defaults to CCITT if 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the requested dictionary or 0
+     </p>
+<A NAME="hasFlag"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>hasFlag</strong> (const NamedList& list, const char* param, const char* flag)
+<br></td><td align="right"><h3><strong>hasFlag</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Check if a list's parameter (comma separated list of flags) has a given flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The parameter list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">The parameter to check
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flag</i></TD><TD align="left" valign="top">The flag to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given flag is found
+     </p>
+<A NAME="removeFlag"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>removeFlag</strong> (String& flags, const char* flag)
+<br></td><td align="right"><h3><strong>removeFlag</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Remove a flag from a comma separated list of flags
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">The list of flags
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flag</i></TD><TD align="left" valign="top">The flag to remove
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the given flag was found and removed
+     </p>
+<A NAME="addKeyword"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>addKeyword</strong> (NamedList& list, const char* param,
+	const TokenDict* tokens, unsigned int val)
+<br></td><td align="right"><h3><strong>addKeyword</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Add string (keyword) if found in a dictionary or integer parameter to a named list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">Destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter to add to the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>tokens</i></TD><TD align="left" valign="top">The dictionary used to find the given value
+</TD></TR>
+<TR><TD align="left" valign="top"><i>val</i></TD><TD align="left" valign="top">The value to find/add to the list
+     </TD></TR>
+</TABLE></P>
+<A NAME="dumpData"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dumpData</strong> (const SignallingComponent* comp, NamedList& list, const char* param,
+	const unsigned char* buf, unsigned int len, char sep = ' ')
+<br></td><td align="right"><h3><strong>dumpData</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Dump a buffer to a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter to add to the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The buffer containing the data to dump
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer's length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">The separator between elements
+     </TD></TR>
+</TABLE></P>
+<A NAME="dumpDataExt"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>dumpDataExt</strong> (const SignallingComponent* comp, NamedList& list, const char* param,
+	const unsigned char* buf, unsigned int len, char sep = ' ')
+<br></td><td align="right"><h3><strong>dumpDataExt</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Dump data from a buffer to a list of parameters. The buffer is parsed until (and including)
+  the first byte with the extension bit (the most significant one) set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter to add to the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The buffer containing the data to dump
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer's length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sep</i></TD><TD align="left" valign="top">The separator between elements
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The number of bytes processed. 0 if the end of the buffer was reached without finding
+  a byte with the extension bit set
+     </p>
+<A NAME="decodeFlags"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>decodeFlags</strong> (const SignallingComponent* comp, NamedList& list, const char* param,
+	const SignallingFlags* flags, const unsigned char* buf, unsigned int len)
+<br></td><td align="right"><h3><strong>decodeFlags</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode a received buffer to a comma separated list of flags and add it to a list of parameters
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">The parameter to add to the list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">The flags description to use
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The buffer containing the data to parse
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer's length
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the flags description or the buffer is missing or the buffer's length exceeds
+  the length of the 'unsigned int' data type
+     </p>
+<A NAME="decodeCause"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>decodeCause</strong> (const SignallingComponent* comp, NamedList& list, const unsigned char* buf,
+	unsigned int len, const char* prefix, bool isup)
+<br></td><td align="right"><h3><strong>decodeCause</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode cause parameters as defined in Q.850
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The buffer containing the data to parse
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer's length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">The prefix to add to the fields before adding to the destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>isup</i></TD><TD align="left" valign="top">True if the requestor is ISUP, false for ISDN requestor
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully parsed
+     </p>
+<A NAME="decodeCaps"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>decodeCaps</strong> (const SignallingComponent* comp, NamedList& list, const unsigned char* buf,
+	unsigned int len, const char* prefix, bool isup)
+<br></td><td align="right"><h3><strong>decodeCaps</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Decode bearer capabilities as defined in Q.931 (Bearer Capabilities) and Q.763 (User Service Information)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">The destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The buffer containing the data to parse
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Buffer's length
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">The prefix to add to the fields before adding to the destination list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>isup</i></TD><TD align="left" valign="top">True if the requestor is ISUP, false for ISDN requestor
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if successfully parsed
+     </p>
+<A NAME="encodeFlags"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>encodeFlags</strong> (const SignallingComponent* comp, int& dest, const String& flags,
+	TokenDict* dict)
+<br></td><td align="right"><h3><strong>encodeFlags</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Encode a comma separated list of flags. Flags can be prefixed with the '-'
+  character to be reset if previously set
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination flak mask
+</TD></TR>
+<TR><TD align="left" valign="top"><i>flags</i></TD><TD align="left" valign="top">The flag list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dict</i></TD><TD align="left" valign="top">Dictionary used to retrive the flag names and values
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The OR'd value of found flags
+     </p>
+<A NAME="encodeCause"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>encodeCause</strong> (const SignallingComponent* comp, DataBlock& buf, const NamedList& params,
+	const char* prefix, bool isup, bool fail = false)
+<br></td><td align="right"><h3><strong>encodeCause</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Encode cause parameters as defined in Q.850. Create with normal clearing value if parameter is missing.
+ Don't encode diagnostic if total length exceeds 32 bytes for Q.931 requestor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list with the parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">The prefix of the fields obtained from parameter list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>isup</i></TD><TD align="left" valign="top">True if the requestor is ISUP, false for ISDN requestor
+</TD></TR>
+<TR><TD align="left" valign="top"><i>fail</i></TD><TD align="left" valign="top">Fail if the buffer is too long. Ignored if isup is true
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the requestor is Q.931, fail is true and the length exceeds 32 bytes
+     </p>
+<A NAME="encodeCaps"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>encodeCaps</strong> (const SignallingComponent* comp, DataBlock& buf, const NamedList& params,
+	const char* prefix, bool isup)
+<br></td><td align="right"><h3><strong>encodeCaps</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Encode bearer capabilities as defined in Q.931 (Bearer Capabilities) and Q.763 (User Service Information)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>comp</i></TD><TD align="left" valign="top">Signalling component requesting the service. Used to print debug messages
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">The destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The list with the parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prefix</i></TD><TD align="left" valign="top">The prefix of the fields obtained from parameter list
+</TD></TR>
+<TR><TD align="left" valign="top"><i>isup</i></TD><TD align="left" valign="top">True if the requestor is ISUP, false for ISDN requestor
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True
+     </p>
+<A NAME="parseUIntArray"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int* &nbsp;<strong>parseUIntArray</strong> (const String& source, unsigned int minVal, unsigned int maxVal,
+	unsigned int& count, bool discardDup)
+<br></td><td align="right"><h3><strong>parseUIntArray</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Parse a list of unsigned integers or unsigned integer intervals. Source elements
+  must be separated by a '.' or ',' character. Interval margins must be separated
+  by a '-' character. Empty elements are ignored
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>source</i></TD><TD align="left" valign="top">The string to parse
+</TD></TR>
+<TR><TD align="left" valign="top"><i>minVal</i></TD><TD align="left" valign="top">The minimum value for each element in the array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxVal</i></TD><TD align="left" valign="top">The maximum value for each element in the array
+</TD></TR>
+<TR><TD align="left" valign="top"><i>count</i></TD><TD align="left" valign="top">On exit will contain the length of the returned array (0 on failure)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>discardDup</i></TD><TD align="left" valign="top">True to discard duplicate values
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to an array of unsigned integers on success (the caller must delete it after use).
+  0 on failure (source is empty or has invalid format or an invalid value was found)
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

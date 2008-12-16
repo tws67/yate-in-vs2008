@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlText</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlText</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"> XML text. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlText</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__TiXmlNode.html">TelEngine::TiXmlNode</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlText.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">TiXmlText</A></b> (const char * initValue ) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~TiXmlText</A></b> () 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref4">TiXmlText</A></b> ( const std::string& initValue ) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref5">TiXmlText</A></b> ( const TiXmlText& copy ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">operator=</A></b> ( const TiXmlText& base ) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">Print</A></b> ( FILE* cfile, int depth )  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref8">CDATA</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref9">SetCDATA</A></b> ( bool _cdata ) 
+</LI>
+<LI>virtual  const char* &nbsp;<b><A HREF="#ref10">Parse</A></b> ( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding ) 
+</LI>
+<LI>virtual  const TiXmlText* &nbsp;<b><A HREF="#ref11">ToText</A></b> ()  const
+</LI>
+<LI>virtual  TiXmlText*       &nbsp;<b><A HREF="#ref12">ToText</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref15">StreamOut</A></b> ( TIXML_OSTREAM * out, bool unclosed = false )  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  TiXmlNode* &nbsp;<b><A HREF="#ref13">Clone</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref14">CopyTo</A></b> ( TiXmlText* target )  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">Blank</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref17">StreamIn</A></b> ( TIXML_ISTREAM * in, TIXML_STRING * tag ) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p> XML text. A text node can have 2 ways to output the next. "normal" output 
+	and CDATA. It will default to the mode it was parsed from the XML file and
+	you generally want to leave it alone, but you can change the output mode with 
+	SetCDATA() and query it with CDATA().
+</p>
+<A NAME="TiXmlText"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlText</strong> (const char * initValue )
+<br></td><td align="right"><h3><strong>TiXmlText</strong></h3></td></tr></table><p></p><p> Constructor for text element. By default, it is treated as 
+		normal, encoded text. If you want it be output as a CDATA text
+		element, set the parameter _cdata to 'true'
+	</p>
+<A NAME="~TiXmlText"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~TiXmlText</strong> ()
+<br></td><td align="right"><h3><strong>~TiXmlText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="TiXmlText"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlText</strong> ( const std::string& initValue )
+<br></td><td align="right"><h3><strong>TiXmlText</strong></h3></td></tr></table><p></p><A NAME="TiXmlText"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlText</strong> ( const TiXmlText& copy )
+<br></td><td align="right"><h3><strong>TiXmlText</strong></h3></td></tr></table><p></p><A NAME="operator="></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>operator=</strong> ( const TiXmlText& base )
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#operator=">TiXmlNode</A>.</p>
+<A NAME="Print"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>Print</strong> ( FILE* cfile, int depth )
+<br></td><td align="right"><h3><strong>Print</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Print">TiXmlBase</A>.</p>
+<A NAME="CDATA"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>CDATA</strong> ()
+<br></td><td align="right"><h3><strong>CDATA</strong></h3></td></tr></table><p></p><A NAME="SetCDATA"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetCDATA</strong> ( bool _cdata )
+<br></td><td align="right"><h3><strong>SetCDATA</strong></h3></td></tr></table><p></p><A NAME="Parse"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const char* &nbsp;<strong>Parse</strong> ( const char* p, TiXmlParsingData* data, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>Parse</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#Parse">TiXmlBase</A>.</p>
+<A NAME="ToText"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlText* &nbsp;<strong>ToText</strong> ()
+<br></td><td align="right"><h3><strong>ToText</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#ToText">TiXmlNode</A>.</p>
+<A NAME="ToText"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlText*       &nbsp;<strong>ToText</strong> ()
+<br></td><td align="right"><h3><strong>ToText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#ToText">TiXmlNode</A>.</p>
+<A NAME="Clone"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlNode* &nbsp;<strong>Clone</strong> ()
+<br></td><td align="right"><h3><strong>Clone</strong></h3></td></tr></table><p> <small>[protected const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#Clone">TiXmlNode</A>.</p>
+<A NAME="CopyTo"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>CopyTo</strong> ( TiXmlText* target )
+<br></td><td align="right"><h3><strong>CopyTo</strong></h3></td></tr></table><p> <small>[protected const]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#CopyTo">TiXmlNode</A>.</p>
+<A NAME="StreamOut"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamOut</strong> ( TIXML_OSTREAM * out, bool unclosed = false )
+<br></td><td align="right"><h3><strong>StreamOut</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlBase.html#StreamOut">TiXmlBase</A>.</p>
+<A NAME="Blank"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>Blank</strong> ()
+<br></td><td align="right"><h3><strong>Blank</strong></h3></td></tr></table><p> <small>[protected const]</small></p><A NAME="StreamIn"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>StreamIn</strong> ( TIXML_ISTREAM * in, TIXML_STRING * tag )
+<br></td><td align="right"><h3><strong>StreamIn</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>Reimplemented from <A HREF="TelEngine__TiXmlNode.html#StreamIn">TiXmlNode</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

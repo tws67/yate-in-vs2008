@@ -1,0 +1,250 @@
+<HTML>
+<HEAD>
+<TITLE>class ISDNQ931Monitor</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ISDNQ931Monitor</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">ISDN Q.931 implementation on top of Q.921 of call controller monitor. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ISDNQ931Monitor</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__ISDNLayer3.html">TelEngine::ISDNLayer3</A></i> <small>[public ]</small>, <A HREF="TelEngine__SignallingCallControl.html">TelEngine::SignallingCallControl</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ISDNQ931Monitor.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">ISDNQ931Monitor</A></b> (const NamedList& params, const char* name = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~ISDNQ931Monitor</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">dataLinkState</A></b> (bool cmd, bool value, ISDNLayer2* layer2) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">idleTimeout</A></b> (ISDNLayer2* layer2) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">receiveData</A></b> (const DataBlock& data, bool ack, ISDNLayer2* layer2) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">attach</A></b> (ISDNQ921Pasive* q921, bool net) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref8">attach</A></b> (SignallingCircuitGroup* circuits, bool net) 
+</LI>
+<LI>virtual  void* &nbsp;<b><A HREF="#ref9">getObject</A></b> (const String& name)  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref10">destruct</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">setDebug</A></b> (bool printMsg, bool extendedDebug) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref12">cleanup</A></b> (const char* reason = "offline") 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">terminateMonitor</A></b> (ISDNQ931CallMonitor* mon, const char* reason) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref14">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref15">reserveCircuit</A></b> (unsigned int code, bool netInit,
+	SignallingCircuit** caller, SignallingCircuit** called) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">releaseCircuit</A></b> (SignallingCircuit* circuit) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref17">processMsgRestart</A></b> (ISDNQ931Message* msg) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.931 ISDN Layer 3 implementation on top of a Layer 2. Manage Q.931 monitors
+</p>
+<A NAME="ISDNQ931Monitor"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>ISDNQ931Monitor</strong> (const NamedList& params, const char* name = 0)
+<br></td><td align="right"><h3><strong>ISDNQ931Monitor</strong></h3></td></tr></table><p></p><p>
+ Constructor
+ Initialize this object and the component
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Layer's parameters and parser settings
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Name of this component
+     </TD></TR>
+</TABLE></P>
+<A NAME="~ISDNQ931Monitor"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ISDNQ931Monitor</strong> ()
+<br></td><td align="right"><h3><strong>~ISDNQ931Monitor</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+ Destroy all calls
+     </p>
+<A NAME="dataLinkState"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>dataLinkState</strong> (bool cmd, bool value, ISDNLayer2* layer2)
+<br></td><td align="right"><h3><strong>dataLinkState</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification from layer 2 of data link set/release command or response
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>cmd</i></TD><TD align="left" valign="top">True if received a command, false if received a response
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The value of the notification
+	If 'cmd' is true (command), the value is true if a request to establish data link was received
+   or false if received a request to release data link
+	If 'cmd' is false (response), the value is the response
+</TD></TR>
+<TR><TD align="left" valign="top"><i>layer2</i></TD><TD align="left" valign="top">Pointer to the notifier
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer3.html#dataLinkState">ISDNLayer3</A>.</p>
+<A NAME="idleTimeout"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>idleTimeout</strong> (ISDNLayer2* layer2)
+<br></td><td align="right"><h3><strong>idleTimeout</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Notification from layer 2 of data link idle timeout
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>layer2</i></TD><TD align="left" valign="top">Pointer to the notifier
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer3.html#idleTimeout">ISDNLayer3</A>.</p>
+<A NAME="receiveData"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>receiveData</strong> (const DataBlock& data, bool ack, ISDNLayer2* layer2)
+<br></td><td align="right"><h3><strong>receiveData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Implements Q.921 DL-DATA and DL-UNIT DATA indication primitives
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Received data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ack</i></TD><TD align="left" valign="top">True if data is an acknoledged frame,
+  false if it is an unacknoledged one
+</TD></TR>
+<TR><TD align="left" valign="top"><i>layer2</i></TD><TD align="left" valign="top">Pointer to the sender
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__ISDNLayer3.html#receiveData">ISDNLayer3</A>.</p>
+<A NAME="attach"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>attach</strong> (ISDNQ921Pasive* q921, bool net)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Attach ISDN Q.921 pasive transport that monitors one side of the link
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>q921</i></TD><TD align="left" valign="top">Pointer to the monitor to attach
+</TD></TR>
+<TR><TD align="left" valign="top"><i>net</i></TD><TD align="left" valign="top">True if this is the network side of the data link, false for user (CPE) side
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#attach">SignallingCallControl</A>.</p>
+<A NAME="attach"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>attach</strong> (SignallingCircuitGroup* circuits, bool net)
+<br></td><td align="right"><h3><strong>attach</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Attach a circuit group to this call controller
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuits</i></TD><TD align="left" valign="top">Pointer to the SignallingCircuitGroup to attach
+</TD></TR>
+<TR><TD align="left" valign="top"><i>net</i></TD><TD align="left" valign="top">True if this group belongs to the network side of the data link, false for user (CPE) side
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#attach">SignallingCallControl</A>.</p>
+<A NAME="getObject"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void* &nbsp;<strong>getObject</strong> (const String& name)
+<br></td><td align="right"><h3><strong>getObject</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get a pointer to this call controller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Object name. Must be ISDNQ931Monitor
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The requested pointer
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#getObject">GenObject</A>.</p>
+<A NAME="destruct"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Detach links. Disposes memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="setDebug"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDebug</strong> (bool printMsg, bool extendedDebug)
+<br></td><td align="right"><h3><strong>setDebug</strong></h3></td></tr></table><p></p><p>
+ Set debug data of this call controller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>printMsg</i></TD><TD align="left" valign="top">Enable/disable message printing on output
+</TD></TR>
+<TR><TD align="left" valign="top"><i>extendedDebug</i></TD><TD align="left" valign="top">Enable/disable hex data dump if print messages is enabled
+     </TD></TR>
+</TABLE></P>
+<A NAME="cleanup"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>cleanup</strong> (const char* reason = "offline")
+<br></td><td align="right"><h3><strong>cleanup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Terminate all monitors
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">Cleanup reason
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#cleanup">SignallingCallControl</A>.</p>
+<A NAME="terminateMonitor"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>terminateMonitor</strong> (ISDNQ931CallMonitor* mon, const char* reason)
+<br></td><td align="right"><h3><strong>terminateMonitor</strong></h3></td></tr></table><p></p><p>
+ Terminate all monitors or only one
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mon</i></TD><TD align="left" valign="top">The monitor to terminate, 0 to terminate all
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">The termination reason
+     </TD></TR>
+</TABLE></P>
+<A NAME="timerTick"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to check timeouts
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for events and timeouts
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingComponent.html#timerTick">SignallingComponent</A>.</p>
+<A NAME="reserveCircuit"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>reserveCircuit</strong> (unsigned int code, bool netInit,
+	SignallingCircuit** caller, SignallingCircuit** called)
+<br></td><td align="right"><h3><strong>reserveCircuit</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Reserve the same circuit code from both circuit groups
+ This is an atomic operation: if one circuit fails to be reserved, both of them will fail
+ Release both circuits on failure
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The circuit code to reserve
+</TD></TR>
+<TR><TD align="left" valign="top"><i>netInit</i></TD><TD align="left" valign="top">True if the caller is from the network side of the link, false if it's from CPE side
+</TD></TR>
+<TR><TD align="left" valign="top"><i>caller</i></TD><TD align="left" valign="top">The destination caller circuit
+</TD></TR>
+<TR><TD align="left" valign="top"><i>called</i></TD><TD align="left" valign="top">The destination called circuit
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#reserveCircuit">SignallingCallControl</A>.</p>
+<A NAME="releaseCircuit"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>releaseCircuit</strong> (SignallingCircuit* circuit)
+<br></td><td align="right"><h3><strong>releaseCircuit</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Release a circuit
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>circuit</i></TD><TD align="left" valign="top">The circuit to release
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingCallControl.html#releaseCircuit">SignallingCallControl</A>.</p>
+<A NAME="processMsgRestart"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processMsgRestart</strong> (ISDNQ931Message* msg)
+<br></td><td align="right"><h3><strong>processMsgRestart</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Process a restart or restart acknoledge message
+ Terminate the monitor having the circuit given in restart message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

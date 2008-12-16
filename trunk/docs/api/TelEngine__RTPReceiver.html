@@ -1,0 +1,177 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPReceiver</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPReceiver</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">RTP/RTCP packet receiver. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPReceiver</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__RTPBaseIO.html">TelEngine::RTPBaseIO</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPReceiver.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">RTPReceiver</A></b> (RTPSession* session = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~RTPReceiver</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref4">setDejitter</A></b> (RTPDejitter* dejitter) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">setDejitter</A></b> (unsigned int mindelay, unsigned int maxdelay) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">rtpRecv</A></b> (bool marker, int payload, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">rtpRecvData</A></b> (bool marker, unsigned int timestamp,
+	const void* data, int len) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">rtpRecvEvent</A></b> (int event, char key, int duration,
+	int volume, unsigned int timestamp) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref9">rtpNewPayload</A></b> (int payload, unsigned int timestamp) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref10">rtpNewSSRC</A></b> (<A HREF="#u_int32_t">u_int32_t</A> newSsrc, bool marker) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref11">timerTick</A></b> (const Time& when) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Class that handles incoming RTP and RTCP packets
+</p>
+<A NAME="RTPReceiver"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>RTPReceiver</strong> (RTPSession* session = 0)
+<br></td><td align="right"><h3><strong>RTPReceiver</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="~RTPReceiver"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPReceiver</strong> ()
+<br></td><td align="right"><h3><strong>~RTPReceiver</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor - gets rid of the jitter buffer if present
+     </p>
+<A NAME="setDejitter"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setDejitter</strong> (RTPDejitter* dejitter)
+<br></td><td align="right"><h3><strong>setDejitter</strong></h3></td></tr></table><p></p><p>
+ Set a new dejitter buffer in this receiver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dejitter</i></TD><TD align="left" valign="top">New dejitter buffer to set, NULL to remove
+     </TD></TR>
+</TABLE></P>
+<A NAME="setDejitter"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>setDejitter</strong> (unsigned int mindelay, unsigned int maxdelay)
+<br></td><td align="right"><h3><strong>setDejitter</strong></h3></td></tr></table><p></p><p>
+ Allocate and set a new dejitter buffer in this receiver
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>mindelay</i></TD><TD align="left" valign="top">Minimum length of the dejitter buffer in microseconds
+</TD></TR>
+<TR><TD align="left" valign="top"><i>maxdelay</i></TD><TD align="left" valign="top">Maximum length of the dejitter buffer in microseconds
+     </TD></TR>
+</TABLE></P>
+<A NAME="rtpRecv"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rtpRecv</strong> (bool marker, int payload, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpRecv</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process one RTP payload packet.
+ Default behaviour is to call rtpRecvData() or rtpRecvEvent().
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit is set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>payload</i></TD><TD align="left" valign="top">Payload number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block in bytes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was handled
+     </p>
+<A NAME="rtpRecvData"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rtpRecvData</strong> (bool marker, unsigned int timestamp,
+	const void* data, int len)
+<br></td><td align="right"><h3><strong>rtpRecvData</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process one RTP data packet
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">Set to true if the marker bit is set
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the packet data
+</TD></TR>
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">Pointer to data block to process
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of the data block in bytes
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was handled
+     </p>
+<A NAME="rtpRecvEvent"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>rtpRecvEvent</strong> (int event, char key, int duration,
+	int volume, unsigned int timestamp)
+<br></td><td align="right"><h3><strong>rtpRecvEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process one RTP event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Received event code
+</TD></TR>
+<TR><TD align="left" valign="top"><i>key</i></TD><TD align="left" valign="top">Received key (for events 0-16) or zero
+</TD></TR>
+<TR><TD align="left" valign="top"><i>duration</i></TD><TD align="left" valign="top">Duration of the event as number of samples
+</TD></TR>
+<TR><TD align="left" valign="top"><i>volume</i></TD><TD align="left" valign="top">Attenuation of the tone, zero for don't care
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the initial packet data
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if data was handled
+     </p>
+<A NAME="rtpNewPayload"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpNewPayload</strong> (int payload, unsigned int timestamp)
+<br></td><td align="right"><h3><strong>rtpNewPayload</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Method called for unknown payload types just before attempting
+  to call rtpRecvData(). This is a good opportunity to change the
+  payload type and continue.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>payload</i></TD><TD align="left" valign="top">Payload number
+</TD></TR>
+<TR><TD align="left" valign="top"><i>timestamp</i></TD><TD align="left" valign="top">Sampling instant of the unexpected packet data
+     </TD></TR>
+</TABLE></P>
+<A NAME="rtpNewSSRC"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>rtpNewSSRC</strong> (<A HREF="#u_int32_t">u_int32_t</A> newSsrc, bool marker)
+<br></td><td align="right"><h3><strong>rtpNewSSRC</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Method called when a packet with an unexpected SSRC is received
+  just before processing further. This is a good opportunity to
+  change the SSRC and continue
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newSsrc</i></TD><TD align="left" valign="top">SSRC received in packet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>marker</i></TD><TD align="left" valign="top">True if marker bit is set in the RTP packet
+    </TD></TR>
+</TABLE></P>
+<A NAME="timerTick"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Method called periodically to finish lingering events
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as base in all computing
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__RTPBaseIO.html#timerTick">RTPBaseIO</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

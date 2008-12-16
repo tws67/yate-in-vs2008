@@ -1,0 +1,253 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7MTP2</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7MTP2</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">SS7 Layer 2 implementation on top of a hardware interface. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7MTP2</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <i><A HREF="TelEngine__SS7Layer2.html">TelEngine::SS7Layer2</A></i> <small>[public ]</small>, <i><A HREF="TelEngine__SignallingReceiver.html">TelEngine::SignallingReceiver</A></i> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7MTP2.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">ErrorCorrection</A> {	Basic,       
+	Preventive,  
+	Adaptive,    
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SS7MTP2</A></b> (const NamedList& params, unsigned int status = OutOfService) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~SS7MTP2</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref4">transmitMSU</A></b> (const SS7MSU& msu) 
+</LI>
+<LI>virtual  ObjList* &nbsp;<b><A HREF="#ref5">recoverMSU</A></b> () 
+</LI>
+<LI>virtual  unsigned int &nbsp;<b><A HREF="#ref6">status</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref7">aligned</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">operational</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref9">control</A></b> (Operation oper, NamedList* params = 0) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref10">notify</A></b> (SignallingInterface::Notification event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">destruct</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref12">timerTick</A></b> (const Time& when) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref13">receivedPacket</A></b> (const DataBlock& packet) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref14">processFISU</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref15">processLSSU</A></b> (unsigned int status) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref16">transmitLSSU</A></b> (unsigned int status) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">transmitLSSU</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">transmitFISU</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref19">startAlignment</A></b> (bool emergency = false) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref20">abortAlignment</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref21">startProving</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref22">setDumper</A></b> (SignallingDumper* dumper = 0) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Q.703 SS7 Layer 2 (Data Link) implementation on top of a hardware interface
+</p>
+<A NAME="ErrorCorrection"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>ErrorCorrection</strong> {	Basic,       
+	Preventive,  
+	Adaptive,    
+    }
+</td><td align="right"><h3><strong>ErrorCorrection</strong></h3></td></tr></table><p></p><p>
+ Types of error correction
+     </p>
+<A NAME="SS7MTP2"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7MTP2</strong> (const NamedList& params, unsigned int status = OutOfService)
+<br></td><td align="right"><h3><strong>SS7MTP2</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Layer's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>status</i></TD><TD align="left" valign="top">Initial status
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7MTP2"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SS7MTP2</strong> ()
+<br></td><td align="right"><h3><strong>~SS7MTP2</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="transmitMSU"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>transmitMSU</strong> (const SS7MSU& msu)
+<br></td><td align="right"><h3><strong>transmitMSU</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Push a Message Signal Unit down the protocol stack
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msu</i></TD><TD align="left" valign="top">MSU data to transmit
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if message was successfully queued
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7Layer2.html#transmitMSU">SS7Layer2</A>.</p>
+<A NAME="recoverMSU"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> ObjList* &nbsp;<strong>recoverMSU</strong> ()
+<br></td><td align="right"><h3><strong>recoverMSU</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove the MSUs waiting in the transmit queue and return them
+</p>
+<p><b>Returns</b>: List of MSUs taken from the queue
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7Layer2.html#recoverMSU">SS7Layer2</A>.</p>
+<A NAME="status"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned int &nbsp;<strong>status</strong> ()
+<br></td><td align="right"><h3><strong>status</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Retrive the current link status indications
+</p>
+<p><b>Returns</b>: Link status indication bits
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7Layer2.html#status">SS7Layer2</A>.</p>
+<A NAME="aligned"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>aligned</strong> ()
+<br></td><td align="right"><h3><strong>aligned</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the link is aligned.
+ The link may not be operational, the other side may be still proving.
+</p>
+<p><b>Returns</b>: True if the link is aligned
+     </p>
+<A NAME="operational"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>operational</strong> ()
+<br></td><td align="right"><h3><strong>operational</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Check if the link is aligned and operational
+</p>
+<p><b>Returns</b>: True if the link is operational
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7Layer2.html#operational">SS7Layer2</A>.</p>
+<A NAME="control"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>control</strong> (Operation oper, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>control</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Execute a control operation. Operations can change the link status or
+  can query the aligned status.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>oper</i></TD><TD align="left" valign="top">Operation to execute
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional parameters for the operation
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the command completed successfully, for query operations
+  also indicates the data link is aligned and operational
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7Layer2.html#control">SS7Layer2</A>.</p>
+<A NAME="notify"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>notify</strong> (SignallingInterface::Notification event)
+<br></td><td align="right"><h3><strong>notify</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process a notification generated by the attached interface
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">Notification event reported by the interface
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if notification was processed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SS7Layer2.html#notify">SS7Layer2</A>.</p>
+<A NAME="destruct"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove all attachements. Disposes the memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="timerTick"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>timerTick</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>timerTick</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Periodical timer tick used to perform alignment and housekeeping
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for events and timeouts
+     </TD></TR>
+</TABLE></P>
+<p>Reimplemented from <A HREF="TelEngine__SignallingComponent.html#timerTick">SignallingComponent</A>.</p>
+<A NAME="receivedPacket"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>receivedPacket</strong> (const DataBlock& packet)
+<br></td><td align="right"><h3><strong>receivedPacket</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a Signalling Packet received by the hardware interface
+</p>
+<p><b>Returns</b>: True if message was successfully processed
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__SignallingReceiver.html#receivedPacket">SignallingReceiver</A>.</p>
+<A NAME="processFISU"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processFISU</strong> ()
+<br></td><td align="right"><h3><strong>processFISU</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a received Fill-In Signal Unit
+     </p>
+<A NAME="processLSSU"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processLSSU</strong> (unsigned int status)
+<br></td><td align="right"><h3><strong>processLSSU</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Process a received Link Status Signal Unit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>status</i></TD><TD align="left" valign="top">Link status indications
+     </TD></TR>
+</TABLE></P>
+<A NAME="transmitLSSU"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>transmitLSSU</strong> (unsigned int status)
+<br></td><td align="right"><h3><strong>transmitLSSU</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Push a Link Status Signal Unit down the protocol stack
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>status</i></TD><TD align="left" valign="top">Link status indications
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if message was successfully queued
+     </p>
+<A NAME="transmitLSSU"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>transmitLSSU</strong> ()
+<br></td><td align="right"><h3><strong>transmitLSSU</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Push a Link Status Signal Unit with the current status down the protocol stack
+</p>
+<p><b>Returns</b>: True if message was successfully queued
+     </p>
+<A NAME="transmitFISU"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>transmitFISU</strong> ()
+<br></td><td align="right"><h3><strong>transmitFISU</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Push a Fill-In Signal Unit down the protocol stack
+</p>
+<p><b>Returns</b>: True if message was successfully queued
+     </p>
+<A NAME="startAlignment"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>startAlignment</strong> (bool emergency = false)
+<br></td><td align="right"><h3><strong>startAlignment</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Initiates alignment and proving procedure
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>emergency</i></TD><TD align="left" valign="top">True if emergency alignment is desired
+     </TD></TR>
+</TABLE></P>
+<A NAME="abortAlignment"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>abortAlignment</strong> ()
+<br></td><td align="right"><h3><strong>abortAlignment</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Abort an alignment procedure if link errors occur
+     </p>
+<A NAME="startProving"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>startProving</strong> ()
+<br></td><td align="right"><h3><strong>startProving</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Start the link proving period
+</p>
+<p><b>Returns</b>: True if proving period was started
+     </p>
+<A NAME="setDumper"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setDumper</strong> (SignallingDumper* dumper = 0)
+<br></td><td align="right"><h3><strong>setDumper</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set or remove a data dumper
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dumper</i></TD><TD align="left" valign="top">Pointer to the data dumper object, NULL to remove
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

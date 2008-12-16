@@ -1,0 +1,363 @@
+<HTML>
+<HEAD>
+<TITLE>class SS7MSU</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SS7MSU</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A block of data that holds a Message Signal Unit. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SS7MSU</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DataBlock.html">TelEngine::DataBlock</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SS7MSU.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Services</A> {	SNM   =  0,
+	MTN   =  1,
+	MTNS  =  2,
+	SCCP  =  3,
+	TUP   =  4,
+	ISUP  =  5,
+	DUP_C =  6,
+	DUP_F =  7,
+	MTP_T =  8,
+	BISUP =  9,
+	SISUP = 10,
+	AAL2  = 12,
+	BICC  = 13,
+	GCP   = 14,
+    }
+</LI>
+<LI>enum <A HREF="#ref2">Priority</A> {	Regular  = 0x00,
+	Special  = 0x10,
+	Circuit  = 0x20,
+	Facility = 0x30
+    }
+</LI>
+<LI>enum <A HREF="#ref3">NetIndicator</A> {	International      = 0x00,
+	SpareInternational = 0x40,
+	National           = 0x80,
+	ReservedNational   = 0xc0
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref4">SS7MSU</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref5">SS7MSU</A></b> (const SS7MSU& value) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref6">SS7MSU</A></b> (const DataBlock& value) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref7">SS7MSU</A></b> (void* value, unsigned int len, bool copyData = true) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref8">SS7MSU</A></b> (unsigned char sio, const SS7Label label, void* value = 0, unsigned int len = 0) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref9">SS7MSU</A></b> (unsigned char sif, unsigned char ssf, const SS7Label label, void* value = 0, unsigned int len = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref10">~SS7MSU</A></b> () 
+</LI>
+<LI>inline SS7MSU& &nbsp;<b><A HREF="#ref11">operator=</A></b> (const SS7MSU& value) 
+</LI>
+<LI>inline SS7MSU& &nbsp;<b><A HREF="#ref12">operator=</A></b> (const DataBlock& value) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref13">valid</A></b> ()  const
+</LI>
+<LI>inline unsigned char* &nbsp;<b><A HREF="#ref14">getData</A></b> (unsigned int offs, unsigned int len = 1) 
+</LI>
+<LI>inline const unsigned char* &nbsp;<b><A HREF="#ref15">getData</A></b> (unsigned int offs, unsigned int len = 1)  const
+</LI>
+<LI>inline unsigned char* &nbsp;<b><A HREF="#ref16">getData</A></b> (const SS7Label& label, unsigned int len = 1) 
+</LI>
+<LI>inline const unsigned char* &nbsp;<b><A HREF="#ref17">getData</A></b> (const SS7Label& label, unsigned int len = 1)  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref18">getSIO</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref19">getSIF</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref20">getSSF</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref21">getPrio</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref22">getNI</A></b> ()  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref23">getServiceName</A></b> ()  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref24">getPriorityName</A></b> ()  const
+</LI>
+<LI>const char* &nbsp;<b><A HREF="#ref25">getIndicatorName</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  unsigned char &nbsp;<b><A HREF="#ref26">getPriority</A></b> (const char* name, unsigned char defVal = Regular) 
+</LI>
+<LI>static  unsigned char &nbsp;<b><A HREF="#ref27">getNetIndicator</A></b> (const char* name, unsigned char defVal = National) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A raw data block with a little more understanding about MSU format
+</p>
+<A NAME="Services"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Services</strong> {	SNM   =  0,
+	MTN   =  1,
+	MTNS  =  2,
+	SCCP  =  3,
+	TUP   =  4,
+	ISUP  =  5,
+	DUP_C =  6,
+	DUP_F =  7,
+	MTP_T =  8,
+	BISUP =  9,
+	SISUP = 10,
+	AAL2  = 12,
+	BICC  = 13,
+	GCP   = 14,
+    }
+</td><td align="right"><h3><strong>Services</strong></h3></td></tr></table><p></p><p>
+ Service indicator values
+     </p>
+<A NAME="Priority"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Priority</strong> {	Regular  = 0x00,
+	Special  = 0x10,
+	Circuit  = 0x20,
+	Facility = 0x30
+    }
+</td><td align="right"><h3><strong>Priority</strong></h3></td></tr></table><p></p><p>
+ Priority values
+     </p>
+<A NAME="NetIndicator"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>NetIndicator</strong> {	International      = 0x00,
+	SpareInternational = 0x40,
+	National           = 0x80,
+	ReservedNational   = 0xc0
+    }
+</td><td align="right"><h3><strong>NetIndicator</strong></h3></td></tr></table><p></p><p>
+ Subservice types
+     </p>
+<A NAME="SS7MSU"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7MSU</strong> ()
+<br></td><td align="right"><h3><strong>SS7MSU</strong></h3></td></tr></table><p></p><p>
+ Empty MSU constructor
+     </p>
+<A NAME="SS7MSU"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7MSU</strong> (const SS7MSU& value)
+<br></td><td align="right"><h3><strong>SS7MSU</strong></h3></td></tr></table><p></p><p>
+ Copy constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Original MSU
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7MSU"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7MSU</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>SS7MSU</strong></h3></td></tr></table><p></p><p>
+ Constructor from data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Raw data block to copy
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7MSU"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>SS7MSU</strong> (void* value, unsigned int len, bool copyData = true)
+<br></td><td align="right"><h3><strong>SS7MSU</strong></h3></td></tr></table><p></p><p>
+ Constructor of an initialized MSU
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to assign, may be NULL to fill with zeros
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, may be zero (then value is ignored)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>copyData</i></TD><TD align="left" valign="top">True to make a copy of the data, false to use the pointer
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7MSU"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7MSU</strong> (unsigned char sio, const SS7Label label, void* value = 0, unsigned int len = 0)
+<br></td><td align="right"><h3><strong>SS7MSU</strong></h3></td></tr></table><p></p><p>
+ Constructor from routing label and raw data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sio</i></TD><TD align="left" valign="top">Service Information Octet
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, may be zero (then value is ignored)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to assign, may be NULL to fill with zeros
+     </TD></TR>
+</TABLE></P>
+<A NAME="SS7MSU"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SS7MSU</strong> (unsigned char sif, unsigned char ssf, const SS7Label label, void* value = 0, unsigned int len = 0)
+<br></td><td align="right"><h3><strong>SS7MSU</strong></h3></td></tr></table><p></p><p>
+ Constructor from routing label and raw data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sif</i></TD><TD align="left" valign="top">Service Information Field
+</TD></TR>
+<TR><TD align="left" valign="top"><i>ssf</i></TD><TD align="left" valign="top">Subservice Field
+</TD></TR>
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Length of data, may be zero (then value is ignored)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data to assign, may be NULL to fill with zeros
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SS7MSU"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SS7MSU</strong> ()
+<br></td><td align="right"><h3><strong>~SS7MSU</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="operator="></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7MSU& &nbsp;<strong>operator=</strong> (const SS7MSU& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Original MSU
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A reference to this MSU
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataBlock.html#operator=">DataBlock</A>.</p>
+<A NAME="operator="></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SS7MSU& &nbsp;<strong>operator=</strong> (const DataBlock& value)
+<br></td><td align="right"><h3><strong>operator=</strong></h3></td></tr></table><p></p><p>
+ Assignment operator from data block
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Data block to assign
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: A reference to this MSU
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__DataBlock.html#operator=">DataBlock</A>.</p>
+<A NAME="valid"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the MSU length appears valid
+</p>
+<p><b>Returns</b>: True if the MSU length is valid
+     </p>
+<A NAME="getData"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char* &nbsp;<strong>getData</strong> (unsigned int offs, unsigned int len = 1)
+<br></td><td align="right"><h3><strong>getData</strong></h3></td></tr></table><p></p><p>
+ Get a pointer to raw data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Offset in the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Minimum length of data requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to data or NULL if invalid offset or length
+     </p>
+<A NAME="getData"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const unsigned char* &nbsp;<strong>getData</strong> (unsigned int offs, unsigned int len = 1)
+<br></td><td align="right"><h3><strong>getData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a const pointer to raw data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>offs</i></TD><TD align="left" valign="top">Offset in the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Minimum length of data requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to data or NULL if invalid offset or length
+     </p>
+<A NAME="getData"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned char* &nbsp;<strong>getData</strong> (const SS7Label& label, unsigned int len = 1)
+<br></td><td align="right"><h3><strong>getData</strong></h3></td></tr></table><p></p><p>
+ Get a pointer to raw user part data after a routing label
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label of the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Minimum length of data requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to data or NULL if invalid offset or length
+     </p>
+<A NAME="getData"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const unsigned char* &nbsp;<strong>getData</strong> (const SS7Label& label, unsigned int len = 1)
+<br></td><td align="right"><h3><strong>getData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get a const pointer to raw user part data after a routing label
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>label</i></TD><TD align="left" valign="top">Routing label of the MSU
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Minimum length of data requested
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to data or NULL if invalid offset or length
+     </p>
+<A NAME="getSIO"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getSIO</strong> ()
+<br></td><td align="right"><h3><strong>getSIO</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Service Information Octet
+</p>
+<p><b>Returns</b>: Value of the SIO or -1 if the MSU is empty
+     </p>
+<A NAME="getSIF"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getSIF</strong> ()
+<br></td><td align="right"><h3><strong>getSIF</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Service Information Field
+</p>
+<p><b>Returns</b>: Value of the SIF or -1 if the MSU is empty
+     </p>
+<A NAME="getSSF"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getSSF</strong> ()
+<br></td><td align="right"><h3><strong>getSSF</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Subservice Field (SSF)
+</p>
+<p><b>Returns</b>: Value of the subservice or -1 if the MSU is empty
+     </p>
+<A NAME="getPrio"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getPrio</strong> ()
+<br></td><td align="right"><h3><strong>getPrio</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Priority Field
+</p>
+<p><b>Returns</b>: Value of the priority or -1 if the MSU is empty
+     </p>
+<A NAME="getNI"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getNI</strong> ()
+<br></td><td align="right"><h3><strong>getNI</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the Network Indicator (NI)
+</p>
+<p><b>Returns</b>: Value of the subservice or -1 if the MSU is empty
+     </p>
+<A NAME="getServiceName"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getServiceName</strong> ()
+<br></td><td align="right"><h3><strong>getServiceName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the name of the Service as decoded from the SIF
+</p>
+<p><b>Returns</b>: Name of the service, NULL if unknown or invalid MSU
+     </p>
+<A NAME="getPriorityName"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getPriorityName</strong> ()
+<br></td><td align="right"><h3><strong>getPriorityName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the name of the Priority as decoded from the SIF
+</p>
+<p><b>Returns</b>: Name of the priority, NULL if unknown or invalid MSU
+     </p>
+<A NAME="getIndicatorName"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char* &nbsp;<strong>getIndicatorName</strong> ()
+<br></td><td align="right"><h3><strong>getIndicatorName</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the name of the Network Indicator as decoded from the SIF
+</p>
+<p><b>Returns</b>: Name of the network indicator, NULL if unknown or invalid MSU
+     </p>
+<A NAME="getPriority"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned char &nbsp;<strong>getPriority</strong> (const char* name, unsigned char defVal = Regular)
+<br></td><td align="right"><h3><strong>getPriority</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the priority associated with a given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Priority name to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The priority value or the given default one if not exists
+     </p>
+<A NAME="getNetIndicator"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td> unsigned char &nbsp;<strong>getNetIndicator</strong> (const char* name, unsigned char defVal = National)
+<br></td><td align="right"><h3><strong>getNetIndicator</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the network indicator associated with a given name
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">Network indicator name to find
+</TD></TR>
+<TR><TD align="left" valign="top"><i>defVal</i></TD><TD align="left" valign="top">Default value to return if not found
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The network indicator value or the given default one if not exists
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

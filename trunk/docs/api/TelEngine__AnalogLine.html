@@ -1,0 +1,460 @@
+<HTML>
+<HEAD>
+<TITLE>class AnalogLine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class AnalogLine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An analog line. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::AnalogLine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__AnalogLine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref2">Type</A> {	FXO,                             
+	FXS,                             
+	Recorder,                        
+	Monitor,                         
+	Unknown
+    }
+</LI>
+<LI>enum <A HREF="#ref3">State</A> {	OutOfService   = -1,             
+	Idle           = 0,              
+	Dialing        = 1,              
+	DialComplete   = 2,              
+	Ringing        = 3,              
+	Answered       = 4,              
+	CallEnded      = 5,              
+	OutOfOrder     = 6,              
+    }
+</LI>
+<LI>enum <A HREF="#ref4">CallSetupInfo</A> {	After,                           
+	Before,                          
+	NoCallSetup                      
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref5">AnalogLine</A></b> (AnalogLineGroup* grp, unsigned int cic, const NamedList& params) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref6">~AnalogLine</A></b> () 
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref7">type</A></b> ()  const
+</LI>
+<LI>inline State &nbsp;<b><A HREF="#ref8">state</A></b> ()  const
+</LI>
+<LI>inline AnalogLineGroup* &nbsp;<b><A HREF="#ref9">group</A></b> () 
+</LI>
+<LI>inline AnalogLine* &nbsp;<b><A HREF="#ref10">getPeer</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">setPeer</A></b> (AnalogLine* line = 0, bool sync = true) 
+</LI>
+<LI>inline SignallingCircuit* &nbsp;<b><A HREF="#ref12">circuit</A></b> () 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref13">address</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref14">outbandDtmf</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref15">answerOnPolarity</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">hangupOnPolarity</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref17">polarityControl</A></b> ()  const
+</LI>
+<LI>inline CallSetupInfo &nbsp;<b><A HREF="#ref18">callSetup</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref19">callSetupTimeout</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref20">noRingTimeout</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref21">alarmTimeout</A></b> ()  const
+</LI>
+<LI>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref22">delayDial</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref23">acceptPulseDigit</A></b> (bool ok) 
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref24">userdata</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref25">userdata</A></b> (void* data, bool sync = true) 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref26">toString</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">resetEcho</A></b> (bool train) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref28">resetCircuit</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref29">setCircuitParam</A></b> (const char* param, const char* value = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref30">connect</A></b> (bool sync) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref31">disconnect</A></b> (bool sync) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref32">sendEvent</A></b> (SignallingCircuitEvent::Type type, NamedList* params = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref33">sendEvent</A></b> (SignallingCircuitEvent::Type type, State newState,
+	NamedList* params = 0) 
+</LI>
+<LI>virtual  AnalogLineEvent* &nbsp;<b><A HREF="#ref34">getEvent</A></b> (const Time& when) 
+</LI>
+<LI>virtual  AnalogLineEvent* &nbsp;<b><A HREF="#ref35">getMonitorEvent</A></b> (const Time& when) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref36">checkTimeouts</A></b> (const Time& when) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref37">changeState</A></b> (State newState, bool sync = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref38">enable</A></b> (bool ok, bool sync, bool connectNow = true) 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  const TokenDict* &nbsp;<b><A HREF="#ref39">typeNames</A></b> () 
+</LI>
+<LI>static  const TokenDict* &nbsp;<b><A HREF="#ref40">stateNames</A></b> () 
+</LI>
+<LI>static  const TokenDict* &nbsp;<b><A HREF="#ref41">csNames</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref42">destroyed</A></b> () 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is used to manage an analog line and keep data associated with it.
+ Also it can be used to monitor a pair of FXS/FXO analog lines
+</p>
+<A NAME="Type"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	FXO,                             
+	FXS,                             
+	Recorder,                        
+	Monitor,                         
+	Unknown
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Line type enumerator
+     </p>
+<A NAME="State"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {	OutOfService   = -1,             
+	Idle           = 0,              
+	Dialing        = 1,              
+	DialComplete   = 2,              
+	Ringing        = 3,              
+	Answered       = 4,              
+	CallEnded      = 5,              
+	OutOfOrder     = 6,              
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ Line state enumeration
+     </p>
+<A NAME="CallSetupInfo"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>CallSetupInfo</strong> {	After,                           
+	Before,                          
+	NoCallSetup                      
+    }
+</td><td align="right"><h3><strong>CallSetupInfo</strong></h3></td></tr></table><p></p><p>
+ Call setup (such as Caller ID) management (send and detect)
+     </p>
+<A NAME="AnalogLine"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>AnalogLine</strong> (AnalogLineGroup* grp, unsigned int cic, const NamedList& params)
+<br></td><td align="right"><h3><strong>AnalogLine</strong></h3></td></tr></table><p></p><p>
+ Constructor. Reserve the line's circuit. Connect it if requested. Creation will fail if no group,
+  circuit, caller or the circuit is already allocated for another line in the group
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>grp</i></TD><TD align="left" valign="top">The group owning this analog line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>cic</i></TD><TD align="left" valign="top">The code of the signalling circuit used this line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">The line's parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="~AnalogLine"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~AnalogLine</strong> ()
+<br></td><td align="right"><h3><strong>~AnalogLine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="type"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get this line's type
+</p>
+<p><b>Returns</b>: The line type as enumeration
+     </p>
+<A NAME="state"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline State &nbsp;<strong>state</strong> ()
+<br></td><td align="right"><h3><strong>state</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the line state
+</p>
+<p><b>Returns</b>: The line state as enumeration
+     </p>
+<A NAME="group"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline AnalogLineGroup* &nbsp;<strong>group</strong> ()
+<br></td><td align="right"><h3><strong>group</strong></h3></td></tr></table><p></p><p>
+ Get the group owning this line
+</p>
+<p><b>Returns</b>: The group owning this line
+     </p>
+<A NAME="getPeer"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline AnalogLine* &nbsp;<strong>getPeer</strong> ()
+<br></td><td align="right"><h3><strong>getPeer</strong></h3></td></tr></table><p></p><p>
+ Get this line's peer if belongs to a pair of monitored lines
+</p>
+<p><b>Returns</b>: This line's peer if belongs to a pair of monitored lines
+     </p>
+<A NAME="setPeer"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setPeer</strong> (AnalogLine* line = 0, bool sync = true)
+<br></td><td align="right"><h3><strong>setPeer</strong></h3></td></tr></table><p></p><p>
+ Remove old peer's peer. Set this line's peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>line</i></TD><TD align="left" valign="top">This line's peer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">True to synchronize (set/reset) with the old peer
+     </TD></TR>
+</TABLE></P>
+<A NAME="circuit"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCircuit* &nbsp;<strong>circuit</strong> ()
+<br></td><td align="right"><h3><strong>circuit</strong></h3></td></tr></table><p></p><p>
+ Get the line's circuit
+</p>
+<p><b>Returns</b>: SignallingCircuit pointer or 0 if no circuit was attached to this line
+     </p>
+<A NAME="address"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>address</strong> ()
+<br></td><td align="right"><h3><strong>address</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the line address: group_name/circuit_number
+</p>
+<p><b>Returns</b>: The line address
+     </p>
+<A NAME="outbandDtmf"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>outbandDtmf</strong> ()
+<br></td><td align="right"><h3><strong>outbandDtmf</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if allowed to send outband DTMFs (DTMF events)
+</p>
+<p><b>Returns</b>: True if allowed to send outband DTMFs
+     </p>
+<A NAME="answerOnPolarity"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>answerOnPolarity</strong> ()
+<br></td><td align="right"><h3><strong>answerOnPolarity</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the line should be answered on polarity change
+</p>
+<p><b>Returns</b>: True if the line should be answered on polarity change
+     </p>
+<A NAME="hangupOnPolarity"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>hangupOnPolarity</strong> ()
+<br></td><td align="right"><h3><strong>hangupOnPolarity</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the line should be hanged up on polarity change
+</p>
+<p><b>Returns</b>: True if the line should be hanged up on polarity change
+     </p>
+<A NAME="polarityControl"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>polarityControl</strong> ()
+<br></td><td align="right"><h3><strong>polarityControl</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the line polarity change should be used
+</p>
+<p><b>Returns</b>: True if the line polarity change should be used
+     </p>
+<A NAME="callSetup"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline CallSetupInfo &nbsp;<strong>callSetup</strong> ()
+<br></td><td align="right"><h3><strong>callSetup</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the line is processing (send/receive) the setup info (such as caller id) and when it does it
+</p>
+<p><b>Returns</b>: Call setup info processing as enumeration
+     </p>
+<A NAME="callSetupTimeout"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>callSetupTimeout</strong> ()
+<br></td><td align="right"><h3><strong>callSetupTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time allowed to ellapse between the call setup data and the first ring
+</p>
+<p><b>Returns</b>: The time allowed to ellapse between the call setup data and the first ring
+     </p>
+<A NAME="noRingTimeout"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>noRingTimeout</strong> ()
+<br></td><td align="right"><h3><strong>noRingTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time allowed to ellapse without receiving a ring on incoming calls
+</p>
+<p><b>Returns</b>: The time allowed to ellapse without receiving a ring on incoming calls
+     </p>
+<A NAME="alarmTimeout"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>alarmTimeout</strong> ()
+<br></td><td align="right"><h3><strong>alarmTimeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time allowed to stay in alarm. This option can be used by the clients to terminate an active call
+</p>
+<p><b>Returns</b>: The time allowed to stay in alarm
+     </p>
+<A NAME="delayDial"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>delayDial</strong> ()
+<br></td><td align="right"><h3><strong>delayDial</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the time delay of dialing the called number
+</p>
+<p><b>Returns</b>: The time delay of dialing the called number
+     </p>
+<A NAME="acceptPulseDigit"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>acceptPulseDigit</strong> (bool ok)
+<br></td><td align="right"><h3><strong>acceptPulseDigit</strong></h3></td></tr></table><p></p><p>
+ Set/reset accept pulse digits flag
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">True to accept incoming pulse digits, false to ignore them
+     </TD></TR>
+</TABLE></P>
+<A NAME="userdata"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>userdata</strong> ()
+<br></td><td align="right"><h3><strong>userdata</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the private user data of this line
+</p>
+<p><b>Returns</b>: The private user data of this line
+     </p>
+<A NAME="userdata"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>userdata</strong> (void* data, bool sync = true)
+<br></td><td align="right"><h3><strong>userdata</strong></h3></td></tr></table><p></p><p>
+ Set the private user data of this line and its peer if any
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The new private user data value of this line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">True to synchronize (set data) with the peer
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get this line's address
+</p>
+<p><b>Returns</b>: This line's address
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="resetEcho"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>resetEcho</strong> (bool train)
+<br></td><td align="right"><h3><strong>resetEcho</strong></h3></td></tr></table><p></p><p>
+ Reset the line circuit's echo canceller to line default echo canceller state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>train</i></TD><TD align="left" valign="top">Start echo canceller training if enabled
+     </TD></TR>
+</TABLE></P>
+<A NAME="resetCircuit"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>resetCircuit</strong> ()
+<br></td><td align="right"><h3><strong>resetCircuit</strong></h3></td></tr></table><p></p><p>
+ Reset the line's circuit (change its state to Reserved)
+</p>
+<p><b>Returns</b>: True if the line's circuit state was changed to Reserved
+     </p>
+<A NAME="setCircuitParam"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setCircuitParam</strong> (const char* param, const char* value = 0)
+<br></td><td align="right"><h3><strong>setCircuitParam</strong></h3></td></tr></table><p></p><p>
+ Set a parameter of this line's circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>param</i></TD><TD align="left" valign="top">Parameter name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">Optional parameter value
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the line's circuit parameter was set
+     </p>
+<A NAME="connect"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>connect</strong> (bool sync)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p></p><p>
+ Connect the line's circuit. Reset line echo canceller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">True to synchronize (connect) the peer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the line's circuit state was changed to Connected
+     </p>
+<A NAME="disconnect"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>disconnect</strong> (bool sync)
+<br></td><td align="right"><h3><strong>disconnect</strong></h3></td></tr></table><p></p><p>
+ Disconnect the line's circuit. Reset line echo canceller
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">True to synchronize (disconnect) the peer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the line's circuit was disconnected (changed state from Connected to Reserved)
+     </p>
+<A NAME="sendEvent"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendEvent</strong> (SignallingCircuitEvent::Type type, NamedList* params = 0)
+<br></td><td align="right"><h3><strong>sendEvent</strong></h3></td></tr></table><p></p><p>
+ Send an event through this line if not out of service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the event to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional event parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="sendEvent"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>sendEvent</strong> (SignallingCircuitEvent::Type type, State newState,
+	NamedList* params = 0)
+<br></td><td align="right"><h3><strong>sendEvent</strong></h3></td></tr></table><p></p><p>
+ Send an event through this line if not out of service and change its state on success
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the event to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">The new state of the line if the event was sent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Optional event parameters
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success
+     </p>
+<A NAME="getEvent"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td> AnalogLineEvent* &nbsp;<strong>getEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Get events from the line's circuit if not out of service. Check timeouts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: AnalogLineEvent pointer or 0 if no events
+     </p>
+<A NAME="getMonitorEvent"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td> AnalogLineEvent* &nbsp;<strong>getMonitorEvent</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>getMonitorEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Alternate get events from this line or peer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: AnalogLineEvent pointer or 0 if no events
+     </p>
+<A NAME="checkTimeouts"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>checkTimeouts</strong> (const Time& when)
+<br></td><td align="right"><h3><strong>checkTimeouts</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check timeouts if the line is not out of service and no event was generated by the circuit
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as computing base for timeouts
+     </TD></TR>
+</TABLE></P>
+<A NAME="changeState"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>changeState</strong> (State newState, bool sync = false)
+<br></td><td align="right"><h3><strong>changeState</strong></h3></td></tr></table><p></p><p>
+ Change the line state if neither current or new state are OutOfService
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">The new state of the line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">True to synchronize (change state) the peer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if line state changed
+     </p>
+<A NAME="enable"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>enable</strong> (bool ok, bool sync, bool connectNow = true)
+<br></td><td align="right"><h3><strong>enable</strong></h3></td></tr></table><p></p><p>
+ Enable/disable line. Change circuit's state to Disabled/Reserved when
+  entering/exiting the OutOfService state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ok</i></TD><TD align="left" valign="top">Enable (change state to Idle) or disable (change state to OutOfService) the line
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sync</i></TD><TD align="left" valign="top">True to synchronize (enable/disable) the peer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>connectNow</i></TD><TD align="left" valign="top">Connect the line if enabled. Ignored if the line will be disabled
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if line state changed
+     </p>
+<A NAME="typeNames"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>typeNames</strong> ()
+<br></td><td align="right"><h3><strong>typeNames</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Line type names dictionary
+     </p>
+<A NAME="stateNames"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>stateNames</strong> ()
+<br></td><td align="right"><h3><strong>stateNames</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Line state names dictionary
+     </p>
+<A NAME="csNames"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TokenDict* &nbsp;<strong>csNames</strong> ()
+<br></td><td align="right"><h3><strong>csNames</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Call setup info names
+     </p>
+<A NAME="destroyed"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Deref the circuit. Remove itself from group
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

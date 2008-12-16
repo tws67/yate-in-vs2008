@@ -1,0 +1,419 @@
+<HTML>
+<HEAD>
+<TITLE>class TiXmlNode</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class TiXmlNode</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1"> The parent class for everything in the Document Object Model. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::TiXmlNode</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yxml___tinyxml_h.html">libs/yxml/tinyxml.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><i><A HREF="TelEngine__TiXmlBase.html">TelEngine::TiXmlBase</A></i> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__TiXmlComment.html">TiXmlComment</A>, <A HREF="TelEngine__TiXmlDeclaration.html">TiXmlDeclaration</A>, <A HREF="TelEngine__TiXmlDocument.html">TiXmlDocument</A>, <A HREF="TelEngine__TiXmlElement.html">TiXmlElement</A>, <A HREF="TelEngine__TiXmlText.html">TiXmlText</A>, <A HREF="TelEngine__TiXmlUnknown.html">TiXmlUnknown</A>, <A HREF="TelEngine__XMLParser.html">XMLParser</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__TiXmlNode.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref7">NodeType</A> {		DOCUMENT,
+		ELEMENT,
+		COMMENT,
+		UNKNOWN,
+		TEXT,
+		DECLARATION,
+		TYPECOUNT
+	}
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>friend std::istream& &nbsp;<b><A HREF="#ref3">operator >> </A></b> (std::istream& in, TiXmlNode& base) 
+</LI>
+<LI>friend std::ostream& &nbsp;<b><A HREF="#ref4">operator<< </A></b> (std::ostream& out, const TiXmlNode& base) 
+</LI>
+<LI>friend std::string& &nbsp;<b><A HREF="#ref5">operator<< </A></b> (std::string& out, const TiXmlNode& base ) 
+</LI>
+<LI>friend TIXML_OSTREAM& &nbsp;<b><A HREF="#ref6">operator<< </A></b> (TIXML_OSTREAM& out, const TiXmlNode& base) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref8">~TiXmlNode</A></b> () 
+</LI>
+<LI>const char *&nbsp;<b><A HREF="#ref9">Value</A></b> ()  const
+</LI>
+<LI>const std::string& &nbsp;<b><A HREF="#ref10">ValueStr</A></b> ()  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref11">SetValue</A></b> (const char * _value) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref12">SetValue</A></b> ( const std::string& _value ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">Clear</A></b> () 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref14">Parent</A></b> () 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref15">Parent</A></b> ()  const
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref16">FirstChild</A></b> ()  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref17">FirstChild</A></b> () 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref18">FirstChild</A></b> ( const char * value )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref19">FirstChild</A></b> ( const char * value ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref20">LastChild</A></b> ()  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref21">LastChild</A></b> () 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref22">LastChild</A></b> ( const char * value )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref23">LastChild</A></b> ( const char * value ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref24">FirstChild</A></b> ( const std::string& _value )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref25">FirstChild</A></b> ( const std::string& _value ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref26">LastChild</A></b> ( const std::string& _value )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref27">LastChild</A></b> ( const std::string& _value ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref28">IterateChildren</A></b> ( const TiXmlNode* previous )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref29">IterateChildren</A></b> ( TiXmlNode* previous ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref30">IterateChildren</A></b> ( const char * value, const TiXmlNode* previous )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref31">IterateChildren</A></b> ( const char * value, TiXmlNode* previous ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref32">IterateChildren</A></b> ( const std::string& _value, const TiXmlNode* previous )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref33">IterateChildren</A></b> ( const std::string& _value, TiXmlNode* previous ) 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref34">InsertEndChild</A></b> ( const TiXmlNode& addThis ) 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref35">LinkEndChild</A></b> ( TiXmlNode* addThis ) 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref36">InsertBeforeChild</A></b> ( TiXmlNode* beforeThis, const TiXmlNode& addThis ) 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref37">InsertAfterChild</A></b> (  TiXmlNode* afterThis, const TiXmlNode& addThis ) 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref38">ReplaceChild</A></b> ( TiXmlNode* replaceThis, const TiXmlNode& withThis ) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref39">RemoveChild</A></b> ( TiXmlNode* removeThis, bool del = true ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref40">PreviousSibling</A></b> ()  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref41">PreviousSibling</A></b> () 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref42">PreviousSibling</A></b> ( const char * )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref43">PreviousSibling</A></b> ( const char * ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref44">PreviousSibling</A></b> ( const std::string& _value )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref45">PreviousSibling</A></b> ( const std::string& _value ) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref46">NextSibling</A></b> ( const std::string& _value)  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref47">NextSibling</A></b> ( const std::string& _value) 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref48">NextSibling</A></b> ()  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref49">NextSibling</A></b> () 
+</LI>
+<LI>const TiXmlNode* &nbsp;<b><A HREF="#ref50">NextSibling</A></b> ( const char * )  const
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref51">NextSibling</A></b> ( const char * ) 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref52">NextSiblingElement</A></b> ()  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref53">NextSiblingElement</A></b> () 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref54">NextSiblingElement</A></b> ( const char * )  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref55">NextSiblingElement</A></b> ( const char * ) 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref56">NextSiblingElement</A></b> ( const std::string& _value)  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref57">NextSiblingElement</A></b> ( const std::string& _value) 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref58">FirstChildElement</A></b> ()  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref59">FirstChildElement</A></b> () 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref60">FirstChildElement</A></b> ( const char * value )  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref61">FirstChildElement</A></b> ( const char * value ) 
+</LI>
+<LI>const TiXmlElement* &nbsp;<b><A HREF="#ref62">FirstChildElement</A></b> ( const std::string& _value )  const
+</LI>
+<LI>TiXmlElement* &nbsp;<b><A HREF="#ref63">FirstChildElement</A></b> ( const std::string& _value ) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref64">Type</A></b> ()  const
+</LI>
+<LI>const TiXmlDocument* &nbsp;<b><A HREF="#ref65">GetDocument</A></b> ()  const
+</LI>
+<LI>TiXmlDocument* &nbsp;<b><A HREF="#ref66">GetDocument</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref67">NoChildren</A></b> ()  const
+</LI>
+<LI>virtual  const TiXmlDocument*    &nbsp;<b><A HREF="#ref68">ToDocument</A></b> ()  const
+</LI>
+<LI>virtual  const TiXmlElement*     &nbsp;<b><A HREF="#ref69">ToElement</A></b> ()  const
+</LI>
+<LI>virtual  const TiXmlComment*     &nbsp;<b><A HREF="#ref70">ToComment</A></b> ()  const
+</LI>
+<LI>virtual  const TiXmlUnknown*     &nbsp;<b><A HREF="#ref71">ToUnknown</A></b> ()  const
+</LI>
+<LI>virtual  const TiXmlText*        &nbsp;<b><A HREF="#ref72">ToText</A></b> ()  const
+</LI>
+<LI>virtual  const TiXmlDeclaration* &nbsp;<b><A HREF="#ref73">ToDeclaration</A></b> ()  const
+</LI>
+<LI>virtual  TiXmlDocument*          &nbsp;<b><A HREF="#ref74">ToDocument</A></b> () 
+</LI>
+<LI>virtual  TiXmlElement*           &nbsp;<b><A HREF="#ref75">ToElement</A></b> () 
+</LI>
+<LI>virtual  TiXmlComment*           &nbsp;<b><A HREF="#ref76">ToComment</A></b> () 
+</LI>
+<LI>virtual  TiXmlUnknown*           &nbsp;<b><A HREF="#ref77">ToUnknown</A></b> () 
+</LI>
+<LI>virtual  TiXmlText*	            &nbsp;<b><A HREF="#ref78">ToText</A></b> () 
+</LI>
+<LI>virtual  TiXmlDeclaration*       &nbsp;<b><A HREF="#ref79">ToDeclaration</A></b> () 
+</LI>
+<LI>virtual  TiXmlNode* &nbsp;<b><i><A HREF="#ref80">Clone</A></i></b> ()  const
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref81">TiXmlNode</A></b> ( NodeType _type ) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref82">CopyTo</A></b> ( TiXmlNode* target )  const
+</LI>
+<LI>virtual  void &nbsp;<b><i><A HREF="#ref83">StreamIn</A></i></b> ( TIXML_ISTREAM* in, TIXML_STRING* tag ) 
+</LI>
+<LI>TiXmlNode* &nbsp;<b><A HREF="#ref84">Identify</A></b> ( const char* start, TiXmlEncoding encoding ) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>TiXmlNode*		<b><A HREF="#ref85">parent</A></b></LI>
+<LI>NodeType		<b><A HREF="#ref86">type</A></b></LI>
+<LI>TiXmlNode*		<b><A HREF="#ref87">firstChild</A></b></LI>
+<LI>TiXmlNode*		<b><A HREF="#ref88">lastChild</A></b></LI>
+<LI>TIXML_STRING	<b><A HREF="#ref89">value</A></b></LI>
+<LI>TiXmlNode*		<b><A HREF="#ref90">prev</A></b></LI>
+<LI>TiXmlNode*		<b><A HREF="#ref91">next</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p> The parent class for everything in the Document Object Model.
+	(Except for attributes).
+	Nodes have siblings, a parent, and children. A node can be
+	in a document, or stand on its own. The type of a TiXmlNode
+	can be queried, and it can be cast to its more defined type.
+</p>
+<A NAME="operator%20%3E%3E%20"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>friend std::istream& &nbsp;<strong>operator >> </strong> (std::istream& in, TiXmlNode& base)
+<br></td><td align="right"><h3><strong>operator >> </strong></h3></td></tr></table><p></p><p> An input stream operator, for every class. Tolerant of newlines and
+		    formatting, but doesn't expect them.
+	    </p>
+<A NAME="operator%3C%3C%20"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>friend std::ostream& &nbsp;<strong>operator<< </strong> (std::ostream& out, const TiXmlNode& base)
+<br></td><td align="right"><h3><strong>operator<< </strong></h3></td></tr></table><p></p><p> An output stream operator, for every class. Note that this outputs
+		    without any newlines or formatting, as opposed to Print(), which
+		    includes tabs and new lines.
+</p>
+<p>		    The operator<< and operator>> are not completely symmetric. Writing
+		    a node to a stream is very well defined. You'll get a nice stream
+		    of output, without any extra whitespace or newlines.
+</p>
+<p>		    But reading is not as well defined. (As it always is.) If you create
+		    a TiXmlElement (for example) and read that from an input stream,
+		    the text needs to define an element or junk will result. This is
+		    true of all input streams, but it's worth keeping in mind.
+</p>
+<p>		    A TiXmlDocument will read nodes until it reads a root element, and
+			all the children of that root element.
+	    </p>
+<A NAME="operator%3C%3C%20"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>friend std::string& &nbsp;<strong>operator<< </strong> (std::string& out, const TiXmlNode& base )
+<br></td><td align="right"><h3><strong>operator<< </strong></h3></td></tr></table><p></p><A NAME="operator%3C%3C%20"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>friend TIXML_OSTREAM& &nbsp;<strong>operator<< </strong> (TIXML_OSTREAM& out, const TiXmlNode& base)
+<br></td><td align="right"><h3><strong>operator<< </strong></h3></td></tr></table><p></p><A NAME="NodeType"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>NodeType</strong> {		DOCUMENT,
+		ELEMENT,
+		COMMENT,
+		UNKNOWN,
+		TEXT,
+		DECLARATION,
+		TYPECOUNT
+	}
+</td><td align="right"><h3><strong>NodeType</strong></h3></td></tr></table><p></p><p> The types of XML nodes supported by TinyXml. (All the
+			unsupported types are picked up by UNKNOWN.)
+	</p>
+<A NAME="~TiXmlNode"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~TiXmlNode</strong> ()
+<br></td><td align="right"><h3><strong>~TiXmlNode</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="Value"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const char *&nbsp;<strong>Value</strong> ()
+<br></td><td align="right"><h3><strong>Value</strong></h3></td></tr></table><p> <small>[const]</small></p><p> The meaning of 'value' changes for the specific type of
+		TiXmlNode.
+		@verbatim
+		Document:	filename of the xml file
+		Element:	name of the element
+		Comment:	the comment text
+		Unknown:	the tag contents
+		Text:		the text string
+		@endverbatim
+</p>
+<p>		The subclasses will wrap this function.
+	</p>
+<A NAME="ValueStr"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const std::string& &nbsp;<strong>ValueStr</strong> ()
+<br></td><td align="right"><h3><strong>ValueStr</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return Value() as a std::string. If you only use STL,
+	    this is more efficient than calling Value().
+		Only available in STL mode.
+	</p>
+<A NAME="SetValue"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetValue</strong> (const char * _value)
+<br></td><td align="right"><h3><strong>SetValue</strong></h3></td></tr></table><p></p><p> Changes the value of the node. Defined as:
+		@verbatim
+		Document:	filename of the xml file
+		Element:	name of the element
+		Comment:	the comment text
+		Unknown:	the tag contents
+		Text:		the text string
+		@endverbatim
+	</p>
+<A NAME="SetValue"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>SetValue</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>SetValue</strong></h3></td></tr></table><p></p><A NAME="Clear"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>Clear</strong> ()
+<br></td><td align="right"><h3><strong>Clear</strong></h3></td></tr></table><p></p><A NAME="Parent"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>Parent</strong> ()
+<br></td><td align="right"><h3><strong>Parent</strong></h3></td></tr></table><p></p><A NAME="Parent"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>Parent</strong> ()
+<br></td><td align="right"><h3><strong>Parent</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChild"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>FirstChild</strong> ()
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChild"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>FirstChild</strong> ()
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p></p><A NAME="FirstChild"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>FirstChild</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChild"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>FirstChild</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p></p><A NAME="LastChild"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>LastChild</strong> ()
+<br></td><td align="right"><h3><strong>LastChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="LastChild"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>LastChild</strong> ()
+<br></td><td align="right"><h3><strong>LastChild</strong></h3></td></tr></table><p></p><A NAME="LastChild"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>LastChild</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>LastChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="LastChild"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>LastChild</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>LastChild</strong></h3></td></tr></table><p></p><A NAME="FirstChild"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>FirstChild</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChild"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>FirstChild</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>FirstChild</strong></h3></td></tr></table><p></p><A NAME="LastChild"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>LastChild</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>LastChild</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="LastChild"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>LastChild</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>LastChild</strong></h3></td></tr></table><p></p><A NAME="IterateChildren"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>IterateChildren</strong> ( const TiXmlNode* previous )
+<br></td><td align="right"><h3><strong>IterateChildren</strong></h3></td></tr></table><p> <small>[const]</small></p><p> An alternate way to walk the children of a node.
+		One way to iterate over nodes is:
+		@verbatim
+			for( child = parent->FirstChild(); child; child = child->NextSibling() )
+		@endverbatim
+</p>
+<p>		IterateChildren does the same thing with the syntax:
+		@verbatim
+			child = 0;
+			while( child = parent->IterateChildren( child ) )
+		@endverbatim
+</p>
+<p>		IterateChildren takes the previous child as input and finds
+		the next one. If the previous child is null, it returns the
+		first. IterateChildren will return null when done.
+	</p>
+<A NAME="IterateChildren"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>IterateChildren</strong> ( TiXmlNode* previous )
+<br></td><td align="right"><h3><strong>IterateChildren</strong></h3></td></tr></table><p></p><A NAME="IterateChildren"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>IterateChildren</strong> ( const char * value, const TiXmlNode* previous )
+<br></td><td align="right"><h3><strong>IterateChildren</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="IterateChildren"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>IterateChildren</strong> ( const char * value, TiXmlNode* previous )
+<br></td><td align="right"><h3><strong>IterateChildren</strong></h3></td></tr></table><p></p><A NAME="IterateChildren"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>IterateChildren</strong> ( const std::string& _value, const TiXmlNode* previous )
+<br></td><td align="right"><h3><strong>IterateChildren</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="IterateChildren"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>IterateChildren</strong> ( const std::string& _value, TiXmlNode* previous )
+<br></td><td align="right"><h3><strong>IterateChildren</strong></h3></td></tr></table><p></p><A NAME="InsertEndChild"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>InsertEndChild</strong> ( const TiXmlNode& addThis )
+<br></td><td align="right"><h3><strong>InsertEndChild</strong></h3></td></tr></table><p></p><p> Add a new node related to this. Adds a child past the LastChild.
+		Returns a pointer to the new object or NULL if an error occured.
+	</p>
+<A NAME="LinkEndChild"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>LinkEndChild</strong> ( TiXmlNode* addThis )
+<br></td><td align="right"><h3><strong>LinkEndChild</strong></h3></td></tr></table><p></p><p> Add a new node related to this. Adds a child past the LastChild.
+</p>
+<p>		NOTE: the node to be added is passed by pointer, and will be
+		henceforth owned (and deleted) by tinyXml. This method is efficient
+		and avoids an extra copy, but should be used with care as it
+		uses a different memory model than the other insert functions.
+</p>
+<p>		@sa InsertEndChild
+	</p>
+<A NAME="InsertBeforeChild"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>InsertBeforeChild</strong> ( TiXmlNode* beforeThis, const TiXmlNode& addThis )
+<br></td><td align="right"><h3><strong>InsertBeforeChild</strong></h3></td></tr></table><p></p><p> Add a new node related to this. Adds a child before the specified child.
+		Returns a pointer to the new object or NULL if an error occured.
+	</p>
+<A NAME="InsertAfterChild"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>InsertAfterChild</strong> (  TiXmlNode* afterThis, const TiXmlNode& addThis )
+<br></td><td align="right"><h3><strong>InsertAfterChild</strong></h3></td></tr></table><p></p><p> Add a new node related to this. Adds a child after the specified child.
+		Returns a pointer to the new object or NULL if an error occured.
+	</p>
+<A NAME="ReplaceChild"></A><A NAME="ref38"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>ReplaceChild</strong> ( TiXmlNode* replaceThis, const TiXmlNode& withThis )
+<br></td><td align="right"><h3><strong>ReplaceChild</strong></h3></td></tr></table><p></p><p> Replace a child of this node.
+		Returns a pointer to the new object or NULL if an error occured.
+	</p>
+<A NAME="RemoveChild"></A><A NAME="ref39"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>RemoveChild</strong> ( TiXmlNode* removeThis, bool del = true )
+<br></td><td align="right"><h3><strong>RemoveChild</strong></h3></td></tr></table><p></p><A NAME="PreviousSibling"></A><A NAME="ref40"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>PreviousSibling</strong> ()
+<br></td><td align="right"><h3><strong>PreviousSibling</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="PreviousSibling"></A><A NAME="ref41"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>PreviousSibling</strong> ()
+<br></td><td align="right"><h3><strong>PreviousSibling</strong></h3></td></tr></table><p></p><A NAME="PreviousSibling"></A><A NAME="ref42"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>PreviousSibling</strong> ( const char * )
+<br></td><td align="right"><h3><strong>PreviousSibling</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="PreviousSibling"></A><A NAME="ref43"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>PreviousSibling</strong> ( const char * )
+<br></td><td align="right"><h3><strong>PreviousSibling</strong></h3></td></tr></table><p></p><A NAME="PreviousSibling"></A><A NAME="ref44"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>PreviousSibling</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>PreviousSibling</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="PreviousSibling"></A><A NAME="ref45"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>PreviousSibling</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>PreviousSibling</strong></h3></td></tr></table><p></p><A NAME="NextSibling"></A><A NAME="ref46"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>NextSibling</strong> ( const std::string& _value)
+<br></td><td align="right"><h3><strong>NextSibling</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="NextSibling"></A><A NAME="ref47"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>NextSibling</strong> ( const std::string& _value)
+<br></td><td align="right"><h3><strong>NextSibling</strong></h3></td></tr></table><p></p><A NAME="NextSibling"></A><A NAME="ref48"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>NextSibling</strong> ()
+<br></td><td align="right"><h3><strong>NextSibling</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="NextSibling"></A><A NAME="ref49"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>NextSibling</strong> ()
+<br></td><td align="right"><h3><strong>NextSibling</strong></h3></td></tr></table><p></p><A NAME="NextSibling"></A><A NAME="ref50"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlNode* &nbsp;<strong>NextSibling</strong> ( const char * )
+<br></td><td align="right"><h3><strong>NextSibling</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="NextSibling"></A><A NAME="ref51"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>NextSibling</strong> ( const char * )
+<br></td><td align="right"><h3><strong>NextSibling</strong></h3></td></tr></table><p></p><A NAME="NextSiblingElement"></A><A NAME="ref52"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>NextSiblingElement</strong> ()
+<br></td><td align="right"><h3><strong>NextSiblingElement</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Convenience function to get through elements.
+		Calls NextSibling and ToElement. Will skip all non-Element
+		nodes. Returns 0 if there is not another element.
+	</p>
+<A NAME="NextSiblingElement"></A><A NAME="ref53"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>NextSiblingElement</strong> ()
+<br></td><td align="right"><h3><strong>NextSiblingElement</strong></h3></td></tr></table><p></p><A NAME="NextSiblingElement"></A><A NAME="ref54"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>NextSiblingElement</strong> ( const char * )
+<br></td><td align="right"><h3><strong>NextSiblingElement</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Convenience function to get through elements.
+		Calls NextSibling and ToElement. Will skip all non-Element
+		nodes. Returns 0 if there is not another element.
+	</p>
+<A NAME="NextSiblingElement"></A><A NAME="ref55"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>NextSiblingElement</strong> ( const char * )
+<br></td><td align="right"><h3><strong>NextSiblingElement</strong></h3></td></tr></table><p></p><A NAME="NextSiblingElement"></A><A NAME="ref56"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>NextSiblingElement</strong> ( const std::string& _value)
+<br></td><td align="right"><h3><strong>NextSiblingElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="NextSiblingElement"></A><A NAME="ref57"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>NextSiblingElement</strong> ( const std::string& _value)
+<br></td><td align="right"><h3><strong>NextSiblingElement</strong></h3></td></tr></table><p></p><A NAME="FirstChildElement"></A><A NAME="ref58"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>FirstChildElement</strong> ()
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChildElement"></A><A NAME="ref59"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>FirstChildElement</strong> ()
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p></p><A NAME="FirstChildElement"></A><A NAME="ref60"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>FirstChildElement</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChildElement"></A><A NAME="ref61"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>FirstChildElement</strong> ( const char * value )
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p></p><A NAME="FirstChildElement"></A><A NAME="ref62"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlElement* &nbsp;<strong>FirstChildElement</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="FirstChildElement"></A><A NAME="ref63"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlElement* &nbsp;<strong>FirstChildElement</strong> ( const std::string& _value )
+<br></td><td align="right"><h3><strong>FirstChildElement</strong></h3></td></tr></table><p></p><A NAME="Type"></A><A NAME="ref64"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>Type</strong> ()
+<br></td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Query the type (as an enumerated value, above) of this node.
+		The possible types are: DOCUMENT, ELEMENT, COMMENT,
+								UNKNOWN, TEXT, and DECLARATION.
+	</p>
+<A NAME="GetDocument"></A><A NAME="ref65"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const TiXmlDocument* &nbsp;<strong>GetDocument</strong> ()
+<br></td><td align="right"><h3><strong>GetDocument</strong></h3></td></tr></table><p> <small>[const]</small></p><p> Return a pointer to the Document this node lives in.
+		Returns null if not in a document.
+	</p>
+<A NAME="GetDocument"></A><A NAME="ref66"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlDocument* &nbsp;<strong>GetDocument</strong> ()
+<br></td><td align="right"><h3><strong>GetDocument</strong></h3></td></tr></table><p></p><A NAME="NoChildren"></A><A NAME="ref67"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>NoChildren</strong> ()
+<br></td><td align="right"><h3><strong>NoChildren</strong></h3></td></tr></table><p> <small>[const]</small></p><A NAME="ToDocument"></A><A NAME="ref68"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlDocument*    &nbsp;<strong>ToDocument</strong> ()
+<br></td><td align="right"><h3><strong>ToDocument</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><A NAME="ToElement"></A><A NAME="ref69"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlElement*     &nbsp;<strong>ToElement</strong> ()
+<br></td><td align="right"><h3><strong>ToElement</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><A NAME="ToComment"></A><A NAME="ref70"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlComment*     &nbsp;<strong>ToComment</strong> ()
+<br></td><td align="right"><h3><strong>ToComment</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><A NAME="ToUnknown"></A><A NAME="ref71"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlUnknown*     &nbsp;<strong>ToUnknown</strong> ()
+<br></td><td align="right"><h3><strong>ToUnknown</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><A NAME="ToText"></A><A NAME="ref72"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlText*        &nbsp;<strong>ToText</strong> ()
+<br></td><td align="right"><h3><strong>ToText</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><A NAME="ToDeclaration"></A><A NAME="ref73"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const TiXmlDeclaration* &nbsp;<strong>ToDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>ToDeclaration</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><A NAME="ToDocument"></A><A NAME="ref74"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlDocument*          &nbsp;<strong>ToDocument</strong> ()
+<br></td><td align="right"><h3><strong>ToDocument</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="ToElement"></A><A NAME="ref75"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlElement*           &nbsp;<strong>ToElement</strong> ()
+<br></td><td align="right"><h3><strong>ToElement</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="ToComment"></A><A NAME="ref76"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlComment*           &nbsp;<strong>ToComment</strong> ()
+<br></td><td align="right"><h3><strong>ToComment</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="ToUnknown"></A><A NAME="ref77"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlUnknown*           &nbsp;<strong>ToUnknown</strong> ()
+<br></td><td align="right"><h3><strong>ToUnknown</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="ToText"></A><A NAME="ref78"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlText*	            &nbsp;<strong>ToText</strong> ()
+<br></td><td align="right"><h3><strong>ToText</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="ToDeclaration"></A><A NAME="ref79"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlDeclaration*       &nbsp;<strong>ToDeclaration</strong> ()
+<br></td><td align="right"><h3><strong>ToDeclaration</strong></h3></td></tr></table><p> <small>[virtual]</small></p><A NAME="Clone"></A><A NAME="ref80"></A><table width="100%"><tr bgcolor="#eeeeee"><td> TiXmlNode* &nbsp;<i><strong>Clone</strong></i> ()
+<br></td><td align="right"><h3><i><strong>Clone</strong></i></h3></td></tr></table><p> <small>[const pure virtual]</small></p><p> Create an exact duplicate of this node and return it. The memory must be deleted
+		by the caller. 
+	</p>
+<A NAME="TiXmlNode"></A><A NAME="ref81"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>TiXmlNode</strong> ( NodeType _type )
+<br></td><td align="right"><h3><strong>TiXmlNode</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="CopyTo"></A><A NAME="ref82"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>CopyTo</strong> ( TiXmlNode* target )
+<br></td><td align="right"><h3><strong>CopyTo</strong></h3></td></tr></table><p> <small>[protected const]</small></p><A NAME="StreamIn"></A><A NAME="ref83"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>StreamIn</strong></i> ( TIXML_ISTREAM* in, TIXML_STRING* tag )
+<br></td><td align="right"><h3><i><strong>StreamIn</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><A NAME="Identify"></A><A NAME="ref84"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode* &nbsp;<strong>Identify</strong> ( const char* start, TiXmlEncoding encoding )
+<br></td><td align="right"><h3><strong>Identify</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="parent"></A><A NAME="ref85"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode*		 <strong>parent</strong>
+</td><td align="right"><h3><strong>parent</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="type"></A><A NAME="ref86"></A><table width="100%"><tr bgcolor="#eeeeee"><td>NodeType		 <strong>type</strong>
+</td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="firstChild"></A><A NAME="ref87"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode*		 <strong>firstChild</strong>
+</td><td align="right"><h3><strong>firstChild</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="lastChild"></A><A NAME="ref88"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode*		 <strong>lastChild</strong>
+</td><td align="right"><h3><strong>lastChild</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="value"></A><A NAME="ref89"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TIXML_STRING	 <strong>value</strong>
+</td><td align="right"><h3><strong>value</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="prev"></A><A NAME="ref90"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode*		 <strong>prev</strong>
+</td><td align="right"><h3><strong>prev</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="next"></A><A NAME="ref91"></A><table width="100%"><tr bgcolor="#eeeeee"><td>TiXmlNode*		 <strong>next</strong>
+</td><td align="right"><h3><strong>next</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

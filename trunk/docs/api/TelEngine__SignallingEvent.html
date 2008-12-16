@@ -1,0 +1,164 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingEvent</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingEvent</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A single signalling related event. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingEvent</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingEvent.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref1">Type</A> {	Unknown = 0,
+	Generic,
+	NewCall,
+	Accept,
+	Connect,
+	Complete,
+	Progress,
+	Ringing,
+	Answer,
+	Transfer,
+	Suspend,
+	Resume,
+	Release,
+	Info,
+	Message,
+	Facility,
+	Enable,
+	Disable,
+	Reset,
+	Verify,
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">SignallingEvent</A></b> (Type type, SignallingMessage* message, SignallingCall* call) 
+</LI>
+<LI>&nbsp;<b><A HREF="#ref3">SignallingEvent</A></b> (Type type, SignallingMessage* message, SignallingCallControl* controller = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref4">~SignallingEvent</A></b> () 
+</LI>
+<LI>inline const char* &nbsp;<b><A HREF="#ref5">name</A></b> ()  const
+</LI>
+<LI>inline Type &nbsp;<b><A HREF="#ref6">type</A></b> ()  const
+</LI>
+<LI>inline SignallingCall* &nbsp;<b><A HREF="#ref7">call</A></b> ()  const
+</LI>
+<LI>inline SignallingMessage* &nbsp;<b><A HREF="#ref8">message</A></b> ()  const
+</LI>
+<LI>inline SignallingCallControl* &nbsp;<b><A HREF="#ref9">controller</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  inline const char* &nbsp;<b><A HREF="#ref10">typeName</A></b> (Type t) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ An object holding a signalling event and related references
+</p>
+<A NAME="Type"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>Type</strong> {	Unknown = 0,
+	Generic,
+	NewCall,
+	Accept,
+	Connect,
+	Complete,
+	Progress,
+	Ringing,
+	Answer,
+	Transfer,
+	Suspend,
+	Resume,
+	Release,
+	Info,
+	Message,
+	Facility,
+	Enable,
+	Disable,
+	Reset,
+	Verify,
+    }
+</td><td align="right"><h3><strong>Type</strong></h3></td></tr></table><p></p><p>
+ Type of the event
+     </p>
+<A NAME="SignallingEvent"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingEvent</strong> (Type type, SignallingMessage* message, SignallingCall* call)
+<br></td><td align="right"><h3><strong>SignallingEvent</strong></h3></td></tr></table><p></p><p>
+ Constructor for a call related event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Message carried by the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>call</i></TD><TD align="left" valign="top">Call this event refers to
+     </TD></TR>
+</TABLE></P>
+<A NAME="SignallingEvent"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingEvent</strong> (Type type, SignallingMessage* message, SignallingCallControl* controller = 0)
+<br></td><td align="right"><h3><strong>SignallingEvent</strong></h3></td></tr></table><p></p><p>
+ Constructor for a controller related event
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Type of the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Message carried by the event
+</TD></TR>
+<TR><TD align="left" valign="top"><i>controller</i></TD><TD align="left" valign="top">Controller this event refers to
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingEvent"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingEvent</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, dereferences any resources, notify the signalling call of termination
+     </p>
+<A NAME="name"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const char* &nbsp;<strong>name</strong> ()
+<br></td><td align="right"><h3><strong>name</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the string associated with this event's type
+</p>
+<p><b>Returns</b>: The string associated with this event's type, if any
+     </p>
+<A NAME="type"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Type &nbsp;<strong>type</strong> ()
+<br></td><td align="right"><h3><strong>type</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the type of the event
+</p>
+<p><b>Returns</b>: Type of event, may be unknown
+     </p>
+<A NAME="call"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCall* &nbsp;<strong>call</strong> ()
+<br></td><td align="right"><h3><strong>call</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the call that generated this event, may be NULL
+     </p>
+<A NAME="message"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingMessage* &nbsp;<strong>message</strong> ()
+<br></td><td align="right"><h3><strong>message</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the message that generated this event, may be NULL
+     </p>
+<A NAME="controller"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCallControl* &nbsp;<strong>controller</strong> ()
+<br></td><td align="right"><h3><strong>controller</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the controller of the call
+     </p>
+<A NAME="typeName"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> inline const char* &nbsp;<strong>typeName</strong> (Type t)
+<br></td><td align="right"><h3><strong>typeName</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Get the text associated with a given event type for debug purposes
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>t</i></TD><TD align="left" valign="top">The requested type
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: The text associated with the given type
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

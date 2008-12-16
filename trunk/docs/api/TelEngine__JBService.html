@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<TITLE>class JBService</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBService</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber service. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBService</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small>, <A HREF="TelEngine__GenObject.html">TelEngine::GenObject</A> <small>[public ]</small>, <A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__JBMessage.html">JBMessage</A>, <A HREF="TelEngine__JBPresence.html">JBPresence</A>, <A HREF="TelEngine__JGEngine.html">JGEngine</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBService.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">JBService</A></b> (JBEngine* engine, const char* name, const NamedList* params, int prio) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~JBService</A></b> () 
+</LI>
+<LI>inline JBEngine* &nbsp;<b><A HREF="#ref3">engine</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref4">priority</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">received</A></b> (JBEvent* event) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref6">initialize</A></b> (const NamedList& params) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref7">destruct</A></b> () 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  bool &nbsp;<b><A HREF="#ref8">accept</A></b> (JBEvent* event, bool& processed, bool& insert) 
+</LI>
+<LI>JBEvent* &nbsp;<b><A HREF="#ref9">deque</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>bool <b><A HREF="#ref10">m_initialized</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class is the base class for a Jabber service who wants
+  to get specific protocol data from the Jabber engine
+</p>
+<A NAME="JBService"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBService</strong> (JBEngine* engine, const char* name, const NamedList* params, int prio)
+<br></td><td align="right"><h3><strong>JBService</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The Jabber engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>name</i></TD><TD align="left" valign="top">This service's name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+</TD></TR>
+<TR><TD align="left" valign="top"><i>prio</i></TD><TD align="left" valign="top">The priority of this service
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JBService"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~JBService</strong> ()
+<br></td><td align="right"><h3><strong>~JBService</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor. Remove from engine
+     </p>
+<A NAME="engine"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline JBEngine* &nbsp;<strong>engine</strong> ()
+<br></td><td align="right"><h3><strong>engine</strong></h3></td></tr></table><p></p><p>
+ Get the Jabber engine
+</p>
+<p><b>Returns</b>: The Jabber engine
+     </p>
+<A NAME="priority"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>priority</strong> ()
+<br></td><td align="right"><h3><strong>priority</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the Jabber engine
+</p>
+<p><b>Returns</b>: The Jabber engine
+     </p>
+<A NAME="received"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>received</strong> (JBEvent* event)
+<br></td><td align="right"><h3><strong>received</strong></h3></td></tr></table><p></p><p>
+ Accept an event from the engine. If accepted, the event is enqueued
+  and the stream that generated the event is notified on event
+  terminated to allow it to process other data.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to accept
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if not accepted, let the engine try another service
+     </p>
+<A NAME="initialize"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>initialize</strong> (const NamedList& params)
+<br></td><td align="right"><h3><strong>initialize</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Initialize the service
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Service's parameters
+     </TD></TR>
+</TABLE></P>
+<A NAME="destruct"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destruct</strong> ()
+<br></td><td align="right"><h3><strong>destruct</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Remove from engine. Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#destruct">GenObject</A>.</p>
+<A NAME="accept"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>accept</strong> (JBEvent* event, bool& processed, bool& insert)
+<br></td><td align="right"><h3><strong>accept</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Accept an event from the engine
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to accept
+</TD></TR>
+<TR><TD align="left" valign="top"><i>processed</i></TD><TD align="left" valign="top">Set to true on exit to signal that the event was
+  already processed
+</TD></TR>
+<TR><TD align="left" valign="top"><i>insert</i></TD><TD align="left" valign="top">Set to true if accepted to insert on top of the event queue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if not accepted, let the engine try another service
+     </p>
+<A NAME="deque"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>JBEvent* &nbsp;<strong>deque</strong> ()
+<br></td><td align="right"><h3><strong>deque</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Get an event from queue
+</p>
+<p><b>Returns</b>: JBEvent pointer or 0 if queue is empty
+     </p>
+<A NAME="m_initialized"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_initialized</strong>
+</td><td align="right"><h3><strong>m_initialized</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

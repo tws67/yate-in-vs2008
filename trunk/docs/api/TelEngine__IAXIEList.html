@@ -1,0 +1,255 @@
+<HTML>
+<HEAD>
+<TITLE>class IAXIEList</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class IAXIEList</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Information Element container. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::IAXIEList</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yiax___yateiax_h.html">libs/yiax/yateiax.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__IAXIEList.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref1">IAXIEList</A></b> () 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref2">IAXIEList</A></b> (const IAXFullFrame* frame, bool incoming = true) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">~IAXIEList</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref4">invalidIEList</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">clear</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref6">insertVersion</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">validVersion</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref8">appendIE</A></b> (IAXInfoElement* ie) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref9">appendNull</A></b> (IAXInfoElement::Type type) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref10">appendString</A></b> (IAXInfoElement::Type type, const String& src) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">appendString</A></b> (IAXInfoElement::Type type, unsigned char* src, unsigned len) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref12">appendNumeric</A></b> (IAXInfoElement::Type type, <A HREF="#u_int32_t">u_int32_t</A> value, <A HREF="#u_int8_t">u_int8_t</A> len) 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref13">appendBinary</A></b> (IAXInfoElement::Type type, unsigned char* data, unsigned len) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref14">createFromFrame</A></b> (const IAXFullFrame* frame, bool incoming = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref15">toBuffer</A></b> (DataBlock& buf) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref16">toString</A></b> (String& dest, const char* indent = 0) 
+</LI>
+<LI>IAXInfoElement* &nbsp;<b><A HREF="#ref17">getIE</A></b> (IAXInfoElement::Type type) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref18">getString</A></b> (IAXInfoElement::Type type, String& dest) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref19">getNumeric</A></b> (IAXInfoElement::Type type, <A HREF="#u_int32_t">u_int32_t</A>& dest) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">getBinary</A></b> (IAXInfoElement::Type type, DataBlock& dest) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Management class for a list of Information Elements
+</p>
+<A NAME="IAXIEList"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>IAXIEList</strong> ()
+<br></td><td align="right"><h3><strong>IAXIEList</strong></h3></td></tr></table><p></p><p>
+ Constructor
+     </p>
+<A NAME="IAXIEList"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>IAXIEList</strong> (const IAXFullFrame* frame, bool incoming = true)
+<br></td><td align="right"><h3><strong>IAXIEList</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct the list from an IAXFullFrame object
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Source object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>incoming</i></TD><TD align="left" valign="top">True if it is an incoming frame
+     </TD></TR>
+</TABLE></P>
+<A NAME="~IAXIEList"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>~IAXIEList</strong> ()
+<br></td><td align="right"><h3><strong>~IAXIEList</strong></h3></td></tr></table><p></p><p>
+ Destructor
+     </p>
+<A NAME="invalidIEList"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>invalidIEList</strong> ()
+<br></td><td align="right"><h3><strong>invalidIEList</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the invalid IE list flag
+</p>
+<p><b>Returns</b>: False if the last frame parse was unsuccessful
+     </p>
+<A NAME="clear"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>clear</strong> ()
+<br></td><td align="right"><h3><strong>clear</strong></h3></td></tr></table><p></p><p>
+ Clear the list
+     </p>
+<A NAME="insertVersion"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>insertVersion</strong> ()
+<br></td><td align="right"><h3><strong>insertVersion</strong></h3></td></tr></table><p></p><p>
+ Insert a VERSION Information Element in the list if not already done
+     </p>
+<A NAME="validVersion"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>validVersion</strong> ()
+<br></td><td align="right"><h3><strong>validVersion</strong></h3></td></tr></table><p></p><p>
+ Get the validity of the VERSION Information Element of the list if any
+</p>
+<p><b>Returns</b>: False if version is not IAX_PROTOCOL_VERSION or the list doesn't contain a VERSION Information Element
+     </p>
+<A NAME="appendIE"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendIE</strong> (IAXInfoElement* ie)
+<br></td><td align="right"><h3><strong>appendIE</strong></h3></td></tr></table><p></p><p>
+ Append an Information Element to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ie</i></TD><TD align="left" valign="top">IAXInfoElement pointer to append
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendNull"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendNull</strong> (IAXInfoElement::Type type)
+<br></td><td align="right"><h3><strong>appendNull</strong></h3></td></tr></table><p></p><p>
+ Append an Information Element to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the IAXInfoElement to append
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendString"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendString</strong> (IAXInfoElement::Type type, const String& src)
+<br></td><td align="right"><h3><strong>appendString</strong></h3></td></tr></table><p></p><p>
+ Append a text Information Element to the list from a String
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the IAXInfoElementString to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The source
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendString"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendString</strong> (IAXInfoElement::Type type, unsigned char* src, unsigned len)
+<br></td><td align="right"><h3><strong>appendString</strong></h3></td></tr></table><p></p><p>
+ Append a text Information Element to the list from a buffer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the IAXInfoElementString to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>src</i></TD><TD align="left" valign="top">The source
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Source length
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendNumeric"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendNumeric</strong> (IAXInfoElement::Type type, <A HREF="#u_int32_t">u_int32_t</A> value, <A HREF="#u_int8_t">u_int8_t</A> len)
+<br></td><td align="right"><h3><strong>appendNumeric</strong></h3></td></tr></table><p></p><p>
+ Append a numeric Information Element to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the IAXInfoElementNumeric to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The source
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Source length
+     </TD></TR>
+</TABLE></P>
+<A NAME="appendBinary"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>appendBinary</strong> (IAXInfoElement::Type type, unsigned char* data, unsigned len)
+<br></td><td align="right"><h3><strong>appendBinary</strong></h3></td></tr></table><p></p><p>
+ Append a binary Information Element to the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The type of the IAXInfoElementBinary to append
+</TD></TR>
+<TR><TD align="left" valign="top"><i>value</i></TD><TD align="left" valign="top">The source
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">Source length
+     </TD></TR>
+</TABLE></P>
+<A NAME="createFromFrame"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>createFromFrame</strong> (const IAXFullFrame* frame, bool incoming = true)
+<br></td><td align="right"><h3><strong>createFromFrame</strong></h3></td></tr></table><p></p><p>
+ Construct the list from an IAXFullFrame object.
+  On exit m_invalidIEList will contain the opposite of the returned value
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>frame</i></TD><TD align="left" valign="top">Source object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>incoming</i></TD><TD align="left" valign="top">True if it is an incoming frame
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the frame contains invalid IEs
+     </p>
+<A NAME="toBuffer"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toBuffer</strong> (DataBlock& buf)
+<br></td><td align="right"><h3><strong>toBuffer</strong></h3></td></tr></table><p></p><p>
+ Construct a buffer from this list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">Destination buffer
+     </TD></TR>
+</TABLE></P>
+<A NAME="toString"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>toString</strong> (String& dest, const char* indent = 0)
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p></p><p>
+ Add this list to a string
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">Destination string
+</TD></TR>
+<TR><TD align="left" valign="top"><i>indent</i></TD><TD align="left" valign="top">Optional indent for each element
+     </TD></TR>
+</TABLE></P>
+<A NAME="getIE"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>IAXInfoElement* &nbsp;<strong>getIE</strong> (IAXInfoElement::Type type)
+<br></td><td align="right"><h3><strong>getIE</strong></h3></td></tr></table><p></p><p>
+ Get an IAXInfoElement from the list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The desired type
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: An IAXInfoElement pointer or 0 if the list doesn't contain an IE of this type
+     </p>
+<A NAME="getString"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getString</strong> (IAXInfoElement::Type type, String& dest)
+<br></td><td align="right"><h3><strong>getString</strong></h3></td></tr></table><p></p><p>
+ Get the data of a list item into a String. Before any operation dest is cleared
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The desired type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination String
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the list doesn't contain an IE of this type
+     </p>
+<A NAME="getNumeric"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getNumeric</strong> (IAXInfoElement::Type type, <A HREF="#u_int32_t">u_int32_t</A>& dest)
+<br></td><td align="right"><h3><strong>getNumeric</strong></h3></td></tr></table><p></p><p>
+ Get the data of a list item into a numeric destination
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The desired type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the list doesn't contain an IE of this type
+     </p>
+<A NAME="getBinary"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>getBinary</strong> (IAXInfoElement::Type type, DataBlock& dest)
+<br></td><td align="right"><h3><strong>getBinary</strong></h3></td></tr></table><p></p><p>
+ Get the data of a list item into a DataBlock. Before any operation dest is cleared
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">The desired type
+</TD></TR>
+<TR><TD align="left" valign="top"><i>dest</i></TD><TD align="left" valign="top">The destination buffer
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False if the list doesn't contain an IE of this type
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

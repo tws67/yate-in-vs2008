@@ -1,0 +1,332 @@
+<HTML>
+<HEAD>
+<TITLE>class MGCPTransaction</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class MGCPTransaction</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">An MGCP transaction. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::MGCPTransaction</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ymgcp___yatemgcp_h.html">libs/ymgcp/yatemgcp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__Mutex.html">TelEngine::Mutex</A> <small>[public ]</small>, <A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__MGCPTransaction.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Types</h4><ul><LI>enum <A HREF="#ref3">State</A> {	Invalid      = 0,                
+	Initiated    = 1,                
+	Trying       = 2,                
+	Responded    = 3,                
+	Ack          = 4,                
+	Destroying   = 5,                
+    }
+</LI>
+</ul><h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref4">MGCPTransaction</A></b> (MGCPEngine* engine, MGCPMessage* msg, bool outgoing,
+	const SocketAddr& address) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref5">~MGCPTransaction</A></b> () 
+</LI>
+<LI>inline State &nbsp;<b><A HREF="#ref6">state</A></b> ()  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref7">id</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref8">outgoing</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref9">ep</A></b> ()  const
+</LI>
+<LI>const SocketAddr& &nbsp;<b><A HREF="#ref10">addr</A></b> ()  const
+</LI>
+<LI>inline MGCPEngine* &nbsp;<b><A HREF="#ref11">engine</A></b> () 
+</LI>
+<LI>inline const MGCPMessage* &nbsp;<b><A HREF="#ref12">initial</A></b> ()  const
+</LI>
+<LI>inline const MGCPMessage* &nbsp;<b><A HREF="#ref13">msgProvisional</A></b> ()  const
+</LI>
+<LI>inline const MGCPMessage* &nbsp;<b><A HREF="#ref14">msgResponse</A></b> ()  const
+</LI>
+<LI>inline const MGCPMessage* &nbsp;<b><A HREF="#ref15">msgAck</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref16">timeout</A></b> ()  const
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref17">userData</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref18">userData</A></b> (void* data) 
+</LI>
+<LI>MGCPEvent* &nbsp;<b><A HREF="#ref19">getEvent</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time = Time()) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref20">sendProvisional</A></b> (int code = 100, const char* comment = 0) 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref21">setResponse</A></b> (int code, const char* comment = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">setResponse</A></b> (int code, const NamedList* params, MimeSdpBody* sdp1 = 0,
+	MimeSdpBody* sdp2 = 0) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref23">setResponse</A></b> (MGCPMessage* msg) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><A HREF="#ref24">destroyed</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref25">processMessage</A></b> (MGCPMessage* msg) 
+</LI>
+<LI>MGCPEvent* &nbsp;<b><A HREF="#ref26">checkTimeout</A></b> (<A HREF="#u_int64_t">u_int64_t</A> time) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref27">eventTerminated</A></b> (MGCPEvent* event) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref28">changeState</A></b> (State newState) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref29">setProvisional</A></b> (int code = 100) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref30">send</A></b> (MGCPMessage* msg) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This class implements an MGCP transaction
+</p>
+<A NAME="State"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>enum <strong>State</strong> {	Invalid      = 0,                
+	Initiated    = 1,                
+	Trying       = 2,                
+	Responded    = 3,                
+	Ack          = 4,                
+	Destroying   = 5,                
+    }
+</td><td align="right"><h3><strong>State</strong></h3></td></tr></table><p></p><p>
+ Transaction state enumeration
+     </p>
+<A NAME="MGCPTransaction"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>MGCPTransaction</strong> (MGCPEngine* engine, MGCPMessage* msg, bool outgoing,
+	const SocketAddr& address)
+<br></td><td align="right"><h3><strong>MGCPTransaction</strong></h3></td></tr></table><p></p><p>
+ Constructor. Construct a transaction from its first message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The engine owning this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The command creating this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">The direction of this transaction
+</TD></TR>
+<TR><TD align="left" valign="top"><i>address</i></TD><TD align="left" valign="top">Remote enpoint's address
+     </TD></TR>
+</TABLE></P>
+<A NAME="~MGCPTransaction"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~MGCPTransaction</strong> ()
+<br></td><td align="right"><h3><strong>~MGCPTransaction</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="state"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline State &nbsp;<strong>state</strong> ()
+<br></td><td align="right"><h3><strong>state</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the current transaction's state
+</p>
+<p><b>Returns</b>: The transaction state as enumeration
+     </p>
+<A NAME="id"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the id of this transaction
+</p>
+<p><b>Returns</b>: The id of this transaction
+     </p>
+<A NAME="outgoing"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>outgoing</strong> ()
+<br></td><td align="right"><h3><strong>outgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the direction of this transaction
+</p>
+<p><b>Returns</b>: True if this is an outgoing transaction
+     </p>
+<A NAME="ep"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>ep</strong> ()
+<br></td><td align="right"><h3><strong>ep</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the id of the endpoint owning this transaction
+</p>
+<p><b>Returns</b>: The id of the endpoint owning this transaction
+     </p>
+<A NAME="addr"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>const SocketAddr& &nbsp;<strong>addr</strong> ()
+<br></td><td align="right"><h3><strong>addr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the remote endpoint's IP address
+</p>
+<p><b>Returns</b>: The remote endpoint's IP address
+     </p>
+<A NAME="engine"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline MGCPEngine* &nbsp;<strong>engine</strong> ()
+<br></td><td align="right"><h3><strong>engine</strong></h3></td></tr></table><p></p><p>
+ Get the engine owning this transaction
+</p>
+<p><b>Returns</b>: The engine owning this transaction
+     </p>
+<A NAME="initial"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const MGCPMessage* &nbsp;<strong>initial</strong> ()
+<br></td><td align="right"><h3><strong>initial</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the initial command message sent or received by this transaction
+</p>
+<p><b>Returns</b>: The transaction's initial message
+     </p>
+<A NAME="msgProvisional"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const MGCPMessage* &nbsp;<strong>msgProvisional</strong> ()
+<br></td><td align="right"><h3><strong>msgProvisional</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the provisional response message sent or received by this transaction
+</p>
+<p><b>Returns</b>: The transaction's provisional response message
+     </p>
+<A NAME="msgResponse"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const MGCPMessage* &nbsp;<strong>msgResponse</strong> ()
+<br></td><td align="right"><h3><strong>msgResponse</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the final response message sent or received by this transaction
+</p>
+<p><b>Returns</b>: The transaction's final response message
+     </p>
+<A NAME="msgAck"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const MGCPMessage* &nbsp;<strong>msgAck</strong> ()
+<br></td><td align="right"><h3><strong>msgAck</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the response aknowledgement message sent or received by this transaction
+</p>
+<p><b>Returns</b>: The transaction's response aknowledgement message
+     </p>
+<A NAME="timeout"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>timeout</strong> ()
+<br></td><td align="right"><h3><strong>timeout</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this transaction timed out
+</p>
+<p><b>Returns</b>: True if this transaction timed out
+     </p>
+<A NAME="userData"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>userData</strong> ()
+<br></td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the private user data of this transaction
+</p>
+<p><b>Returns</b>: The private user data of this transaction
+     </p>
+<A NAME="userData"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>userData</strong> (void* data)
+<br></td><td align="right"><h3><strong>userData</strong></h3></td></tr></table><p></p><p>
+ Set the private user data of this transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">The new private user data of this transaction
+     </TD></TR>
+</TABLE></P>
+<A NAME="getEvent"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MGCPEvent* &nbsp;<strong>getEvent</strong> (<A HREF="#u_int64_t">u_int64_t</A> time = Time())
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p></p><p>
+ Get an event from this transaction. Check timeouts
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time in microseconds
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MGCPEvent pointer or 0 if none
+     </p>
+<A NAME="sendProvisional"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>sendProvisional</strong> (int code = 100, const char* comment = 0)
+<br></td><td align="right"><h3><strong>sendProvisional</strong></h3></td></tr></table><p></p><p>
+ Explicitely transmits a provisional code
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Provisional response code to send, must be in range 100-199
+</TD></TR>
+<TR><TD align="left" valign="top"><i>comment</i></TD><TD align="left" valign="top">Optional response comment text
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the provisional response was sent
+     </p>
+<A NAME="setResponse"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>setResponse</strong> (int code, const char* comment = 0)
+<br></td><td align="right"><h3><strong>setResponse</strong></h3></td></tr></table><p></p><p>
+ Creates and transmits a final response (code must at least 200) message if
+  this is an incoming transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Response code to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>comment</i></TD><TD align="left" valign="top">Optional response comment text
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message was queued for transmission
+     </p>
+<A NAME="setResponse"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setResponse</strong> (int code, const NamedList* params, MimeSdpBody* sdp1 = 0,
+	MimeSdpBody* sdp2 = 0)
+<br></td><td align="right"><h3><strong>setResponse</strong></h3></td></tr></table><p></p><p>
+ Creates and transmits a final response (code must at least 200) message if
+  this is an incoming transaction.
+ The SDP(s) will be consumed (appended to the message or destroyed)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">Response code to send
+</TD></TR>
+<TR><TD align="left" valign="top"><i>params</i></TD><TD align="left" valign="top">Parameters to set in response, name will be set as comment
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sdp1</i></TD><TD align="left" valign="top">Optional SDP to be added to the response
+</TD></TR>
+<TR><TD align="left" valign="top"><i>sdp2</i></TD><TD align="left" valign="top">Optional second SDP to be added to the response if the first one is not 0
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message was queued for transmission
+     </p>
+<A NAME="setResponse"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>setResponse</strong> (MGCPMessage* msg)
+<br></td><td align="right"><h3><strong>setResponse</strong></h3></td></tr></table><p></p><p>
+ Transmits a final response (code must at least 200)
+  message if this is an incoming transaction
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to transmit
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the message was queued for transmission
+     </p>
+<A NAME="destroyed"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>destroyed</strong> ()
+<br></td><td align="right"><h3><strong>destroyed</strong></h3></td></tr></table><p> <small>[protected virtual]</small></p><p>
+ Gracefully terminate this transaction. Release memory
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__RefObject.html#destroyed">RefObject</A>.</p>
+<A NAME="processMessage"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>processMessage</strong> (MGCPMessage* msg)
+<br></td><td align="right"><h3><strong>processMessage</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Consume (process) a received message, other then the initiating one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+     </TD></TR>
+</TABLE></P>
+<A NAME="checkTimeout"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>MGCPEvent* &nbsp;<strong>checkTimeout</strong> (<A HREF="#u_int64_t">u_int64_t</A> time)
+<br></td><td align="right"><h3><strong>checkTimeout</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Check timeouts. Manage retransmissions
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>time</i></TD><TD align="left" valign="top">Current time in milliseconds
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: MGCPEvent pointer if timeout
+     </p>
+<A NAME="eventTerminated"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>eventTerminated</strong> (MGCPEvent* event)
+<br></td><td align="right"><h3><strong>eventTerminated</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Event termination notification
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The notifier
+     </TD></TR>
+</TABLE></P>
+<A NAME="changeState"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>changeState</strong> (State newState)
+<br></td><td align="right"><h3><strong>changeState</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Change transaction's state if the new state is a valid one
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>newState</i></TD><TD align="left" valign="top">The new state of this transaction
+     </TD></TR>
+</TABLE></P>
+<A NAME="setProvisional"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>setProvisional</strong> (int code = 100)
+<br></td><td align="right"><h3><strong>setProvisional</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Set and send the provisional response (codes between 100 and 199)
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>code</i></TD><TD align="left" valign="top">The response code
+     </TD></TR>
+</TABLE></P>
+<A NAME="send"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>send</strong> (MGCPMessage* msg)
+<br></td><td align="right"><h3><strong>send</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ (Re)send one the initial, provisional or final response. Change transaction's state
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The message to send
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

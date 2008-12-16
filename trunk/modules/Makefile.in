@@ -1,0 +1,294 @@
+# Makefile
+# This file holds the make rules for the Telephony Engine modules
+
+# override DESTDIR at install time to prefix the install directory
+DESTDIR :=
+
+# override DEBUG at compile time to enable full debug or remove it all
+DEBUG :=
+
+CC  := @CC@ -Wall
+CXX := @CXX@ -Wall
+SED := sed
+DEFS :=
+INCLUDES := -I.. -I@top_srcdir@
+CFLAGS := -O2 @MODULE_CFLAGS@ @INLINE_FLAGS@
+CPPFLAGS := -O2 @MODULE_CPPFLAGS@ @INLINE_FLAGS@
+LDFLAGS:= @LDFLAGS@ -L.. -lyate
+MODFLAGS:= @MODULE_LDFLAGS@
+MODRELAX:= @MODULE_LDRELAX@
+MODSTRIP:= @MODULE_SYMBOLS@
+INCFILES := @top_srcdir@/yateclass.h @top_srcdir@/yatengine.h @top_srcdir@/yatephone.h ../yateversn.h
+
+SUBDIRS :=
+MKDEPS  := ../config.status
+PROGS := cdrbuild.yate cdrfile.yate regexroute.yate \
+	tonegen.yate tonedetect.yate wavefile.yate \
+	extmodule.yate conference.yate moh.yate pbx.yate \
+	dumbchan.yate callfork.yate mux.yate \
+	yrtpchan.yate ystunchan.yate \
+	ysipchan.yate \
+	yiaxchan.yate \
+	yjinglechan.yate \
+	server/pbxassist.yate server/dbpbx.yate server/lateroute.yate \
+	server/park.yate server/queues.yate \
+	server/regfile.yate server/accfile.yate server/register.yate \
+	server/yradius.yate \
+	server/sipfeatures.yate \
+	server/heartbeat.yate server/clustering.yate \
+	server/mgcpgw.yate server/mgcpca.yate \
+	server/mrcpspeech.yate \
+	server/ysigchan.yate \
+	server/analog.yate server/analogdetect.yate \
+	callgen.yate analyzer.yate rmanager.yate msgsniff.yate
+LIBS :=
+DIRS := client server
+
+ifneq (@HAVE_PGSQL@,no)
+PROGS := $(PROGS) server/pgsqldb.yate
+endif
+
+ifneq (@HAVE_MYSQL@,no)
+PROGS := $(PROGS) server/mysqldb.yate
+endif
+
+ifneq (@HAVE_RESOLV@,no)
+PROGS := $(PROGS) enumroute.yate
+endif
+
+ifneq (@HAVE_SOUNDCARD@,no)
+PROGS := $(PROGS) client/osschan.yate
+endif
+
+ifneq (@HAVE_ALSA@,no)
+PROGS := $(PROGS) client/alsachan.yate
+endif
+
+ifneq (@HAVE_ZAP@,no)
+PROGS := $(PROGS) server/zapcard.yate
+endif
+
+ifneq (@HAVE_WANPIPE@,no)
+PROGS := $(PROGS) server/wpcard.yate
+endif
+
+ifneq (@HAVE_SPANDSP@,no)
+PROGS := $(PROGS) faxchan.yate
+endif
+
+ifneq (@HAVE_H323@,no)
+PROGS := $(PROGS) h323chan.yate
+endif
+
+ifneq (@HAVE_GSM@,no)
+PROGS := $(PROGS) gsmcodec.yate
+endif
+
+ifneq (@HAVE_ILBC@,no)
+PROGS := $(PROGS) ilbccodec.yate
+endif
+
+ifneq (@HAVE_SPEEX@,no)
+PROGS := $(PROGS) speexcodec.yate
+endif
+
+ifneq (@HAVE_AMRNB@,no)
+PROGS := $(PROGS) amrnbcodec.yate
+endif
+
+ifneq (@HAVE_OPENSSL@,no)
+PROGS := $(PROGS) openssl.yate
+endif
+
+ifeq (@HAVE_COREDUMPER@,yes)
+COREDUMP_INC := -DHAVE_COREDUMPER @COREDUMPER_INC@
+COREDUMP_LIB := @COREDUMPER_LIB@
+endif
+
+LOCALFLAGS =
+LOCALLIBS =
+CCOMPILE = $(CC) $(DEFS) $(DEBUG) $(INCLUDES) $(CFLAGS)
+COMPILE = $(CXX) $(DEFS) $(DEBUG) $(INCLUDES) $(CPPFLAGS)
+LINK = $(CXX) $(LDFLAGS)
+MODLINK = $(CXX) $(MODFLAGS) $(MODSTRIP) $(LDFLAGS)
+MODCOMP = $(COMPILE) $(MODFLAGS) $(MODSTRIP) $(LDFLAGS)
+
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+moddir = @libdir@/yate
+
+# include optional local make rules
+-include YateLocal.mak
+
+.PHONY: all debug ddebug xdebug
+all: subdirs do-all $(LIBS) $(PROGS)
+
+debug:
+	$(MAKE) all DEBUG=-g3 MODSTRIP=
+
+ddebug:
+	$(MAKE) all DEBUG='-g3 -DDEBUG' MODSTRIP=
+
+xdebug:
+	$(MAKE) all DEBUG='-g3 -DXDEBUG' MODSTRIP=
+
+.PHONY: strip
+strip: all do-strip
+	strip --strip-debug --discard-locals $(PROGS)
+
+.PHONY: clean
+clean: do-clean
+	@-$(RM) $(PROGS) $(LIBS) *.o core 2>/dev/null
+
+.PHONY: install
+install: all do-install
+	@mkdir -p "$(DESTDIR)$(moddir)/" && \
+	for i in $(DIRS) ; do \
+	    mkdir -p "$(DESTDIR)$(moddir)/$$i" ; \
+	done; \
+	for i in $(PROGS) ; do \
+	    @INSTALL_D@ "$$i" "$(DESTDIR)$(moddir)/$$i" ; \
+	done;
+
+.PHONY: uninstall
+uninstall: do-uninstall
+	@-for i in $(PROGS) ; do \
+	    rm "$(DESTDIR)$(moddir)/$$i" ; \
+	done; \
+	for i in $(DIRS) $(SUBDIRS) ; do \
+	    rmdir "$(DESTDIR)$(moddir)/$$i" ; \
+	done;
+	@-rmdir "$(DESTDIR)$(moddir)"
+
+.PHONY: subdirs
+subdirs:
+	@mkdir -p $(DIRS)
+
+%.o: @srcdir@/%.cpp $(MKDEPS) $(INCFILES)
+	$(COMPILE) -c $<
+
+do-all do-strip do-clean do-install do-uninstall:
+	$(if $(SUBDIRS),\
+	@target=`echo $@ | $(SED) -e 's/^do-//'`; \
+	for i in $(SUBDIRS) ; do \
+	    if test -f ./$$i/Makefile ; then \
+		$(MAKE) -C ./$$i $${target} || exit 1;\
+	    fi; \
+	done \
+	)
+
+Makefile: @srcdir@/Makefile.in $(MKDEPS)
+	cd .. && ./config.status
+
+lib%.so: %.o
+	$(LINK) -shared -o $@ $^
+
+%.yate: @srcdir@/%.cpp $(MKDEPS) $(INCFILES)
+	$(MODCOMP) -o $@ $(LOCALFLAGS) $< $(LOCALLIBS)
+
+server/%.yate: @srcdir@/server/%.cpp $(MKDEPS) $(INCFILES)
+	$(MODCOMP) -o $@ $(LOCALFLAGS) $< $(LOCALLIBS)
+
+client/%.yate: @srcdir@/client/%.cpp $(MKDEPS) $(INCFILES)
+	$(MODCOMP) -o $@ $(LOCALFLAGS) $< $(LOCALLIBS)
+
+# Take special care of the modules that depend on optional libs
+
+server/ysigchan.yate server/wpcard.yate server/zapcard.yate server/analog.yate: ../libyatesig.so
+server/ysigchan.yate server/analog.yate: LOCALFLAGS = -I@top_srcdir@/libs/ysig
+server/wpcard.yate: LOCALFLAGS = -I@top_srcdir@/libs/ysig @WANPIPE_HWEC_INC@
+server/zapcard.yate: LOCALFLAGS = -I@top_srcdir@/libs/ysig @ZAP_FLAGS@
+server/ysigchan.yate server/wpcard.yate server/zapcard.yate server/analog.yate: LOCALLIBS = -lyatesig
+
+server/analogdetect.yate: ../libs/ymodem/libyatemodem.a
+server/analogdetect.yate: LOCALFLAGS = -I@top_srcdir@/libs/ymodem
+server/analogdetect.yate: LOCALLIBS = -L../libs/ymodem -lyatemodem
+
+h323chan.yate: LOCALFLAGS = -DPHAS_TEMPLATES -D_REENTRANT -DP_HAS_SEMAPHORES @H323_INC@
+h323chan.yate: LOCALLIBS = @H323_LIB@
+
+server/pgsqldb.yate: LOCALFLAGS = @PGSQL_INC@
+server/pgsqldb.yate: LOCALLIBS = -lpq
+
+server/mysqldb.yate: LOCALFLAGS = @MYSQL_INC@
+server/mysqldb.yate: LOCALLIBS = @MYSQL_LIB@
+
+enumroute.yate: LOCALLIBS = @RESOLV_LIB@
+
+client/alsachan.yate: LOCALLIBS = -lasound
+
+yiaxchan.yate: ../libs/yiax/libyateiax.a
+yiaxchan.yate: LOCALFLAGS = -I@top_srcdir@/libs/yiax
+yiaxchan.yate: LOCALLIBS = -L../libs/yiax -lyateiax
+
+yjinglechan.yate: ../libs/yxml/libyatexml.a ../libs/yjingle/libyatejingle.a
+yjinglechan.yate: LOCALFLAGS = -I@top_srcdir@/libs/yxml -I@top_srcdir@/libs/yjingle
+yjinglechan.yate: LOCALLIBS = -L../libs/yjingle -L../libs/yxml -lyatejingle -lyatexml
+
+server/dbpbx.yate server/pbxassist.yate: ../libs/ypbx/libyatepbx.a
+server/dbpbx.yate server/pbxassist.yate: LOCALFLAGS = -I@top_srcdir@/libs/ypbx
+server/dbpbx.yate server/pbxassist.yate: LOCALLIBS = ../libs/ypbx/libyatepbx.a
+
+server/mgcpgw.yate server/mgcpca.yate: ../libs/ymgcp/libyatemgcp.a
+server/mgcpgw.yate server/mgcpca.yate: LOCALFLAGS = -I@top_srcdir@/libs/ymgcp
+server/mgcpgw.yate server/mgcpca.yate: LOCALLIBS = ../libs/ymgcp/libyatemgcp.a
+
+ilbccodec.yate: ../libs/ilbc/libilbc.a
+ilbccodec.yate: LOCALLIBS = ../libs/ilbc/libilbc.a
+ilbccodec.yate: LOCALFLAGS = @ILBC_INC@
+
+gsmcodec.yate: LOCALLIBS = -lgsm
+gsmcodec.yate: LOCALFLAGS = @GSM_INC@
+
+speexcodec.yate: LOCALLIBS = -lspeex
+speexcodec.yate: LOCALFLAGS = @SPEEX_INC@
+
+amrnbcodec.yate: LOCALFLAGS = @AMRNB_INC@
+amrnbcodec.yate: LOCALLIBS = @AMRNB_LIB@
+
+faxchan.yate: LOCALLIBS = -lspandsp
+faxchan.yate: LOCALFLAGS = @SPANDSP_INC@
+
+ysipchan.yate: ../libs/ysip/libyatesip.a
+ysipchan.yate: LOCALFLAGS = -I@top_srcdir@/libs/ysip
+ysipchan.yate: LOCALLIBS = ../libs/ysip/libyatesip.a
+
+yrtpchan.yate: ../libs/yrtp/libyatertp.a
+yrtpchan.yate: LOCALFLAGS = -I@top_srcdir@/libs/yrtp
+yrtpchan.yate: LOCALLIBS = ../libs/yrtp/libyatertp.a
+
+openssl.yate: LOCALFLAGS = @OPENSSL_INC@
+openssl.yate: LOCALLIBS = @OPENSSL_LIB@
+
+rmanager.yate: LOCALFLAGS = $(COREDUMP_INC)
+rmanager.yate: LOCALLIBS = $(COREDUMP_LIB)
+
+../libyatesig.so ../libs/ysig/libyatesig.a:
+	$(MAKE) -C ../libs/ysig
+
+../libs/ilbc/libilbc.a:
+	$(MAKE) -C ../libs/ilbc
+
+../libs/ysip/libyatesip.a:
+	$(MAKE) -C ../libs/ysip
+
+../libs/yrtp/libyatertp.a:
+	$(MAKE) -C ../libs/yrtp
+
+../libs/yiax/libyateiax.a:
+	$(MAKE) -C ../libs/yiax
+
+../libs/ymgcp/libyatemgcp.a:
+	$(MAKE) -C ../libs/ymgcp
+
+../libs/ymodem/libyatemodem.a:
+	$(MAKE) -C ../libs/ymodem
+
+../libs/yxml/libyatexml.a:
+	$(MAKE) -C ../libs/yxml
+
+../libs/yjingle/libyatejingle.a:
+	$(MAKE) -C ../libs/yjingle
+
+../libs/ypbx/libyatepbx.a:
+	$(MAKE) -C ../libs/ypbx

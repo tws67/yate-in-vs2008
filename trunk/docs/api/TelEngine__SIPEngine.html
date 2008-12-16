@@ -1,0 +1,370 @@
+<HTML>
+<HEAD>
+<TITLE>class SIPEngine</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SIPEngine</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ This object can be one for each SIPListener. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SIPEngine</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysip___yatesip_h.html">libs/ysip/yatesip.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__DebugEnabler.html">TelEngine::DebugEnabler</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SIPEngine.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SIPEngine</A></b> (const char* userAgent = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~SIPEngine</A></b> () 
+</LI>
+<LI>virtual  bool &nbsp;<b><i><A HREF="#ref3">buildParty</A></i></b> (SIPMessage* message) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref4">checkUser</A></b> (const String& username, const String& realm, const String& nonce,
+	const String& method, const String& uri, const String& response,
+	const SIPMessage* message, GenObject* userData) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref5">checkAuth</A></b> (bool noUser, const SIPMessage* message, GenObject* userData) 
+</LI>
+<LI>int &nbsp;<b><A HREF="#ref6">authUser</A></b> (const SIPMessage* message, String& user, bool proxy = false, GenObject* userData = 0) 
+</LI>
+<LI>SIPTransaction* &nbsp;<b><A HREF="#ref7">addMessage</A></b> (SIPParty* ep, const char* buf, int len = -1) 
+</LI>
+<LI>SIPTransaction* &nbsp;<b><A HREF="#ref8">addMessage</A></b> (SIPMessage* message) 
+</LI>
+<LI>SIPEvent *&nbsp;<b><A HREF="#ref9">getEvent</A></b> () 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">process</A></b> () 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref11">processEvent</A></b> (SIPEvent *event) 
+</LI>
+<LI>virtual  SIPTransaction* &nbsp;<b><A HREF="#ref12">forkInvite</A></b> (SIPMessage* answer, SIPTransaction* trans) 
+</LI>
+<LI>virtual  <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref13">getUserTimeout</A></b> ()  const
+</LI>
+<LI><A HREF="#u_int64_t">u_int64_t</A> &nbsp;<b><A HREF="#ref14">getTimer</A></b> (char which, bool reliable = false)  const
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref15">getMaxForwards</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref16">getUserAgent</A></b> ()  const
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref17">getNextCSeq</A></b> () 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref18">nonceGet</A></b> (String& nonce) 
+</LI>
+<LI>long &nbsp;<b><A HREF="#ref19">nonceAge</A></b> (const String& nonce) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref22">isAllowed</A></b> (const char* method)  const
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref23">addAllowed</A></b> (const char* method) 
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref24">getAllowed</A></b> ()  const
+</LI>
+<LI>inline Mutex* &nbsp;<b><A HREF="#ref25">mutex</A></b> () 
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  void &nbsp;<b><A HREF="#ref20">buildAuth</A></b> (const String& username, const String& realm, const String& passwd,
+	const String& nonce, const String& method, const String& uri, String& response) 
+</LI>
+<LI>static  void &nbsp;<b><A HREF="#ref21">buildAuth</A></b> (const String& hash_a1, const String& nonce, const String& hash_a2,
+	String& response) 
+</LI>
+</ul><h4>Public Members</h4><ul><LI>ObjList <b><A HREF="#ref26">TransList</A></b></LI>
+</ul><h4>Protected Members</h4><ul><LI>Mutex <b><A HREF="#ref27">m_mutex</A></b></LI>
+<LI>u_int64_t <b><A HREF="#ref28">m_t1</A></b></LI>
+<LI>u_int64_t <b><A HREF="#ref29">m_t4</A></b></LI>
+<LI>unsigned int <b><A HREF="#ref30">m_maxForwards</A></b></LI>
+<LI>int <b><A HREF="#ref31">m_cseq</A></b></LI>
+<LI>String <b><A HREF="#ref32">m_userAgent</A></b></LI>
+<LI>String <b><A HREF="#ref33">m_allowed</A></b></LI>
+<LI>String <b><A HREF="#ref34">m_nonce</A></b></LI>
+<LI>String <b><A HREF="#ref35">m_nonce_secret</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref36">m_nonce_time</A></b></LI>
+<LI>Mutex <b><A HREF="#ref37">m_nonce_mutex</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ This object can be one for each SIPListener.
+ </p>
+<A NAME="SIPEngine"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SIPEngine</strong> (const char* userAgent = 0)
+<br></td><td align="right"><h3><strong>SIPEngine</strong></h3></td></tr></table><p></p><p>
+ Create the SIP Engine
+     </p>
+<A NAME="~SIPEngine"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SIPEngine</strong> ()
+<br></td><td align="right"><h3><strong>~SIPEngine</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destroy the SIP Engine
+     </p>
+<A NAME="buildParty"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<i><strong>buildParty</strong></i> (SIPMessage* message)
+<br></td><td align="right"><h3><i><strong>buildParty</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Build a new SIPParty for a message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Pointer to the message to build the party
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True on success, false if party could not be built
+     </p>
+<A NAME="checkUser"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>checkUser</strong> (const String& username, const String& realm, const String& nonce,
+	const String& method, const String& uri, const String& response,
+	const SIPMessage* message, GenObject* userData)
+<br></td><td align="right"><h3><strong>checkUser</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Check user credentials for validity
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>username</i></TD><TD align="left" valign="top">User account name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>realm</i></TD><TD align="left" valign="top">Authentication realm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nonce</i></TD><TD align="left" valign="top">Authentication opaque nonce generated by the server
+</TD></TR>
+<TR><TD align="left" valign="top"><i>method</i></TD><TD align="left" valign="top">Method of the SIP message that is being authenticated
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">URI of the SIP message that is being authenticated
+</TD></TR>
+<TR><TD align="left" valign="top"><i>response</i></TD><TD align="left" valign="top">Response computed by the authenticated entity
+</TD></TR>
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Message that is to be authenticated
+</TD></TR>
+<TR><TD align="left" valign="top"><i>userData</i></TD><TD align="left" valign="top">Pointer to an optional object passed from <A HREF="TelEngine__SIPEngine.html#authUser">authUser</A>
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if valid user/password, false if verification failed
+     </p>
+<A NAME="checkAuth"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>checkAuth</strong> (bool noUser, const SIPMessage* message, GenObject* userData)
+<br></td><td align="right"><h3><strong>checkAuth</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Authenticate a message by other means than user credentials. By default
+  it calls <A HREF="TelEngine__SIPEngine.html#checkUser">checkUser</A> with empty user credential fields
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>noUser</i></TD><TD align="left" valign="top">No plausible user credentials were detected so far
+</TD></TR>
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Message that is to be authenticated
+</TD></TR>
+<TR><TD align="left" valign="top"><i>userData</i></TD><TD align="left" valign="top">Pointer to an optional object passed from <A HREF="TelEngine__SIPEngine.html#authUser">authUser</A>
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if message is authenticated, false if verification failed
+     </p>
+<A NAME="authUser"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int &nbsp;<strong>authUser</strong> (const SIPMessage* message, String& user, bool proxy = false, GenObject* userData = 0)
+<br></td><td align="right"><h3><strong>authUser</strong></h3></td></tr></table><p></p><p>
+ Detect the proper credentials for any user in the engine
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">Pointer to the message to check
+</TD></TR>
+<TR><TD align="left" valign="top"><i>user</i></TD><TD align="left" valign="top">String to store the authenticated user name or user to
+  look for (if not null on entry)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>proxy</i></TD><TD align="left" valign="top">True to authenticate as proxy, false as user agent
+</TD></TR>
+<TR><TD align="left" valign="top"><i>userData</i></TD><TD align="left" valign="top">Pointer to an optional object that is passed back to <A HREF="TelEngine__SIPEngine.html#checkUser">checkUser</A>
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Age of the nonce if user matches, negative for a failure
+     </p>
+<A NAME="addMessage"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPTransaction* &nbsp;<strong>addMessage</strong> (SIPParty* ep, const char* buf, int len = -1)
+<br></td><td align="right"><h3><strong>addMessage</strong></h3></td></tr></table><p></p><p>
+ Add a message into the transaction list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>ep</i></TD><TD align="left" valign="top">Party of the received message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>buf</i></TD><TD align="left" valign="top">A buffer containing the SIP message text
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The length of the message or -1 to interpret as C string
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the transaction or NULL if message was invalid
+     </p>
+<A NAME="addMessage"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPTransaction* &nbsp;<strong>addMessage</strong> (SIPMessage* message)
+<br></td><td align="right"><h3><strong>addMessage</strong></h3></td></tr></table><p></p><p>
+ Add a message into the transaction list
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>message</i></TD><TD align="left" valign="top">A parsed SIP message to add to the transactions
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to the transaction or NULL if message was invalid
+     </p>
+<A NAME="getEvent"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SIPEvent *&nbsp;<strong>getEvent</strong> ()
+<br></td><td align="right"><h3><strong>getEvent</strong></h3></td></tr></table><p></p><p>
+ Get a SIPEvent from the queue. 
+ This method mainly looks into the transaction list and get all kind of 
+ events, like an incoming request (INVITE, REGISTRATION), a timer, an
+ outgoing message.
+ This method is thread safe
+     </p>
+<A NAME="process"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>process</strong> ()
+<br></td><td align="right"><h3><strong>process</strong></h3></td></tr></table><p></p><p>
+ This method should be called very often to get the events from the list and 
+ to send them to processEvent method.
+</p>
+<p><b>Returns</b>: True if some events were processed this turn
+     </p>
+<A NAME="processEvent"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>processEvent</strong> (SIPEvent *event)
+<br></td><td align="right"><h3><strong>processEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Default handling for events.
+ This method should be overriden for what you need and at the end you
+ should call this default one
+ This method is thread safe
+     </p>
+<A NAME="forkInvite"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SIPTransaction* &nbsp;<strong>forkInvite</strong> (SIPMessage* answer, SIPTransaction* trans)
+<br></td><td align="right"><h3><strong>forkInvite</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Handle answers that create new dialogs for an outgoing INVITE
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>answer</i></TD><TD align="left" valign="top">The message that creates the INVITE fork
+</TD></TR>
+<TR><TD align="left" valign="top"><i>trans</i></TD><TD align="left" valign="top">One of the transactions part of the same INVITE
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Pointer to new transaction or NULL if message is ignored
+     </p>
+<A NAME="getUserTimeout"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td> <A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>getUserTimeout</strong> ()
+<br></td><td align="right"><h3><strong>getUserTimeout</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the timeout to be used for transactions involving human interaction.
+ The default implementation returns 120000000 (2 minutes)
+</p>
+<p><b>Returns</b>: Duration of the timeout in microseconds
+     </p>
+<A NAME="getTimer"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int64_t">u_int64_t</A> &nbsp;<strong>getTimer</strong> (char which, bool reliable = false)
+<br></td><td align="right"><h3><strong>getTimer</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the length of a timer
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>which</i></TD><TD align="left" valign="top">A one-character constant that selects which timer to return
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reliable</i></TD><TD align="left" valign="top">Whether we request the timer value for a reliable protocol
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Duration of the selected timer or 0 if invalid
+     </p>
+<A NAME="getMaxForwards"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>getMaxForwards</strong> ()
+<br></td><td align="right"><h3><strong>getMaxForwards</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the default value of the Max-Forwards header for this engine
+</p>
+<p><b>Returns</b>: The maximum number of hops the request is allowed to pass
+     </p>
+<A NAME="getUserAgent"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getUserAgent</strong> ()
+<br></td><td align="right"><h3><strong>getUserAgent</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the User agent for this SIP engine
+     </p>
+<A NAME="getNextCSeq"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>getNextCSeq</strong> ()
+<br></td><td align="right"><h3><strong>getNextCSeq</strong></h3></td></tr></table><p></p><p>
+ Get a CSeq value suitable for use in a new request
+     </p>
+<A NAME="nonceGet"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>nonceGet</strong> (String& nonce)
+<br></td><td align="right"><h3><strong>nonceGet</strong></h3></td></tr></table><p></p><p>
+ Get an authentication nonce
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nonce</i></TD><TD align="left" valign="top">String reference to fill with the current nonce
+     </TD></TR>
+</TABLE></P>
+<A NAME="nonceAge"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td>long &nbsp;<strong>nonceAge</strong> (const String& nonce)
+<br></td><td align="right"><h3><strong>nonceAge</strong></h3></td></tr></table><p></p><p>
+ Get the age of an authentication nonce
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>nonce</i></TD><TD align="left" valign="top">String nonce to check for validity and age
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Age of the nonce in seconds, negative for invalid
+     </p>
+<A NAME="buildAuth"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildAuth</strong> (const String& username, const String& realm, const String& passwd,
+	const String& nonce, const String& method, const String& uri, String& response)
+<br></td><td align="right"><h3><strong>buildAuth</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build an authentication response
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>username</i></TD><TD align="left" valign="top">User account name
+</TD></TR>
+<TR><TD align="left" valign="top"><i>realm</i></TD><TD align="left" valign="top">Authentication realm
+</TD></TR>
+<TR><TD align="left" valign="top"><i>passwd</i></TD><TD align="left" valign="top">Account password
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nonce</i></TD><TD align="left" valign="top">Authentication opaque nonce generated by the server
+</TD></TR>
+<TR><TD align="left" valign="top"><i>method</i></TD><TD align="left" valign="top">Method of the SIP message that is being authenticated
+</TD></TR>
+<TR><TD align="left" valign="top"><i>uri</i></TD><TD align="left" valign="top">URI of the SIP message that is being authenticated
+</TD></TR>
+<TR><TD align="left" valign="top"><i>response</i></TD><TD align="left" valign="top">String to store the computed response
+     </TD></TR>
+</TABLE></P>
+<A NAME="buildAuth"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>buildAuth</strong> (const String& hash_a1, const String& nonce, const String& hash_a2,
+	String& response)
+<br></td><td align="right"><h3><strong>buildAuth</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Build an authentication response from already hashed components
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>hash_a1</i></TD><TD align="left" valign="top">MD5 digest of username:realm:password
+</TD></TR>
+<TR><TD align="left" valign="top"><i>nonce</i></TD><TD align="left" valign="top">Authentication opaque nonce generated by the server
+</TD></TR>
+<TR><TD align="left" valign="top"><i>hash_a2</i></TD><TD align="left" valign="top">MD5 digest of method:uri
+</TD></TR>
+<TR><TD align="left" valign="top"><i>response</i></TD><TD align="left" valign="top">String to store the computed response
+     </TD></TR>
+</TABLE></P>
+<A NAME="isAllowed"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>isAllowed</strong> (const char* method)
+<br></td><td align="right"><h3><strong>isAllowed</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if a method is in the allowed methods list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>method</i></TD><TD align="left" valign="top">Uppercase name of the method to check
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the method should be allowed processing
+     </p>
+<A NAME="addAllowed"></A><A NAME="ref23"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>addAllowed</strong> (const char* method)
+<br></td><td align="right"><h3><strong>addAllowed</strong></h3></td></tr></table><p></p><p>
+ Add a method to the allowed methods list
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>method</i></TD><TD align="left" valign="top">Uppercase name of the method to add
+     </TD></TR>
+</TABLE></P>
+<A NAME="getAllowed"></A><A NAME="ref24"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>getAllowed</strong> ()
+<br></td><td align="right"><h3><strong>getAllowed</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get all the allowed methods
+</p>
+<p><b>Returns</b>: Comma separated list of allowed methods
+     </p>
+<A NAME="mutex"></A><A NAME="ref25"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline Mutex* &nbsp;<strong>mutex</strong> ()
+<br></td><td align="right"><h3><strong>mutex</strong></h3></td></tr></table><p></p><p>
+ Get the mutex that protects objects in this engine
+</p>
+<p><b>Returns</b>: Pointer to the engine's mutex object
+     </p>
+<A NAME="TransList"></A><A NAME="ref26"></A><table width="100%"><tr bgcolor="#eeeeee"><td>ObjList  <strong>TransList</strong>
+</td><td align="right"><h3><strong>TransList</strong></h3></td></tr></table><p></p><A NAME="m_mutex"></A><A NAME="ref27"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex  <strong>m_mutex</strong>
+</td><td align="right"><h3><strong>m_mutex</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_t1"></A><A NAME="ref28"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int64_t">u_int64_t</A>  <strong>m_t1</strong>
+</td><td align="right"><h3><strong>m_t1</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_t4"></A><A NAME="ref29"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int64_t">u_int64_t</A>  <strong>m_t4</strong>
+</td><td align="right"><h3><strong>m_t4</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_maxForwards"></A><A NAME="ref30"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int  <strong>m_maxForwards</strong>
+</td><td align="right"><h3><strong>m_maxForwards</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_cseq"></A><A NAME="ref31"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_cseq</strong>
+</td><td align="right"><h3><strong>m_cseq</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_userAgent"></A><A NAME="ref32"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_userAgent</strong>
+</td><td align="right"><h3><strong>m_userAgent</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_allowed"></A><A NAME="ref33"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_allowed</strong>
+</td><td align="right"><h3><strong>m_allowed</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_nonce"></A><A NAME="ref34"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_nonce</strong>
+</td><td align="right"><h3><strong>m_nonce</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_nonce_secret"></A><A NAME="ref35"></A><table width="100%"><tr bgcolor="#eeeeee"><td>String  <strong>m_nonce_secret</strong>
+</td><td align="right"><h3><strong>m_nonce_secret</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_nonce_time"></A><A NAME="ref36"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_nonce_time</strong>
+</td><td align="right"><h3><strong>m_nonce_time</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_nonce_mutex"></A><A NAME="ref37"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex  <strong>m_nonce_mutex</strong>
+</td><td align="right"><h3><strong>m_nonce_mutex</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

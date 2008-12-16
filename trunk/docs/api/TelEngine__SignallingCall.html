@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<TITLE>class SignallingCall</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class SignallingCall</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Abstract single phone call. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::SignallingCall</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ysig___yatesig_h.html">libs/ysig/yatesig.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__ISDNQ931Call.html">ISDNQ931Call</A>, <A HREF="TelEngine__ISDNQ931CallMonitor.html">ISDNQ931CallMonitor</A>, <A HREF="TelEngine__SS7ISUPCall.html">SS7ISUPCall</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__SignallingCall.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref1">SignallingCall</A></b> (SignallingCallControl* controller, bool outgoing, bool signalOnly = false) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref2">~SignallingCall</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref3">outgoing</A></b> ()  const
+</LI>
+<LI>inline SignallingCallControl* &nbsp;<b><A HREF="#ref4">controller</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref5">userdata</A></b> (void* data) 
+</LI>
+<LI>inline void* &nbsp;<b><A HREF="#ref6">userdata</A></b> ()  const
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref7">signalOnly</A></b> ()  const
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref8">sendEvent</A></b> (SignallingEvent* event) 
+</LI>
+<LI>virtual  SignallingEvent* &nbsp;<b><i><A HREF="#ref9">getEvent</A></i></b> (const Time& when) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref10">eventTerminated</A></b> (SignallingEvent* event) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>void &nbsp;<b><A HREF="#ref11">enqueue</A></b> (SignallingMessage* msg) 
+</LI>
+<LI>SignallingMessage* &nbsp;<b><A HREF="#ref12">dequeue</A></b> (bool remove = true) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref13">clearQueue</A></b> () 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>Mutex <b><A HREF="#ref14">m_callMutex</A></b></LI>
+<LI>SignallingEvent* <b><A HREF="#ref15">m_lastEvent</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Interface of protocol independent phone call
+</p>
+<A NAME="SignallingCall"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>SignallingCall</strong> (SignallingCallControl* controller, bool outgoing, bool signalOnly = false)
+<br></td><td align="right"><h3><strong>SignallingCall</strong></h3></td></tr></table><p></p><p>
+ Constructor
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>controller</i></TD><TD align="left" valign="top">The call controller owning this call
+</TD></TR>
+<TR><TD align="left" valign="top"><i>outgoing</i></TD><TD align="left" valign="top">Call direction (true for outgoing)
+</TD></TR>
+<TR><TD align="left" valign="top"><i>signalOnly</i></TD><TD align="left" valign="top">Just signalling (no voice) flag
+     </TD></TR>
+</TABLE></P>
+<A NAME="~SignallingCall"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~SignallingCall</strong> ()
+<br></td><td align="right"><h3><strong>~SignallingCall</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor, notifies the controller
+     </p>
+<A NAME="outgoing"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>outgoing</strong> ()
+<br></td><td align="right"><h3><strong>outgoing</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this is an outgoing call
+</p>
+<p><b>Returns</b>: True if it's an outgoing call
+     </p>
+<A NAME="controller"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline SignallingCallControl* &nbsp;<strong>controller</strong> ()
+<br></td><td align="right"><h3><strong>controller</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retreive the controller of this call
+     </p>
+<A NAME="userdata"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>userdata</strong> (void* data)
+<br></td><td align="right"><h3><strong>userdata</strong></h3></td></tr></table><p></p><p>
+ Set this call's private user data
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>data</i></TD><TD align="left" valign="top">New user data
+     </TD></TR>
+</TABLE></P>
+<A NAME="userdata"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void* &nbsp;<strong>userdata</strong> ()
+<br></td><td align="right"><h3><strong>userdata</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retreive the private user data of this call
+</p>
+<p><b>Returns</b>: User data
+     </p>
+<A NAME="signalOnly"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>signalOnly</strong> ()
+<br></td><td align="right"><h3><strong>signalOnly</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if this call is just a signalling (no voice) one
+</p>
+<p><b>Returns</b>: True if no audio data can be negotiated for this call
+     </p>
+<A NAME="sendEvent"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>sendEvent</strong> (SignallingEvent* event)
+<br></td><td align="right"><h3><strong>sendEvent</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Send an event to this call
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The event to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if the operation succedded
+     </p>
+<A NAME="getEvent"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> SignallingEvent* &nbsp;<i><strong>getEvent</strong></i> (const Time& when)
+<br></td><td align="right"><h3><i><strong>getEvent</strong></i></h3></td></tr></table><p> <small>[pure virtual]</small></p><p>
+ Get an event from this call if not already got one
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">The current time
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingEvent pointer or 0 if no events or this call has a not terminated event
+     </p>
+<A NAME="eventTerminated"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>eventTerminated</strong> (SignallingEvent* event)
+<br></td><td align="right"><h3><strong>eventTerminated</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Event terminated notification. No event will be generated until
+  the current event is terminated
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>event</i></TD><TD align="left" valign="top">The terminated event
+     </TD></TR>
+</TABLE></P>
+<A NAME="enqueue"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>enqueue</strong> (SignallingMessage* msg)
+<br></td><td align="right"><h3><strong>enqueue</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Enqueue a received message.
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The received message
+     </TD></TR>
+</TABLE></P>
+<A NAME="dequeue"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingMessage* &nbsp;<strong>dequeue</strong> (bool remove = true)
+<br></td><td align="right"><h3><strong>dequeue</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Dequeue a received message. Just return it if remove is false
+ This method is thread safe
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>remove</i></TD><TD align="left" valign="top">True to remove the message from queue
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: SignallingMessage pointer or 0 if no more messages
+     </p>
+<A NAME="clearQueue"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>clearQueue</strong> ()
+<br></td><td align="right"><h3><strong>clearQueue</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Clear incoming messages queue
+     </p>
+<A NAME="m_callMutex"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td>Mutex  <strong>m_callMutex</strong>
+</td><td align="right"><h3><strong>m_callMutex</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_lastEvent"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>SignallingEvent*  <strong>m_lastEvent</strong>
+</td><td align="right"><h3><strong>m_lastEvent</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

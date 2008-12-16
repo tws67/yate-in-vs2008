@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<TITLE>class ChanAssist</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class ChanAssist</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">
+ Object that assists a channel
+  <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::ChanAssist</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___ypbx___yatepbx_h.html">libs/ypbx/yatepbx.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherits</TH><TD><A HREF="TelEngine__RefObject.html">TelEngine::RefObject</A> <small>[public ]</small></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__ChanAssist.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>virtual  &nbsp;<b><A HREF="#ref1">~ChanAssist</A></b> () 
+</LI>
+<LI>virtual  const String& &nbsp;<b><A HREF="#ref2">toString</A></b> ()  const
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref3">msgStartup</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref4">msgHangup</A></b> (Message& msg) 
+</LI>
+<LI>virtual  void &nbsp;<b><A HREF="#ref5">msgExecute</A></b> (Message& msg) 
+</LI>
+<LI>virtual  bool &nbsp;<b><A HREF="#ref6">msgDisconnect</A></b> (Message& msg, const String& reason) 
+</LI>
+<LI>inline ChanAssistList* &nbsp;<b><A HREF="#ref7">list</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref8">id</A></b> ()  const
+</LI>
+<LI>inline RefPointer<CallEndpoint> &nbsp;<b><A HREF="#ref10">locate</A></b> ()  const
+</LI>
+</ul><h4>Public Static Methods</h4><ul><LI>static  RefPointer<CallEndpoint> &nbsp;<b><A HREF="#ref9">locate</A></b> (const String& id) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref11">ChanAssist</A></b> (ChanAssistList* list, const String& id) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Object that assists a channel
+ </p>
+<A NAME="~ChanAssist"></A><A NAME="ref1"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~ChanAssist</strong> ()
+<br></td><td align="right"><h3><strong>~ChanAssist</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Destructor
+     </p>
+<A NAME="toString"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td> const String& &nbsp;<strong>toString</strong> ()
+<br></td><td align="right"><h3><strong>toString</strong></h3></td></tr></table><p> <small>[const virtual]</small></p><p>
+ Get the String value of this object
+</p>
+<p><b>Returns</b>: ID of the assisted channel
+     </p>
+<p>Reimplemented from <A HREF="TelEngine__GenObject.html#toString">GenObject</A>.</p>
+<A NAME="msgStartup"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgStartup</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgStartup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process the chan.startup message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">First channel message, may be received after call.execute
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgHangup"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgHangup</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgHangup</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process the chan.hangup message
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Last channel message
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgExecute"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<strong>msgExecute</strong> (Message& msg)
+<br></td><td align="right"><h3><strong>msgExecute</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process the call.execute message, copy any parameters needed later
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">Call execute message, may be received before chan.startup
+     </TD></TR>
+</TABLE></P>
+<A NAME="msgDisconnect"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td> bool &nbsp;<strong>msgDisconnect</strong> (Message& msg, const String& reason)
+<br></td><td align="right"><h3><strong>msgDisconnect</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Process the channel disconnect message, may connect to something else
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>msg</i></TD><TD align="left" valign="top">The chan.disconnected message
+</TD></TR>
+<TR><TD align="left" valign="top"><i>reason</i></TD><TD align="left" valign="top">The disconnection reason
+     </TD></TR>
+</TABLE></P>
+<A NAME="list"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline ChanAssistList* &nbsp;<strong>list</strong> ()
+<br></td><td align="right"><h3><strong>list</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive the list that owns this object
+</p>
+<p><b>Returns</b>: Pointer to the owner list
+     </p>
+<A NAME="id"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>id</strong> ()
+<br></td><td align="right"><h3><strong>id</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the name of the assisted channel
+</p>
+<p><b>Returns</b>: Identifier of the channel
+     </p>
+<A NAME="locate"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td> RefPointer<CallEndpoint> &nbsp;<strong>locate</strong> (const String& id)
+<br></td><td align="right"><h3><strong>locate</strong></h3></td></tr></table><p> <small>[static]</small></p><p>
+ Retrive a smart pointer to an arbitrary channel
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Identifier of the channel to locate
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: Smart pointer to the channel or NULL if not found or dead
+     </p>
+<A NAME="locate"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline RefPointer<CallEndpoint> &nbsp;<strong>locate</strong> ()
+<br></td><td align="right"><h3><strong>locate</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Retrive a smart pointer to the assisted channel
+</p>
+<p><b>Returns</b>: Smart pointer to the channel or NULL if not found or dead
+     </p>
+<A NAME="ChanAssist"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>ChanAssist</strong> (ChanAssistList* list, const String& id)
+<br></td><td align="right"><h3><strong>ChanAssist</strong></h3></td></tr></table><p> <small>[protected]</small></p><p>
+ Constructor of base class
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>list</i></TD><TD align="left" valign="top">ChanAssistList that owns this object
+</TD></TR>
+<TR><TD align="left" valign="top"><i>id</i></TD><TD align="left" valign="top">Identifier of the assisted channel
+     </TD></TR>
+</TABLE></P>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<TITLE>class JBSocket</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class JBSocket</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">A Jabber streams's socket. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::JBSocket</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yjingle___yatejabber_h.html">libs/yjingle/yatejabber.h</A>&gt;</code></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__JBSocket.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>&nbsp;<b><A HREF="#ref2">JBSocket</A></b> (JBEngine* engine, JBStream* stream,
+	const char* address, int port) 
+</LI>
+<LI>inline &nbsp;<b><A HREF="#ref3">~JBSocket</A></b> () 
+</LI>
+<LI>inline bool &nbsp;<b><A HREF="#ref4">valid</A></b> ()  const
+</LI>
+<LI>inline const SocketAddr& &nbsp;<b><A HREF="#ref5">addr</A></b> ()  const
+</LI>
+<LI>inline const String& &nbsp;<b><A HREF="#ref6">error</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">connect</A></b> (bool& terminated, const char* newAddr, int newPort = 0) 
+</LI>
+<LI>void &nbsp;<b><A HREF="#ref8">terminate</A></b> (bool shutdown = false) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">recv</A></b> (char* buffer, unsigned int& len) 
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref10">send</A></b> (const char* buffer, unsigned int& len) 
+</LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ A socket used used to transport data for a Jabber stream
+</p>
+<A NAME="JBSocket"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>&nbsp;<strong>JBSocket</strong> (JBEngine* engine, JBStream* stream,
+	const char* address, int port)
+<br></td><td align="right"><h3><strong>JBSocket</strong></h3></td></tr></table><p></p><p>
+ Constructor. Build socket for an outgoing stream
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>engine</i></TD><TD align="left" valign="top">The Jabber engine
+</TD></TR>
+<TR><TD align="left" valign="top"><i>stream</i></TD><TD align="left" valign="top">The stream owning this socket
+</TD></TR>
+<TR><TD align="left" valign="top"><i>address</i></TD><TD align="left" valign="top">The address used to connect to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>port</i></TD><TD align="left" valign="top">Port used to connect to remote server
+     </TD></TR>
+</TABLE></P>
+<A NAME="~JBSocket"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>~JBSocket</strong> ()
+<br></td><td align="right"><h3><strong>~JBSocket</strong></h3></td></tr></table><p></p><p>
+ Destructor. Close the socket
+     </p>
+<A NAME="valid"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline bool &nbsp;<strong>valid</strong> ()
+<br></td><td align="right"><h3><strong>valid</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Check if the socket is valid
+</p>
+<p><b>Returns</b>: True if the socket is valid.
+     </p>
+<A NAME="addr"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const SocketAddr& &nbsp;<strong>addr</strong> ()
+<br></td><td align="right"><h3><strong>addr</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the remote peer's address
+</p>
+<p><b>Returns</b>: The remote peer's address
+     </p>
+<A NAME="error"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline const String& &nbsp;<strong>error</strong> ()
+<br></td><td align="right"><h3><strong>error</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get last connect/send/receive error text
+</p>
+<p><b>Returns</b>: Last error text
+     </p>
+<A NAME="connect"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>connect</strong> (bool& terminated, const char* newAddr, int newPort = 0)
+<br></td><td align="right"><h3><strong>connect</strong></h3></td></tr></table><p></p><p>
+ Connect the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>terminated</i></TD><TD align="left" valign="top">True if false is returned and the socket was terminated
+  while connecting
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newAddr</i></TD><TD align="left" valign="top">Optional address to connect to
+</TD></TR>
+<TR><TD align="left" valign="top"><i>newPort</i></TD><TD align="left" valign="top">Optional port to connect to
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on failure
+     </p>
+<A NAME="terminate"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>void &nbsp;<strong>terminate</strong> (bool shutdown = false)
+<br></td><td align="right"><h3><strong>terminate</strong></h3></td></tr></table><p></p><p>
+ Terminate the socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>shutdown</i></TD><TD align="left" valign="top">True to shut down, false to asynchronously terminate the socket
+     </TD></TR>
+</TABLE></P>
+<A NAME="recv"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>recv</strong> (char* buffer, unsigned int& len)
+<br></td><td align="right"><h3><strong>recv</strong></h3></td></tr></table><p></p><p>
+ Read data from socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Destination buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The number of bytes to read. On exit contains the number of
+  bytes actually read
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on socket error
+     </p>
+<A NAME="send"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>send</strong> (const char* buffer, unsigned int& len)
+<br></td><td align="right"><h3><strong>send</strong></h3></td></tr></table><p></p><p>
+ Write data to socket
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>buffer</i></TD><TD align="left" valign="top">Source buffer
+</TD></TR>
+<TR><TD align="left" valign="top"><i>len</i></TD><TD align="left" valign="top">The number of bytes to send
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: False on socket error
+     </p>
+<HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>

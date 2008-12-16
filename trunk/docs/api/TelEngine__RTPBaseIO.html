@@ -1,0 +1,166 @@
+<HTML>
+<HEAD>
+<TITLE>class RTPBaseIO</TITLE>
+
+<META NAME="Generator" CONTENT="KDOC ">
+</HEAD>
+<BODY bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000099" alink= "#ffffff">
+<TABLE WIDTH="100%" BORDER="0">
+<TR>
+<TD>
+	<TABLE BORDER="0">
+		<TR><TD valign="top" align="left" cellspacing="10">
+		<h1>class RTPBaseIO</h1>
+		</TD>
+		<TD valign="top" align="right" colspan="1">Common send/recv variables holder. <small><A HREF="#longdesc">More...</A></small></TD></TR>
+	</TABLE>
+	<HR>
+	<TABLE BORDER="0">
+		<TR><TH colspan="2">Contains pure virtuals</TH></TR><TR><TH>Full name</TH><TD><code><A HREF="TelEngine.html">TelEngine</A>::RTPBaseIO</code></TD></TR>
+<TR><TH>Definition</TH><TD><code>#include &lt;<A HREF="libs___yrtp___yatertp_h.html">libs/yrtp/yatertp.h</A>&gt;</code></TD></TR>
+<TR><TH>Inherited by</TH><TD><A HREF="TelEngine__RTPReceiver.html">RTPReceiver</A>, <A HREF="TelEngine__RTPSender.html">RTPSender</A></TD></TR>
+<TR><TH><A HREF="full-list-TelEngine__RTPBaseIO.html">List of all Methods</A></TH></TR>
+	</TABLE>
+	</TD>
+<TD align="right"><TABLE BORDER="0"><TR><TD><small><A HREF="index-long.html">Annotated List</A></small></TD></TR>
+<TR><TD><small><A HREF="header-list.html">Files</A></small></TD></TR>
+<TR><TD><small><A HREF="all-globals.html">Globals</A></small></TD></TR>
+<TR><TD><small><A HREF="hier.html">Hierarchy</A></small></TD></TR>
+<TR><TD><small><A HREF="index.html">Index</A></small></TD></TR>
+</TABLE></TD></TR></TABLE>
+<h4>Public Methods</h4><ul><LI>inline &nbsp;<b><A HREF="#ref2">RTPBaseIO</A></b> (RTPSession* session = 0) 
+</LI>
+<LI>virtual  &nbsp;<b><A HREF="#ref3">~RTPBaseIO</A></b> () 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref4">dataPayload</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref5">dataPayload</A></b> (int type) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref6">eventPayload</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref7">eventPayload</A></b> (int type) 
+</LI>
+<LI>inline int &nbsp;<b><A HREF="#ref8">silencePayload</A></b> ()  const
+</LI>
+<LI>bool &nbsp;<b><A HREF="#ref9">silencePayload</A></b> (int type) 
+</LI>
+<LI>unsigned int &nbsp;<b><A HREF="#ref10">ssrcInit</A></b> () 
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref11">reset</A></b> () 
+</LI>
+<LI>inline unsigned int &nbsp;<b><A HREF="#ref12">ssrc</A></b> ()  const
+</LI>
+<LI>inline void &nbsp;<b><A HREF="#ref13">ssrc</A></b> (unsigned int src) 
+</LI>
+</ul><h4>Protected Methods</h4><ul><LI>virtual  void &nbsp;<b><i><A HREF="#ref14">timerTick</A></i></b> (const Time& when) 
+</LI>
+</ul><h4>Protected Members</h4><ul><LI>RTPSession* <b><A HREF="#ref15">m_session</A></b></LI>
+<LI>bool <b><A HREF="#ref16">m_ssrcInit</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref17">m_ssrc</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref18">m_ts</A></b></LI>
+<LI>u_int16_t <b><A HREF="#ref19">m_seq</A></b></LI>
+<LI>u_int32_t <b><A HREF="#ref20">m_evTs</A></b></LI>
+<LI>int <b><A HREF="#ref21">m_evNum</A></b></LI>
+<LI>int <b><A HREF="#ref22">m_evVol</A></b></LI>
+</ul><HR><H2><A NAME="longdesc">Detailed Description</A></H2><p>
+ Base class that holds common sender and receiver methods
+</p>
+<A NAME="RTPBaseIO"></A><A NAME="ref2"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline &nbsp;<strong>RTPBaseIO</strong> (RTPSession* session = 0)
+<br></td><td align="right"><h3><strong>RTPBaseIO</strong></h3></td></tr></table><p></p><p>
+ Default constructor.
+     </p>
+<A NAME="~RTPBaseIO"></A><A NAME="ref3"></A><table width="100%"><tr bgcolor="#eeeeee"><td> &nbsp;<strong>~RTPBaseIO</strong> ()
+<br></td><td align="right"><h3><strong>~RTPBaseIO</strong></h3></td></tr></table><p> <small>[virtual]</small></p><p>
+ Do-nothing destructor
+     </p>
+<A NAME="dataPayload"></A><A NAME="ref4"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>dataPayload</strong> ()
+<br></td><td align="right"><h3><strong>dataPayload</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the payload type for data packets
+</p>
+<p><b>Returns</b>: Payload type, -1 if not set
+     </p>
+<A NAME="dataPayload"></A><A NAME="ref5"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>dataPayload</strong> (int type)
+<br></td><td align="right"><h3><strong>dataPayload</strong></h3></td></tr></table><p></p><p>
+ Set the payload type for data packets
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Payload type, -1 to disable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed, false if invalid payload type
+     </p>
+<A NAME="eventPayload"></A><A NAME="ref6"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>eventPayload</strong> ()
+<br></td><td align="right"><h3><strong>eventPayload</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the payload type for event packets
+</p>
+<p><b>Returns</b>: Payload type, -1 if not set
+     </p>
+<A NAME="eventPayload"></A><A NAME="ref7"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>eventPayload</strong> (int type)
+<br></td><td align="right"><h3><strong>eventPayload</strong></h3></td></tr></table><p></p><p>
+ Set the payload type for event packets
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Payload type, -1 to disable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed, false if invalid payload type
+     </p>
+<A NAME="silencePayload"></A><A NAME="ref8"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline int &nbsp;<strong>silencePayload</strong> ()
+<br></td><td align="right"><h3><strong>silencePayload</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the payload type for Silence event packets
+</p>
+<p><b>Returns</b>: Payload type, -1 if not set
+     </p>
+<A NAME="silencePayload"></A><A NAME="ref9"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool &nbsp;<strong>silencePayload</strong> (int type)
+<br></td><td align="right"><h3><strong>silencePayload</strong></h3></td></tr></table><p></p><p>
+ Set the payload type for Silence event packets.
+ Thanks, Silence, for a new and incompatible way of sending events.
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>type</i></TD><TD align="left" valign="top">Payload type, -1 to disable
+</TD></TR>
+</TABLE></P>
+<p><b>Returns</b>: True if changed, false if invalid payload type
+     </p>
+<A NAME="ssrcInit"></A><A NAME="ref10"></A><table width="100%"><tr bgcolor="#eeeeee"><td>unsigned int &nbsp;<strong>ssrcInit</strong> ()
+<br></td><td align="right"><h3><strong>ssrcInit</strong></h3></td></tr></table><p></p><p>
+ Return SSRC value, initialize to a new, random value if needed
+</p>
+<p><b>Returns</b>: Current value of SSRC
+     </p>
+<A NAME="reset"></A><A NAME="ref11"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>reset</strong> ()
+<br></td><td align="right"><h3><strong>reset</strong></h3></td></tr></table><p></p><p>
+ Requesting generation/grabbing of a new SSRC
+     </p>
+<A NAME="ssrc"></A><A NAME="ref12"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline unsigned int &nbsp;<strong>ssrc</strong> ()
+<br></td><td align="right"><h3><strong>ssrc</strong></h3></td></tr></table><p> <small>[const]</small></p><p>
+ Get the value of the current SSRC, zero if not initialized yet
+</p>
+<p><b>Returns</b>: Value of SSRC, zero if not initialized
+     </p>
+<A NAME="ssrc"></A><A NAME="ref13"></A><table width="100%"><tr bgcolor="#eeeeee"><td>inline void &nbsp;<strong>ssrc</strong> (unsigned int src)
+<br></td><td align="right"><h3><strong>ssrc</strong></h3></td></tr></table><p></p><p>
+ Force a new known SSRC for all further packets
+     </p>
+<A NAME="timerTick"></A><A NAME="ref14"></A><table width="100%"><tr bgcolor="#eeeeee"><td> void &nbsp;<i><strong>timerTick</strong></i> (const Time& when)
+<br></td><td align="right"><h3><i><strong>timerTick</strong></i></h3></td></tr></table><p> <small>[protected pure virtual]</small></p><p>
+ Method called periodically to keep the data flowing
+</p>
+<p><b>Parameters</b>:<TABLE BORDER="0" CELLPADDING="5">
+<TR><TD align="left" valign="top"><i>when</i></TD><TD align="left" valign="top">Time to use as base in all computing
+     </TD></TR>
+</TABLE></P>
+<A NAME="m_session"></A><A NAME="ref15"></A><table width="100%"><tr bgcolor="#eeeeee"><td>RTPSession*  <strong>m_session</strong>
+</td><td align="right"><h3><strong>m_session</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_ssrcInit"></A><A NAME="ref16"></A><table width="100%"><tr bgcolor="#eeeeee"><td>bool  <strong>m_ssrcInit</strong>
+</td><td align="right"><h3><strong>m_ssrcInit</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_ssrc"></A><A NAME="ref17"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_ssrc</strong>
+</td><td align="right"><h3><strong>m_ssrc</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_ts"></A><A NAME="ref18"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_ts</strong>
+</td><td align="right"><h3><strong>m_ts</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_seq"></A><A NAME="ref19"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int16_t">u_int16_t</A>  <strong>m_seq</strong>
+</td><td align="right"><h3><strong>m_seq</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_evTs"></A><A NAME="ref20"></A><table width="100%"><tr bgcolor="#eeeeee"><td><A HREF="#u_int32_t">u_int32_t</A>  <strong>m_evTs</strong>
+</td><td align="right"><h3><strong>m_evTs</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_evNum"></A><A NAME="ref21"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_evNum</strong>
+</td><td align="right"><h3><strong>m_evNum</strong></h3></td></tr></table><p> <small>[protected]</small></p><A NAME="m_evVol"></A><A NAME="ref22"></A><table width="100%"><tr bgcolor="#eeeeee"><td>int  <strong>m_evVol</strong>
+</td><td align="right"><h3><strong>m_evVol</strong></h3></td></tr></table><p> <small>[protected]</small></p><HR>
+	<table>
+	<tr><td><small>Generated by: root on dragoshel on Mon Aug  4 10:38:21 2008, using kdoc 2.0a54.</small></td></tr>
+	</table>
+</BODY>
+</HTML>
